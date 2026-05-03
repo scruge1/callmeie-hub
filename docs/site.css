@@ -729,7 +729,7 @@ article.scenario:first-of-type { border-top: 2px solid var(--ink); }
 .pipeline-log__who { font-weight: 600; color: var(--brand); margin-right: 8px; }
 .pipeline-log__who--gate { color: var(--ink); }
 .pipeline-log__who--bounce { color: var(--warn); }
-.pipeline-log__who--adam { color: var(--accent); }
+.pipeline-log__who--reviewer { color: var(--accent); }
 .pipeline-log__who--export { color: var(--ok); }
 .pipeline-log__text { color: var(--ink-soft); font-family: var(--body); font-size: 14px; }
 
