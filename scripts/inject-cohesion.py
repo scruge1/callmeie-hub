@@ -47,11 +47,15 @@ EXCLUDE_DIRS = {"_partials", "scripts", "node_modules", ".git", ".github"}
 # Sentinel regex captures: type, optional attrs blob, content, end-type
 # Tolerates whitespace + newlines between the markers.
 SENTINEL_RE = re.compile(
-    r"<!--\s*COHESION:(?P<type>STRIP|BREADCRUMB|FOOTER)-START(?P<attrs>[^>]*)-->"
+    r"<!--\s*COHESION:(?P<type>STRIP|BREADCRUMB|FOOTER|TRUST)-START(?P<attrs>[^>]*)-->"
     r"(?P<content>.*?)"
     r"<!--\s*COHESION:(?P=type)-END\s*-->",
     re.DOTALL | re.IGNORECASE,
 )
+
+# Stylesheet link to inject into <head> when sentinels present
+COHESION_STYLE_LINK = '<link rel="stylesheet" href="/_partials/cohesion.css">'
+COHESION_STYLE_MARKER = "/_partials/cohesion.css"
 
 # Attribute parser: key="value" or key=value (no quotes, no spaces in value).
 ATTR_RE = re.compile(r'(\w+)\s*=\s*(?:"([^"]*)"|(\S+))')
@@ -109,6 +113,15 @@ def inject_one(page_path: Path) -> tuple[str, bool]:
 
     if not found_any:
         return raw, False
+
+    # Inject cohesion.css link into <head> if sentinels present and link missing.
+    if COHESION_STYLE_MARKER not in new_content:
+        # Insert just before </head> — falls back to inserting after <head> if </head> not found.
+        if "</head>" in new_content:
+            new_content = new_content.replace("</head>", f"  {COHESION_STYLE_LINK}\n</head>", 1)
+        elif "<head>" in new_content:
+            new_content = new_content.replace("<head>", f"<head>\n  {COHESION_STYLE_LINK}", 1)
+
     return new_content, new_content != raw
 
 

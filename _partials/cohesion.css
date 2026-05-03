@@ -1,0 +1,433 @@
+/* cohesion.css — single source of truth for callmeie.ie cohesion-layer styles.
+   Loaded once per page that has cohesion sentinels (link injected by inject-cohesion.py).
+   Tokens prefixed --cmt-* to avoid collision with demo bespoke token systems. */
+
+:root {
+  /* Color */
+  --cmt-paper:        #f8f5f0;
+  --cmt-paper-alt:    #efe9de;
+  --cmt-ink:          #1c1f24;
+  --cmt-ink-soft:     #2d3239;
+  --cmt-muted:        #6b665d;
+  --cmt-line:         #d8cfc1;
+  --cmt-line-soft:    rgba(216, 207, 193, 0.4);
+  --cmt-brand:        #1d3557;
+  --cmt-brand-hover:  #14253f;
+  --cmt-brand-soft:   rgba(29, 53, 87, 0.08);
+  --cmt-accent:       #c08a3f;
+  --cmt-accent-hover: #a87633;
+  --cmt-accent-soft:  rgba(192, 138, 63, 0.12);
+
+  /* Typography */
+  --cmt-font-display: 'Fraunces', 'Bodoni Moda', Georgia, serif;
+  --cmt-font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --cmt-font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --cmt-fs-eyebrow:   clamp(11px, 0.7vw + 8px, 13px);
+  --cmt-fs-small:     clamp(13px, 0.5vw + 11px, 14px);
+  --cmt-fs-body:      clamp(15px, 0.6vw + 13px, 17px);
+
+  /* Spacing */
+  --cmt-s-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+  --cmt-s-s:  clamp(0.5rem, 1vw, 0.75rem);
+  --cmt-s-m:  clamp(0.75rem, 1.5vw, 1rem);
+  --cmt-s-l:  clamp(1rem, 2vw, 1.5rem);
+  --cmt-s-xl: clamp(1.5rem, 3vw, 2.5rem);
+
+  /* Layout */
+  --cmt-max-w:       1180px;
+  --cmt-max-w-prose: 68ch;
+
+  /* Shape */
+  --cmt-radius-pill:   999px;
+  --cmt-radius-card:   6px;
+  --cmt-radius-button: 6px;
+
+  /* Motion */
+  --cmt-duration-fast: 0.15s;
+  --cmt-duration-base: 0.25s;
+  --cmt-ease:          cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Focus */
+  --cmt-focus-ring:    2px solid var(--cmt-accent);
+
+  /* Z-index — top stack contract per recipe §17.2 */
+  --cmt-z-strip:    100;
+  --cmt-z-pill:     90;
+  --cmt-z-dropdown: 110;
+
+  /* Strip height — top-stack offset for sibling sticky elements */
+  --cmt-strip-h:    44px;
+}
+
+@media (max-width: 640px) {
+  :root { --cmt-strip-h: 48px; }
+}
+
+/* ============ SKIP LINK ============ */
+
+.cmt-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--cmt-ink);
+  color: var(--cmt-paper);
+  padding: 8px 16px;
+  font: 600 14px/1 var(--cmt-font-body);
+  text-decoration: none;
+  z-index: var(--cmt-z-dropdown);
+}
+.cmt-skip-link:focus { top: 0; }
+
+/* ============ STRIP ============ */
+
+.callmeie-strip {
+  position: sticky;
+  top: 0;
+  z-index: var(--cmt-z-strip);
+  background: var(--cmt-paper);
+  border-bottom: 1px solid var(--cmt-line);
+  height: var(--cmt-strip-h);
+  font-family: var(--cmt-font-body);
+  color: var(--cmt-ink);
+}
+
+.callmeie-strip-inner {
+  max-width: var(--cmt-max-w);
+  margin: 0 auto;
+  padding: 0 var(--cmt-s-l);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--cmt-s-m);
+}
+
+.callmeie-mark {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--cmt-ink);
+  line-height: 1;
+  margin-right: auto;
+}
+.callmeie-mark-name {
+  font-family: var(--cmt-font-display);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 18;
+}
+.callmeie-mark-tag {
+  font-family: var(--cmt-font-body);
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--cmt-muted);
+  margin-top: 2px;
+}
+@media (max-width: 480px) {
+  .callmeie-mark-tag { display: none; }
+}
+
+.callmeie-products {
+  position: relative;
+}
+.callmeie-products summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cmt-ink-soft);
+  padding: 6px 10px;
+  border-radius: var(--cmt-radius-button);
+  transition: background var(--cmt-duration-fast) var(--cmt-ease);
+}
+.callmeie-products summary::-webkit-details-marker { display: none; }
+.callmeie-products summary::after {
+  content: " ▾";
+  font-size: 9px;
+  margin-left: 4px;
+  opacity: 0.6;
+}
+.callmeie-products summary:hover { background: var(--cmt-brand-soft); }
+.callmeie-products[open] summary { background: var(--cmt-brand-soft); }
+@media (max-width: 480px) {
+  .callmeie-products summary { font-size: 0; padding: 6px 8px; }
+  .callmeie-products summary::after { font-size: 11px; margin-left: 0; opacity: 1; }
+}
+
+.callmeie-products-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 280px;
+  background: var(--cmt-paper);
+  border: 1px solid var(--cmt-line);
+  border-radius: var(--cmt-radius-card);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  z-index: var(--cmt-z-dropdown);
+  padding: 4px;
+  animation: cmt-fadeslide var(--cmt-duration-base) var(--cmt-ease);
+}
+@keyframes cmt-fadeslide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.callmeie-products-menu a {
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  border-radius: var(--cmt-radius-card);
+  transition: background var(--cmt-duration-fast) var(--cmt-ease);
+}
+.callmeie-products-menu a + a { border-top: 1px solid var(--cmt-line-soft); }
+.callmeie-products-menu a:hover { background: var(--cmt-paper-alt); }
+.callmeie-products-menu strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cmt-ink);
+}
+.callmeie-products-menu em {
+  display: block;
+  font-size: 12px;
+  color: var(--cmt-muted);
+  font-style: normal;
+  margin-top: 2px;
+}
+
+.callmeie-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: var(--cmt-brand);
+  color: var(--cmt-paper);
+  border-radius: var(--cmt-radius-button);
+  text-decoration: none;
+  transition: background var(--cmt-duration-fast) var(--cmt-ease);
+}
+.callmeie-cta:hover { background: var(--cmt-brand-hover); color: var(--cmt-paper); }
+@media (max-width: 480px) {
+  .callmeie-cta { padding: 6px 12px; font-size: 12px; }
+}
+
+/* ============ TRUST BAND (sales pages only) ============ */
+
+.callmeie-trust {
+  background: var(--cmt-paper);
+  border-bottom: 1px solid var(--cmt-line-soft);
+  padding: var(--cmt-s-s) var(--cmt-s-l);
+  font-family: var(--cmt-font-body);
+  font-size: 12px;
+  color: var(--cmt-muted);
+  text-align: center;
+}
+.callmeie-trust span + span::before {
+  content: "·";
+  margin: 0 8px;
+  color: var(--cmt-line);
+}
+.callmeie-trust strong { color: var(--cmt-ink); font-weight: 600; }
+
+/* ============ BREADCRUMB ============ */
+
+.callmeie-breadcrumb {
+  background: var(--cmt-paper-alt);
+  padding: var(--cmt-s-s) var(--cmt-s-l);
+  font-family: var(--cmt-font-body);
+}
+.callmeie-breadcrumb ol {
+  max-width: var(--cmt-max-w);
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+.callmeie-breadcrumb li { color: var(--cmt-muted); display: flex; align-items: center; gap: 6px; }
+.callmeie-breadcrumb li + li::before {
+  content: "›";
+  color: var(--cmt-line);
+  font-size: 14px;
+}
+.callmeie-breadcrumb a {
+  color: var(--cmt-ink-soft);
+  text-decoration: none;
+  transition: color var(--cmt-duration-fast) var(--cmt-ease);
+}
+.callmeie-breadcrumb a:hover { color: var(--cmt-brand); }
+.callmeie-breadcrumb [aria-current="page"] {
+  color: var(--cmt-ink);
+  font-weight: 500;
+}
+
+/* ============ FOOTER ============ */
+
+.callmeie-footer {
+  background: var(--cmt-paper-alt);
+  border-top: 2px solid var(--cmt-line);
+  padding: var(--cmt-s-xl) var(--cmt-s-l) var(--cmt-s-m);
+  font-family: var(--cmt-font-body);
+  color: var(--cmt-ink-soft);
+  margin-top: var(--cmt-s-xl);
+}
+.callmeie-footer-inner {
+  max-width: var(--cmt-max-w);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--cmt-s-xl);
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .callmeie-footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .callmeie-footer-inner { grid-template-columns: 1fr; gap: var(--cmt-s-l); }
+}
+.callmeie-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+.callmeie-footer-brand strong {
+  font-family: var(--cmt-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--cmt-ink);
+  font-variation-settings: "opsz" 24;
+}
+.callmeie-footer-brand span { color: var(--cmt-muted); font-size: 13px; }
+.callmeie-footer-brand a {
+  color: var(--cmt-accent);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+.callmeie-footer-brand a:hover { color: var(--cmt-brand); }
+
+.callmeie-footer-nav {
+  display: contents;
+}
+.callmeie-footer-col h4 {
+  font-family: var(--cmt-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cmt-ink);
+  margin: 0 0 var(--cmt-s-m);
+}
+.callmeie-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.callmeie-footer-col a {
+  color: var(--cmt-ink-soft);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color var(--cmt-duration-fast) var(--cmt-ease);
+}
+.callmeie-footer-col a:hover { color: var(--cmt-brand); }
+.callmeie-footer-col span { color: var(--cmt-muted); font-size: 13px; }
+
+.callmeie-footer-band {
+  max-width: var(--cmt-max-w);
+  margin: var(--cmt-s-l) auto 0;
+  padding-top: var(--cmt-s-m);
+  border-top: 1px solid var(--cmt-line-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--cmt-s-s);
+  font-size: 11px;
+  color: var(--cmt-muted);
+}
+.callmeie-footer-band strong { color: var(--cmt-ink-soft); font-weight: 600; }
+
+/* ============ DEMO PILL (variant=pill) ============ */
+
+.callmeie-pill {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: var(--cmt-z-pill);
+  background: rgba(28, 31, 36, 0.85);
+  color: var(--cmt-paper);
+  font-family: var(--cmt-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--cmt-radius-pill);
+  border: 1px solid rgba(248, 245, 240, 0.24);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background var(--cmt-duration-fast) var(--cmt-ease);
+}
+.callmeie-pill:hover { background: rgba(28, 31, 36, 1); }
+.callmeie-pill-arrow { font-size: 11px; }
+.callmeie-pill-tooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: var(--cmt-ink);
+  color: var(--cmt-paper);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--cmt-duration-fast) var(--cmt-ease);
+}
+.callmeie-pill:hover .callmeie-pill-tooltip,
+.callmeie-pill:focus .callmeie-pill-tooltip { opacity: 1; }
+@media (max-width: 640px) {
+  .callmeie-pill { top: 10px; left: 10px; padding: 4px 10px; font-size: 11px; }
+}
+
+/* ============ FOOTER DEMO VARIANT ============ */
+
+.callmeie-demo-footer {
+  background: var(--cmt-paper-alt);
+  border-top: 1px solid var(--cmt-line);
+  padding: var(--cmt-s-m) var(--cmt-s-l);
+  font-family: var(--cmt-font-body);
+  font-size: 12px;
+  color: var(--cmt-muted);
+}
+.callmeie-demo-footer-inner {
+  max-width: var(--cmt-max-w);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--cmt-s-s);
+  align-items: center;
+}
+.callmeie-demo-footer a { color: var(--cmt-ink-soft); text-decoration: none; }
+.callmeie-demo-footer a:hover { color: var(--cmt-brand); }
+.callmeie-demo-back { font-weight: 600; }
+
+/* Reduce-motion guard */
+@media (prefers-reduced-motion: reduce) {
+  .callmeie-products-menu { animation: none; }
+  .callmeie-strip *, .callmeie-pill, .callmeie-footer * { transition: none !important; }
+}
