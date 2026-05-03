@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document Ops — Klippa does the OCR. We do the review. · Callmeie Technologies</title>
-  <meta name="description" content="Managed invoice extraction with a review queue and clean export gate. Klippa, AutoEntry, Hubdoc and Dext save typing — but every uncertain field still lands on your bookkeeper. We review the uncertain rows. Your team downloads a clean spreadsheet.">
+  <meta name="description" content="Confidence-gated invoice extraction (Klippa OCR + 0.98 gate + honest bounce-back). Doubtful docs return to you with a reason. Adam reviews the residual on Rescue + Export and Bespoke tiers. Limerick-based, EUR-billed via Stripe, GDPR compliant.">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Document Ops — Klippa does the OCR. We do the review.">
-  <meta property="og:description" content="Managed invoice extraction with a review queue and clean export gate. Limerick-based, Stripe-billed, GDPR compliant.">
+  <meta property="og:title" content="Document Ops — Klippa does the OCR. We add the gate.">
+  <meta property="og:description" content="Confidence-gated invoice extraction with an honest bounce-back path. Limerick-based, Stripe-billed, GDPR compliant.">
   <meta property="og:url" content="https://callmeie.ie/docs/">
   <meta property="og:site_name" content="Callmeie Technologies">
   <meta name="twitter:card" content="summary_large_image">
@@ -92,8 +92,9 @@
   <div class="nav-inner">
     <a href="/" class="nav-brand">Document Ops<small>by Callmeie Technologies</small></a>
     <div class="nav-cta">
-      <a href="#pricing" class="nav-link">Pricing</a>
       <a href="#how" class="nav-link">How it works</a>
+      <a href="#scenarios" class="nav-link">Scenarios</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
       <a href="https://portal.callmeie.ie/portal/login" class="nav-link">Sign in</a>
       <a href="https://buy.stripe.com/dRm00i0Y3gdgbbCgypaIM09" class="btn btn-primary">Buy Pilot · €500</a>
     </div>
@@ -104,10 +105,10 @@
   <div class="hero-inner">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Managed extraction · Limerick · Ireland</span>
-        <h1 class="headline">Klippa does the OCR. <em>We do the review.</em></h1>
+        <span class="eyebrow">Confidence-gated extraction · Limerick · Ireland</span>
+        <h1 class="headline">Klippa does the OCR. <em>We add the gate.</em></h1>
         <p class="lede">
-          Bare-OCR tools (Klippa, AutoEntry, Hubdoc, Dext) save your team typing. Every uncertain field still lands on the bookkeeper's desk. We extract <em>and</em> review. Your team downloads a clean spreadsheet — pasted straight into Sage, Xero or BrightBooks.
+          Bare-OCR tools (Klippa, AutoEntry, Hubdoc, Dext) save your team typing. Every uncertain field still lands on the bookkeeper's desk. Document Ops gates every extraction at 0.98 confidence and bounces doubtful docs back to you — no silent guessing. Adam personally reviews the residual on Rescue + Export and Bespoke tiers. Clean rows pasted straight into Sage, Xero or BrightBooks.
         </p>
         <div class="cta-row">
           <a href="https://buy.stripe.com/dRm00i0Y3gdgbbCgypaIM09" class="btn btn-primary">Buy Pilot · €500</a>
@@ -182,10 +183,10 @@
       </div>
       <div class="compare-card winner">
         <div class="compare-mark check">✓</div>
-        <span class="compare-tag">Managed extraction</span>
+        <span class="compare-tag">Confidence-gated extraction</span>
         <h3>Document Ops Console</h3>
-        <p>Extract <em>and</em> review the uncertain rows. Clean export gate. Your team only sees validated data — pasted into accounting in minutes.</p>
-        <div class="price">€500 pilot · €150–1,500/mo</div>
+        <p>OCR + a 0.98 confidence gate + an honest bounce-back path. Doubtful docs return to you with a one-line reason — never silently exported. Adam personally reviews the residual on Rescue + Export and Bespoke tiers.</p>
+        <div class="price">€500 pilot · subscription ladder launching</div>
       </div>
     </div>
   </div>
@@ -211,7 +212,7 @@
       <div class="flow-step">
         <div class="num">03</div>
         <h3>Review</h3>
-        <p>We — Adam and the review team — resolve every flagged field. Wrong fields never reach your export.</p>
+        <p>Adam personally reviews flagged docs (on Rescue + Export and Bespoke tiers). On Self-serve tiers, low-confidence docs bounce back to you for re-submit — no silent guessing.</p>
       </div>
       <div class="flow-step">
         <div class="num">04</div>
@@ -219,6 +220,183 @@
         <p>Download CSV. Paste into Sage, Xero, BrightBooks or QuickBooks. Done in minutes, not hours.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="scenarios" id="scenarios" aria-labelledby="scenarios-title">
+  <div class="section-inner">
+    <div class="scenarios-intro">
+      <span class="eyebrow">§ 05 — Five jobs, five paths</span>
+      <h2 id="scenarios-title">Five real-world batches running through the same pipeline.</h2>
+      <p>Same pipeline. Five shapes. Each shows what enters, where the confidence gate fires, what bounces back to you, and what the customer sees on the other side.</p>
+    </div>
+
+    <article class="scenario" id="scenario-bookkeeping">
+      <header class="scenario-head">
+        <span class="scenario-num">§ 05a</span>
+        <h3 class="scenario-title">Bookkeeping firm · mixed monthly batch</h3>
+      </header>
+      <p class="scenario-dek">A two-bookkeeper Cork practice closes 80 docs from one client folder every month-end. The bookkeeper wants the run done by Wednesday lunchtime so Friday's payroll work has air.</p>
+      <div class="scenario-body">
+        <div class="scenario-prose">
+          <h4>What enters</h4>
+          <p>80 PDFs and JPGs, mixed: 65 standard supplier invoices (UK + IE + EU including 4 GBP and 2 EUR-equivalent multi-currency), 5 credit notes, 3 supplier statements (not invoices), 2 multi-invoice PDFs, 2 duplicate invoices, 1 non-invoice attachment (a courier delivery slip), 1 mixed-VAT invoice (23% + 13.5% same supplier), 1 cross-border reverse-charge invoice from a UK SaaS vendor.</p>
+          <h4>What the customer sees</h4>
+          <p>A 71-row CSV pre-mapped to Sage Business Cloud Accounting (vendor / invoice number / date / net / VAT-23 / VAT-13.5 / VAT-0-RC / total / currency / EUR-equivalent / notes). Plus a quarantine list: 9 filenames with re-submit reasons. Bookkeeper splits the 2 multi-invoice PDFs in Acrobat (yields 6 fresh invoices), confirms the duplicate detection, drops the 6 split invoices back. End state: <strong>77 rows in Sage by 09:35</strong>. The 3 supplier statements + 1 delivery slip stay out of the books.</p>
+          <p class="caveat"><strong>Honest caveats.</strong> Auto Plus does not check whether credit notes are <em>correct</em> — only that they extracted cleanly. Pipeline excludes time spent reconciling foreign-currency rate-dates against tax-points (bookkeeper still owns that reconciliation). Pipeline does not chase missing receipts.</p>
+        </div>
+        <figure class="pipeline-log">
+          <figcaption class="pipeline-log__kicker">Pipeline log · Auto Plus tier · €249/mo · 600 docs/mo cap</figcaption>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:02</span><span class="pipeline-log__who">Upload</span><span class="pipeline-log__text">80 files dragged into tenant inbox</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:02-08</span><span class="pipeline-log__who">Pipeline</span><span class="pipeline-log__text">Klippa OCR + VAT-aware validator scoring every field</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:08</span><span class="pipeline-log__who pipeline-log__who--gate">Gate ≥0.98</span><span class="pipeline-log__text">65 standard + 5 credit notes + 1 reverse-charge clear</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:08</span><span class="pipeline-log__who pipeline-log__who--bounce">Bounce</span><span class="pipeline-log__text">3 supplier statements (not invoice doc-type)</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:08</span><span class="pipeline-log__who pipeline-log__who--bounce">Bounce</span><span class="pipeline-log__text">2 multi-invoice PDFs (split + re-upload)</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:08</span><span class="pipeline-log__who pipeline-log__who--bounce">Bounce</span><span class="pipeline-log__text">2 duplicate invoices (matched 30-day fingerprint)</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:08</span><span class="pipeline-log__who pipeline-log__who--bounce">Bounce</span><span class="pipeline-log__text">1 delivery slip (wrong doc-type) + 1 mixed-VAT (split confidence)</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:11</span><span class="pipeline-log__who pipeline-log__who--export">Export</span><span class="pipeline-log__text">71 rows to CSV; bounce list emailed</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:35</span><span class="pipeline-log__who pipeline-log__who--export">Export</span><span class="pipeline-log__text">77 rows after re-uploaded splits</span></span>
+        </figure>
+      </div>
+      <div class="outcome-strip">
+        <div class="outcome-cell"><span class="outcome-cell__label">Cycle time</span><span class="outcome-cell__value">~35 min</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Time saved</span><span class="outcome-cell__value">~4h 45m</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Bounces this run</span><span class="outcome-cell__value">9 of 80</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Adam touch</span><span class="outcome-cell__value">Zero</span></div>
+      </div>
+    </article>
+
+    <article class="scenario" id="scenario-dental">
+      <header class="scenario-head">
+        <span class="scenario-num">§ 05b</span>
+        <h3 class="scenario-title">Dental clinic owner · quarterly batch</h3>
+      </header>
+      <p class="scenario-dek">A solo-dentist practice in Galway closes the quarter on the last Friday. The owner wants the books square before the accountant's Monday call. Forty docs sit in the inbox.</p>
+      <div class="scenario-body">
+        <div class="scenario-prose">
+          <h4>What enters</h4>
+          <p>40 PDFs: 22 supplier invoices (Henry Schein, Optident, lab fees from two local labs), 18 patient billing aggregations (the practice management system exports a weekly patient-revenue summary as a PDF). All standard layout, all sub-€2,000.</p>
+          <h4>What the customer sees</h4>
+          <p>A 35-row CSV mapped to BrightBooks supplier-invoice import. Plus a 5-doc quarantine list with crop thumbnails for the 2 lab-fee invoices and a small "re-categorise as journal" note on the 3 revenue summaries. Owner re-photographs the two lab invoices over the weekend, drops them back Monday morning, gets 37 clean rows. The 3 revenue summaries get keyed as a single journal manually.</p>
+          <p class="caveat"><strong>Honest caveats.</strong> Auto tier does not understand HSE Dental Treatment Services billing rules. It does not validate whether the invoiced VAT rate is correct for dental services (mostly exempt; some materials at 23%) — it extracts what is on the page. Owner spot-checks before paste.</p>
+        </div>
+        <figure class="pipeline-log">
+          <figcaption class="pipeline-log__kicker">Pipeline log · Auto tier · €99/mo · 200 docs/mo cap</figcaption>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">17:40</span><span class="pipeline-log__who">Upload</span><span class="pipeline-log__text">Owner uploads folder before locking up</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">17:41</span><span class="pipeline-log__who">Pipeline</span><span class="pipeline-log__text">Klippa OCR runs all 40 in parallel</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">17:43</span><span class="pipeline-log__who pipeline-log__who--gate">Gate ≥0.98</span><span class="pipeline-log__text">35 docs clear across all critical fields</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">17:43</span><span class="pipeline-log__who pipeline-log__who--bounce">Bounce</span><span class="pipeline-log__text">2 lab invoices (vendor-field below threshold) — thumbnail crop attached</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">17:43</span><span class="pipeline-log__who pipeline-log__who--bounce">Bounce</span><span class="pipeline-log__text">3 revenue summaries (doc-type ambiguity — re-categorise as journal)</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">17:45</span><span class="pipeline-log__who pipeline-log__who--export">Export</span><span class="pipeline-log__text">35-row CSV ready in tenant inbox</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Mon 09:00</span><span class="pipeline-log__who pipeline-log__who--export">Export</span><span class="pipeline-log__text">37 rows after weekend re-shoot of 2 lab invoice headers</span></span>
+        </figure>
+      </div>
+      <div class="outcome-strip">
+        <div class="outcome-cell"><span class="outcome-cell__label">Cycle time</span><span class="outcome-cell__value">~10 min</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Time saved</span><span class="outcome-cell__value">~1h 50m</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Bounces this run</span><span class="outcome-cell__value">5 of 40</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Adam touch</span><span class="outcome-cell__value">Zero</span></div>
+      </div>
+    </article>
+
+    <article class="scenario" id="scenario-motor">
+      <header class="scenario-head">
+        <span class="scenario-num">§ 05c</span>
+        <h3 class="scenario-title">Motor factor · weekly cycle</h3>
+      </header>
+      <p class="scenario-dek">A four-person motor factor in Limerick closes weekly. The owner wants Saturday morning to be CSV-paste time, not data-entry time.</p>
+      <div class="scenario-body">
+        <div class="scenario-prose">
+          <h4>What enters</h4>
+          <p>33 docs per week: 25 supplier invoices (FB Euro, GSF, Comline distributor, oil supplier, tyre wholesaler), 8 delivery dockets — five typed counter-printouts and <strong>three handwritten</strong> dockets from the small local supplier who still works on a triplicate book.</p>
+          <h4>What the customer sees</h4>
+          <p>A 33-row CSV pre-mapped to Xero supplier-bill import. Plus three handwritten thumbnails preserved as receipt attachments in the Xero record (the photo travels with the row, even though the text was typed). Bounce-back form is purpose-built — accepts typed substitution for the unreadable field, not "re-upload."</p>
+          <p class="caveat"><strong>Honest caveats.</strong> We do not OCR handwriting — that is a specific decision, not a hidden limitation. The bounce-back form is faster than re-uploading a typed version because it skips a second OCR pass. If your local supplier ever switches to printed dockets, those bounce away too.</p>
+        </div>
+        <figure class="pipeline-log">
+          <figcaption class="pipeline-log__kicker">Pipeline log · Auto tier · €99/mo · handwritten bounce-path demo</figcaption>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Fri 18:15</span><span class="pipeline-log__who">Upload</span><span class="pipeline-log__text">Counter staff dump folder to shared drive</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">18:16</span><span class="pipeline-log__who">Pipeline</span><span class="pipeline-log__text">Klippa OCR runs</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">18:18</span><span class="pipeline-log__who pipeline-log__who--gate">Gate ≥0.98</span><span class="pipeline-log__text">25 supplier invoices + 5 typed dockets clear</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">18:18</span><span class="pipeline-log__who pipeline-log__who--bounce">Bounce</span><span class="pipeline-log__text">3 handwritten dockets — handwriting heuristic + critical-field collapse</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">18:21</span><span class="pipeline-log__who pipeline-log__who--export">Export</span><span class="pipeline-log__text">30-row CSV ready</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Sat 09:10</span><span class="pipeline-log__who">Upload</span><span class="pipeline-log__text">Owner types 3 handwritten dockets into bounce-back form (5 min on phone)</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">09:11</span><span class="pipeline-log__who pipeline-log__who--export">Export</span><span class="pipeline-log__text">33-row CSV final; handwritten thumbnails preserved as Xero attachments</span></span>
+        </figure>
+      </div>
+      <div class="outcome-strip">
+        <div class="outcome-cell"><span class="outcome-cell__label">Cycle time</span><span class="outcome-cell__value">~10 min</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Time saved</span><span class="outcome-cell__value">~70 min/wk</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Bounces this run</span><span class="outcome-cell__value">3 of 33</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Adam touch</span><span class="outcome-cell__value">Zero</span></div>
+      </div>
+    </article>
+
+    <article class="scenario" id="scenario-freight">
+      <header class="scenario-head">
+        <span class="scenario-num">§ 05d</span>
+        <h3 class="scenario-title">Freight forwarder · Bespoke tier</h3>
+      </header>
+      <p class="scenario-dek">A small forwarder in Dublin Port runs ~200 docs/month across BOL + CMR + customs declarations + supplier invoices. Compliance officer wants Revenue-defensible records and a TMS feed that does not break on multi-leg routing. Not a self-serve scenario.</p>
+      <div class="scenario-body">
+        <div class="scenario-prose">
+          <h4>What enters</h4>
+          <p>200 docs/month, mixed: BOL + CMR (carrier-specific layouts, often 6 different carriers in a week), customs declaration printouts (Revenue ROS), supplier invoices for warehouse + groupage + customs broker fees, driver expense sheets including handwritten items. Multi-leg routing on ~30% of consignments means one shipment generates 3-4 linked docs.</p>
+          <h4>What the customer sees</h4>
+          <p>A live TMS feed (or custom CSV per the scoping call) where ~70% of docs land same-day clean, 30% land within five business days reviewed by name. A monthly summary email signed by Adam. A waitlist position (1-2 slots only, full disclosure) if they came in after capacity was claimed.</p>
+          <p class="caveat"><strong>Honest caveats.</strong> The 5-business-day SLA is real and load-bearing. If you need T+1 turnaround on customs paperwork because a container is sitting at the port, this tier cannot promise it — that is a phone call, not a pipeline. We do not handle live container tracking. We do not file customs declarations on your behalf. We extract and feed the system that does.</p>
+        </div>
+        <figure class="pipeline-log">
+          <figcaption class="pipeline-log__kicker">Pipeline log · Bespoke tier · €1,500–2,500/mo · 1-2 active engagements only</figcaption>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Day 0</span><span class="pipeline-log__who pipeline-log__who--adam">Adam</span><span class="pipeline-log__text">Scoping call — TMS schema, HS-code conventions, multi-leg link convention</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Day 1-3</span><span class="pipeline-log__who pipeline-log__who--adam">Adam</span><span class="pipeline-log__text">Bespoke schema build — per-carrier CMR map + ROS customs parser</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Weekly</span><span class="pipeline-log__who">Upload</span><span class="pipeline-log__text">Forwarder uploads ~45-50 docs to tenant inbox</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Same day</span><span class="pipeline-log__who">Pipeline</span><span class="pipeline-log__text">Klippa + Mindee dual-extract; conservative 0.98 gate</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Same day</span><span class="pipeline-log__who pipeline-log__who--gate">Gate</span><span class="pipeline-log__text">~70% clear → auto-export to TMS w/ consignment-id link</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">≤5 biz days</span><span class="pipeline-log__who pipeline-log__who--adam">Adam</span><span class="pipeline-log__text">~30% land in review queue — completes ambiguous fields, HS-code corrections</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Monthly</span><span class="pipeline-log__who pipeline-log__who--adam">Adam</span><span class="pipeline-log__text">Summary email — docs processed, review actions, schema change patterns</span></span>
+        </figure>
+      </div>
+      <div class="outcome-strip">
+        <div class="outcome-cell"><span class="outcome-cell__label">Cycle</span><span class="outcome-cell__value">Weekly</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Time saved</span><span class="outcome-cell__value">~35 hr/mo</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">SLA</span><span class="outcome-cell__value">5 biz days</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Slots</span><span class="outcome-cell__value">2 of 2 max</span></div>
+      </div>
+    </article>
+
+    <article class="scenario" id="scenario-rct">
+      <header class="scenario-head">
+        <span class="scenario-num">§ 05e</span>
+        <h3 class="scenario-title">Construction subcontractor · RCT reverse-charge</h3>
+      </header>
+      <p class="scenario-dek">A plumbing subcontractor in Tipperary invoices a principal contractor on RCT (Relevant Contracts Tax — Revenue's construction reverse-charge regime). Standard OCR pipelines treat the missing VAT line as a missing field. Sage rejects the import. The subbie's bookkeeper has been hand-coding these for two years.</p>
+      <div class="scenario-body">
+        <div class="scenario-prose">
+          <h4>What enters</h4>
+          <p>12 invoices per fortnight: 8 standard supplier invoices (merchant — Chadwicks / Heiton / Brooks), 4 RCT invoices the subbie <em>issues to</em> the principal contractor (these get re-imported into the subbie's own bookkeeping for the receivables side, with deduction authorisation / RCTDC details supplied by the principal contractor where tax was deducted).</p>
+          <h4>What the customer sees</h4>
+          <p>A 12-row CSV that pastes into Sage Business Cloud Accounting's RCT-aware import without error. The bookkeeper opens Sage and the rows are coded correctly the first time. Compare: previous Dext run flagged all four RCT invoices as "VAT missing" and required manual re-coding — ~8 minutes per doc, every fortnight.</p>
+          <p class="caveat"><strong>Honest caveats.</strong> The validator handles standard RCT notation as published by Revenue. Non-standard wording on the principal contractor's RCTDC printout — Revenue updates the format from time to time — can still flag against the planning 15% bounce-back rate. We update the validator within two business days of any Revenue format change. We do not file RCT returns. We do not generate RCTDC certificates. We extract them correctly so Sage does not reject them.</p>
+        </div>
+        <figure class="pipeline-log">
+          <figcaption class="pipeline-log__kicker">Pipeline log · Auto tier · €99/mo · sample batch · VAT-aware validator wedge</figcaption>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Fri</span><span class="pipeline-log__who">Upload</span><span class="pipeline-log__text">Bookkeeper uploads 12 docs (fortnightly cycle)</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">+0:01</span><span class="pipeline-log__who">Pipeline</span><span class="pipeline-log__text">Klippa OCR + VAT-aware validator</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">+0:03</span><span class="pipeline-log__who pipeline-log__who--gate">Gate ≥0.98</span><span class="pipeline-log__text">8 merchant invoices clear</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">+0:04</span><span class="pipeline-log__who pipeline-log__who--gate">Validator</span><span class="pipeline-log__text">4 RCT invoices: Revenue notation matched ("VAT on this supply to be accounted for by the principal contractor")</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">+0:04</span><span class="pipeline-log__who pipeline-log__who--gate">Validator</span><span class="pipeline-log__text">Principal contractor VAT number extracted; deduction-authorisation details linked where supplied</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">+0:06</span><span class="pipeline-log__who pipeline-log__who--export">Export</span><span class="pipeline-log__text">12-row CSV — RCT-coded rows pre-formatted for Sage's RCT import path · 0 bounces this sample batch</span></span>
+        </figure>
+      </div>
+      <div class="outcome-strip">
+        <div class="outcome-cell"><span class="outcome-cell__label">Cycle time</span><span class="outcome-cell__value">~6 min</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Time saved</span><span class="outcome-cell__value">~75 min/fortnight</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Bounces sample</span><span class="outcome-cell__value">0 (planning 15%)</span></div>
+        <div class="outcome-cell"><span class="outcome-cell__label">Adam touch</span><span class="outcome-cell__value">Zero</span></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -266,45 +444,12 @@
       </div>
     </div>
 
-    <div class="pricing-tier-row">Operations · monthly retainer · steady-state</div>
-    <div class="price-grid">
-      <div class="price-card">
-        <h3>Starter</h3>
-        <div class="price-amount">€150–300<small>/month</small></div>
-        <ul class="price-feats">
-          <li>50–100 invoices/month, single firm</li>
-          <li>weekly review cycle</li>
-          <li>clean CSV export to Sage, Xero, BrightBooks</li>
-          <li>monthly run report</li>
-        </ul>
-        <a href="https://buy.stripe.com/14AfZg4afaSW5Rici9aIM0b" class="btn btn-amber">Start at €250/mo</a>
-      </div>
-      <div class="price-card">
-        <h3>Operations</h3>
-        <div class="price-amount">€500–1,500<small>/month</small></div>
-        <ul class="price-feats">
-          <li>100–300 invoices/month or multi-tenant</li>
-          <li>recurring weekly/monthly cycle</li>
-          <li>schema-mapped exports</li>
-          <li>per-firm exception summary</li>
-        </ul>
-        <a href="mailto:hello@callmeie.ie?subject=Document%20Ops%20Operations%20Retainer" class="btn btn-ghost">Email to scope</a>
-      </div>
-      <div class="price-card">
-        <h3>Integrated</h3>
-        <div class="price-amount">€1,500+<small>/month</small></div>
-        <ul class="price-feats">
-          <li>direct Sage / Xero / TMS integration</li>
-          <li>400+ docs/month or freight + customs</li>
-          <li>custom layouts and rules</li>
-          <li>Adam-led review SLA</li>
-        </ul>
-        <a href="mailto:hello@callmeie.ie?subject=Document%20Ops%20Integrated%20Retainer" class="btn btn-ghost">Email to scope</a>
-      </div>
-    </div>
-
-    <p style="margin-top: var(--s-xl); color: var(--muted); font-size: var(--fs-small); text-align: center;">
-      Pricing principle: <code>docs/month × minutes_saved/doc × your loaded hourly cost</code>. We capture 30–50% of proven monthly value.
+    <div class="pricing-tier-row">Monthly subscription ladder · launching shortly</div>
+    <p style="text-align: center; max-width: 640px; margin: 0 auto var(--s-l); color: var(--ink-soft);">
+      A new four-tier ladder is moving from spec into Stripe — Self-serve Auto, Self-serve Auto Plus, Rescue + Export, and Managed Bespoke (capped at 1-2 active engagements). For the shape and honest copy of each tier, see <a href="#scenarios">the five scenarios above</a>. Email <a href="mailto:hello@callmeie.ie?subject=Document%20Ops%20-%20New%20Ladder%20Interest">hello@callmeie.ie</a> to scope a tier or claim a Bespoke slot.
+    </p>
+    <p style="text-align: center; max-width: 640px; margin: var(--s-m) auto 0; color: var(--muted); font-size: var(--fs-small);">
+      Existing Operations Monthly Starter subscribers (€250/mo) keep their plan unchanged.
     </p>
   </div>
 </section>
@@ -314,16 +459,16 @@
     <h2 class="section-title">Common questions.</h2>
     <div class="faq-grid">
       <div class="faq-item">
-        <div class="faq-q">"We already use Klippa / AutoEntry / Hubdoc."</div>
-        <p class="faq-a">Good. Keep using it. We sit between Klippa's output and your accounting software. Klippa extracts; we review the uncertain fields and only release what's clean. You save the bookkeeper hours that Klippa still costs you.</p>
+        <div class="faq-q">"We already use Klippa / AutoEntry / Hubdoc / Dext."</div>
+        <p class="faq-a">Good. Keep using it. Document Ops sits between OCR output and your accounting software with a 0.98 confidence gate and an honest bounce-back path. On Self-serve tiers, anything below threshold returns to you for re-submit — no silent guessing. On Rescue + Export and Bespoke tiers, Adam personally reviews the residual.</p>
       </div>
       <div class="faq-item">
-        <div class="faq-q">"Why not just hire a part-time bookkeeper?"</div>
-        <p class="faq-a">A part-time bookkeeper is €1,500–2,500/month. Document Ops is €150–300/month for the same single-firm volume. Labor only makes sense at scale; we're priced where it makes sense at any volume.</p>
+        <div class="faq-q">"How does this compare to a bookkeeper?"</div>
+        <p class="faq-a">Document Ops is not a bookkeeper. It's the data-entry-and-export layer in front of one. Self-serve tiers automate the typing and quarantine the doubtful docs back to you. Bespoke tier scopes around a specific operating workflow (freight, customs, contracts) where Adam personally reviews the residual queue. Pricing reflects that — Self-serve is workflow-tool pricing; Bespoke is a small concierge engagement.</p>
       </div>
       <div class="faq-item">
         <div class="faq-q">"What if your extraction is wrong?"</div>
-        <p class="faq-a">That's the entire reason for the review queue. Wrong or uncertain fields don't reach your clean export — they sit in a queue we resolve before delivering. The export-gate script is open and auditable.</p>
+        <p class="faq-a">Critical fields (vendor, total, VAT split, date) gate at ≥0.98 confidence. Below threshold the doc bounces back to you for re-submit, with a one-line reason — never silently exported. Self-serve tiers carry zero human review; Rescue + Export includes 10 human-reviewed rescues per month for ambiguous docs, with overflow bouncing. Final accuracy responsibility stays with you (you spot-check exports before posting); we publish bounce-rate planning assumptions and document failure modes (handwritten dockets, multi-invoice PDFs, mixed VAT, RCT) so you know what the pipeline does and does not handle.</p>
       </div>
       <div class="faq-item">
         <div class="faq-q">"Where does our data live?"</div>
