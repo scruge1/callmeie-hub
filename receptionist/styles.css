@@ -1,7 +1,8 @@
 /* CallMeIE — Brutalism Editorial × Telephonic Mono
    Paper cream + deep ink + single burgundy accent.
-   Archivo Black display · IBM Plex Sans body · JetBrains Mono for phone numbers, timestamps, prices.
-   The phone number IS the hero visual. */
+   D8 lock 2026-05-04: Fraunces 800-italic display (replaces Archivo Black) · IBM Plex Sans body · JetBrains Mono for phone numbers, timestamps, prices.
+   Brutalist register preserved via uppercase + tight letter-spacing + 3-4px ink rules + 88-128px phone-as-hero motif.
+   Paper warmth #F5F1E8 retained as register variation per Stripe pattern (sub-products allowed slight paper drift). */
 
 :root {
   --paper: #F5F1E8;
@@ -10,6 +11,7 @@
   --ink-soft: #2a2622;
   --ink-muted: #545454;
   --burgundy: #5A1420;
+  --display: 'Fraunces', 'Bodoni Moda', Georgia, serif;
   --measure: 640px;
   --section-gap: clamp(56px, 8vw, 112px);
   --rule-heavy: 3px;
@@ -41,7 +43,7 @@ a:hover { text-decoration-thickness: 2px; }
   gap: 16px;
 }
 .wordmark {
-  font-family: 'Archivo Black', 'Arial Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(18px, 1.6vw, 22px); letter-spacing: 0.01em;
   text-transform: uppercase; color: var(--ink); text-decoration: none;
 }
@@ -93,7 +95,7 @@ a:hover { text-decoration-thickness: 2px; }
   content: ""; display: inline-block; width: 48px; height: 2px; background: var(--burgundy);
 }
 .hero__headline {
-  font-family: 'Archivo Black', 'Arial Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(36px, 6.4vw, 88px); line-height: 0.96;
   letter-spacing: -0.015em; text-transform: uppercase;
   margin: 0 0 24px; color: var(--ink); max-width: 14ch;
@@ -136,7 +138,7 @@ a:hover { text-decoration-thickness: 2px; }
   display: flex; gap: 28px; align-items: center; flex-wrap: wrap;
 }
 .btn-primary {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--paper); background: var(--ink);
   padding: 16px 22px; text-decoration: none;
@@ -170,7 +172,7 @@ section.editorial {
   padding-top: 0.6em; border-top: 2px solid var(--ink);
 }
 .section-title {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(30px, 4.6vw, 62px); line-height: 0.95;
   letter-spacing: -0.015em; text-transform: uppercase; margin: 0; color: var(--ink);
 }
@@ -210,7 +212,7 @@ section.editorial {
   color: var(--burgundy);
 }
 .demo-steps li b {
-  font-family: 'Archivo Black', sans-serif; font-weight: 400;
+  font-family: var(--display); font-style: italic; font-weight: 800; font-weight: 400;
   text-transform: uppercase; letter-spacing: 0.02em; font-size: 14px;
   display: block; margin-bottom: 2px; color: var(--ink);
 }
@@ -260,7 +262,7 @@ section.editorial {
   content: ""; width: 24px; height: 2px; background: var(--burgundy); display: inline-block;
 }
 .handles-item__title {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(22px, 2.2vw, 28px); line-height: 1.05;
   letter-spacing: -0.005em; text-transform: uppercase;
   margin: 0 0 12px; color: var(--ink);
@@ -283,13 +285,13 @@ section.editorial {
   color: var(--ink-muted); padding-top: 6px;
 }
 .vertical__label b {
-  display: block; font-family: 'Archivo Black', sans-serif;
+  display: block; font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -0.01em; color: var(--burgundy);
   margin-bottom: 8px; font-weight: 400; line-height: 1;
 }
 .vertical__body { max-width: var(--measure); }
 .vertical__head {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(20px, 2.2vw, 28px); line-height: 1.05;
   text-transform: uppercase; letter-spacing: -0.005em;
   margin: 0 0 16px; color: var(--ink);
@@ -335,7 +337,7 @@ section.editorial {
   color: var(--burgundy); margin-bottom: 14px;
 }
 .tier__name {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(28px, 3vw, 40px); line-height: 1;
   text-transform: uppercase; letter-spacing: -0.01em;
   margin: 0 0 20px; color: var(--ink);
@@ -367,7 +369,7 @@ section.editorial {
 }
 .tier__cta {
   display: inline-block; margin-top: 12px;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ink); text-decoration: none;
   padding: 12px 16px; border: 2px solid var(--ink);
@@ -381,7 +383,7 @@ section.editorial {
 }
 @media (max-width: 760px) { .enterprise { grid-template-columns: 1fr; gap: 14px; } }
 .enterprise__name {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(22px, 2.4vw, 30px); text-transform: uppercase; margin: 0;
 }
 .enterprise__body {
@@ -417,7 +419,7 @@ section.editorial {
   color: var(--burgundy); margin-bottom: 12px;
 }
 .cost-col__head {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(22px, 2.4vw, 30px); line-height: 1.05;
   text-transform: uppercase; letter-spacing: -0.005em;
   margin: 0 0 18px; color: var(--ink);
@@ -485,7 +487,7 @@ section.editorial {
   color: var(--ink-muted); line-height: 1.55;
 }
 .founder__caption strong {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   color: var(--ink); font-weight: 400; letter-spacing: 0.04em;
   display: block; margin-bottom: 2px;
 }
@@ -500,7 +502,7 @@ section.editorial {
   list-style: none; cursor: pointer;
   display: grid; grid-template-columns: 80px 1fr 24px;
   gap: 18px; align-items: baseline;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(18px, 2vw, 22px);
   text-transform: uppercase; letter-spacing: -0.005em;
   color: var(--ink); line-height: 1.25;
@@ -543,7 +545,7 @@ section.editorial {
   content: ""; display: inline-block; width: 48px; height: 2px; background: #c89b9e;
 }
 .final-cta__headline {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: clamp(28px, 4vw, 52px); line-height: 1;
   text-transform: uppercase; letter-spacing: -0.01em;
   margin: 0 0 28px; color: var(--paper); max-width: 18ch;
@@ -564,7 +566,7 @@ section.editorial {
   max-width: 540px; margin: 0 0 32px; line-height: 1.5;
 }
 .final-cta__secondary {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--paper); background: transparent;
   padding: 14px 20px; text-decoration: none;
@@ -588,7 +590,7 @@ footer {
 @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 .footer-col h4 {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ink); margin: 0 0 14px;
 }
@@ -620,7 +622,7 @@ footer {
   font-size: 10px; letter-spacing: 0.12em; color: var(--ink-muted);
 }
 .footer-legal__wordmark {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--display); font-style: italic; font-weight: 800;
   color: var(--ink); font-size: 11px; letter-spacing: 0.16em;
 }
 

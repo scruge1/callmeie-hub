@@ -1,7 +1,8 @@
 /* callmeie.ie — Callmeie Technologies parent-brand hub
    Tokens lifted verbatim from document-ops-portal/app/static/portal.css (lines 1–58).
-   Brand contract: paper #f8f5f0 + ink #1c1f24 + indigo #1d3557 + amber #c08a3f
+   Brand contract: paper #f8f5f0 + ink #1c1f24 + indigo #1d3557
                    + Fraunces (display) + Inter (body) + JetBrains Mono (mono).
+   D7 lock 2026-05-04: amber dropped from hub (clashed with /websites/ orange ~12 deg apart in cross-surface nav). Hub is single-accent indigo. Amber + ok/warn states stay docs-local only.
    Same brand language as portal.callmeie.ie + docs.callmeie.ie. Single product family.
 */
 
@@ -19,9 +20,11 @@
   --brand: #1d3557;
   --brand-hover: #14253f;
   --brand-soft: #e8eef6;
-  --accent: #c08a3f;
-  --accent-hover: #a87633;
-  --accent-soft: #f4e9d3;
+  /* D7 lock 2026-05-04: --accent remapped to indigo (was amber #c08a3f).
+     Hub is single-accent indigo. Amber + ok/warn live in docs/site.css only. */
+  --accent: #1d3557;
+  --accent-hover: #14253f;
+  --accent-soft: #e8eef6;
 
   /* Type */
   --display: 'Fraunces', 'Bodoni Moda', Georgia, serif;

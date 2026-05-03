@@ -14,9 +14,14 @@
   --cmt-brand:        #1d3557;
   --cmt-brand-hover:  #14253f;
   --cmt-brand-soft:   rgba(29, 53, 87, 0.08);
-  --cmt-accent:       #c08a3f;
-  --cmt-accent-hover: #a87633;
-  --cmt-accent-soft:  rgba(192, 138, 63, 0.12);
+  /* D7 lock 2026-05-04: amber dropped from master.
+     --cmt-accent defaults to indigo (matches --cmt-brand) so cohesion chrome
+     on /receptionist/ + /websites/ doesn't pollute their burgundy/orange
+     accents with master amber. /docs/ still has its own amber + ok/warn
+     defined locally in docs/site.css. */
+  --cmt-accent:       #1d3557;
+  --cmt-accent-hover: #14253f;
+  --cmt-accent-soft:  rgba(29, 53, 87, 0.08);
 
   /* Typography */
   --cmt-font-display: 'Fraunces', 'Bodoni Moda', Georgia, serif;
