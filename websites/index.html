@@ -21,7 +21,7 @@
   <link rel="canonical" href="https://callmeie.ie/websites/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,600..800;1,9..144,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     /* ------------------------------------------------------------------
        Owl Studio sales page.
@@ -54,7 +54,10 @@
       --line: rgba(26, 24, 18, 0.12);
       --ok: #1f6a3c;
       --sans: "DM Sans", system-ui, sans-serif;
-      --display: "Archivo", sans-serif;
+      /* D8 lock 2026-05-04: --display swapped Archivo → Fraunces 800-italic per Q1 themes lock. */
+      --display: "Fraunces", "Bodoni Moda", Georgia, serif;
+      --display-style: italic;
+      --display-weight: 800;
       --serif: "Fraunces", serif;
       --mono: "JetBrains Mono", monospace;
     }
@@ -94,7 +97,7 @@
     }
     .mark {
       display: inline-flex; align-items: center; gap: 12px;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase;
       font-size: 15px;
     }
@@ -137,7 +140,7 @@
       color: var(--accent);
     }
     .hero h1 {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 900; letter-spacing: -0.055em;
       font-size: clamp(44px, 7vw, 108px);
       line-height: 0.94;
@@ -222,7 +225,7 @@
       color: var(--muted);
     }
     .hero-anchor .tier-num {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 22px; font-weight: 900; letter-spacing: -0.02em;
       color: var(--ink);
     }
@@ -258,7 +261,7 @@
       background: var(--accent);
       color: var(--paper);
       display: inline-flex; align-items: center; justify-content: center;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 12px; font-weight: 900;
       letter-spacing: 0;
     }
@@ -294,14 +297,14 @@
       position: relative;
     }
     .demo-num {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 900; font-size: 44px; line-height: 1;
       color: var(--accent-light);
       letter-spacing: -0.04em;
       margin-bottom: 8px;
     }
     .demo-title {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 22px; font-weight: 800; letter-spacing: -0.015em;
       margin-bottom: 8px;
     }
@@ -347,7 +350,7 @@
       color: var(--accent-light);
     }
     .demo-thumb .name {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 13px; font-weight: 800; letter-spacing: -0.01em;
       color: #fff;
       line-height: 1.1;
@@ -366,7 +369,7 @@
       content: "01";
       position: absolute;
       left: 12px; top: 14px;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 900; font-size: 72px; line-height: 0.85;
       letter-spacing: -0.05em;
       color: #000000;
@@ -563,7 +566,7 @@
       content: "02";
       position: absolute;
       left: 12px; top: 14px;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 900; font-size: 72px; line-height: 0.85;
       letter-spacing: -0.05em;
       color: #F5F1E8;
@@ -593,7 +596,7 @@
       content: "KW";
       position: absolute;
       left: 12px; bottom: 42%;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 900; font-size: 40px; letter-spacing: -0.04em;
       color: #0b0a08;
       z-index: 2;
@@ -700,7 +703,7 @@
     }
     .why-num {
       display: block;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 900; font-size: clamp(54px, 5.6vw, 84px);
       line-height: 1; letter-spacing: -0.04em;
       color: var(--accent);
@@ -729,7 +732,7 @@
       margin-bottom: 8px;
     }
     .section-h2 {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: clamp(30px, 3.4vw, 50px);
       font-weight: 900; letter-spacing: -0.03em;
       line-height: 1.04;
@@ -787,7 +790,7 @@
       margin-bottom: 10px;
     }
     .tier-price {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 56px; font-weight: 900; letter-spacing: -0.04em;
       color: var(--ink);
       line-height: 1;
@@ -859,7 +862,7 @@
       position: relative;
     }
     .entry-num {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 900; font-size: 58px; line-height: 1;
       color: var(--accent-light);
       letter-spacing: -0.04em;
@@ -867,7 +870,7 @@
     }
     .entry h3 {
       margin: 0 0 8px;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 22px; font-weight: 800; letter-spacing: -0.015em;
     }
     .entry .price-note {
@@ -913,7 +916,7 @@
     }
     .step h3 {
       margin: 0 0 8px;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 18px; font-weight: 800; letter-spacing: -0.01em;
     }
     .step p {
@@ -953,7 +956,7 @@
     }
     .card-header h2 {
       margin: 0;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-weight: 800; letter-spacing: -0.02em;
       font-size: 18px;
     }
@@ -1176,7 +1179,7 @@
     }
     .care-price-block { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
     .care-price {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 52px; font-weight: 900; letter-spacing: -0.04em;
       color: var(--ink);
       line-height: 1;
@@ -1260,7 +1263,7 @@
       list-style: none;
       display: flex; align-items: center; justify-content: space-between;
       gap: 16px;
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: 17px; font-weight: 700; letter-spacing: -0.01em;
       color: var(--ink);
     }
@@ -1293,7 +1296,7 @@
     }
     .final .section-label { color: var(--accent-light); }
     .final h2 {
-      font-family: var(--display);
+      font-family: var(--display); font-style: italic; font-weight: 800;
       font-size: clamp(32px, 4.4vw, 62px);
       font-weight: 900; letter-spacing: -0.04em;
       line-height: 1.02;
@@ -2418,7 +2421,7 @@
       letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
     }
     #qm-title {
-      font-family: var(--display); font-size: clamp(22px, 2.6vw, 30px);
+      font-family: var(--display); font-style: italic; font-weight: 800; font-size: clamp(22px, 2.6vw, 30px);
       font-weight: 900; letter-spacing: -0.02em; line-height: 1.08;
       margin: 0; color: var(--ink);
     }
