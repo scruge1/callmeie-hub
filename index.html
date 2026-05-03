@@ -64,6 +64,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <header class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand">Callmeie<small>Technologies</small></a>
@@ -76,7 +78,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <section class="hero">
   <div class="hero-inner">
@@ -103,47 +105,56 @@
 
 <section class="products" id="products">
   <div class="section-inner">
-    <span class="section-eyebrow">Product family · grouped by buyer outcome</span>
+    <span class="section-eyebrow"><span class="dot"></span>Product family · grouped by buyer outcome</span>
     <h2 class="section-title">One studio. Three operating jobs we take off your desk.</h2>
     <p class="section-lede">
       Each product solves the part of a normal SMB workflow where existing software stops short. Pick the surface that matches the job; everything bills through the same Stripe customer and runs out of the same Limerick office.
     </p>
-    <div class="product-grid">
 
-      <a class="product-card" href="https://receptionist.callmeie.ie">
-        <span class="product-outcome">Front desk</span>
-        <h3 class="product-name">AI Receptionist</h3>
+    <div class="product-list">
+
+      <a class="product-row" href="https://receptionist.callmeie.ie">
+        <div class="product-row-head">
+          <span class="product-outcome">Front desk</span>
+          <h3 class="product-name">AI Receptionist</h3>
+        </div>
         <p class="product-blurb">
           Answers your phone 24/7. Books appointments into Google Calendar. Texts missed callers back automatically. Niche AIs for dental, motor factors, salons, solicitors and a general-business fallback.
         </p>
-        <span class="product-link">receptionist.callmeie.ie →</span>
+        <span class="product-arrow">receptionist.callmeie.ie →</span>
       </a>
 
-      <a class="product-card" href="https://docs.callmeie.ie">
-        <span class="product-outcome">Back office</span>
-        <h3 class="product-name">Document Ops</h3>
+      <a class="product-row" href="https://docs.callmeie.ie">
+        <div class="product-row-head">
+          <span class="product-outcome">Back office</span>
+          <h3 class="product-name">Document Ops</h3>
+        </div>
         <p class="product-blurb">
           Klippa does the OCR. We do the review. Managed extraction with a confidence-scored queue and a clean export gate. Your team only sees validated rows, paste straight into Sage, Xero or BrightBooks.
         </p>
-        <span class="product-link">docs.callmeie.ie →</span>
+        <span class="product-arrow">docs.callmeie.ie →</span>
       </a>
 
-      <a class="product-card" href="https://websites.owlzone.trade">
-        <span class="product-outcome">Online presence</span>
-        <h3 class="product-name">AI-First Websites</h3>
+      <a class="product-row" href="https://websites.owlzone.trade">
+        <div class="product-row-head">
+          <span class="product-outcome">Online presence</span>
+          <h3 class="product-name">AI-First Websites</h3>
+        </div>
         <p class="product-blurb">
           Bespoke Irish web design with the AI stack baked in: receptionist, chatbot, intake forms and workflow automation. The site does operating work, not just looking pretty. Sales menu lists ten directions you can pick from.
         </p>
-        <span class="product-link">websites.owlzone.trade →</span>
+        <span class="product-arrow">websites.owlzone.trade →</span>
       </a>
 
-      <div class="product-card coming-soon" aria-disabled="true">
-        <span class="product-outcome">Coming soon</span>
-        <h3 class="product-name">Next on the bench</h3>
+      <div class="product-row coming-soon" aria-disabled="true">
+        <div class="product-row-head">
+          <span class="product-outcome">Coming soon</span>
+          <h3 class="product-name">Next on the bench</h3>
+        </div>
         <p class="product-blurb">
-          Adam picks the next product family from real client signal. Not a roadmap. If your SMB has a recurring labour task software keeps half-finishing, email us; the next product gets shaped from those calls.
+          The next product gets shaped from real client calls, not a roadmap. If your SMB has a recurring labour task software keeps half-finishing, email us.
         </p>
-        <span class="product-link">in development</span>
+        <span class="product-arrow">in development</span>
       </div>
 
     </div>
@@ -154,7 +165,6 @@
 
 <section class="about" id="about">
   <div class="about-inner">
-    <!-- DRAFT (build agent) — Adam to approve / revise. Voice anchored on SYSTEM-SOUL.md. -->
     <p>
       Callmeie Technologies is a one-person studio in Limerick. I started it because Irish SMBs — bookkeepers, dental clinics, vets, motor factors, freight forwarders, salons — keep paying for software that does the easy half of a job and leaves the hard half on someone's desk. The bookkeeper's desk. The receptionist's desk. The owner's desk after hours.
     </p>
@@ -167,6 +177,10 @@
     <span class="sig">— Adam · founder</span>
   </div>
 </section>
+
+<div class="trust-rule" aria-label="Status">
+  <strong>Founded 2026</strong> · Limerick, Ireland · <strong>Three products live</strong>
+</div>
 
 <section class="cta-tail">
   <div class="section-inner">
