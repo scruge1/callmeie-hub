@@ -94,6 +94,7 @@
     <div class="nav-cta">
       <a href="#how" class="nav-link">How it works</a>
       <a href="#scenarios" class="nav-link">Scenarios</a>
+      <a href="#proof" class="nav-link">Proof</a>
       <a href="#pricing" class="nav-link">Pricing</a>
       <a href="https://portal.callmeie.ie/portal/login" class="nav-link">Sign in</a>
       <a href="https://buy.stripe.com/dRm00i0Y3gdgbbCgypaIM09" class="btn btn-primary">Buy Pilot · €500</a>
@@ -397,6 +398,73 @@
       </div>
     </article>
 
+  </div>
+</section>
+
+<section class="proof" id="proof" aria-labelledby="proof-title">
+  <div class="section-inner">
+    <span class="proof-eyebrow">§ 06 — Proof of work</span>
+    <h2 id="proof-title" class="section-title">The hard documents we benchmark on.</h2>
+    <p class="section-lede">
+      Most OCR vendors publish accuracy numbers from clean, modern invoices. We benchmark against deliberately hard public-domain documents — faded scans, handwritten amendments, century-old typography, multi-language headers, table-spanning rows. Every benchmark run is reproducible and the corpus is open-source MIT-licensed. <strong>The point of an open benchmark is that you can audit it; the point of a hard one is that the result actually means something.</strong>
+    </p>
+
+    <ol class="proof-grid">
+      <li class="proof-card">
+        <span class="proof-num">01</span>
+        <h3 class="proof-card__title">1900 US Census</h3>
+        <p class="proof-card__src">US National Archives · Public domain</p>
+        <p class="proof-card__what">Ledger tables, faded enumerator handwriting, multi-column layouts. Tests row-spanning extraction at scale.</p>
+      </li>
+      <li class="proof-card">
+        <span class="proof-num">02</span>
+        <h3 class="proof-card__title">NAI Calendars of Wills</h3>
+        <p class="proof-card__src">National Archives of Ireland · Permission requested</p>
+        <p class="proof-card__what">Cursive 19th-century handwriting, Irish place-names, deceased-effects schedules. Tests handwritten + IE-specific extraction.</p>
+      </li>
+      <li class="proof-card">
+        <span class="proof-num">03</span>
+        <h3 class="proof-card__title">UK Companies House pre-2000</h3>
+        <p class="proof-card__src">Companies House · Crown Copyright (OGL v3.0)</p>
+        <p class="proof-card__what">Photocopy artifacts, form-based extraction, multi-page contiguous tables. Tests corporate filing accuracy.</p>
+      </li>
+      <li class="proof-card">
+        <span class="proof-num">04</span>
+        <h3 class="proof-card__title">Ellis Island manifests</h3>
+        <p class="proof-card__src">Statue of Liberty Foundation · Public domain (pre-1924)</p>
+        <p class="proof-card__what">Multi-language passenger names, transliteration, row-spanning entries. Tests cross-script extraction.</p>
+      </li>
+      <li class="proof-card">
+        <span class="proof-num">05</span>
+        <h3 class="proof-card__title">Project Gutenberg filings</h3>
+        <p class="proof-card__src">Project Gutenberg · Public domain</p>
+        <p class="proof-card__what">Long historical contracts, antiquated typography, footnote/sidenote layout. Tests prose-document extraction.</p>
+      </li>
+      <li class="proof-card">
+        <span class="proof-num">06</span>
+        <h3 class="proof-card__title">SEC EDGAR 1990s 10-K filings</h3>
+        <p class="proof-card__src">SEC EDGAR · Public domain (US gov filings)</p>
+        <p class="proof-card__what">Financial table extraction, multi-section continuity, dense numeric data. Tests financial-document correctness.</p>
+      </li>
+      <li class="proof-card">
+        <span class="proof-num">07</span>
+        <h3 class="proof-card__title">1911 Ireland Census</h3>
+        <p class="proof-card__src">National Archives of Ireland · Permission requested</p>
+        <p class="proof-card__what">Gaelic-language headers, household-row aggregation, slanted enumerator hand. Tests bilingual + IE-specific extraction.</p>
+      </li>
+    </ol>
+
+    <div class="proof-tail">
+      <div class="proof-metrics">
+        <span class="proof-metric"><strong>STR</strong> Straight-through rate at 0.98 gate</span>
+        <span class="proof-metric"><strong>FLA</strong> Field-level accuracy when not flagged</span>
+        <span class="proof-metric"><strong>SFR</strong> Silent-failure rate (auto-exported but wrong)</span>
+        <span class="proof-metric"><strong>BPS</strong> Bounce-back rate</span>
+      </div>
+      <a class="proof-cta" href="https://github.com/scruge1/proof-fixtures" rel="noopener" target="_blank">
+        View the open corpus on GitHub <span aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
