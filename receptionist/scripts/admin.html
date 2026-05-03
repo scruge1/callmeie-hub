@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CallMeIE Admin</title>
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="alternate icon" href="/favicon.ico">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         background: #0f172a; color: #e2e8f0; min-height: 100vh; padding: 16px; }
+  h1 { font-size: 1.3rem; font-weight: 700; color: #22d3ee; margin-bottom: 4px; }
+  .subtitle { font-size: 0.85rem; color: #64748b; margin-bottom: 24px; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+  .tab { padding: 8px 18px; border-radius: 6px; border: 1px solid #334155;
+         background: transparent; color: #94a3b8; cursor: pointer; font-size: 0.9rem; }
+  .tab.active { background: #22d3ee; color: #0f172a; border-color: #22d3ee; font-weight: 600; }
+  .badge { display: inline-block; background: #ef4444; color: #fff;
+           border-radius: 99px; font-size: 0.7rem; padding: 1px 6px; margin-left: 4px; vertical-align: middle; }
+  .section { display: none; }
+  .section.active { display: block; }
+  .card { background: #1e293b; border: 1px solid #334155; border-radius: 10px;
+          padding: 16px; margin-bottom: 12px; }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+  .biz-name { font-size: 1rem; font-weight: 700; }
+  .biz-type { font-size: 0.75rem; background: #0e7490; color: #fff;
+              padding: 2px 8px; border-radius: 99px; }
+  .meta { font-size: 0.82rem; color: #94a3b8; margin-bottom: 10px; line-height: 1.6; }
+  .meta strong { color: #cbd5e1; }
+  .detail-row { font-size: 0.78rem; color: #64748b; margin-bottom: 4px; }
+  .detail-row strong { color: #94a3b8; }
+  details summary { font-size: 0.8rem; color: #475569; cursor: pointer;
+                    margin-bottom: 8px; user-select: none; }
+  details[open] summary { color: #22d3ee; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn { padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer;
+         font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-provision { background: #22d3ee; color: #0f172a; }
+  .btn-reject { background: transparent; border: 1px solid #ef4444; color: #ef4444; }
+  .btn-sms { background: transparent; border: 1px solid #334155; color: #94a3b8; font-size: 0.8rem; }
+  .status-badge { font-size: 0.72rem; padding: 2px 8px; border-radius: 99px; font-weight: 600; }
+  .status-pending { background: #92400e; color: #fde68a; }
+  .status-provisioned { background: #065f46; color: #6ee7b7; }
+  .status-rejected { background: #3f3f46; color: #a1a1aa; }
+  .status-active { background: #065f46; color: #6ee7b7; }
+  .empty { text-align: center; color: #475569; padding: 40px 20px; font-size: 0.9rem; }
+  .toast { position: fixed; bottom: 20px; right: 20px; background: #1e293b;
+           border: 1px solid #334155; border-radius: 8px; padding: 12px 16px;
+           font-size: 0.85rem; max-width: 280px; z-index: 999;
+           transition: opacity 0.3s; }
+  .toast.success { border-color: #22d3ee; color: #22d3ee; }
+  .toast.error { border-color: #ef4444; color: #ef4444; }
+  .token-screen { max-width: 360px; margin: 80px auto; text-align: center; }
+  .token-screen input { width: 100%; padding: 12px; background: #1e293b;
+                        border: 1px solid #334155; border-radius: 8px; color: #e2e8f0;
+                        font-size: 1rem; margin: 16px 0; text-align: center; }
+  .token-screen .btn { width: 100%; padding: 12px; background: #22d3ee; color: #0f172a; font-size: 1rem; }
+  #main { display: none; }
+  .assist-id { font-size: 0.72rem; font-family: monospace; color: #475569;
+               background: #0f172a; padding: 2px 6px; border-radius: 4px; }
+  .health-ok     { color: #4ade80; }
+  .health-quiet  { color: #fbbf24; }
+  .health-errors { color: #ef4444; }
+  .health-dead   { color: #475569; }
+  .stat-row { display: flex; gap: 16px; font-size: 0.78rem; color: #64748b; margin-top: 6px; }
+  .stat-row span strong { color: #94a3b8; }
+  /* Call log */
+  .call-group { background: #1e293b; border: 1px solid #334155; border-radius: 10px;
+                margin-bottom: 12px; overflow: hidden; }
+  .call-group-header { padding: 10px 14px; display: flex; justify-content: space-between;
+                       align-items: center; border-bottom: 1px solid #334155;
+                       font-size: 0.82rem; }
+  .call-id-label { font-family: monospace; color: #475569; font-size: 0.72rem; }
+  .call-event { display: flex; gap: 10px; padding: 6px 14px;
+                border-bottom: 1px solid #1a2535; font-size: 0.78rem; align-items: flex-start; }
+  .call-event:last-child { border-bottom: none; }
+  .ev-time { color: #475569; min-width: 58px; font-family: monospace; padding-top: 1px; }
+  .ev-type { min-width: 120px; font-weight: 600; padding-top: 1px; }
+  .ev-call-ended    { color: #94a3b8; }
+  .ev-lead-captured { color: #22d3ee; }
+  .ev-demo-complete { color: #a78bfa; }
+  .ev-booking       { color: #4ade80; }
+  .ev-avail-check   { color: #fbbf24; }
+  .ev-lead-error    { color: #ef4444; }
+  .ev-summary { color: #cbd5e1; flex: 1; }
+  .ev-detail { font-family: monospace; font-size: 0.7rem; color: #475569;
+               background: #0f172a; padding: 4px 8px; border-radius: 4px;
+               margin-top: 3px; white-space: pre-wrap; }
+  .log-controls { display: flex; gap: 8px; margin-bottom: 14px; align-items: center; }
+  .log-controls label { font-size: 0.82rem; color: #64748b; }
+  .refresh-indicator { font-size: 0.75rem; color: #475569; margin-left: auto; }
+</style>
+</head>
+<body>
+
+<div id="tokenScreen" class="token-screen">
+  <h1>CallMeIE Admin</h1>
+  <p style="color:#64748b;margin-top:8px;font-size:0.9rem;">Enter your admin token to continue</p>
+  <input type="password" id="tokenInput" placeholder="Admin token" autocomplete="off">
+  <button class="btn" onclick="login()">Enter</button>
+</div>
+
+<div id="main">
+  <h1>CallMeIE Admin</h1>
+  <div class="subtitle" id="subtitle">Loading...</div>
+  <div id="backupStatus" style="font-size:0.8rem;color:#94a3b8;margin-bottom:18px;"></div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('pending')">
+      Queue <span id="pendingBadge" class="badge" style="display:none"></span>
+    </button>
+    <button class="tab" onclick="switchTab('clients')">Active Clients</button>
+    <button class="tab" onclick="switchTab('calls')">
+      Call Log <span id="liveDot" style="display:inline-block;width:7px;height:7px;background:#22d3ee;border-radius:50%;margin-left:4px;vertical-align:middle"></span>
+    </button>
+  </div>
+
+  <div id="pendingSection" class="section active"></div>
+  <div id="clientsSection" class="section"></div>
+  <div id="callsSection" class="section"></div>
+</div>
+
+<div id="toast" class="toast" style="display:none"></div>
+
+<script>
+let TOKEN = '';
+const BASE = window.location.origin;
+
+function login() {
+  const t = document.getElementById('tokenInput').value.trim();
+  if (!t) return;
+  TOKEN = t;
+  sessionStorage.setItem('admin_token', t);
+  document.getElementById('tokenScreen').style.display = 'none';
+  document.getElementById('main').style.display = 'block';
+  loadAll();
+}
+
+// Check sessionStorage or URL param on load
+window.onload = () => {
+  const params = new URLSearchParams(window.location.search);
+  const t = params.get('token') || sessionStorage.getItem('admin_token');
+  if (t) {
+    TOKEN = t;
+    document.getElementById('tokenScreen').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+    loadAll();
+  }
+  document.getElementById('tokenInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') login();
+  });
+};
+
+let callsAutoRefresh = null;
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    t.classList.toggle('active',
+      (i === 0 && tab === 'pending') ||
+      (i === 1 && tab === 'clients') ||
+      (i === 2 && tab === 'calls')
+    );
+  });
+  document.getElementById('pendingSection').classList.toggle('active', tab === 'pending');
+  document.getElementById('clientsSection').classList.toggle('active', tab === 'clients');
+  document.getElementById('callsSection').classList.toggle('active', tab === 'calls');
+
+  if (tab === 'calls') {
+    loadEvents();
+    if (!callsAutoRefresh) {
+      callsAutoRefresh = setInterval(loadEvents, 5000);
+    }
+  } else {
+    clearInterval(callsAutoRefresh);
+    callsAutoRefresh = null;
+  }
+}
+
+async function loadAll() {
+  await Promise.all([loadSubmissions(), loadClients(), loadBackupStatus()]);
+}
+
+// ── Call Log ──────────────────────────────────────────────────────────────────
+
+const EV_LABELS = {
+  'call-ended':    { cls: 'ev-call-ended',    icon: '📵' },
+  'lead-captured': { cls: 'ev-lead-captured', icon: '🎯' },
+  'lead-error':    { cls: 'ev-lead-error',    icon: '⚠️' },
+  'demo-complete': { cls: 'ev-demo-complete', icon: '✅' },
+  'booking':       { cls: 'ev-booking',       icon: '📅' },
+  'avail-check':   { cls: 'ev-avail-check',   icon: '🔍' },
+};
+
+let showDetail = false;
+let lastEventId = 0;
+
+async function loadEvents() {
+  const res = await fetch(`${BASE}/admin/api/events?token=${TOKEN}&limit=300`);
+  if (!res.ok) return;
+  const events = await res.json();
+
+  // Flash live dot on new events
+  if (events.length && events[0].id !== lastEventId) {
+    lastEventId = events[0].id;
+    const dot = document.getElementById('liveDot');
+    dot.style.background = '#ef4444';
+    setTimeout(() => { dot.style.background = '#22d3ee'; }, 800);
+  }
+
+  // Group by call_id, preserve insertion order
+  const groups = {};
+  const order = [];
+  for (const ev of events) {
+    const key = ev.call_id || '__no_call__';
+    if (!groups[key]) { groups[key] = []; order.push(key); }
+    groups[key].push(ev);
+  }
+
+  const el = document.getElementById('callsSection');
+  const ts = new Date().toLocaleTimeString('en-IE', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+
+  if (!events.length) {
+    el.innerHTML = '<div class="empty">No call events yet.<br>Events appear here as soon as a call hits any endpoint.</div>';
+    return;
+  }
+
+  el.innerHTML = `
+    <div class="log-controls">
+      <label><input type="checkbox" onchange="toggleDetail(this.checked)" ${showDetail ? 'checked' : ''}> Show raw detail</label>
+      <span class="refresh-indicator">Auto-refresh every 5s · Last: ${ts}</span>
+    </div>
+  ` + order.map(callId => {
+    const evs = groups[callId];
+    const first = evs[evs.length - 1]; // oldest first
+    const last  = evs[0];
+    const callIdShort = callId === '__no_call__' ? '—' : callId.substring(0, 8) + '…';
+
+    // Find lead info for header
+    const leadEv = evs.find(e => e.event_type === 'lead-captured');
+    let headerInfo = '';
+    if (leadEv) {
+      try {
+        const d = JSON.parse(leadEv.detail || '{}');
+        headerInfo = `${esc(d.name || '')} · ${esc(d.business_type || '')}`;
+      } catch(e) {}
+    }
+    const demoEv = evs.find(e => e.event_type === 'demo-complete');
+    let heatBadge = '';
+    if (demoEv) {
+      try {
+        const d = JSON.parse(demoEv.detail || '{}');
+        const heat = {'very_interested':'🔥 HOT','curious':'🌡 WARM','just_browsing':'❄ COLD'}[d.interest_level] || '';
+        heatBadge = heat ? `<span class="status-badge" style="background:#1e3a2e;color:#4ade80;margin-left:6px">${heat}</span>` : '';
+      } catch(e) {}
+    }
+
+    const evRows = [...evs].reverse().map(ev => {
+      const label = EV_LABELS[ev.event_type] || { cls: '', icon: '•' };
+      const time = ev.created_at ? ev.created_at.split('T')[1]?.substring(0,8) || ev.created_at.substring(11,19) : '';
+      let detailHtml = '';
+      if (showDetail && ev.detail && ev.detail !== '{}') {
+        try {
+          detailHtml = `<div class="ev-detail">${esc(JSON.stringify(JSON.parse(ev.detail), null, 2))}</div>`;
+        } catch(e) {}
+      }
+      return `
+        <div class="call-event">
+          <span class="ev-time">${time}</span>
+          <span class="ev-type ${label.cls}">${label.icon} ${esc(ev.event_type)}</span>
+          <span class="ev-summary">
+            <span style="color:#475569;font-size:0.72rem">${esc(ev.assistant || '')}</span>
+            &nbsp;${esc(ev.summary || '')}
+            ${detailHtml}
+          </span>
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="call-group">
+        <div class="call-group-header">
+          <div>
+            <span class="call-id-label">call: ${callIdShort}</span>
+            ${headerInfo ? `&nbsp;·&nbsp;<strong>${headerInfo}</strong>` : ''}
+            ${heatBadge}
+          </div>
+          <div style="color:#475569;font-size:0.72rem">${fmtDate(first.created_at)}</div>
+        </div>
+        ${evRows}
+      </div>`;
+  }).join('');
+}
+
+function toggleDetail(on) {
+  showDetail = on;
+  loadEvents();
+}
+
+async function loadSubmissions() {
+  const res = await fetch(`${BASE}/admin/api/submissions?token=${TOKEN}`);
+  if (res.status === 401) { showToast('Invalid token', 'error'); return; }
+  const data = await res.json();
+  const pending = data.filter(s => s.status === 'pending');
+  const badge = document.getElementById('pendingBadge');
+  if (pending.length > 0) {
+    badge.textContent = pending.length;
+    badge.style.display = 'inline-block';
+  } else {
+    badge.style.display = 'none';
+  }
+
+  const el = document.getElementById('pendingSection');
+  if (data.length === 0) {
+    el.innerHTML = '<div class="empty">No submissions yet.<br>Share the onboarding link with your next prospect.</div>';
+    return;
+  }
+
+  el.innerHTML = data.map(s => `
+    <div class="card" id="sub-${s.id}">
+      <div class="card-header">
+        <div>
+          <div class="biz-name">${esc(s.business_name)}</div>
+          <div style="margin-top:4px">
+            ${s.business_type ? `<span class="biz-type">${esc(s.business_type)}</span>` : ''}
+            <span class="status-badge status-${s.status}" style="margin-left:4px">${s.status}</span>
+          </div>
+        </div>
+        <div style="font-size:0.75rem;color:#475569;text-align:right">${fmtDate(s.created_at)}</div>
+      </div>
+      <div class="meta">
+        <strong>Contact:</strong> ${esc(s.contact_name || '—')} · ${esc(s.contact_phone || '—')}<br>
+        ${s.contact_email ? `<strong>Email:</strong> ${esc(s.contact_email)}<br>` : ''}
+        ${s.plan ? `<strong>Plan:</strong> ${esc(s.plan)}<br>` : ''}
+        ${s.ai_name ? `<strong>AI Name:</strong> ${esc(s.ai_name)}<br>` : ''}
+      </div>
+      <details>
+        <summary>View full details</summary>
+        ${s.address ? `<div class="detail-row"><strong>Address:</strong> ${esc(s.address)}</div>` : ''}
+        ${s.hours ? `<div class="detail-row"><strong>Hours:</strong> ${esc(s.hours)}</div>` : ''}
+        ${s.services ? `<div class="detail-row"><strong>Services:</strong> ${esc(s.services)}</div>` : ''}
+        ${s.emergency_number ? `<div class="detail-row"><strong>Emergency #:</strong> ${esc(s.emergency_number)}</div>` : ''}
+        ${s.calendar_email ? `<div class="detail-row"><strong>Calendar:</strong> ${esc(s.calendar_email)}</div>` : ''}
+        ${s.notes ? `<div class="detail-row"><strong>Notes:</strong> ${esc(s.notes)}</div>` : ''}
+        ${s.vapi_assistant_id ? `<div class="detail-row"><strong>Assistant:</strong> <span class="assist-id">${s.vapi_assistant_id}</span></div>` : ''}
+      </details>
+      ${s.status === 'pending' ? `
+      <div class="actions" style="margin-top:12px">
+        <button class="btn btn-provision" id="prov-${s.id}" onclick="provision(${s.id})">Provision</button>
+        <button class="btn btn-reject" onclick="reject(${s.id})">Reject</button>
+        ${s.contact_phone ? `<button class="btn btn-sms" onclick="copyPhone('${esc(s.contact_phone)}')">Copy phone</button>` : ''}
+      </div>` : ''}
+    </div>
+  `).join('');
+
+  const total = data.length;
+  const prov = data.filter(s => s.status === 'provisioned').length;
+  document.getElementById('subtitle').textContent =
+    `${pending.length} pending · ${prov} provisioned · ${total} total`;
+}
+
+async function loadClients() {
+  const [clientsRes, healthRes] = await Promise.all([
+    fetch(`${BASE}/admin/api/clients?token=${TOKEN}`),
+    fetch(`${BASE}/admin/api/health?token=${TOKEN}`),
+  ]);
+  if (!clientsRes.ok) return;
+  const clients = await clientsRes.json();
+  const healthData = healthRes.ok ? await healthRes.json() : [];
+  const healthMap = {};
+  for (const h of healthData) healthMap[h.assistant_id] = h;
+
+  const el = document.getElementById('clientsSection');
+
+  // Show demo system health even if no real clients yet
+  const allEntries = [...clients];
+  const HEALTH_ICON = { ok: '🟢', quiet: '🟡', errors: '🔴', dead: '⚫' };
+  const HEALTH_LABEL = { ok: 'Active', quiet: 'Quiet', errors: 'Errors', dead: 'No data' };
+
+  // Demo health summary
+  const demoEntries = healthData.filter(h => h.is_demo);
+  const demoHtml = demoEntries.length ? `
+    <div class="card" style="border-color:#1e3a5f">
+      <div class="biz-name" style="color:#64748b;font-size:0.85rem;margin-bottom:10px">Demo System Health (7 days)</div>
+      ${demoEntries.map(h => `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #1a2535;font-size:0.8rem">
+          <span>${HEALTH_ICON[h.health]} ${esc(h.name)}</span>
+          <span class="health-${h.health}" style="font-size:0.72rem">
+            ${h.calls_7d} calls · ${h.leads_7d} leads · ${h.bookings_7d} bookings
+            ${h.errors_7d > 0 ? `· <span style="color:#ef4444">${h.errors_7d} errors</span>` : ''}
+          </span>
+        </div>
+      `).join('')}
+    </div>
+  ` : '';
+
+  if (clients.length === 0) {
+    el.innerHTML = demoHtml + '<div class="empty" style="margin-top:8px">No provisioned clients yet.</div>';
+    return;
+  }
+
+  el.innerHTML = demoHtml + clients.map(c => {
+    const h = healthMap[c.assistant_id] || {};
+    const healthIcon = HEALTH_ICON[h.health] || '⚫';
+    const healthLabel = HEALTH_LABEL[h.health] || 'No data';
+    const healthCls = `health-${h.health || 'dead'}`;
+    return `
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="biz-name">${esc(c.name)}</div>
+          <span class="status-badge status-${c.status}" style="margin-top:4px;display:inline-block">${c.status}</span>
+          <span class="${healthCls}" style="font-size:0.78rem;margin-left:8px">${healthIcon} ${healthLabel}</span>
+        </div>
+        <div style="font-size:0.75rem;color:#475569;text-align:right">${fmtDate(c.created_at)}</div>
+      </div>
+      ${h.calls_7d !== undefined ? `
+      <div class="stat-row">
+        <span><strong>7d calls:</strong> ${h.calls_7d}</span>
+        <span><strong>Bookings:</strong> ${h.bookings_7d}</span>
+        <span><strong>Leads:</strong> ${h.leads_7d}</span>
+        ${h.errors_7d > 0 ? `<span style="color:#ef4444"><strong>Errors:</strong> ${h.errors_7d}</span>` : ''}
+        ${h.last_event ? `<span><strong>Last:</strong> ${fmtDate(h.last_event)}</span>` : ''}
+      </div>` : ''}
+      <div class="meta" style="margin-top:8px">
+        <span class="assist-id">${c.assistant_id}</span>
+      </div>
+      <div class="actions" style="margin-top:8px">
+        <button class="btn btn-sms" onclick="copyText('${c.assistant_id}')">Copy ID</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function loadBackupStatus() {
+  const el = document.getElementById('backupStatus');
+  const res = await fetch(`${BASE}/admin/api/backup-sheet/status?token=${TOKEN}`);
+  if (!res.ok) {
+    el.textContent = 'Google backup status unavailable.';
+    return;
+  }
+  const data = await res.json();
+  if (data.configured) {
+    el.innerHTML = `Google backup: <span style="color:#4ade80">configured</span> · <span style="font-family:monospace">${esc(data.sheet_tab || 'submissions')}</span>`;
+  } else {
+    el.innerHTML = `Google backup: <span style="color:#fbbf24">not configured</span> · <button class="btn btn-sms" style="margin-left:8px" onclick="bootstrapBackupSheet()">Bootstrap sheet</button>`;
+  }
+}
+
+async function bootstrapBackupSheet() {
+  try {
+    const res = await fetch(`${BASE}/admin/api/backup-sheet/bootstrap?token=${TOKEN}`, { method: 'POST' });
+    const data = await res.json();
+    if (res.ok) {
+      showToast('Backup sheet created', 'success');
+      await loadBackupStatus();
+    } else {
+      showToast(data.detail || 'Unable to bootstrap backup sheet', 'error');
+    }
+  } catch (e) {
+    showToast('Network error', 'error');
+  }
+}
+
+async function provision(id) {
+  const btn = document.getElementById(`prov-${id}`);
+  btn.disabled = true;
+  btn.textContent = 'Provisioning...';
+  try {
+    const res = await fetch(`${BASE}/admin/api/provision/${id}?token=${TOKEN}`, { method: 'POST' });
+    const data = await res.json();
+    if (res.ok) {
+      showToast(`Provisioned! Assistant: ${data.assistant_id.substring(0,8)}...`, 'success');
+      await loadAll();
+    } else {
+      showToast(data.detail || 'Provision failed', 'error');
+      btn.disabled = false;
+      btn.textContent = 'Provision';
+    }
+  } catch(e) {
+    showToast('Network error', 'error');
+    btn.disabled = false;
+    btn.textContent = 'Provision';
+  }
+}
+
+async function reject(id) {
+  if (!confirm('Reject this submission?')) return;
+  await fetch(`${BASE}/admin/api/reject/${id}?token=${TOKEN}`, { method: 'POST' });
+  showToast('Rejected', 'error');
+  await loadSubmissions();
+}
+
+function copyPhone(phone) {
+  navigator.clipboard.writeText(phone);
+  showToast('Phone copied', 'success');
+}
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+  showToast('Copied!', 'success');
+}
+
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type}`;
+  t.style.display = 'block';
+  setTimeout(() => { t.style.display = 'none'; }, 3500);
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function fmtDate(s) {
+  if (!s) return '';
+  const d = new Date(s + (s.endsWith('Z') ? '' : 'Z'));
+  return d.toLocaleDateString('en-IE', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' });
+}
+</script>
+</body>
+</html>

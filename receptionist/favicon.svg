@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- CallMeIE brand favicon — speech bubble phone icon -->
+  <!-- Burgundy rounded square background -->
+  <rect width="64" height="64" rx="14" fill="#5A1420"/>
+  <!-- Speech bubble body + tail (white) -->
+  <path d="M11 13 Q11 7 17 7 L47 7 Q53 7 53 13 L53 35 Q53 41 47 41 L23 41 L13 53 L16 41 Q11 41 11 35 Z" fill="white"/>
+  <!-- Phone handset: earpiece (rotated rounded rect) -->
+  <rect x="-5.5" y="-3.5" width="11" height="7" rx="3.5" fill="#5A1420" transform="translate(37,16) rotate(-45)"/>
+  <!-- Phone handset: mouthpiece (rotated rounded rect) -->
+  <rect x="-5.5" y="-3.5" width="11" height="7" rx="3.5" fill="#5A1420" transform="translate(21,32) rotate(-45)"/>
+  <!-- Phone handset: grip (thin diagonal) -->
+  <rect x="-2" y="-10" width="4" height="20" rx="2" fill="#5A1420" transform="translate(29,24) rotate(-45)"/>
+  <!-- Notification dot (top-right of bubble) -->
+  <circle cx="48" cy="12" r="5" fill="white"/>
+  <circle cx="48" cy="12" r="3" fill="#5A1420"/>
+</svg>
