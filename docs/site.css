@@ -478,6 +478,57 @@ img, svg { max-width: 100%; display: block; }
 }
 .price-card .btn { margin-top: auto; }
 
+/* Bespoke editorial card — D9 lock 2026-05-04: managed register signal via layout density + price prominence + CTA verb (not typeface swap). Single-card row, italic-em headline, secondary price, description-led prose. */
+.price-grid.bespoke-row {
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
+}
+.price-card.editorial {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: var(--s-xl);
+  display: flex; flex-direction: column; gap: var(--s-m);
+  text-align: left;
+}
+.price-card.editorial .editorial-headline {
+  font-family: var(--display);
+  font-size: clamp(2.25rem, 4vw + 1rem, 3.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.price-card.editorial .editorial-headline em {
+  font-style: italic;
+  font-weight: 600;
+}
+.price-card.editorial .price-secondary {
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+.price-card.editorial .price-secondary small {
+  color: var(--muted);
+}
+.price-card.editorial .bespoke-prose {
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+.pricing-fineprint {
+  text-align: center;
+  max-width: 720px;
+  margin: var(--s-xl) auto 0;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  line-height: 1.55;
+}
+
 /* ============ FAQ ============ */
 .faq { padding: var(--s-2xl) 24px; }
 .faq-grid {
