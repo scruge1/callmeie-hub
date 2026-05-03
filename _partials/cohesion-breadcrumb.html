@@ -1,0 +1,18 @@
+<nav class="callmeie-breadcrumb" aria-label="breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="{{section_url}}">{{section}}</a></li>
+    <li aria-current="page">{{page}}</li>
+  </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://callmeie.ie/"},
+    {"@type": "ListItem", "position": 2, "name": "{{section}}", "item": "https://callmeie.ie{{section_url}}"},
+    {"@type": "ListItem", "position": 3, "name": "{{page}}"}
+  ]
+}
+</script>
