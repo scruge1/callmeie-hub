@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# pre-commit hook — verify cohesion-layer drift before allowing commit.
+# Activate once per clone: git config core.hooksPath .githooks
+
+set -e
+
+# Skip if no Python available
+if ! command -v python >/dev/null 2>&1 && ! command -v python3 >/dev/null 2>&1; then
+  echo "[pre-commit] WARNING: python not found; skipping cohesion drift check" >&2
+  exit 0
+fi
+
+PY=$(command -v python || command -v python3)
+
+if [ ! -f "scripts/inject-cohesion.py" ]; then
+  echo "[pre-commit] WARNING: scripts/inject-cohesion.py missing; skipping cohesion drift check" >&2
+  exit 0
+fi
+
+if "$PY" scripts/inject-cohesion.py --check; then
+  exit 0
+else
+  echo "" >&2
+  echo "[pre-commit] FAIL: cohesion-layer drift detected." >&2
+  echo "[pre-commit] Run: python scripts/inject-cohesion.py" >&2
+  echo "[pre-commit] Then re-stage and re-commit." >&2
+  exit 1
+fi
