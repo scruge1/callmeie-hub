@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hear a Call — CallMeIE Demo · Limerick</title>
+<meta name="description" content="Ring the CallMeIE demo line. Claire qualifies you, transfers to the vertical AI that fits your business, and you experience what your own customers would hear. Built in Limerick." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* CallMeIE — Hear a Call page.
+     Matches the homepage style: paper cream + deep ink + burgundy accent.
+     Archivo Black display · Fraunces body · JetBrains Mono for numbers, timestamps, kickers.
+     No emoji. No shadows. No rounded corners. No gradients. */
+
+  :root {
+    --paper: #F5F1E8;
+    --paper-deep: #ECE7D9;
+    --ink: #0b0a08;
+    --ink-soft: #2a2622;
+    --ink-muted: #545454;
+    --burgundy: #5A1420;
+    --measure: 640px;
+    --section-gap: clamp(56px, 8vw, 112px);
+    --rule-heavy: 3px;
+    --rule-thick: 4px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 36, "SOFT" 30;
+    font-size: 18px; line-height: 1.58;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  a:hover { text-decoration-thickness: 2px; }
+  ::selection { background: var(--burgundy); color: var(--paper); }
+
+  /* Layout scaffold */
+  .page { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); position: relative; }
+
+  /* Topbar */
+  .topbar {
+    position: relative; z-index: 5;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 0 18px; border-bottom: var(--rule-heavy) solid var(--ink);
+    gap: 16px;
+  }
+  .wordmark {
+    font-family: 'Archivo Black', 'Arial Black', sans-serif;
+    font-size: clamp(18px, 1.6vw, 22px); letter-spacing: 0.01em;
+    text-transform: uppercase; color: var(--ink); text-decoration: none;
+  }
+  .wordmark__dot {
+    display: inline-block; width: 8px; height: 8px;
+    background: var(--burgundy); margin: 0 6px 2px 0; vertical-align: middle;
+  }
+  .topbar__right { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: flex-end; }
+  .topbar__meta {
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted);
+  }
+  @media (max-width: 720px) { .topbar__meta { display: none; } }
+  .topbar__cta {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--ink); text-decoration: none;
+    padding: 10px 14px; border: 2px solid var(--ink);
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+  .topbar__cta:hover { background: var(--ink); color: var(--paper); }
+
+  /* Masthead strip */
+  .masthead-strip {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 14px 0; border-bottom: 1px solid var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+    gap: 18px; flex-wrap: wrap;
+  }
+  @media (max-width: 720px) {
+    .masthead-strip { flex-direction: column; gap: 4px; align-items: flex-start; }
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: clamp(44px, 8vw, 96px) 0 clamp(56px, 9vw, 120px);
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+  .hero__kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--burgundy); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero__kicker::before {
+    content: ""; display: inline-block; width: 48px; height: 2px; background: var(--burgundy);
+  }
+  .hero__headline {
+    font-family: 'Archivo Black', 'Arial Black', sans-serif;
+    font-size: clamp(44px, 8vw, 120px); line-height: 0.94;
+    letter-spacing: -0.02em; text-transform: uppercase;
+    margin: 0 0 28px; color: var(--ink); max-width: 12ch;
+  }
+  .hero__sub {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic; font-weight: 400;
+    font-size: clamp(18px, 2vw, 24px); line-height: 1.42;
+    color: var(--ink-soft); max-width: 640px; margin: 0 0 clamp(36px, 5vw, 56px);
+  }
+  .hero__sub em { font-style: normal; font-weight: 500; color: var(--ink); }
+
+  .demo-number__label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-muted);
+    display: block; margin-bottom: 10px;
+  }
+  .demo-number {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 700;
+    font-size: clamp(44px, 12vw, 128px);
+    line-height: 1.0; letter-spacing: -0.03em;
+    color: var(--ink);
+    display: block;
+    margin: 0 0 16px;
+    word-break: break-all;
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+  }
+  .demo-number:hover { color: var(--burgundy); }
+  .demo-number__caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-muted); margin-top: 8px;
+  }
+
+  .hero__actions {
+    margin-top: clamp(28px, 4vw, 44px);
+    display: flex; gap: 28px; align-items: center; flex-wrap: wrap;
+  }
+  .btn-primary {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--paper); background: var(--ink);
+    padding: 16px 22px; text-decoration: none;
+    border: 2px solid var(--ink);
+    transition: background 0.15s ease, color 0.15s ease;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--burgundy); border-color: var(--burgundy); color: var(--paper); }
+  .btn-secondary {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 16px; color: var(--ink);
+    text-decoration: none; border-bottom: 2px solid var(--ink);
+    padding-bottom: 2px;
+  }
+  .btn-secondary:hover { color: var(--burgundy); border-bottom-color: var(--burgundy); }
+
+  /* Section scaffolding */
+  section.editorial {
+    padding: var(--section-gap) 0;
+    border-bottom: var(--rule-thick) solid var(--ink);
+    position: relative; z-index: 2;
+  }
+  section.editorial:last-of-type { border-bottom: 0; }
+  .section-head {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: 22px; align-items: baseline; margin-bottom: 40px;
+  }
+  @media (max-width: 640px) { .section-head { grid-template-columns: 56px 1fr; gap: 14px; } }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.16em; color: var(--ink-muted);
+    padding-top: 0.6em; border-top: 2px solid var(--ink);
+  }
+  .section-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 4.6vw, 62px); line-height: 0.95;
+    letter-spacing: -0.015em; text-transform: uppercase; margin: 0; color: var(--ink);
+  }
+  .section-dek {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(17px, 1.6vw, 20px); line-height: 1.5;
+    color: var(--ink-soft); max-width: var(--measure); margin: 20px 0 0 102px;
+  }
+  @media (max-width: 640px) { .section-dek { margin-left: 70px; } }
+
+  /* TIMELINE — editorial monospace/serif transcript */
+  .timeline {
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 12px 0; margin: 16px 0 0;
+  }
+  .timeline__row {
+    display: grid; grid-template-columns: 96px 130px 1fr;
+    gap: 18px; align-items: baseline;
+    padding: 12px 0; border-bottom: 1px solid var(--ink);
+  }
+  .timeline__row:last-child { border-bottom: 0; }
+  @media (max-width: 720px) {
+    .timeline__row { grid-template-columns: 76px 1fr; gap: 10px; padding: 14px 0; }
+    .timeline__who { grid-column: 1 / -1; margin-left: 86px; margin-top: -4px; }
+  }
+  .timeline__time {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; font-size: 13px; letter-spacing: 0.04em;
+    color: var(--ink-muted); padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .timeline__who {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--burgundy); padding-top: 4px;
+    font-weight: 400;
+  }
+  .timeline__who--ai { color: var(--ink); }
+  .timeline__text {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.5;
+    color: var(--ink); font-style: italic;
+  }
+  .timeline__text--plain { font-style: normal; color: var(--ink-soft); }
+  .timeline__row--marker {
+    grid-template-columns: 96px 1fr;
+    background: var(--paper-deep);
+  }
+  @media (max-width: 720px) {
+    .timeline__row--marker { grid-template-columns: 76px 1fr; }
+  }
+  .timeline__marker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--burgundy);
+  }
+  .timeline__ellipsis {
+    text-align: center; font-family: 'JetBrains Mono', monospace;
+    color: var(--ink-muted); letter-spacing: 0.4em; padding: 10px 0;
+    grid-column: 1 / -1;
+  }
+  .timeline__caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-muted);
+    padding: 12px 0 4px; border-bottom: 1px solid var(--ink);
+    margin-bottom: 4px;
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .timeline__caption b { color: var(--burgundy); font-family: 'Archivo Black', sans-serif; font-weight: 400; letter-spacing: 0.18em; }
+
+  /* Verticals — editorial ruled blocks */
+  .vertical {
+    display: grid; grid-template-columns: 220px 1fr; gap: 48px;
+    padding: 48px 0; border-top: 1px solid var(--ink); align-items: start;
+  }
+  .vertical:last-of-type { border-bottom: 1px solid var(--ink); }
+  @media (max-width: 860px) { .vertical { grid-template-columns: 1fr; gap: 18px; padding: 40px 0; } }
+  .vertical__label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-muted); padding-top: 6px;
+  }
+  .vertical__label b {
+    display: block; font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -0.005em; color: var(--burgundy);
+    margin-bottom: 6px; font-weight: 400; line-height: 1.05;
+    text-transform: uppercase;
+  }
+  .vertical__body { max-width: var(--measure); }
+  .vertical__head {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(20px, 2.2vw, 26px); line-height: 1.1;
+    text-transform: uppercase; letter-spacing: -0.005em;
+    margin: 0 0 14px; color: var(--ink);
+  }
+  .vertical__body > p {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.6;
+    margin: 0 0 14px; color: var(--ink-soft);
+  }
+  .vertical__try {
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    padding: 14px 0; margin-top: 18px;
+    display: grid; grid-template-columns: 92px 1fr; gap: 14px; align-items: baseline;
+  }
+  @media (max-width: 520px) { .vertical__try { grid-template-columns: 1fr; gap: 4px; } }
+  .vertical__try-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--burgundy); padding-top: 4px;
+  }
+  .vertical__try-text {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 16px;
+    line-height: 1.5; color: var(--ink);
+  }
+  .vertical__try-text b { font-style: normal; font-weight: 600; color: var(--burgundy); }
+
+  /* Stack prose section */
+  .prose-block {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 5vw, 72px);
+    align-items: start; border-top: 1px solid var(--ink); padding-top: 40px;
+  }
+  @media (max-width: 860px) { .prose-block { grid-template-columns: 1fr; gap: 28px; } }
+  .prose-block p {
+    font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.62;
+    margin: 0 0 16px; color: var(--ink-soft); max-width: 560px;
+  }
+  .prose-block p strong { color: var(--ink); font-weight: 600; }
+
+  .stack-list {
+    list-style: none; padding: 0; margin: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .stack-list li {
+    display: grid; grid-template-columns: 170px 1fr;
+    padding: 16px 0; border-bottom: 1px solid var(--ink);
+    gap: 20px; align-items: baseline;
+  }
+  @media (max-width: 640px) { .stack-list li { grid-template-columns: 1fr; gap: 2px; padding: 14px 0; } }
+  .stack-list li > span:first-child {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--burgundy); font-weight: 500;
+  }
+  .stack-list li > span:last-child {
+    font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink-soft); line-height: 1.5;
+  }
+  .stack-list li > span:last-child b { color: var(--ink); font-weight: 600; }
+
+  /* Failure-honesty block */
+  .honesty {
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 36px clamp(20px, 3vw, 36px); margin-top: 8px;
+    background: var(--paper-deep);
+  }
+  .honesty__kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--burgundy); margin-bottom: 14px;
+  }
+  .honesty p {
+    font-family: 'Fraunces', serif; font-size: clamp(17px, 1.8vw, 20px);
+    line-height: 1.55; color: var(--ink); margin: 0 0 14px; max-width: 720px;
+  }
+  .honesty p:last-child { margin-bottom: 0; }
+  .honesty p em { font-style: italic; font-weight: 500; color: var(--burgundy); }
+  .honesty p strong { color: var(--ink); font-weight: 600; font-style: normal; }
+
+  /* Next-step row */
+  .next-step {
+    display: grid; grid-template-columns: 1.4fr 1fr;
+    gap: 0; align-items: stretch;
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+  }
+  @media (max-width: 860px) { .next-step { grid-template-columns: 1fr; } }
+  .next-step__primary {
+    padding: 44px 36px 44px 0;
+    border-right: 1px solid var(--ink);
+  }
+  .next-step__secondary {
+    padding: 44px 0 44px 36px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  @media (max-width: 860px) {
+    .next-step__primary { border-right: 0; border-bottom: 1px solid var(--ink); padding: 32px 0; }
+    .next-step__secondary { padding: 32px 0; }
+  }
+  .next-step__kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--burgundy); margin-bottom: 14px;
+  }
+  .next-step__head {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(22px, 2.6vw, 32px); line-height: 1.05;
+    text-transform: uppercase; letter-spacing: -0.01em;
+    margin: 0 0 20px; color: var(--ink);
+  }
+  .next-step__number {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: clamp(30px, 6vw, 58px);
+    line-height: 1.0; letter-spacing: -0.02em;
+    color: var(--ink); text-decoration: none;
+    display: inline-block; margin: 0 0 18px;
+    word-break: break-all;
+    font-variant-numeric: tabular-nums;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 6px;
+  }
+  .next-step__number:hover { color: var(--burgundy); border-bottom-color: var(--burgundy); }
+  .next-step__note {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 16px; color: var(--ink-soft); line-height: 1.5; margin: 0;
+  }
+  .next-step__secondary p {
+    font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.55;
+    color: var(--ink-soft); margin: 0 0 18px;
+  }
+  .next-step__secondary a.onboard-link {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none;
+    border-bottom: 3px solid var(--ink); padding-bottom: 4px;
+    align-self: flex-start;
+  }
+  .next-step__secondary a.onboard-link:hover { color: var(--burgundy); border-bottom-color: var(--burgundy); }
+
+  /* Footer */
+  footer {
+    background: var(--paper); padding: 56px 0 36px;
+    border-top: var(--rule-thick) solid var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted);
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px; margin-bottom: 40px;
+  }
+  @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+  @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-col h4 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink); margin: 0 0 14px;
+  }
+  .footer-col p, .footer-col li {
+    font-family: 'Fraunces', serif; font-size: 13px; line-height: 1.55;
+    letter-spacing: 0; text-transform: none; color: var(--ink-soft); margin: 0 0 6px;
+  }
+  .footer-col ul { list-style: none; padding: 0; margin: 0; }
+  .footer-col a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(11,10,8,0.25); }
+  .footer-col a:hover { border-bottom-color: var(--ink); }
+  .footer-col .mono-val {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.04em;
+    color: var(--ink); text-transform: none;
+  }
+  .footer-legal {
+    border-top: 1px solid var(--ink); padding-top: 22px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 24px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.12em; color: var(--ink-muted);
+  }
+  .footer-legal__wordmark {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--ink); font-size: 11px; letter-spacing: 0.16em;
+  }
+</style>
+
+<!-- mobile-fit-safety -->
+<style>
+html { overflow-x: hidden; }
+body { max-width: 100vw; overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; }
+* { min-width: 0; }
+img, video, iframe, svg, canvas { max-width: 100%; height: auto; display: block; }
+@media (max-width: 640px) {
+  [class*="grid"], [class*="cols"], [class*="row"], [class*="columns"] { grid-template-columns: 1fr !important; flex-direction: column !important; }
+  [class*="container"] { max-width: 100% !important; padding-inline: 16px !important; }
+  section, header, main, footer, article, aside, nav { max-width: 100% !important; padding-inline: clamp(12px, 4vw, 24px) !important; }
+  h1 { font-size: clamp(30px, 8vw, 44px) !important; line-height: 1.05 !important; }
+  h2 { font-size: clamp(24px, 6vw, 34px) !important; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- TOPBAR -->
+  <header class="topbar" role="banner">
+    <a class="wordmark" href="index.html" aria-label="CallMeIE — home">
+      <span class="wordmark__dot" aria-hidden="true"></span>CallMeIE
+    </a>
+    <div class="topbar__right">
+      <span class="topbar__meta">Hear a call · Demo page</span>
+      <a class="topbar__cta" href="tel:+16617643212">Ring +1 (661) 764-3212</a>
+    </div>
+  </header>
+
+  <div class="masthead-strip" aria-hidden="true">
+    <span>Demo Line</span>
+    <span>Vol. I — MMXXVI</span>
+    <span>Claire · Receptionist</span>
+    <span>Limerick · Ireland</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__kicker">The demo, explained</div>
+    <h1 id="hero-title" class="hero__headline">Hear a call.</h1>
+    <p class="hero__sub">
+      Ring the demo number. <em>Claire qualifies you. She transfers to the vertical
+      AI that fits your business.</em> You experience what your own customers would
+      hear — end to end, on a real phone line, no cassette, no script.
+    </p>
+
+    <span class="demo-number__label">Demo line · Answers 24 hours</span>
+    <a class="demo-number" href="tel:+16617643212" aria-label="Ring the demo on plus one six six one seven six four three two one two">+1 (661) 764-3212</a>
+    <span class="demo-number__caption">One ring. About ninety seconds. Try to confuse it.</span>
+
+    <div class="hero__actions">
+      <a class="btn-primary" href="tel:+16617643212">Ring the demo now</a>
+      <a class="btn-secondary" href="onboard.html">Prefer to just onboard? &rarr;</a>
+    </div>
+  </section>
+
+  <!-- SECTION 01 — WHAT YOU'LL HEAR -->
+  <section class="editorial" id="script" aria-labelledby="script-title">
+    <div class="section-head">
+      <div class="section-num">&sect; 01</div>
+      <h2 id="script-title" class="section-title">What you&rsquo;ll actually hear</h2>
+    </div>
+    <p class="section-dek">
+      Timestamps on the left, speaker in the middle, dialogue on the right. This
+      is the real flow &mdash; not a marketing mock. Claire opens, qualifies the
+      vertical, takes your name and number, and hands you off to the specialist
+      AI for your trade.
+    </p>
+
+    <div class="timeline__caption">
+      <span>Transcript &mdash; dental route</span>
+      <span><b>Claire</b> &rarr; Dental AI &middot; duration ~2m 14s</span>
+    </div>
+
+    <div class="timeline" role="list" aria-label="Demo call transcript">
+
+      <div class="timeline__row timeline__row--marker" role="listitem">
+        <span class="timeline__time">[00:00]</span>
+        <span class="timeline__marker">Ring &nbsp; Ring</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:03]</span>
+        <span class="timeline__who timeline__who--ai">Claire</span>
+        <span class="timeline__text">&ldquo;Hello, CallMeIE, this is Claire, how can I help?&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:07]</span>
+        <span class="timeline__who">You</span>
+        <span class="timeline__text">&ldquo;Hi, I&rsquo;m ringing to try the demo.&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:10]</span>
+        <span class="timeline__who timeline__who--ai">Claire</span>
+        <span class="timeline__text">&ldquo;Lovely, and are you thinking about it for a specific kind of business?&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:14]</span>
+        <span class="timeline__who">You</span>
+        <span class="timeline__text">&ldquo;A dental practice.&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:17]</span>
+        <span class="timeline__who timeline__who--ai">Claire</span>
+        <span class="timeline__text">&ldquo;Brilliant. Just your first name and a phone number so my owner can send you a quick recap after?&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:22]</span>
+        <span class="timeline__who">You</span>
+        <span class="timeline__text">&ldquo;Cian, 087 555 0000.&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:27]</span>
+        <span class="timeline__who timeline__who--ai">Claire</span>
+        <span class="timeline__text">&ldquo;Thanks Cian, I&rsquo;ll put you through to Bright Smile Dental now. One moment.&rdquo;</span>
+      </div>
+
+      <div class="timeline__row timeline__row--marker" role="listitem">
+        <span class="timeline__time">[00:30]</span>
+        <span class="timeline__marker">*** transfer ***</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:33]</span>
+        <span class="timeline__who timeline__who--ai">Dental AI</span>
+        <span class="timeline__text">&ldquo;Bright Smile Dental, this is Sarah &mdash; how can I help you today?&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:37]</span>
+        <span class="timeline__who">You</span>
+        <span class="timeline__text">&ldquo;Looking for a check-up next Tuesday afternoon.&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[00:42]</span>
+        <span class="timeline__who timeline__who--ai">Dental AI</span>
+        <span class="timeline__text">&ldquo;I have Tuesday at 2:15 PM with Dr. Conor or 3:30 PM with Dr. Aoife &mdash; which suits?&rdquo;</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__ellipsis">&middot; &middot; &middot;</span>
+      </div>
+
+      <div class="timeline__row timeline__row--marker" role="listitem">
+        <span class="timeline__time">[02:14]</span>
+        <span class="timeline__marker">*** call ends ***</span>
+      </div>
+
+      <div class="timeline__row" role="listitem">
+        <span class="timeline__time">[02:19]</span>
+        <span class="timeline__who timeline__who--ai">SMS &rarr; you</span>
+        <span class="timeline__text timeline__text--plain">&ldquo;Recap from your CallMeIE demo call &mdash; owner will ring back on +353&nbsp;87&hellip;&rdquo;</span>
+      </div>
+
+    </div>
+
+    <p class="section-dek" style="margin-top: 28px;">
+      Real calls vary by vertical, but the shape is the same: qualify &rarr;
+      capture contact &rarr; transfer &rarr; the specialist AI does the actual
+      work &rarr; SMS recap lands on your phone before you&rsquo;ve hung up.
+    </p>
+  </section>
+
+  <!-- SECTION 02 — VERTICALS -->
+  <section class="editorial" id="verticals" aria-labelledby="verticals-title">
+    <div class="section-head">
+      <div class="section-num">&sect; 02</div>
+      <h2 id="verticals-title" class="section-title">Four verticals you can test</h2>
+    </div>
+    <p class="section-dek">
+      Tell Claire which vertical you want. She routes you. Each specialist AI
+      runs on a different knowledge base &mdash; real trade vocabulary, real
+      booking rules, real escalation paths.
+    </p>
+
+    <div class="vertical">
+      <div class="vertical__label">
+        <b>Dental</b>
+        Vertical 01
+      </div>
+      <div class="vertical__body">
+        <h3 class="vertical__head">Appointment desk for a dental practice</h3>
+        <p>
+          The dental AI handles new-patient intake, routine check-ups,
+          hygienist slots, emergency triage, and PRSI Treatment Benefit
+          questions. It checks the practice calendar live and offers two
+          real slots &mdash; never &ldquo;we&rsquo;ll ring you back&rdquo; unless the case
+          actually warrants a human.
+        </p>
+        <div class="vertical__try">
+          <span class="vertical__try-tag">Try this</span>
+          <span class="vertical__try-text">
+            Ask Claire for <b>dental</b>. Then ask the receptionist if they take
+            PRSI Treatment Benefit.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="vertical">
+      <div class="vertical__label">
+        <b>Motor Factors</b>
+        Vertical 02
+      </div>
+      <div class="vertical__body">
+        <h3 class="vertical__head">Parts counter for a motor factors</h3>
+        <p>
+          The motor-factors AI handles part lookups by make / model / year /
+          engine, stock checks, trade-account pricing, delivery windows, and
+          fitment questions. It understands that &ldquo;the timing kit&rdquo; is
+          not the same thing as &ldquo;the timing belt&rdquo; and asks accordingly.
+        </p>
+        <div class="vertical__try">
+          <span class="vertical__try-tag">Try this</span>
+          <span class="vertical__try-text">
+            Ask Claire for <b>motor factors</b>. Ask if they stock a timing belt
+            for a 2016 Ford Focus diesel.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="vertical">
+      <div class="vertical__label">
+        <b>Salon</b>
+        Vertical 03
+      </div>
+      <div class="vertical__body">
+        <h3 class="vertical__head">Booking desk for a hair salon</h3>
+        <p>
+          The salon AI handles stylist-specific bookings, colour services,
+          deposit policy, patch-test rules for first-time colour, and
+          rescheduling. It knows which stylists do balayage versus which are
+          blow-dry only, and it takes a deposit when the service type
+          requires one.
+        </p>
+        <div class="vertical__try">
+          <span class="vertical__try-tag">Try this</span>
+          <span class="vertical__try-text">
+            Ask Claire for <b>a hair salon</b>. Ask for a balayage with your
+            usual stylist and whether they take a deposit.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="vertical">
+      <div class="vertical__label">
+        <b>Solicitor</b>
+        Vertical 04
+      </div>
+      <div class="vertical__body">
+        <h3 class="vertical__head">Front desk for a solicitor&rsquo;s office</h3>
+        <p>
+          The solicitor AI handles conveyancing enquiries, wills &amp; probate
+          intake, consultation booking, and quote requests by matter type. It
+          knows the difference between a first-time buyer Help-to-Buy purchase
+          and an investment buy-to-let, and it quotes within the firm&rsquo;s
+          published bands or escalates to the partner.
+        </p>
+        <div class="vertical__try">
+          <span class="vertical__try-tag">Try this</span>
+          <span class="vertical__try-text">
+            Ask Claire for <b>a solicitor</b>. Ask about a first-time buyer
+            mortgage conveyancing quote.
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — WHAT'S REALLY HAPPENING -->
+  <section class="editorial" id="stack" aria-labelledby="stack-title">
+    <div class="section-head">
+      <div class="section-num">&sect; 03</div>
+      <h2 id="stack-title" class="section-title">What&rsquo;s really happening behind the call</h2>
+    </div>
+    <p class="section-dek">
+      Plainspoken, no hype. Four commodity services, wired together carefully,
+      running on a small server in Limerick. That&rsquo;s the whole trick.
+    </p>
+
+    <div class="prose-block">
+      <div>
+        <p>
+          When you ring the demo line, <strong>Twilio</strong> answers the call
+          on the PSTN &mdash; the same phone network your landline uses. Twilio
+          hands the audio stream to <strong>Vapi</strong>, which runs the voice
+          pipeline: OpenAI speech-to-text on the way in, a language model in the
+          middle, and OpenAI voice on the way out.
+        </p>
+        <p>
+          The language model &mdash; <strong>Claude or GPT</strong>, depending
+          on the vertical &mdash; reads each turn of the conversation, checks
+          the relevant knowledge base or calendar, and writes the next line.
+          When the vertical AI needs to book an appointment, it calls
+          <strong>Google Calendar</strong> directly, checks real availability,
+          and writes the event against the practice&rsquo;s own calendar.
+        </p>
+        <p>
+          End-to-end, a turn takes <strong>under 800ms on average</strong>
+          &mdash; close enough to human timing that most callers don&rsquo;t
+          notice until they ask something only a human would know, at which
+          point the AI says so and escalates.
+        </p>
+      </div>
+
+      <ul class="stack-list" aria-label="Stack components">
+        <li>
+          <span>Voice pipeline</span>
+          <span><b>Vapi</b> &mdash; OpenAI speech-to-text in, OpenAI voice out, barge-in handling, turn-taking.</span>
+        </li>
+        <li>
+          <span>Telephony</span>
+          <span><b>Twilio</b> &mdash; PSTN termination, number provisioning, transfer bridging, SMS recap.</span>
+        </li>
+        <li>
+          <span>Reasoning</span>
+          <span><b>Claude / GPT</b> &mdash; generates each reply in real time against the vertical&rsquo;s knowledge base.</span>
+        </li>
+        <li>
+          <span>Scheduling</span>
+          <span><b>Google Calendar</b> &mdash; checks live availability and writes the event on the practice calendar.</span>
+        </li>
+        <li>
+          <span>Turn latency</span>
+          <span><b>&lt; 800ms avg</b> &mdash; measured end to end, end-of-speech to start-of-reply, on the demo line.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — HONESTY -->
+  <section class="editorial" id="honesty" aria-labelledby="honesty-title">
+    <div class="section-head">
+      <div class="section-num">&sect; 04</div>
+      <h2 id="honesty-title" class="section-title">What it sounds like if it fails</h2>
+    </div>
+    <p class="section-dek">
+      Because you will try to confuse it, and sometimes you&rsquo;ll succeed.
+      Here&rsquo;s what happens when you do.
+    </p>
+
+    <div class="honesty">
+      <div class="honesty__kicker">Failure modes &mdash; on the record</div>
+      <p>
+        Sometimes Claire doesn&rsquo;t catch the vertical on the first try and
+        asks once more. Background noise eats the first word, or you name a
+        trade she doesn&rsquo;t route for yet. She asks again. She doesn&rsquo;t
+        guess.
+      </p>
+      <p>
+        Sometimes the vertical AI hits a question it genuinely can&rsquo;t
+        answer &mdash; a pricing edge case, a clinical judgement, a legal
+        opinion. In that case it says so: <em>&ldquo;let me check that with the
+        owner and ring you back today.&rdquo;</em> The call ends, an SMS goes to
+        the owner with the full transcript, and the human rings back on the
+        number you gave Claire. That&rsquo;s the escalation path &mdash; not a
+        failure.
+      </p>
+      <p>
+        <strong>We&rsquo;d rather an honest &ldquo;let me check&rdquo; than a
+        confident wrong answer.</strong> A receptionist who makes things up
+        costs you customers. A receptionist who says &ldquo;I&rsquo;ll find
+        out&rdquo; keeps them.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — NEXT STEP -->
+  <section class="editorial" id="next" aria-labelledby="next-title">
+    <div class="section-head">
+      <div class="section-num">&sect; 05</div>
+      <h2 id="next-title" class="section-title">Next step</h2>
+    </div>
+    <p class="section-dek">
+      Two ways in. Ring the demo and hear it work, or skip the demo and start
+      the onboarding form &mdash; we do both every week.
+    </p>
+
+    <div class="next-step">
+      <div class="next-step__primary">
+        <div class="next-step__kicker">Primary &mdash; 90 seconds</div>
+        <h3 class="next-step__head">Ring the demo now</h3>
+        <a class="next-step__number" href="tel:+16617643212">+1 (661) 764-3212</a>
+        <p class="next-step__note">
+          One real call. Claire answers, qualifies, transfers. Try the vertical
+          that matches your business. You&rsquo;ll get an SMS recap after.
+        </p>
+      </div>
+
+      <div class="next-step__secondary">
+        <div class="next-step__kicker">Or skip the demo</div>
+        <p>
+          You&rsquo;ve heard enough. You run the kind of business we build for,
+          and you&rsquo;d rather just tell us what to set up.
+        </p>
+        <a class="onboard-link" href="onboard.html">Prefer to just onboard? &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.page -->
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="page">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>CallMeIE</h4>
+        <p>AI phone receptionist for Irish SMBs. Built &amp; operated from Limerick, Ireland.</p>
+        <p>Stack: Vapi &middot; Twilio &middot; Google Calendar &middot; FastAPI on Render.</p>
+        <p>Email: <a href="mailto:callmeie@proton.me" class="mono-val">callmeie@proton.me</a></p>
+        <p>Demo line: <span class="mono-val">+1 (661) 764-3212</span></p>
+      </div>
+      <div class="footer-col">
+        <h4>This page</h4>
+        <ul>
+          <li><a href="#script">What you&rsquo;ll hear</a></li>
+          <li><a href="#verticals">Four verticals</a></li>
+          <li><a href="#stack">The stack</a></li>
+          <li><a href="#honesty">Failure modes</a></li>
+          <li><a href="#next">Next step</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="onboard.html">Onboarding form</a></li>
+          <li><a href="/index.html#pricing">Pricing</a></li>
+          <li><a href="/index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy notice</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="mailto:callmeie@proton.me?subject=GDPR%20data%20request">GDPR request</a></li>
+          <li><a href="mailto:callmeie@proton.me?subject=DPA%20request">DPA on request</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span class="footer-legal__wordmark">CALLMEIE &mdash; LIMERICK</span>
+      <span>&copy; 2026 CallMeIE. All rights reserved.</span>
+      <span>Built in Limerick &nbsp;&middot;&nbsp; Ring +1 (661) 764-3212</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

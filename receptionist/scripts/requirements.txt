@@ -1,0 +1,11 @@
+backports.zoneinfo==0.2.1; python_version < "3.9"
+fastapi==0.115.0
+google-api-python-client==2.153.0
+google-auth==2.35.0
+google-auth-httplib2==0.2.0
+httpx==0.27.0
+requests==2.32.0
+uvicorn==0.30.0
+psycopg[binary]==3.2.7
+# AUD-038 — Vapi metered billing + Stripe Customer Portal
+stripe>=10.0.0
