@@ -532,6 +532,15 @@ img, svg { max-width: 100%; display: block; }
 }
 .cta-tail .btn-primary:hover { background: #a87633; border-color: #a87633; color: var(--paper); }
 
+/* ============ MOBILE NAV ============ */
+@media (max-width: 640px) {
+  .nav-cta .nav-link { display: none; }
+  .nav-cta { gap: 8px; }
+  .nav-inner { padding-left: 16px; padding-right: 16px; }
+  .nav-brand { font-size: 18px; }
+  .btn { padding: 10px 14px; font-size: 13px; }
+}
+
 /* ============ FOOTER ============ */
 .footer {
   background: var(--paper);
