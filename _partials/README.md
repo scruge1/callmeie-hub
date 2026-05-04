@@ -81,7 +81,7 @@ To opt a page out of one specific partial but keep others (e.g. footer-only):
 ```
 _partials/
 ├── README.md                         (this file)
-├── cohesion-strip.html               (universal Callmeie strip — sales + product pages)
+├── cohesion-strip.html               (universal CallMeIE strip — sales + product pages)
 ├── cohesion-strip-pill.html          (minimal pill — demos + samples)
 ├── cohesion-breadcrumb.html          (3-segment breadcrumb)
 ├── cohesion-footer.html              (universal footer — sales + product pages)

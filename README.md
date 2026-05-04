@@ -1,6 +1,6 @@
 # callmeie-hub
 
-Parent-brand hub for **Callmeie Technologies Ltd** — the Limerick AI ops studio.
+Parent-brand hub for **CallMeIE Technologies Ltd** — the Limerick AI ops studio.
 This repo serves the apex domain `callmeie.ie` via GitHub Pages.
 
 - **Live**: https://callmeie.ie
@@ -76,4 +76,4 @@ See `CALLMEIE-PARENT-HUB-BUILD-SPEC.md` §6 for the 7-phase runbook.
 
 ## License
 
-Proprietary. Callmeie Technologies Ltd.
+Proprietary. CallMeIE Technologies Ltd.
