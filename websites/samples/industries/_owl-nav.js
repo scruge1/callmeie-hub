@@ -1,7 +1,7 @@
 /**
  * Callmeie Technologies sample-preview nav bar.
  * Loaded from every demo/sample page via:
- *   - demos/*/index.html  →  <script src="/samples/industries/_owl-nav.js" defer></script>
+ *   - demos/*/index.html  →  <script src="/websites/samples/industries/_owl-nav.js" defer></script>
  *   - samples/industries/*.html  →  <script src="_owl-nav.js" defer></script>
  *
  * Fixed bottom-centre bar: back to gallery, ← Prev, 01/10, Next →, "Build this", ×
@@ -10,16 +10,16 @@
   "use strict";
 
   var SAMPLES = [
-    { slug: "slaney-dental-wexford",   url: "/demos/slaney-dental-wexford/",                    name: "Slaney Dental",     style: "Typographic-First"     },
-    { slug: "strand-road-dental",      url: "/demos/strand-road-dental/",                       name: "Strand Road Dental",style: "Luxury Minimal"         },
-    { slug: "vetcare-limerick",        url: "/demos/vetcare-limerick/",                         name: "Vetcare Limerick",  style: "Warm & Approachable"   },
-    { slug: "murphy-plumbing-cork",    url: "/demos/murphy-plumbing-cork/",                     name: "Murphy Plumbing",   style: "Bold Utility"          },
-    { slug: "curtin-electrical",       url: "/demos/curtin-electrical/",                        name: "Curtin Electrical", style: "Technical Split-Panel" },
-    { slug: "clancys-restaurant-cork", url: "/demos/clancys-restaurant-cork/",                  name: "Clancy's Cork",     style: "Fine Dining Cinematic" },
-    { slug: "wildflour-bakery-galway", url: "/demos/wildflour-bakery-galway/",                  name: "Wildflour Bakery",  style: "Warm Craft"            },
-    { slug: "01-dental-swiss",         url: "/samples/industries/01-dental-swiss.html",         name: "Dental Practice",   style: "Swiss Editorial"       },
-    { slug: "02-solicitor-swiss",      url: "/samples/industries/02-solicitor-swiss.html",      name: "Solicitors",        style: "Swiss Authority"       },
-    { slug: "06-trade-pro-dark-oled",  url: "/samples/industries/06-trade-pro-dark-oled.html",  name: "Trade Pro",         style: "Dark OLED"             }
+    { slug: "slaney-dental-wexford",   url: "/websites/demos/slaney-dental-wexford/",                    name: "Slaney Dental",     style: "Typographic-First"     },
+    { slug: "strand-road-dental",      url: "/websites/demos/strand-road-dental/",                       name: "Strand Road Dental",style: "Luxury Minimal"         },
+    { slug: "vetcare-limerick",        url: "/websites/demos/vetcare-limerick/",                         name: "Vetcare Limerick",  style: "Warm & Approachable"   },
+    { slug: "murphy-plumbing-cork",    url: "/websites/demos/murphy-plumbing-cork/",                     name: "Murphy Plumbing",   style: "Bold Utility"          },
+    { slug: "curtin-electrical",       url: "/websites/demos/curtin-electrical/",                        name: "Curtin Electrical", style: "Technical Split-Panel" },
+    { slug: "clancys-restaurant-cork", url: "/websites/demos/clancys-restaurant-cork/",                  name: "Clancy's Cork",     style: "Fine Dining Cinematic" },
+    { slug: "wildflour-bakery-galway", url: "/websites/demos/wildflour-bakery-galway/",                  name: "Wildflour Bakery",  style: "Warm Craft"            },
+    { slug: "01-dental-swiss",         url: "/websites/samples/industries/01-dental-swiss.html",         name: "Dental Practice",   style: "Swiss Editorial"       },
+    { slug: "02-solicitor-swiss",      url: "/websites/samples/industries/02-solicitor-swiss.html",      name: "Solicitors",        style: "Swiss Authority"       },
+    { slug: "06-trade-pro-dark-oled",  url: "/websites/samples/industries/06-trade-pro-dark-oled.html",  name: "Trade Pro",         style: "Dark OLED"             }
   ];
 
   var GALLERY_URL = "https://callmeie.ie/websites/#styles";
