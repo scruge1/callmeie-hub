@@ -143,6 +143,11 @@ def create_client(config: dict) -> dict:
         json={
             "name": f"{name} Receptionist",
             "firstMessage": f"Hi, thanks for ringing {name}! This is {config['ai_name']}. How can I help you today?",
+            # 10-minute hard cap on every call. Prevents the "midnight prank-call
+            # wave runs the meter for hours on a looping prompt" failure mode
+            # called out in `_research/2026-05-07-receptionist-lifecycle.md` Q7
+            # risk #5. €0.10/min Vapi blended × 600s = €1 worst-case per call.
+            "maxDurationSeconds": 600,
             "model": {
                 "provider": "anthropic",
                 "model": "claude-haiku-4-5-20251001",
