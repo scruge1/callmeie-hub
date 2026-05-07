@@ -34,10 +34,48 @@ The client.json file should contain:
 import argparse
 import json
 import os
+import re
 import sys
 import requests
 
 VAPI_API_KEY = os.environ.get("VAPI_API_KEY", "")
+
+# GDPR / ePrivacy Regulations 2011 (IE): inbound calls must be told they may be
+# recorded BEFORE recording starts. Vapi records every call by default, so the
+# very first thing the assistant says + its system prompt MUST disclose it.
+# This validator runs BEFORE every Vapi /assistant POST or PATCH that touches
+# model.messages — fail closed if the disclosure is missing. Catches the
+# "ops accidentally pasted a clean prompt and stripped the disclosure" failure
+# mode deterministically. See _research/2026-05-07-receptionist-lifecycle.md §Q7.
+RECORDING_DISCLOSURE_PATTERNS = (
+    re.compile(r"may be recorded", re.IGNORECASE),
+    re.compile(r"this call.*recorded", re.IGNORECASE),
+    re.compile(r"calls.*recorded.*quality", re.IGNORECASE),
+    re.compile(r"recorded.*for quality", re.IGNORECASE),
+    re.compile(r"recorded.*for training", re.IGNORECASE),
+)
+
+
+def assert_recording_disclosure(prompt: str, where: str = "system prompt") -> None:
+    """Fail closed if the prompt does not contain a recording-disclosure phrase.
+
+    Required by GDPR + Irish ePrivacy Regulations 2011: Vapi records every call
+    by default, so the assistant's first turn AND its system prompt must inform
+    the caller. The disclosure must be a non-removable part of the system
+    prompt — this validator enforces it at every assistant create / update.
+    """
+    if not isinstance(prompt, str) or not prompt.strip():
+        raise SystemExit(f"FATAL: {where} is empty — recording disclosure required.")
+    for pattern in RECORDING_DISCLOSURE_PATTERNS:
+        if pattern.search(prompt):
+            return
+    raise SystemExit(
+        f"FATAL: {where} is missing a recording-disclosure phrase.\n"
+        f"  Required: at least one of {[p.pattern for p in RECORDING_DISCLOSURE_PATTERNS]}\n"
+        f"  Per GDPR + IE ePrivacy Regulations 2011, every Vapi-recorded inbound\n"
+        f"  call must be told it may be recorded before recording begins.\n"
+        f"  Add to the prompt body, redeploy, retry."
+    )
 TEMPLATE_PROMPT = """You are {ai_name}, the receptionist at {business_name} in Limerick. You answer phone calls, help callers with questions, and book appointments.
 
 VOICE RULES - these override everything:
@@ -97,6 +135,7 @@ def create_client(config: dict) -> dict:
 
     # 1. Create assistant
     prompt = TEMPLATE_PROMPT.format(**config)
+    assert_recording_disclosure(prompt, where=f"system prompt for {name}")
     print("[1/6] Creating assistant...")
     resp = requests.post(
         "https://api.vapi.ai/assistant",
@@ -220,6 +259,9 @@ def create_client(config: dict) -> dict:
     print("[6/6] Assigning tools to assistant...")
     tool_ids = [t for t in [check_tool, create_tool, transfer_tool, sms_tool, kb_tool] if t]
 
+    # Re-assert disclosure on the second PATCH — protects against the case where
+    # someone mutates `prompt` between create and final attach.
+    assert_recording_disclosure(prompt, where=f"final-PATCH system prompt for {name}")
     resp = requests.patch(
         f"https://api.vapi.ai/assistant/{assistant_id}",
         headers=headers,
