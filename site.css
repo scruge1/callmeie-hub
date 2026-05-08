@@ -621,3 +621,131 @@ a.product-row:hover .product-arrow::after { right: 0; }
   }
   .product-card { border-width: 2px; }
 }
+
+/* ============ DEMO LIVE-LINE STRIP ============
+   Surfaces the live AI Receptionist demo number on the hub home page.
+   Sits between hero and products section so visitors can experience
+   the product before reading three blurbs about it. Single tel: link,
+   AI/recording disclosure, mobile-stack layout. */
+.demo-line {
+  max-width: 980px;
+  margin: clamp(36px, 5vw, 64px) auto clamp(24px, 3vw, 40px);
+  padding: clamp(20px, 3vw, 28px) clamp(20px, 4vw, 32px);
+  border: 1px solid rgba(29, 53, 87, 0.18);
+  border-radius: 6px;
+  background: linear-gradient(180deg, #fff9f0 0%, #fff3de 100%);
+  position: relative;
+  overflow: hidden;
+}
+.demo-line::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--brand, #1d3557);
+}
+.demo-line-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(16px, 3vw, 28px);
+  align-items: center;
+}
+@media (max-width: 720px) {
+  .demo-line-inner { grid-template-columns: 1fr; }
+}
+.demo-line-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand, #1d3557);
+  margin-bottom: 8px;
+}
+.demo-line-eyebrow .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1f6a3c;
+  display: inline-block;
+}
+.demo-line-eyebrow .dot-pulse {
+  box-shadow: 0 0 0 0 rgba(31, 106, 60, 0.6);
+  animation: demo-line-pulse 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+@keyframes demo-line-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(31, 106, 60, 0.55); }
+  70%  { box-shadow: 0 0 0 10px rgba(31, 106, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(31, 106, 60, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .demo-line-eyebrow .dot-pulse { animation: none; }
+}
+.demo-line-note {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #2d3239;
+}
+.demo-line-disclosure {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.55);
+  font-style: italic;
+}
+.demo-line-call {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
+  color: #1a1812;
+  padding: 14px 22px;
+  background: #ffffff;
+  border: 1px solid rgba(29, 53, 87, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 3px 0 var(--brand, #1d3557);
+  transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+  white-space: nowrap;
+}
+.demo-line-call:hover,
+.demo-line-call:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 var(--brand, #1d3557);
+}
+.demo-line-call:focus-visible {
+  outline: 2px solid var(--brand, #1d3557);
+  outline-offset: 4px;
+}
+@media (max-width: 720px) {
+  .demo-line-call { align-items: center; width: 100%; }
+}
+.demo-line-call-prefix {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 4px;
+}
+.demo-line-call-number {
+  font-family: "Fraunces", "Bodoni Moda", Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: -0.02em;
+}
+.demo-line-aside {
+  margin: 14px 0 0;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+@media (prefers-reduced-motion: reduce) {
+  .demo-line-call { transition: none; }
+  .demo-line-call:hover { transform: none; }
+}
