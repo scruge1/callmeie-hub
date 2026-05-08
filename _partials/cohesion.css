@@ -436,3 +436,106 @@
   .callmeie-products-menu { animation: none; }
   .callmeie-strip *, .callmeie-pill, .callmeie-footer * { transition: none !important; }
 }
+
+/* ============ WHATSAPP FAB ============
+   Floating action button — bottom-right.
+   z-index sits below dropdown but above strip/content.
+   Brand-coloured (WhatsApp green #25D366) with brand-ring focus.
+   Hidden on print. Reduced-motion aware. */
+
+.cmt-wa-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background: #25D366;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.12);
+  z-index: 95; /* under cmt-z-strip 100 sticky strip; above page content */
+  transition: transform var(--cmt-duration-fast) var(--cmt-ease),
+              box-shadow var(--cmt-duration-fast) var(--cmt-ease);
+  /* Keep clear of mobile system UI / bottom sheets */
+  padding: 0;
+  border: 0;
+}
+
+.cmt-wa-fab:hover,
+.cmt-wa-fab:focus-visible {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22), 0 4px 8px rgba(0, 0, 0, 0.14);
+}
+.cmt-wa-fab:focus-visible {
+  outline: 3px solid var(--cmt-brand);
+  outline-offset: 4px;
+}
+.cmt-wa-fab:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.cmt-wa-glyph {
+  pointer-events: none;
+  display: block;
+}
+
+/* Visually-hidden text label for screen readers AND when shown on hover (desktop only).
+   Default: hidden (icon-only FAB on mobile + first impression).
+   Optional: surface on hover via expand pattern (future enhancement). */
+.cmt-wa-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Mobile — slightly smaller, tighter to corner, but still ≥48px tap target */
+@media (max-width: 480px) {
+  .cmt-wa-fab {
+    width: 56px;
+    height: 56px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .cmt-wa-glyph {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Avoid stacking on top of any inline tel: bottom-bar on receptionist demo pages.
+   Those pages can override via a body class .has-bottom-cta to lift the FAB. */
+body.has-bottom-cta .cmt-wa-fab {
+  bottom: 92px;
+}
+@media (max-width: 480px) {
+  body.has-bottom-cta .cmt-wa-fab {
+    bottom: 84px;
+  }
+}
+
+/* Hide on print */
+@media print {
+  .cmt-wa-fab { display: none !important; }
+}
+
+/* Reduced motion — kill transform & shadow lift */
+@media (prefers-reduced-motion: reduce) {
+  .cmt-wa-fab,
+  .cmt-wa-fab:hover,
+  .cmt-wa-fab:focus-visible,
+  .cmt-wa-fab:active {
+    transition: none;
+    transform: none;
+  }
+}
+
