@@ -562,7 +562,7 @@ cash on completion ta MJQ</code></pre>
     <span class="proof-eyebrow">§ 05c — Drop your own</span>
     <h2 id="drop-it-title" class="section-title">Drop a real invoice. See the extractor work for yourself.</h2>
     <p class="section-lede">
-      Upload a text-layer PDF (Sage / Xero / Stripe export, or any digital invoice). We extract via pypdf in-memory, normalise fields with our Irish-VAT prompt, and return the same confidence-gated JSON the production pipeline produces. <strong>The bytes you upload never touch our disk and are dropped from memory the moment we have the text.</strong>
+      Upload any PDF — digital or scanned. Digital PDFs go through pdfplumber in &lt;200 ms; scans get rendered via pypdfium2, preprocessed (Lanczos 3.5× upscale + Hough deskew + adaptive Gaussian threshold) and run through the Tesseract + RapidOCR ensemble. Fields are then normalised by our Irish-VAT prompt and confidence-gated against the math invariant + IE statutory rate set. <strong>The bytes you upload never touch our disk and are dropped from memory the moment we have the text.</strong>
     </p>
 
     <form class="drop-it__form" data-drop-form aria-describedby="drop-it-disclosure">
@@ -590,9 +590,17 @@ cash on completion ta MJQ</code></pre>
 
 <style>
   .drop-it {
-    padding: clamp(64px, 8vw, 112px) 0;
+    padding: clamp(64px, 8vw, 112px) 0 clamp(96px, 11vw, 144px);
     background: linear-gradient(180deg, #f3ecdf 0%, #ede1ce 100%);
     border-top: 1px solid var(--line, rgba(26, 24, 18, 0.12));
+  }
+  /* Lift the disclosure paragraph above the page-bottom FAB stack
+     (chatbot pill bottom-left + WhatsApp circle bottom-right both
+     sit at z-index 90/95 on a fixed bottom of 16-20px). Without the
+     extra pad, the last line of fine print on /docs/ drops behind
+     the chatbot pill on tall viewports. */
+  .drop-it .section-inner {
+    padding-bottom: clamp(80px, 10vw, 120px);
   }
   .drop-it__form {
     display: flex; flex-direction: column; gap: 16px;
