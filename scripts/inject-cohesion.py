@@ -47,7 +47,7 @@ EXCLUDE_DIRS = {"_partials", "scripts", "node_modules", ".git", ".github"}
 # Sentinel regex captures: type, optional attrs blob, content, end-type
 # Tolerates whitespace + newlines between the markers.
 SENTINEL_RE = re.compile(
-    r"<!--\s*COHESION:(?P<type>STRIP|BREADCRUMB|FOOTER|TRUST)-START(?P<attrs>[^>]*)-->"
+    r"<!--\s*COHESION:(?P<type>STRIP|BREADCRUMB|FOOTER|TRUST|WHATSAPP)-START(?P<attrs>[^>]*)-->"
     r"(?P<content>.*?)"
     r"<!--\s*COHESION:(?P=type)-END\s*-->",
     re.DOTALL | re.IGNORECASE,
