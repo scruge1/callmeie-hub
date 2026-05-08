@@ -130,6 +130,115 @@
   @media (prefers-reduced-motion: reduce) {
     .hero-icon { animation: none; }
   }
+
+  /* ============ ANCHOR-COST: above-fold price contrast ============
+     Sits between hero and §01 demo. Single primary CTA + secondary
+     anchor link to full §05 breakdown. Real Irish 2026 payroll
+     numbers — sourceable footnote. Mobile-first stack. */
+  .anchor-cost {
+    margin: clamp(40px, 5vw, 72px) auto clamp(32px, 4vw, 56px);
+    padding: 0 clamp(16px, 4vw, 24px);
+    max-width: 980px;
+  }
+  .anchor-cost__lead {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--burgundy, #7a1e2c);
+    margin: 0 0 16px; text-align: center;
+  }
+  .anchor-cost__title {
+    font-family: "Fraunces", "Bodoni Moda", Georgia, serif;
+    font-style: italic; font-weight: 800;
+    font-size: clamp(26px, 4vw, 40px);
+    line-height: 1.1; letter-spacing: -0.02em;
+    margin: 0 0 24px; text-align: center;
+    color: #1a1812;
+  }
+  .anchor-cost__grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+  }
+  @media (max-width: 720px) {
+    .anchor-cost__grid { grid-template-columns: 1fr; }
+  }
+  .anchor-cost__col {
+    padding: 22px 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 4px;
+    text-align: center;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+  }
+  .anchor-cost__col--human {
+    background: linear-gradient(180deg, #faf6ee, #f0e7d4);
+  }
+  .anchor-cost__col--ai {
+    background: linear-gradient(180deg, #fff9f0, #fff3de);
+    border-color: rgba(122, 30, 44, 0.3);
+  }
+  .anchor-cost__tag {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(0,0,0,0.55);
+    margin: 0 0 12px;
+  }
+  .anchor-cost__price {
+    font-family: "Fraunces", "Bodoni Moda", Georgia, serif;
+    font-weight: 900;
+    font-size: clamp(34px, 5.5vw, 56px);
+    line-height: 1; letter-spacing: -0.03em;
+    margin: 0; color: #1a1812;
+  }
+  .anchor-cost__price em {
+    font-size: 0.45em; font-style: normal; font-weight: 600;
+    color: rgba(0,0,0,0.55); letter-spacing: 0;
+  }
+  .anchor-cost__col--human .anchor-cost__price { color: #6b665d; }
+  .anchor-cost__delta {
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Fraunces", "Bodoni Moda", Georgia, serif;
+    font-style: italic; font-weight: 800;
+    font-size: clamp(18px, 2.5vw, 26px);
+    color: var(--burgundy, #7a1e2c);
+    padding: 0 6px;
+  }
+  @media (max-width: 720px) {
+    .anchor-cost__delta { padding: 2px 0; font-size: 16px; }
+  }
+  .anchor-cost__detail {
+    font-size: 13px; line-height: 1.45;
+    color: rgba(0,0,0,0.65);
+    margin: 12px 0 0;
+  }
+  .anchor-cost__detail strong { color: #1a1812; }
+  .anchor-cost__cta-row {
+    margin-top: 24px;
+    display: flex; flex-wrap: wrap; gap: 12px;
+    justify-content: center; align-items: center;
+  }
+  .anchor-cost__more {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(0,0,0,0.6); text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    padding-bottom: 2px;
+  }
+  .anchor-cost__more:hover {
+    color: var(--burgundy, #7a1e2c);
+    border-bottom-color: var(--burgundy, #7a1e2c);
+  }
+  .anchor-cost__source {
+    margin: 16px 0 0;
+    font-size: 11px; font-style: italic;
+    color: rgba(0,0,0,0.5);
+    text-align: center;
+  }
 </style>
   <link rel="stylesheet" href="/_partials/cohesion.css">
 </head>
@@ -251,6 +360,42 @@
       <a class="btn-primary" href="tel:+16617643212">Ring the demo</a>
       <a class="btn-secondary" href="onboard.html">See it onboard a business →</a>
     </div>
+  </section>
+
+  <!-- ANCHOR-COST: above-fold price contrast -->
+  <section class="anchor-cost" aria-labelledby="anchor-cost-title">
+    <p class="anchor-cost__lead">The maths · Ireland 2026</p>
+    <h2 id="anchor-cost-title" class="anchor-cost__title">€1,840 to hire one. €149 to ship one.</h2>
+    <div class="anchor-cost__grid">
+      <div class="anchor-cost__col anchor-cost__col--human">
+        <div>
+          <p class="anchor-cost__tag">Part-time human · 25h/wk</p>
+          <p class="anchor-cost__price">€1,840 <em>– €2,366/mo</em></p>
+        </div>
+        <p class="anchor-cost__detail">
+          <strong>€14–€18/hr</strong> + employer PRSI 11.15% + auto-enrolment + holiday accrual.
+          Business hours only. No nights, weekends, lunch, sick days.
+        </p>
+      </div>
+      <div class="anchor-cost__delta" aria-hidden="true">vs</div>
+      <div class="anchor-cost__col anchor-cost__col--ai">
+        <div>
+          <p class="anchor-cost__tag">CallMeIE Starter · 24/7/365</p>
+          <p class="anchor-cost__price">€149 <em>/mo</em></p>
+        </div>
+        <p class="anchor-cost__detail">
+          300 minutes included. Every call, every hour, every day — including Christmas.
+          €297 setup once. Escalates to your mobile when judgement is needed.
+        </p>
+      </div>
+    </div>
+    <div class="anchor-cost__cta-row">
+      <a class="btn-primary" href="tel:+16617643212">Ring the demo</a>
+      <a class="anchor-cost__more" href="#cost">See full breakdown ↓</a>
+    </div>
+    <p class="anchor-cost__source">
+      Figures: published Irish part-time front-desk payroll ranges 2026 · Employer PRSI 11.15% · auto-enrolment My Future Fund · holiday accrual 8.7%
+    </p>
   </section>
 
   <!-- HOW THE DEMO WORKS + sample call excerpt (dental) -->
