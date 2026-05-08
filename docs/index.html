@@ -1138,7 +1138,8 @@ cash on completion ta MJQ</code></pre>
     var ex = body.extracted || {};
     var conf = body.confidence || {};
     var isInvoice = body.is_invoice_shaped === true;
-    var bounce = isInvoice && ((body.below_gate && body.below_gate.length > 0) || (body.missing && body.missing.length > 0));
+    var isTightInvoice = body.is_tight_invoice === true;
+    var bounce = isTightInvoice && ((body.below_gate && body.below_gate.length > 0) || (body.missing && body.missing.length > 0));
 
     var html = '';
 
@@ -1151,7 +1152,13 @@ cash on completion ta MJQ</code></pre>
     html += '<div class="drop-it__result-head">';
     html += '<span class="drop-it__result-tag">' + escapeHtml(typeLabel) + ' · ' + (body.page_count || '?') + ' page' + (body.page_count === 1 ? '' : 's') + '</span>';
     html += '<span class="drop-it__result-badge drop-it__result-badge--' + (bounce ? 'bounce' : 'ok') + '">';
-    html += isInvoice ? (bounce ? 'Bounce-back fired' : 'Invoice math gate ✓') : 'Adaptive extract';
+    if (isTightInvoice) {
+      html += bounce ? 'Bounce-back fired' : 'Invoice math gate ✓';
+    } else if (isInvoice) {
+      html += 'Statement extract';
+    } else {
+      html += 'Adaptive extract';
+    }
     html += '</span></div>';
 
     html += '<div class="drop-it__overview">';
@@ -1288,10 +1295,12 @@ cash on completion ta MJQ</code></pre>
       html += '<p class="drop-it__ie-note"><strong>Irish VAT note:</strong> ' + escapeHtml(ex.ie_vat_notes) + '</p>';
     }
 
-    // 9. Foot — invoice-only review queue line, then audit receipt
-    if (isInvoice && body.review_note) {
+    // 9. Foot — tight-invoice-only review queue line, then audit receipt.
+    //    Platform / bank statements legitimately leave net-vat-gross null
+    //    so the math gate doesn't apply and the review-queue noise is hidden.
+    if (isTightInvoice && body.review_note) {
       html += '<p class="drop-it__result-foot">Review queue: <em>' + escapeHtml(body.review_note) + '</em></p>';
-    } else if (isInvoice && body.math_gate_passed) {
+    } else if (isTightInvoice && body.math_gate_passed) {
       html += '<p class="drop-it__result-foot">Math gate passed — net + VAT = gross. Would route straight to a Sage / Xero / BrightBooks export queue on a paying tier.</p>';
     }
 
