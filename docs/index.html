@@ -583,7 +583,7 @@ cash on completion ta MJQ</code></pre>
     <div class="drop-it__result" data-drop-result hidden></div>
 
     <p class="drop-it__disclosure" id="drop-it-disclosure">
-      <strong>Privacy contract.</strong> Your bytes are read into memory, parsed by pypdf, the buffer is dropped, and the text is sent to our IE-VAT prompt. We keep an audit row holding the size in bytes, page count, and a SHA-256 digest of the input — no content, no metadata that could rebuild your document. Processing region: Render Frankfurt. Sub-processor: xAI (Grok-4) for the field-normalisation step. Three uploads per visitor per hour. Production paying clients get a private endpoint with stricter SLAs and a signed DPA — this public sandbox is intentionally rate-limited.
+      <strong>Privacy contract.</strong> Your bytes are read into memory, parsed by pdfplumber (digital PDFs) or rendered + OCR'd by Tesseract (image-only PDFs), the buffer is dropped, and the resulting text is sent to our IE-VAT prompt. We keep an audit row holding the size in bytes, page count, and a SHA-256 digest of the input — no content, no metadata that could rebuild your document. Processing region: Hetzner Nuremberg DE (same infrastructure paying clients run on). Sub-processor: xAI (Grok-4) for the field-normalisation step (US under EU-US Data Privacy Framework). Three uploads per visitor per hour. <strong>What's missing vs. paying tier:</strong> the RapidOCR ensemble + voter agreement + GLM-OCR vision verifier + line-item table parser + 7-year VATCA retention + Label Studio bounce-back queue all stay behind the paying-client wall. Want a pilot on your own invoices? <a href="mailto:hello@callmeie.ie?subject=Doc%20Ops%20pilot%20%E2%80%94%20pipeline%20test">Email Adam</a>.
     </p>
   </div>
 </section>
@@ -809,7 +809,12 @@ cash on completion ta MJQ</code></pre>
   var statusEl = document.querySelector('[data-drop-status]');
   var resultEl = document.querySelector('[data-drop-result]');
 
-  var ENDPOINT = 'https://callmeie.onrender.com/api/docops/extract';
+  // P5b NARROW v1 (2026-05-08) — sandbox now lives on document-ops-portal
+  // (Coolify Hetzner), same Docker image as paying-tier, real Tesseract OCR
+  // for image-only PDFs. The Render predecessor at callmeie.onrender.com/api/docops/extract
+  // remains as a cold-failover and is documented in NEW-REPOS-NEXT-STEPS.md
+  // for retirement.
+  var ENDPOINT = 'https://portal.callmeie.ie/api/sandbox/extract';
   var MAX_BYTES = 10 * 1024 * 1024;
 
   function setStatus(text, tone) {
