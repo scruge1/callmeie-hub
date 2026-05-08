@@ -551,10 +551,446 @@ cash on completion ta MJQ</code></pre>
     </div>
 
     <p class="try-it__disclosure">
-      Samples are local to this page. Real uploads ship in our P5b release — Hetzner-hosted, processed in EU, deleted within 60 seconds, no original document retained.
+      Three local samples, no upload required. Want to feed it your own invoice? Drop one in the zone below — bytes processed in EU, dropped within seconds, no document retained.
     </p>
   </div>
 </section>
+
+<!-- DROP-IT — real upload, ephemeral pipeline (P5b) -->
+<section class="drop-it" id="drop-it" aria-labelledby="drop-it-title">
+  <div class="section-inner">
+    <span class="proof-eyebrow">§ 05c — Drop your own</span>
+    <h2 id="drop-it-title" class="section-title">Drop a real invoice. See the extractor work for yourself.</h2>
+    <p class="section-lede">
+      Upload a text-layer PDF (Sage / Xero / Stripe export, or any digital invoice). We extract via pypdf in-memory, normalise fields with our Irish-VAT prompt, and return the same confidence-gated JSON the production pipeline produces. <strong>The bytes you upload never touch our disk and are dropped from memory the moment we have the text.</strong>
+    </p>
+
+    <form class="drop-it__form" data-drop-form aria-describedby="drop-it-disclosure">
+      <label class="drop-it__zone" data-drop-zone tabindex="0" aria-label="Drag a PDF here or press Enter to choose a file">
+        <input type="file" name="file" accept="application/pdf,.pdf" data-drop-input hidden>
+        <span class="drop-it__zone-icon" aria-hidden="true">↥</span>
+        <span class="drop-it__zone-prompt"><strong>Drag a PDF here</strong> or click to choose</span>
+        <span class="drop-it__zone-meta">PDF · ≤ 10 MB · ≤ 8 pages · text layer only (no scans yet)</span>
+        <span class="drop-it__zone-file" data-drop-filename hidden></span>
+      </label>
+      <div class="drop-it__actions">
+        <button type="submit" class="try-it__btn" data-drop-submit disabled>Extract →</button>
+        <button type="button" class="drop-it__reset" data-drop-reset hidden>Reset</button>
+      </div>
+    </form>
+
+    <div class="drop-it__status" data-drop-status role="status" aria-live="polite" hidden></div>
+    <div class="drop-it__result" data-drop-result hidden></div>
+
+    <p class="drop-it__disclosure" id="drop-it-disclosure">
+      <strong>Privacy contract.</strong> Your bytes are read into memory, parsed by pypdf, the buffer is dropped, and the text is sent to our IE-VAT prompt. We keep an audit row holding the size in bytes, page count, and a SHA-256 digest of the input — no content, no metadata that could rebuild your document. Processing region: Render Frankfurt. Sub-processor: xAI (Grok-4) for the field-normalisation step. Three uploads per visitor per hour. Production paying clients get a private endpoint with stricter SLAs and a signed DPA — this public sandbox is intentionally rate-limited.
+    </p>
+  </div>
+</section>
+
+<style>
+  .drop-it {
+    padding: clamp(64px, 8vw, 112px) 0;
+    background: linear-gradient(180deg, #f3ecdf 0%, #ede1ce 100%);
+    border-top: 1px solid var(--line, rgba(26, 24, 18, 0.12));
+  }
+  .drop-it__form {
+    display: flex; flex-direction: column; gap: 16px;
+    margin: 28px 0 8px;
+  }
+  .drop-it__zone {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 38px 24px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 2px dashed rgba(26, 24, 18, 0.28);
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.15s, border-color 0.15s;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+  .drop-it__zone:focus-visible {
+    outline: 3px solid #c96f32;
+    outline-offset: 4px;
+  }
+  .drop-it__zone[data-state="hover"] {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #c96f32;
+  }
+  .drop-it__zone[data-state="ready"] {
+    background: #fff;
+    border-style: solid;
+    border-color: #1d3557;
+  }
+  .drop-it__zone-icon {
+    font-size: 32px;
+    color: #c96f32;
+    line-height: 1;
+  }
+  .drop-it__zone-prompt {
+    font-size: 16px;
+    color: #1a1812;
+  }
+  .drop-it__zone-prompt strong { font-weight: 700; }
+  .drop-it__zone-meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.55);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .drop-it__zone-file {
+    margin-top: 4px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: #1d3557;
+    background: rgba(29, 53, 87, 0.08);
+    padding: 4px 10px;
+    border-radius: 999px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .drop-it__actions {
+    display: flex; gap: 12px; align-items: center;
+  }
+  .drop-it__actions .try-it__btn[disabled] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .drop-it__reset {
+    border: 0; background: transparent; cursor: pointer;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.55);
+    padding: 8px 4px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .drop-it__reset:hover { color: #1a1812; }
+
+  .drop-it__status {
+    margin: 18px 0 0;
+    padding: 14px 16px;
+    border-radius: 4px;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .drop-it__status[data-tone="info"] {
+    background: rgba(29, 53, 87, 0.08);
+    border-left: 3px solid #1d3557;
+    color: #1a1812;
+  }
+  .drop-it__status[data-tone="error"] {
+    background: rgba(180, 30, 30, 0.08);
+    border-left: 3px solid #b41e1e;
+    color: #6b1010;
+  }
+  .drop-it__spinner {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border: 2px solid rgba(26, 24, 18, 0.18);
+    border-top-color: #1d3557;
+    border-radius: 50%;
+    animation: drop-it-spin 0.8s linear infinite;
+    vertical-align: -2px;
+    margin-right: 8px;
+  }
+  @keyframes drop-it-spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .drop-it__spinner { animation: none; border-top-color: transparent; }
+  }
+
+  .drop-it__result {
+    margin: 22px 0 0;
+    background: #1a1812;
+    color: #f3ecdf;
+    border-radius: 4px;
+    padding: 18px 22px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+  .drop-it__result-head {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .drop-it__result-tag {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(243, 236, 223, 0.65);
+  }
+  .drop-it__result-badge {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .drop-it__result-badge--ok     { background: rgba(31, 106, 60, 0.32);  color: #c8efd1; }
+  .drop-it__result-badge--bounce { background: rgba(220, 78, 78, 0.32);  color: #ffd1d1; }
+  .drop-it__result-row {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 12px;
+    padding: 4px 0;
+    align-items: baseline;
+  }
+  @media (max-width: 640px) {
+    .drop-it__result-row { grid-template-columns: 140px 1fr auto; }
+  }
+  .drop-it__result-key { color: rgba(243, 236, 223, 0.65); }
+  .drop-it__result-val--ok     { color: #c8efd1; }
+  .drop-it__result-val--warn   { color: #ffd8a6; }
+  .drop-it__result-val--bounce { color: #ffd1d1; }
+  .drop-it__result-val--null   { color: rgba(243, 236, 223, 0.45); font-style: italic; }
+  .drop-it__result-conf {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .drop-it__result-foot {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 12px;
+    color: rgba(243, 236, 223, 0.85);
+  }
+  .drop-it__result-foot em { color: #ffeac0; font-style: italic; }
+  .drop-it__result-receipt {
+    margin-top: 8px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    color: rgba(243, 236, 223, 0.45);
+    letter-spacing: 0.04em;
+  }
+
+  .drop-it__disclosure {
+    margin: 24px 0 0;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(26, 24, 18, 0.12);
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .drop-it__disclosure strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #1a1812;
+    font-weight: 700;
+  }
+</style>
+
+<script>
+(function () {
+  if (window.__cmtDropItBound) return;
+  window.__cmtDropItBound = true;
+
+  var form = document.querySelector('[data-drop-form]');
+  if (!form) return;
+  var zone = form.querySelector('[data-drop-zone]');
+  var input = form.querySelector('[data-drop-input]');
+  var fname = form.querySelector('[data-drop-filename]');
+  var submit = form.querySelector('[data-drop-submit]');
+  var reset = form.querySelector('[data-drop-reset]');
+  var statusEl = document.querySelector('[data-drop-status]');
+  var resultEl = document.querySelector('[data-drop-result]');
+
+  var ENDPOINT = 'https://callmeie.onrender.com/api/docops/extract';
+  var MAX_BYTES = 10 * 1024 * 1024;
+
+  function setStatus(text, tone) {
+    if (!text) { statusEl.hidden = true; statusEl.innerHTML = ''; return; }
+    statusEl.hidden = false;
+    statusEl.dataset.tone = tone || 'info';
+    statusEl.innerHTML = (tone === 'info' && text.indexOf('…') >= 0)
+      ? '<span class="drop-it__spinner" aria-hidden="true"></span>' + escapeHtml(text)
+      : escapeHtml(text);
+  }
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function fmt(v) {
+    if (v === null || v === undefined || v === '') return null;
+    if (typeof v === 'number') return v.toString();
+    return String(v);
+  }
+
+  function tone(c) {
+    if (c >= 0.98) return 'ok';
+    if (c >= 0.5) return 'warn';
+    if (c > 0) return 'bounce';
+    return 'null';
+  }
+
+  function chipBg(c) {
+    if (c >= 0.98) return 'background: rgba(31, 106, 60, 0.32); color: #c8efd1;';
+    if (c >= 0.5) return 'background: rgba(201, 111, 50, 0.32); color: #ffd8a6;';
+    if (c > 0) return 'background: rgba(220, 78, 78, 0.32); color: #ffd1d1;';
+    return 'background: rgba(243, 236, 223, 0.16); color: rgba(243, 236, 223, 0.55);';
+  }
+
+  function chooseFile(file) {
+    if (!file) return;
+    if (file.type && file.type.indexOf('pdf') === -1) {
+      setStatus('PDF only — that file looks like ' + file.type + '.', 'error');
+      return;
+    }
+    if (file.size > MAX_BYTES) {
+      setStatus('Too big. We cap public uploads at 10 MB. Yours is ' + (file.size / 1024 / 1024).toFixed(2) + ' MB.', 'error');
+      return;
+    }
+    fname.hidden = false;
+    fname.textContent = file.name + ' · ' + (file.size / 1024).toFixed(0) + ' KB';
+    zone.dataset.state = 'ready';
+    submit.disabled = false;
+    reset.hidden = false;
+    setStatus('', null);
+  }
+
+  zone.addEventListener('click', function () { input.click(); });
+  zone.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+  });
+  input.addEventListener('change', function () {
+    chooseFile(input.files && input.files[0]);
+  });
+  zone.addEventListener('dragover', function (e) {
+    e.preventDefault(); zone.dataset.state = 'hover';
+  });
+  zone.addEventListener('dragleave', function () {
+    if (input.files && input.files.length > 0) zone.dataset.state = 'ready';
+    else delete zone.dataset.state;
+  });
+  zone.addEventListener('drop', function (e) {
+    e.preventDefault();
+    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      input.files = e.dataTransfer.files;
+      chooseFile(e.dataTransfer.files[0]);
+    }
+  });
+
+  reset.addEventListener('click', function () {
+    input.value = '';
+    fname.hidden = true; fname.textContent = '';
+    delete zone.dataset.state;
+    submit.disabled = true;
+    reset.hidden = true;
+    resultEl.hidden = true; resultEl.innerHTML = '';
+    setStatus('', null);
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var file = input.files && input.files[0];
+    if (!file) return;
+    submit.disabled = true;
+    submit.textContent = 'Working…';
+    resultEl.hidden = true; resultEl.innerHTML = '';
+    setStatus('Extracting in-memory… your file is being read, parsed, and dropped.', 'info');
+
+    var fd = new FormData();
+    fd.append('file', file);
+
+    fetch(ENDPOINT, { method: 'POST', body: fd })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, status: r.status, body: j }; }); })
+      .then(function (resp) {
+        if (!resp.ok) {
+          var err = (resp.body && resp.body.error) || 'unknown_error';
+          var msg = (resp.body && resp.body.message) || mapError(err, resp.status);
+          setStatus(msg, 'error');
+        } else {
+          renderResult(resp.body);
+          setStatus('', null);
+        }
+      })
+      .catch(function (err) {
+        setStatus('Network error reaching the extractor. Bytes never left your browser if it failed before upload. (' + (err && err.message ? err.message : err) + ')', 'error');
+      })
+      .finally(function () {
+        submit.disabled = false;
+        submit.textContent = 'Extract →';
+      });
+  });
+
+  function mapError(code, status) {
+    switch (code) {
+      case 'pdf_only':       return 'PDF only — sorry, no other formats yet.';
+      case 'file_too_large': return 'Too big. Public sandbox caps at 10 MB.';
+      case 'too_many_pages': return 'Too many pages. Public sandbox caps at 8 pages.';
+      case 'rate_limit_per_ip': return 'Three uploads per hour from the same IP. Try again later — or email hello@callmeie.ie if you need to test more volume.';
+      case 'daily_cap_reached': return 'Daily public-sandbox cap reached. Resets at midnight Dublin time. Email hello@callmeie.ie to bypass.';
+      case 'no_text_layer':  return 'We could read the PDF but found no extractable text — looks like a scan. Image-based OCR is on the v2 roadmap. Try a text-layer PDF for now (Sage / Xero / Stripe export).';
+      case 'extraction_failed': return 'The extractor couldn\'t pattern-match this one. Bytes have been dropped on our side. Email hello@callmeie.ie for a hand.';
+      case 'pdf_parse_failed': return 'Couldn\'t parse this PDF — it may be password-protected or corrupted.';
+      case 'pdf_lib_missing': return 'Server is missing its PDF library — please email hello@callmeie.ie so Adam can redeploy.';
+      default:               return 'Something went wrong (' + status + ' / ' + code + '). Try again, or email hello@callmeie.ie.';
+    }
+  }
+
+  function renderResult(body) {
+    var fields = body.fields || {};
+    var conf = body.confidence || {};
+    var bounce = (body.below_gate && body.below_gate.length > 0) || (body.missing && body.missing.length > 0);
+    var head = '<div class="drop-it__result-head">' +
+      '<span class="drop-it__result-tag">Extracted JSON · ' + (body.page_count || '?') + ' page' + (body.page_count === 1 ? '' : 's') + '</span>' +
+      '<span class="drop-it__result-badge drop-it__result-badge--' + (bounce ? 'bounce' : 'ok') + '">' +
+      (bounce ? 'Bounce-back fired' : 'All fields ≥ 0.98') +
+      '</span></div>';
+
+    var rows = '';
+    var order = ['supplier_name','supplier_vat','invoice_number','issue_date','due_date','currency','net_total','vat_amount','vat_rate','gross_total','document_type','ie_vat_notes'];
+    order.forEach(function (k) {
+      if (!(k in fields)) return;
+      var v = fields[k];
+      var c = conf[k] != null ? conf[k] : 0;
+      var t = tone(c);
+      var display;
+      if (v === null || v === undefined || v === '') {
+        display = '<span class="drop-it__result-val--null">null</span>';
+      } else if (typeof v === 'number') {
+        display = '<span class="drop-it__result-val--' + t + '">' + escapeHtml(v) + '</span>';
+      } else {
+        display = '<span class="drop-it__result-val--' + t + '">"' + escapeHtml(v) + '"</span>';
+      }
+      var chipText = c === 0 ? '— missing' : c.toFixed(2);
+      rows += '<div class="drop-it__result-row">' +
+        '<span class="drop-it__result-key">"' + k + '"</span>' +
+        display +
+        '<span class="drop-it__result-conf" style="' + chipBg(c) + '">' + chipText + '</span>' +
+      '</div>';
+    });
+
+    var foot = '';
+    if (body.review_note) {
+      foot = '<p class="drop-it__result-foot">Review queue: <em>' + escapeHtml(body.review_note) + '</em></p>';
+    } else if (body.math_gate_passed) {
+      foot = '<p class="drop-it__result-foot">Math gate passed — net + VAT = gross. This row would route straight to your Sage / Xero / BrightBooks export queue.</p>';
+    }
+    var receipt = '<p class="drop-it__result-receipt">audit · ' + body.size_bytes + ' bytes · sha-' + (body.digest || '').slice(0, 16) + ' · payload dropped</p>';
+
+    resultEl.innerHTML = head + rows + foot + receipt;
+    resultEl.hidden = false;
+  }
+})();
+</script>
 
 <style>
   .try-it {
