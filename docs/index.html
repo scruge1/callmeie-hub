@@ -798,6 +798,163 @@ cash on completion ta MJQ</code></pre>
     color: rgba(243, 236, 223, 0.45);
     letter-spacing: 0.04em;
   }
+  /* Adaptive renderer (v1.6) — overview card, parties, key/value list,
+     mini-tables, IE-VAT note, raw-text fold. Inherits the dark-terminal
+     palette from .drop-it__result so the new sections feel like one
+     extraction trail rather than several disconnected widgets. */
+  .drop-it__overview {
+    margin: 4px 0 14px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #c96f32;
+    border-radius: 0 4px 4px 0;
+  }
+  .drop-it__overview-title {
+    margin: 0 0 4px;
+    font-family: "Fraunces", "Bodoni Moda", Georgia, serif;
+    font-style: italic; font-weight: 800;
+    font-size: 16px;
+    color: #ffeac0;
+  }
+  .drop-it__overview-summary {
+    margin: 0;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(243, 236, 223, 0.9);
+  }
+  .drop-it__overview-meta {
+    margin: 6px 0 0;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    color: rgba(243, 236, 223, 0.5);
+    letter-spacing: 0.04em;
+  }
+  .drop-it__section-h {
+    margin: 18px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(243, 236, 223, 0.65);
+  }
+  .drop-it__party {
+    display: flex; flex-wrap: wrap; gap: 6px 12px;
+    padding: 6px 0;
+    font-size: 12px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  }
+  .drop-it__party-role {
+    flex: 0 0 auto;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255, 234, 192, 0.85);
+    min-width: 80px;
+  }
+  .drop-it__party-name {
+    flex: 1 1 auto;
+    color: #c8efd1;
+    font-weight: 600;
+  }
+  .drop-it__party-meta {
+    flex: 0 0 auto;
+    color: rgba(243, 236, 223, 0.55);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+  }
+  .drop-it__subhead {
+    margin: 10px 0 4px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255, 234, 192, 0.8);
+  }
+  .drop-it__minitable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    margin: 4px 0 10px;
+  }
+  .drop-it__minitable th,
+  .drop-it__minitable td {
+    padding: 6px 8px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(243, 236, 223, 0.85);
+  }
+  .drop-it__minitable th {
+    color: rgba(255, 234, 192, 0.8);
+    font-weight: 700;
+    border-bottom-color: rgba(255, 255, 255, 0.18);
+  }
+  .drop-it__kv {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 12px;
+    padding: 4px 0;
+    font-size: 12px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+  }
+  @media (max-width: 640px) {
+    .drop-it__kv { grid-template-columns: 140px 1fr; }
+  }
+  .drop-it__kv-label {
+    color: rgba(243, 236, 223, 0.55);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+  }
+  .drop-it__kv-value {
+    color: #c8efd1;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    word-break: break-word;
+  }
+  .drop-it__ie-note {
+    margin: 14px 0 0;
+    padding: 10px 12px;
+    background: rgba(201, 111, 50, 0.12);
+    border-left: 3px solid #c96f32;
+    border-radius: 0 4px 4px 0;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #ffeac0;
+  }
+  .drop-it__ie-note strong { color: #ffd29a; }
+  .drop-it__rawtext {
+    margin: 16px 0 0;
+    padding: 0;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+  .drop-it__rawtext > summary {
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(243, 236, 223, 0.55);
+    padding: 6px 0;
+  }
+  .drop-it__rawtext[open] > summary {
+    color: rgba(243, 236, 223, 0.85);
+  }
+  .drop-it__rawtext-pre {
+    margin: 8px 0 0;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    font-size: 10px;
+    line-height: 1.55;
+    color: rgba(243, 236, 223, 0.78);
+    max-height: 320px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
 
   .drop-it__disclosure {
     margin: 24px 0 0;
@@ -974,47 +1131,184 @@ cash on completion ta MJQ</code></pre>
   }
 
   function renderResult(body) {
-    var fields = body.fields || {};
+    // Adaptive renderer (v1.6) — handles invoice-shaped + non-invoice
+    // documents alike. Backend now returns body.extracted = adaptive
+    // shape: document_type / summary / parties / key_fields / dates /
+    // monetary_values / tables / invoice_fields / ie_vat_notes.
+    var ex = body.extracted || {};
     var conf = body.confidence || {};
-    var bounce = (body.below_gate && body.below_gate.length > 0) || (body.missing && body.missing.length > 0);
-    var head = '<div class="drop-it__result-head">' +
-      '<span class="drop-it__result-tag">Extracted JSON · ' + (body.page_count || '?') + ' page' + (body.page_count === 1 ? '' : 's') + '</span>' +
-      '<span class="drop-it__result-badge drop-it__result-badge--' + (bounce ? 'bounce' : 'ok') + '">' +
-      (bounce ? 'Bounce-back fired' : 'All fields ≥ 0.98') +
-      '</span></div>';
+    var isInvoice = body.is_invoice_shaped === true;
+    var bounce = isInvoice && ((body.below_gate && body.below_gate.length > 0) || (body.missing && body.missing.length > 0));
 
-    var rows = '';
-    var order = ['supplier_name','supplier_vat','invoice_number','issue_date','due_date','currency','net_total','vat_amount','vat_rate','gross_total','document_type','ie_vat_notes'];
-    order.forEach(function (k) {
-      if (!(k in fields)) return;
-      var v = fields[k];
-      var c = conf[k] != null ? conf[k] : 0;
-      var t = tone(c);
-      var display;
-      if (v === null || v === undefined || v === '') {
-        display = '<span class="drop-it__result-val--null">null</span>';
-      } else if (typeof v === 'number') {
-        display = '<span class="drop-it__result-val--' + t + '">' + escapeHtml(v) + '</span>';
-      } else {
-        display = '<span class="drop-it__result-val--' + t + '">"' + escapeHtml(v) + '"</span>';
-      }
-      var chipText = c === 0 ? '— missing' : c.toFixed(2);
-      rows += '<div class="drop-it__result-row">' +
-        '<span class="drop-it__result-key">"' + k + '"</span>' +
-        display +
-        '<span class="drop-it__result-conf" style="' + chipBg(c) + '">' + chipText + '</span>' +
-      '</div>';
-    });
+    var html = '';
 
-    var foot = '';
-    if (body.review_note) {
-      foot = '<p class="drop-it__result-foot">Review queue: <em>' + escapeHtml(body.review_note) + '</em></p>';
-    } else if (body.math_gate_passed) {
-      foot = '<p class="drop-it__result-foot">Math gate passed — net + VAT = gross. This row would route straight to your Sage / Xero / BrightBooks export queue.</p>';
+    // 1. Document overview card — always present
+    var docType = ex.document_type || 'other';
+    var summary = ex.summary || 'No summary returned by the extractor.';
+    var title = ex.title;
+    var lang = ex.language;
+    var typeLabel = docType.replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    html += '<div class="drop-it__result-head">';
+    html += '<span class="drop-it__result-tag">' + escapeHtml(typeLabel) + ' · ' + (body.page_count || '?') + ' page' + (body.page_count === 1 ? '' : 's') + '</span>';
+    html += '<span class="drop-it__result-badge drop-it__result-badge--' + (bounce ? 'bounce' : 'ok') + '">';
+    html += isInvoice ? (bounce ? 'Bounce-back fired' : 'Invoice math gate ✓') : 'Adaptive extract';
+    html += '</span></div>';
+
+    html += '<div class="drop-it__overview">';
+    if (title) {
+      html += '<p class="drop-it__overview-title">' + escapeHtml(title) + '</p>';
     }
-    var receipt = '<p class="drop-it__result-receipt">audit · ' + body.size_bytes + ' bytes · sha-' + (body.digest || '').slice(0, 16) + ' · payload dropped</p>';
+    html += '<p class="drop-it__overview-summary">' + escapeHtml(summary) + '</p>';
+    if (lang) {
+      html += '<p class="drop-it__overview-meta">Language: ' + escapeHtml(lang) + ' · Engine: ' + escapeHtml(body.engine || 'pdfplumber') + '</p>';
+    }
+    html += '</div>';
 
-    resultEl.innerHTML = head + rows + foot + receipt;
+    // 2. Parties — every named transactional / contractual entity
+    var parties = ex.parties || [];
+    if (parties.length > 0) {
+      html += '<h4 class="drop-it__section-h">Parties</h4>';
+      parties.forEach(function (p) {
+        html += '<div class="drop-it__party">';
+        html += '<span class="drop-it__party-role">' + escapeHtml(p.role || 'party') + '</span>';
+        html += '<span class="drop-it__party-name">' + escapeHtml(p.name || '—') + '</span>';
+        if (p.vat) html += '<span class="drop-it__party-meta">VAT: ' + escapeHtml(p.vat) + '</span>';
+        if (p.country) html += '<span class="drop-it__party-meta">' + escapeHtml(p.country) + '</span>';
+        if (p.address) html += '<span class="drop-it__party-meta">' + escapeHtml(p.address) + '</span>';
+        html += '</div>';
+      });
+    }
+
+    // 3. Invoice-shaped fields w/ confidence chips — only when relevant
+    if (isInvoice) {
+      var inv = ex.invoice_fields || {};
+      html += '<h4 class="drop-it__section-h">Invoice fields · confidence-gated</h4>';
+      var order = ['supplier_name','supplier_vat','buyer_name','buyer_vat','invoice_number','issue_date','due_date','period_start','period_end','currency','net_total','vat_amount','vat_rate','gross_total'];
+      order.forEach(function (k) {
+        if (!(k in inv)) return;
+        var v = inv[k];
+        var c = conf[k] != null ? conf[k] : 0;
+        var t = tone(c);
+        var display = (v === null || v === undefined || v === '')
+          ? '<span class="drop-it__result-val--null">null</span>'
+          : (typeof v === 'number'
+              ? '<span class="drop-it__result-val--' + t + '">' + escapeHtml(v) + '</span>'
+              : '<span class="drop-it__result-val--' + t + '">"' + escapeHtml(v) + '"</span>');
+        var chipText = c === 0 ? '— missing' : c.toFixed(2);
+        html += '<div class="drop-it__result-row">' +
+          '<span class="drop-it__result-key">' + escapeHtml(k) + '</span>' +
+          display +
+          '<span class="drop-it__result-conf" style="' + chipBg(c) + '">' + chipText + '</span>' +
+        '</div>';
+      });
+
+      // VAT breakdown (multi-rate)
+      if (inv.vat_breakdown && inv.vat_breakdown.length > 0) {
+        html += '<p class="drop-it__subhead">VAT breakdown</p>';
+        html += '<table class="drop-it__minitable"><thead><tr><th>Rate</th><th>Net</th><th>VAT</th></tr></thead><tbody>';
+        inv.vat_breakdown.forEach(function (b) {
+          html += '<tr><td>' + escapeHtml((b.rate * 100).toFixed(1)) + '%</td><td>' + escapeHtml(b.net) + '</td><td>' + escapeHtml(b.vat) + '</td></tr>';
+        });
+        html += '</tbody></table>';
+      }
+
+      // Line items
+      if (inv.line_items && inv.line_items.length > 0) {
+        html += '<p class="drop-it__subhead">Line items (' + inv.line_items.length + ')</p>';
+        html += '<table class="drop-it__minitable"><thead><tr><th>Description</th><th>Qty</th><th>Unit</th><th>Amount</th><th>VAT</th></tr></thead><tbody>';
+        inv.line_items.slice(0, 30).forEach(function (li) {
+          html += '<tr>';
+          html += '<td>' + escapeHtml(li.description || '—') + '</td>';
+          html += '<td>' + escapeHtml(li.quantity == null ? '—' : li.quantity) + '</td>';
+          html += '<td>' + escapeHtml(li.unit_price == null ? '—' : li.unit_price) + '</td>';
+          html += '<td>' + escapeHtml(li.amount == null ? '—' : li.amount) + '</td>';
+          html += '<td>' + escapeHtml(li.vat_rate == null ? '—' : (li.vat_rate * 100).toFixed(1) + '%') + '</td>';
+          html += '</tr>';
+        });
+        html += '</tbody></table>';
+      }
+    }
+
+    // 4. Key fields — every label/value pair the LLM picked out (catch-all
+    //    for non-invoice docs: account numbers, references, terms, etc).
+    var kf = ex.key_fields || [];
+    if (kf.length > 0) {
+      html += '<h4 class="drop-it__section-h">Key fields</h4>';
+      kf.forEach(function (f) {
+        html += '<div class="drop-it__kv">';
+        html += '<span class="drop-it__kv-label">' + escapeHtml(f.label || '—') + '</span>';
+        html += '<span class="drop-it__kv-value">' + escapeHtml(f.value == null ? '—' : f.value) + '</span>';
+        html += '</div>';
+      });
+    }
+
+    // 5. Dates — every date-like value w/ label
+    var dates = ex.dates || [];
+    if (dates.length > 0) {
+      html += '<h4 class="drop-it__section-h">Dates</h4>';
+      dates.forEach(function (d) {
+        html += '<div class="drop-it__kv">';
+        html += '<span class="drop-it__kv-label">' + escapeHtml(d.label || 'Date') + '</span>';
+        html += '<span class="drop-it__kv-value">' + escapeHtml(d.value || '—') + '</span>';
+        html += '</div>';
+      });
+    }
+
+    // 6. Monetary — every currency value w/ label
+    var money = ex.monetary_values || [];
+    if (money.length > 0) {
+      html += '<h4 class="drop-it__section-h">Monetary values</h4>';
+      money.forEach(function (m) {
+        html += '<div class="drop-it__kv">';
+        html += '<span class="drop-it__kv-label">' + escapeHtml(m.label || '—') + '</span>';
+        html += '<span class="drop-it__kv-value">' + escapeHtml((m.amount == null ? '—' : m.amount) + ' ' + (m.currency || '')) + '</span>';
+        html += '</div>';
+      });
+    }
+
+    // 7. Tables — arbitrary tabular data the LLM identified
+    var tables = ex.tables || [];
+    if (tables.length > 0) {
+      tables.forEach(function (tbl) {
+        html += '<h4 class="drop-it__section-h">Table · ' + escapeHtml(tbl.caption || 'untitled') + '</h4>';
+        html += '<table class="drop-it__minitable"><thead><tr>';
+        (tbl.headers || []).forEach(function (h) { html += '<th>' + escapeHtml(h) + '</th>'; });
+        html += '</tr></thead><tbody>';
+        (tbl.rows || []).slice(0, 30).forEach(function (row) {
+          html += '<tr>';
+          row.forEach(function (cell) { html += '<td>' + escapeHtml(cell) + '</td>'; });
+          html += '</tr>';
+        });
+        html += '</tbody></table>';
+      });
+    }
+
+    // 8. IE VAT notes (when the LLM flagged something Irish-specific)
+    if (ex.ie_vat_notes) {
+      html += '<p class="drop-it__ie-note"><strong>Irish VAT note:</strong> ' + escapeHtml(ex.ie_vat_notes) + '</p>';
+    }
+
+    // 9. Foot — invoice-only review queue line, then audit receipt
+    if (isInvoice && body.review_note) {
+      html += '<p class="drop-it__result-foot">Review queue: <em>' + escapeHtml(body.review_note) + '</em></p>';
+    } else if (isInvoice && body.math_gate_passed) {
+      html += '<p class="drop-it__result-foot">Math gate passed — net + VAT = gross. Would route straight to a Sage / Xero / BrightBooks export queue on a paying tier.</p>';
+    }
+
+    // 10. Raw-text fold — collapsible, lets the visitor see what we read
+    if (body.raw_text_preview) {
+      var totalChars = body.raw_text_total_chars || body.raw_text_preview.length;
+      var truncatedNote = body.raw_text_truncated
+        ? ' (showing first 2,000 of ' + totalChars + ' chars)' : '';
+      html += '<details class="drop-it__rawtext"><summary>Show raw text we read off the page' + truncatedNote + '</summary>';
+      html += '<pre class="drop-it__rawtext-pre">' + escapeHtml(body.raw_text_preview) + '</pre>';
+      html += '</details>';
+    }
+
+    // 11. Audit receipt
+    html += '<p class="drop-it__result-receipt">audit · ' + body.size_bytes + ' bytes · sha-' + (body.digest || '').slice(0, 16) + ' · ' + (body.elapsed_ms || 0) + 'ms · payload dropped</p>';
+
+    resultEl.innerHTML = html;
     resultEl.hidden = false;
   }
 })();
