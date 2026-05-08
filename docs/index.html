@@ -566,13 +566,13 @@ cash on completion ta MJQ</code></pre>
     </p>
 
     <form class="drop-it__form" data-drop-form aria-describedby="drop-it-disclosure">
-      <label class="drop-it__zone" data-drop-zone tabindex="0" aria-label="Drag a PDF here or press Enter to choose a file">
-        <input type="file" name="file" accept="application/pdf,.pdf" data-drop-input hidden>
+      <div class="drop-it__zone" data-drop-zone tabindex="0" role="button" aria-label="Drag a PDF here or press Enter to choose a file">
+        <input type="file" name="file" accept="application/pdf,.pdf" data-drop-input class="drop-it__zone-input">
         <span class="drop-it__zone-icon" aria-hidden="true">↥</span>
         <span class="drop-it__zone-prompt"><strong>Drag a PDF here</strong> or click to choose</span>
-        <span class="drop-it__zone-meta">PDF · ≤ 10 MB · ≤ 8 pages · text layer only (no scans yet)</span>
+        <span class="drop-it__zone-meta">PDF · ≤ 10 MB · ≤ 8 pages · digital + scanned both supported</span>
         <span class="drop-it__zone-file" data-drop-filename hidden></span>
-      </label>
+      </div>
       <div class="drop-it__actions">
         <button type="submit" class="try-it__btn" data-drop-submit disabled>Extract →</button>
         <button type="button" class="drop-it__reset" data-drop-reset hidden>Reset</button>
@@ -614,6 +614,21 @@ cash on completion ta MJQ</code></pre>
   .drop-it__zone:focus-visible {
     outline: 3px solid #c96f32;
     outline-offset: 4px;
+  }
+  .drop-it__zone-input {
+    /* Visually hidden but still focusable + clickable. Avoids the hidden-attribute
+       behaviour that some browsers (Safari + older Chrome) refuse to fire .click()
+       on, which would let you tap the zone and never see a file picker. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
   }
   .drop-it__zone[data-state="hover"] {
     background: rgba(255, 255, 255, 0.85);
