@@ -406,6 +406,350 @@
   </div>
 </section>
 
+<!-- TRY-IT — interactive sample extractor (P5a) -->
+<section class="try-it" id="try-it" aria-labelledby="try-it-title">
+  <div class="section-inner">
+    <span class="proof-eyebrow">§ 05b — Try it yourself</span>
+    <h2 id="try-it-title" class="section-title">Pick a sample. Watch the extractor work.</h2>
+    <p class="section-lede">
+      Three prebuilt Irish invoices — one clean, one edge-case, one that should bounce back to a bookkeeper. Click <strong>Extract</strong> and you'll see the same confidence-gated output your team gets in production. No upload, no signup — these are local samples baked into the page.
+    </p>
+
+    <div class="try-it__grid" role="list">
+
+      <article class="try-it__card" data-try-id="sample-clean" role="listitem">
+        <header class="try-it__head">
+          <span class="try-it__badge try-it__badge--clean">Clean</span>
+          <h3 class="try-it__title">Limerick Office Supplies — B2B invoice</h3>
+          <p class="try-it__sub">Modern PDF · all fields high confidence</p>
+        </header>
+        <div class="try-it__panes">
+          <pre class="try-it__source"><code>LIMERICK OFFICE SUPPLIES LTD
+Henry Street, Limerick V94 X2P5
+VAT IE 4823910K
+
+Invoice No.    INV-04211
+Date           14/04/2026
+Due            28/04/2026
+
+Bill to:
+Treaty Tech Ltd
+12 O'Connell Avenue, Limerick V94 P0X3
+
+Description                Qty    Unit     Net
+Box files (10pk)            4    18.50    74.00
+Toner cartridge HP-83A      1    65.00    65.00
+
+Net total                                139.00
+VAT 23%                                   31.97
+Gross total                              170.97</code></pre>
+          <div class="try-it__output" data-try-output hidden>
+            <div class="try-it__output-head">
+              <span class="try-it__output-tag">Extracted JSON · all fields ≥ 0.98</span>
+              <span class="try-it__output-confidence try-it__output-confidence--ok">Ready for Sage</span>
+            </div>
+            <pre class="try-it__json"><code>{
+  "supplier_name":   <span class="try-it__field try-it__field--ok">"Limerick Office Supplies Ltd"</span>  <span class="try-it__chip try-it__chip--ok">0.99</span>,
+  "supplier_vat":    <span class="try-it__field try-it__field--ok">"IE4823910K"</span>          <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "invoice_number":  <span class="try-it__field try-it__field--ok">"INV-04211"</span>           <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "issue_date":      <span class="try-it__field try-it__field--ok">"2026-04-14"</span>          <span class="try-it__chip try-it__chip--ok">0.99</span>,
+  "due_date":        <span class="try-it__field try-it__field--ok">"2026-04-28"</span>          <span class="try-it__chip try-it__chip--ok">0.99</span>,
+  "currency":        <span class="try-it__field try-it__field--ok">"EUR"</span>                 <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "net_total":       <span class="try-it__field try-it__field--ok">139.00</span>               <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "vat_amount":      <span class="try-it__field try-it__field--ok">31.97</span>                <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "vat_rate":        <span class="try-it__field try-it__field--ok">0.23</span>                 <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "gross_total":     <span class="try-it__field try-it__field--ok">170.97</span>               <span class="try-it__chip try-it__chip--ok">1.00</span>
+}</code></pre>
+            <p class="try-it__output-foot">Math gate passed (139.00 + 31.97 = 170.97). Routes straight to your Sage / Xero / BrightBooks export queue.</p>
+          </div>
+        </div>
+        <button type="button" class="try-it__btn" data-try-extract>Extract →</button>
+      </article>
+
+      <article class="try-it__card" data-try-id="sample-edge" role="listitem">
+        <header class="try-it__head">
+          <span class="try-it__badge try-it__badge--edge">Edge case</span>
+          <h3 class="try-it__title">Munster Cleaning Services — faded thermal</h3>
+          <p class="try-it__sub">Low contrast scan · one uncertain field</p>
+        </header>
+        <div class="try-it__panes">
+          <pre class="try-it__source"><code>MUNSTER CLEANING SVCS
+Mallow, Co. Cork
+VAT IE 6612874M
+
+Inv: MCS-04-188
+04/04/2026
+
+Cleaning, two-bay forecourt    198.50
+Steam-mat hire (5 days)         42.40
+                              -------
+Net                            240.90
+VAT 23%             ~5̲5̲.̲4̲̲̲1̲~  (smudged)
+Gross                          296.31</code></pre>
+          <div class="try-it__output" data-try-output hidden>
+            <div class="try-it__output-head">
+              <span class="try-it__output-tag">Extracted JSON · 1 field below 0.98 gate</span>
+              <span class="try-it__output-confidence try-it__output-confidence--warn">Bounce-back fired</span>
+            </div>
+            <pre class="try-it__json"><code>{
+  "supplier_name":   <span class="try-it__field try-it__field--ok">"Munster Cleaning Svcs"</span>     <span class="try-it__chip try-it__chip--ok">0.99</span>,
+  "supplier_vat":    <span class="try-it__field try-it__field--ok">"IE6612874M"</span>             <span class="try-it__chip try-it__chip--ok">0.99</span>,
+  "invoice_number":  <span class="try-it__field try-it__field--ok">"MCS-04-188"</span>             <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "issue_date":      <span class="try-it__field try-it__field--ok">"2026-04-04"</span>             <span class="try-it__chip try-it__chip--ok">0.99</span>,
+  "net_total":       <span class="try-it__field try-it__field--ok">240.90</span>                  <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "vat_amount":      <span class="try-it__field try-it__field--warn">55.41</span>                  <span class="try-it__chip try-it__chip--warn">0.93</span>,
+  "vat_rate":        <span class="try-it__field try-it__field--ok">0.23</span>                    <span class="try-it__chip try-it__chip--ok">1.00</span>,
+  "gross_total":     <span class="try-it__field try-it__field--ok">296.31</span>                  <span class="try-it__chip try-it__chip--ok">1.00</span>
+}</code></pre>
+            <p class="try-it__output-foot">vat_amount = 0.93 &lt; 0.98 gate. Routed to your bookkeeper review queue with one-line reason: <em>"VAT cell partially obscured — confirm 55.41 vs invoice math (240.90 × 0.23 = 55.41 ✓)."</em> Math agrees, so reviewer 1-clicks accept.</p>
+          </div>
+        </div>
+        <button type="button" class="try-it__btn" data-try-extract>Extract →</button>
+      </article>
+
+      <article class="try-it__card" data-try-id="sample-bounce" role="listitem">
+        <header class="try-it__head">
+          <span class="try-it__badge try-it__badge--bounce">Bounce-back</span>
+          <h3 class="try-it__title">M.J. Quinn Joinery — handwritten quote</h3>
+          <p class="try-it__sub">Multiple uncertain fields · routes to bookkeeper</p>
+        </header>
+        <div class="try-it__panes">
+          <pre class="try-it__source"><code>M.J. Quinn Joinery
+083-419-2287
+quote 04/2026
+
+oak skirting   ~240m @ 6.20    1488.00
+fitting (3 days)                 480.00
+                                ───────
+                                1968.00
+add VAT @13.5%                   265.68
+                                ───────
+total                           2233.68
+
+cash on completion ta MJQ</code></pre>
+          <div class="try-it__output" data-try-output hidden>
+            <div class="try-it__output-head">
+              <span class="try-it__output-tag">Extracted JSON · 3 fields below 0.98 gate</span>
+              <span class="try-it__output-confidence try-it__output-confidence--bounce">Bounce-back fired</span>
+            </div>
+            <pre class="try-it__json"><code>{
+  "supplier_name":   <span class="try-it__field try-it__field--ok">"M.J. Quinn Joinery"</span>      <span class="try-it__chip try-it__chip--ok">0.98</span>,
+  "supplier_vat":    <span class="try-it__field try-it__field--bounce">null</span>                       <span class="try-it__chip try-it__chip--bounce">— missing</span>,
+  "invoice_number":  <span class="try-it__field try-it__field--bounce">"quote 04/2026"</span>           <span class="try-it__chip try-it__chip--bounce">0.71</span>,
+  "issue_date":      <span class="try-it__field try-it__field--warn">"2026-04-??"</span>             <span class="try-it__chip try-it__chip--warn">0.84</span>,
+  "net_total":       <span class="try-it__field try-it__field--ok">1968.00</span>                  <span class="try-it__chip try-it__chip--ok">0.98</span>,
+  "vat_rate":        <span class="try-it__field try-it__field--ok">0.135</span>                   <span class="try-it__chip try-it__chip--ok">0.99</span>,
+  "vat_amount":      <span class="try-it__field try-it__field--ok">265.68</span>                  <span class="try-it__chip try-it__chip--ok">0.99</span>,
+  "gross_total":     <span class="try-it__field try-it__field--ok">2233.68</span>                  <span class="try-it__chip try-it__chip--ok">0.99</span>
+}</code></pre>
+            <p class="try-it__output-foot">3 fields below gate. Document type detected as <em>quote, not invoice</em>. Bounced back with: <em>"This is a quote, not a Revenue-compliant invoice — supplier VAT missing, no invoice number, partial date. Ask supplier for proper invoice on completion."</em> Never silently goes into your books.</p>
+          </div>
+        </div>
+        <button type="button" class="try-it__btn" data-try-extract>Extract →</button>
+      </article>
+
+    </div>
+
+    <p class="try-it__disclosure">
+      Samples are local to this page. Real uploads ship in our P5b release — Hetzner-hosted, processed in EU, deleted within 60 seconds, no original document retained.
+    </p>
+  </div>
+</section>
+
+<style>
+  .try-it {
+    padding: clamp(64px, 8vw, 112px) 0;
+    background: linear-gradient(180deg, #fbf7ee 0%, #f3ecdf 100%);
+    border-top: 1px solid var(--line, rgba(26, 24, 18, 0.12));
+  }
+  .try-it .section-title { margin-top: 8px; }
+  .try-it__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 32px 0 18px;
+  }
+  @media (max-width: 980px) { .try-it__grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 720px) { .try-it__grid { grid-template-columns: 1fr; } }
+  .try-it__card {
+    display: flex; flex-direction: column;
+    background: #fffaf2;
+    border: 1px solid rgba(26, 24, 18, 0.14);
+    border-radius: 6px;
+    padding: 22px 22px 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  .try-it__head { margin-bottom: 14px; }
+  .try-it__badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .try-it__badge--clean  { background: rgba(31, 106, 60, 0.14);  color: #1f6a3c; }
+  .try-it__badge--edge   { background: rgba(201, 111, 50, 0.14); color: #9a4e1e; }
+  .try-it__badge--bounce { background: rgba(180, 30, 30, 0.14);  color: #8b1a1a; }
+  .try-it__title {
+    margin: 0;
+    font-family: "Fraunces", "Bodoni Moda", Georgia, serif;
+    font-style: italic; font-weight: 800;
+    font-size: 22px; line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: #1a1812;
+  }
+  .try-it__sub {
+    margin: 4px 0 0;
+    font-size: 12px; color: rgba(0,0,0,0.55);
+  }
+  .try-it__panes {
+    flex: 1 1 auto;
+    display: grid; gap: 12px;
+    margin-bottom: 14px;
+    min-height: 240px;
+  }
+  .try-it__source {
+    margin: 0;
+    padding: 14px 14px;
+    background: #fff;
+    border: 1px solid rgba(26, 24, 18, 0.12);
+    border-radius: 4px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px; line-height: 1.55;
+    color: #2d3239;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .try-it__output {
+    background: #1a1812;
+    color: #f3ecdf;
+    border-radius: 4px;
+    padding: 14px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px; line-height: 1.6;
+    overflow-x: auto;
+    animation: try-it-reveal 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .try-it__output { animation: none; }
+  }
+  @keyframes try-it-reveal {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .try-it__output[hidden] { display: none; }
+  .try-it__output-head {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .try-it__output-tag {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(243, 236, 223, 0.65);
+  }
+  .try-it__output-confidence {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+  .try-it__output-confidence--ok     { background: rgba(31, 106, 60, 0.32);  color: #c8efd1; }
+  .try-it__output-confidence--warn   { background: rgba(201, 111, 50, 0.32); color: #ffd8a6; }
+  .try-it__output-confidence--bounce { background: rgba(220, 78, 78, 0.32);  color: #ffd1d1; }
+  .try-it__json {
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 11px;
+    line-height: 1.55;
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .try-it__field--ok     { color: #c8efd1; }
+  .try-it__field--warn   { color: #ffd8a6; }
+  .try-it__field--bounce { color: #ffd1d1; }
+  .try-it__chip {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+  .try-it__chip--ok     { background: rgba(31, 106, 60, 0.32);  color: #c8efd1; }
+  .try-it__chip--warn   { background: rgba(201, 111, 50, 0.32); color: #ffd8a6; }
+  .try-it__chip--bounce { background: rgba(220, 78, 78, 0.32);  color: #ffd1d1; }
+  .try-it__output-foot {
+    margin: 8px 0 0;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 12px; line-height: 1.5;
+    color: rgba(243, 236, 223, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 8px;
+  }
+  .try-it__output-foot em { color: #ffeac0; font-style: italic; }
+  .try-it__btn {
+    align-self: stretch;
+    border: 0; cursor: pointer;
+    padding: 12px 16px;
+    background: #1a1812;
+    color: #f3ecdf;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    box-shadow: 0 3px 0 #c96f32;
+    transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.15s;
+  }
+  .try-it__btn:hover, .try-it__btn:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 #c96f32;
+  }
+  .try-it__btn:focus-visible {
+    outline: 2px solid #c96f32; outline-offset: 4px;
+  }
+  .try-it__btn[data-try-state="done"] {
+    background: rgba(26, 24, 18, 0.6);
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .try-it__btn { transition: none; }
+    .try-it__btn:hover { transform: none; }
+  }
+  .try-it__disclosure {
+    margin: 18px 0 0;
+    font-size: 12px; line-height: 1.55;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    text-align: center;
+  }
+</style>
+
+<script>
+(function () {
+  if (window.__cmtTryItBound) return;
+  window.__cmtTryItBound = true;
+  document.querySelectorAll('.try-it__card').forEach(function (card) {
+    var btn = card.querySelector('[data-try-extract]');
+    var output = card.querySelector('[data-try-output]');
+    if (!btn || !output) return;
+    btn.addEventListener('click', function () {
+      output.hidden = false;
+      btn.dataset.tryState = 'done';
+      btn.textContent = 'Extracted ✓';
+      btn.disabled = true;
+    });
+  });
+})();
+</script>
+
 <section class="proof" id="proof" aria-labelledby="proof-title">
   <div class="section-inner">
     <span class="proof-eyebrow">§ 06 — Open proof corpus</span>
