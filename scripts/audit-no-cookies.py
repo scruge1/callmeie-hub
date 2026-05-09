@@ -5,6 +5,25 @@
    USAGE:
      python scripts/audit-no-cookies.py            # walk repo HTML, exit 1 on hit
      python scripts/audit-no-cookies.py --verbose  # show per-page status
+
+   P2-1 STATUS (2026-05-09):
+   ------------------------
+   Operator-visibility task to add web analytics is BLOCKED by the rules
+   below. callmeie.ie ships with no analytics and no cookie banner on
+   purpose — the brand promise is "no cookies, no tracking." Three
+   options for getting analytics without breaking that:
+
+     A) Move callmeie.ie onto a Cloudflare-proxied A record (currently
+        GitHub Pages, proxied:false in DNS). Cloudflare Web Analytics
+        (server-side, no JS, no cookies) becomes available + the audit
+        rules below remain green.
+     B) Add Umami via analytics.owlzone.trade on a "no localStorage"
+        config + add the consent banner. Loses the no-banner promise.
+     C) Keep zero analytics. Accept the operator-visibility blind spot
+        as the price of the brand promise.
+
+   Defer to Adam. Until decided, P2-1 stays deferred and this comment
+   is the audit trail.
 """
 from __future__ import annotations
 import argparse
