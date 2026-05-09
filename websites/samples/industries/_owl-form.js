@@ -7,7 +7,7 @@
  *   2. Looks up the corresponding site_id in SAMPLES
  *   3. Injects a neutral "Try the contact form — leads land in the admin dashboard"
  *      block near the end of the page (above or inside the footer)
- *   4. On submit: POSTs to https://callmeie.onrender.com/owl/submit
+ *   4. On submit: POSTs to https://api.callmeie.ie/owl/submit
  *
  * Fails silently on non-sample pages. Session-dismissible.
  * Same pattern as _owl-nav.js (floating nav bar), deliberately additive —
@@ -156,7 +156,7 @@
     button.textContent = "Sending\u2026";
     status.className = "olf-status";
     status.textContent = "";
-    fetch("https://callmeie.onrender.com/owl/submit", {
+    fetch("https://api.callmeie.ie/owl/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
