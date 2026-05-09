@@ -1573,6 +1573,47 @@ cash on completion ta MJQ</code></pre>
   </div>
 </section>
 
+<script>
+  // P5-5 — Stripe-Payment-Link attribution.
+  // Discovery quiz routes visitors here with ?ref=discovery-<id> so we
+  // can stitch the funnel from quiz answer → paying tenant. On page
+  // load, read the ref + append client_reference_id={ref} to every
+  // buy.stripe.com link on this page. Stripe relays this through the
+  // checkout.session.completed event so the docops portal webhook
+  // (alembic 0009) can write it onto tenants.discovery_submission_id.
+  (function () {
+    var ref = new URLSearchParams(window.location.search).get('ref');
+    if (!ref) return;
+    document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach(function (a) {
+      try {
+        var u = new URL(a.href);
+        if (!u.searchParams.has('client_reference_id')) {
+          u.searchParams.set('client_reference_id', ref);
+          a.href = u.toString();
+        }
+      } catch (_) { /* ignore malformed URLs */ }
+    });
+    // Persist for in-session navigation (visitor clicks around before paying)
+    try { sessionStorage.setItem('cmt_ref', ref); } catch (_) { /* private mode */ }
+  })();
+  // Restore ref from sessionStorage on subsequent /docs/ visits within session
+  (function () {
+    if (new URLSearchParams(window.location.search).get('ref')) return;
+    var ref;
+    try { ref = sessionStorage.getItem('cmt_ref'); } catch (_) { return; }
+    if (!ref) return;
+    document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach(function (a) {
+      try {
+        var u = new URL(a.href);
+        if (!u.searchParams.has('client_reference_id')) {
+          u.searchParams.set('client_reference_id', ref);
+          a.href = u.toString();
+        }
+      } catch (_) { /* ignore */ }
+    });
+  })();
+</script>
+
 <section class="pricing" id="pricing">
   <div class="section-inner">
     <h2 class="section-title">Pricing.</h2>
