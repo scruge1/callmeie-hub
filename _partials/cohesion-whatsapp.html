@@ -1,5 +1,12 @@
+<!--
+  P2-3 — every prefill message starts with a `[ref:<page>]` line so
+  that even when WhatsApp strips URL params (some clients do, some
+  don't), Adam can still grep his phone for "ref:salon" and see which
+  page sent the lead. The URL-level UTM is the canonical capture; the
+  in-message ref line is the belt-and-braces fallback.
+-->
 <a class="cmt-wa-fab"
-   href="https://wa.me/353857863564?text={{prefill}}&utm_source=callmeie&utm_medium=wa-fab&utm_campaign=site-2026-q2&utm_content={{utm_content}}"
+   href="https://wa.me/353857863564?text=%5Bref%3A{{utm_content}}%5D%0A{{prefill}}&utm_source=callmeie&utm_medium=wa-fab&utm_campaign=site-2026-q2&utm_content={{utm_content}}"
    target="_blank"
    rel="noopener"
    aria-label="Chat with CallMeIE on WhatsApp"
