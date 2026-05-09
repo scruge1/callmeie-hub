@@ -1366,7 +1366,18 @@
       body: JSON.stringify(payload)
     })
       .then(function (r) {
-        if (!r.ok) throw new Error('http_' + r.status);
+        if (!r.ok) {
+          // Carry the status + parsed body up so renderError can branch
+          // on 400 (invalid input) vs 429 (rate-limit, has Retry-After)
+          // vs 5xx (real server error). Without this every non-2xx
+          // showed the same "couldn't reach backend" message — see P0-8.
+          return r.json().catch(function () { return {}; }).then(function (errBody) {
+            var e = new Error('http_' + r.status);
+            e.status = r.status;
+            e.errBody = errBody || {};
+            throw e;
+          });
+        }
         return r.json();
       })
       .then(renderResult)
@@ -1419,24 +1430,63 @@
   function renderError(err) {
     setProgress('Error');
     body.innerHTML = '';
+
+    // Branch the message on what actually failed so the visitor doesn't
+    // see "couldn't reach backend" when they were actually rate-limited
+    // or sent malformed input. (P0-8 — paired with server.py setting
+    // Retry-After + RateLimit-* headers on 429 + the JSON envelope on
+    // every other status.)
+    var status = err && err.status ? err.status : 0;
+    var errBody = (err && err.errBody) || {};
+    var msg, showRetry = true;
+
+    if (status === 429) {
+      var retryAfter = parseInt(errBody.retry_after || '0', 10);
+      var minutes = retryAfter > 0 ? Math.max(1, Math.ceil(retryAfter / 60)) : 0;
+      if (errBody.error === 'daily_cap_reached') {
+        msg = 'Today\'s quiz quota is fully booked. ' +
+              'Easiest path: email hello@callmeie.ie or message us on WhatsApp (the green button) — Adam reads both same-day.';
+        showRetry = false;
+      } else if (minutes > 0) {
+        msg = 'You\'ve already submitted a few quizzes from this address. ' +
+              'Try again in about ' + minutes + ' min — or skip the wait and email hello@callmeie.ie / WhatsApp the green button.';
+        showRetry = false;
+      } else {
+        msg = 'You\'ve already submitted a few quizzes from this address. ' +
+              'Try again in a few minutes — or skip the wait and email hello@callmeie.ie / WhatsApp the green button.';
+        showRetry = false;
+      }
+    } else if (status === 400) {
+      msg = 'The form sent something I couldn\'t read. Refresh the page and try the quiz again — if it keeps happening, email hello@callmeie.ie and Adam will sort it.';
+    } else if (status >= 500) {
+      msg = 'Our matcher hit an error on our side. Fastest path: email hello@callmeie.ie or message us on WhatsApp (the green button) — Adam reads both same-day.';
+    } else {
+      // Status 0 = network failure, fetch rejection, CORS, offline.
+      msg = 'Couldn\'t reach our matcher — looks like a network hiccup. Try again, or email hello@callmeie.ie / WhatsApp the green button.';
+    }
+
     var p = document.createElement('div');
     p.className = 'cmt-chat-error';
-    p.textContent = 'Sorry — the matcher couldn\'t reach our backend. Easiest path: email hello@callmeie.ie or message us on WhatsApp (the green button).';
+    p.textContent = msg;
     body.appendChild(p);
+
     var nav = document.createElement('div');
     nav.className = 'cmt-chat-skip-row';
-    var retry = document.createElement('button');
-    retry.type = 'button';
-    retry.className = 'cmt-chat-btn cmt-chat-btn-primary';
-    retry.textContent = 'Try again';
-    retry.addEventListener('click', function () { state.submitting = false; submit(); });
+    if (showRetry) {
+      var retry = document.createElement('button');
+      retry.type = 'button';
+      retry.className = 'cmt-chat-btn cmt-chat-btn-primary';
+      retry.textContent = 'Try again';
+      retry.addEventListener('click', function () { state.submitting = false; submit(); });
+      nav.appendChild(retry);
+    }
     var mail = document.createElement('a');
     mail.href = 'mailto:hello@callmeie.ie?subject=Talk%20to%20CallMeIE%20%E2%80%94%20discovery%20widget%20error';
     mail.className = 'cmt-chat-btn cmt-chat-btn-ghost';
     mail.textContent = 'Email Adam';
-    nav.appendChild(retry);
     nav.appendChild(mail);
     body.appendChild(nav);
+
     state.submitting = false;
     if (window.console) console.warn('[cmt-chat] discovery submit failed:', err);
   }
