@@ -1,0 +1,2092 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local SEO + Google Business Profile management for Irish SMBs · CallMeIE Technologies</title>
+  <meta name="description" content="We claim, fill and grow your Google Business Profile so customers actually find you. Done by humans in Limerick. €95–495/mo monthly tiers; €99 audit one-off.">
+  <meta name="theme-color" content="#f3ecdf">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CallMeIE Technologies">
+  <meta property="og:title" content="Local SEO + Google Business Profile management for Irish SMBs · CallMeIE Technologies">
+  <meta property="og:description" content="We claim, fill and grow your Google Business Profile so customers actually find you. Done by humans in Limerick. €95–495/mo monthly tiers; €99 audit one-off.">
+  <meta property="og:url" content="https://callmeie.ie/local-seo/">
+  <meta property="og:image" content="https://callmeie.ie/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Local SEO + Google Business Profile · CallMeIE Technologies">
+  <meta name="twitter:description" content="GBP claim, fill and growth done by humans in Limerick. €95–495/mo. €99 audit one-off, credited toward your first month.">
+  <meta name="twitter:image" content="https://callmeie.ie/og-image.png">
+  <link rel="canonical" href="https://callmeie.ie/local-seo/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,600..800;1,9..144,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Local SEO + GBP",
+    "serviceType": "Local SEO",
+    "provider": {
+      "@type": "Organization",
+      "name": "CallMeIE Technologies",
+      "url": "https://callmeie.ie/",
+      "email": "hello@callmeie.ie",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Limerick",
+        "addressRegion": "Munster",
+        "addressCountry": "IE"
+      }
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Limerick"},
+      {"@type": "AdministrativeArea", "name": "Munster"},
+      {"@type": "Country", "name": "Ireland"}
+    ],
+    "description": "Google Business Profile setup and monthly maintenance, automated reviews engine, and local citation consistency for Irish SMBs. €99 audit one-off; €95-495/mo care tiers.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Audit (one-off)",
+        "price": "99",
+        "priceCurrency": "EUR",
+        "description": "GBP audit + competitor map + first-month roadmap. Credited in full toward the first month of any care tier."
+      },
+      {
+        "@type": "Offer",
+        "name": "Essential (monthly)",
+        "price": "95",
+        "priceCurrency": "EUR",
+        "description": "GBP claim/verify, profile completeness pass, 4 posts/mo, weekly photo, monthly Q&A pass, monthly insights report."
+      },
+      {
+        "@type": "Offer",
+        "name": "Growth (monthly)",
+        "price": "245",
+        "priceCurrency": "EUR",
+        "description": "Everything in Essential + reviews engine ON, 12 posts/mo, citations sweep, monthly 30-min strategy call."
+      },
+      {
+        "@type": "Offer",
+        "name": "Concierge (monthly)",
+        "price": "495",
+        "priceCurrency": "EUR",
+        "description": "Everything in Growth + competitor monitoring, GBP-attribute experiments, Maps-pack response time SLA, monthly local content. Limited to 4 active clients."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ------------------------------------------------------------------
+       CallMeIE · Local SEO + GBP product page.
+       Sections (in order):
+         1. topbar
+         2. hero
+         3. what we mean by local SEO
+         4. what we DON'T promise (anti-overpromise)
+         5. pricing (audit + 3 tiers)
+         6. cost vs hire (math)
+         7. vertical fit (good/bad fits)
+         8. FAQ (6 × <details>)
+         9. concrete next step
+        10. footer (cohesion)
+       Voice: warm, Irish, plain-spoken. No "leverage", no "synergy",
+       no "ROAS". Honesty first. Anti-overpromise is REQUIRED.
+    ------------------------------------------------------------------- */
+
+    :root {
+      --ink: #1a1812;
+      --paper: #f3ecdf;
+      --cream: #f8f3ea;
+      --accent: #c96f32;
+      --accent-dark: #9a4e1e;
+      --accent-light: #f1c18e;
+      --muted: rgba(26, 24, 18, 0.62);
+      --faint: rgba(26, 24, 18, 0.08);
+      --line: rgba(26, 24, 18, 0.12);
+      --ok: #1f6a3c;
+      --warn: #b04527;
+      --sans: "DM Sans", system-ui, sans-serif;
+      --display: "Fraunces", "Bodoni Moda", Georgia, serif;
+      --display-style: italic;
+      --display-weight: 800;
+      --serif: "Fraunces", serif;
+      --mono: "JetBrains Mono", monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      max-width: 100vw;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 12% -10%, rgba(201, 111, 50, 0.14), transparent 40%),
+        linear-gradient(180deg, var(--cream) 0%, #ede3d1 100%);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
+    }
+    img, video, svg, canvas { max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .shell { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+
+    /* ---------- 1. TOPBAR ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 30;
+      backdrop-filter: blur(18px);
+      background: rgba(243, 236, 223, 0.86);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      min-height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .mark {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      letter-spacing: -0.04em; text-transform: uppercase;
+      font-size: 15px;
+    }
+    .mark-badge {
+      width: 36px; height: 36px;
+      border-radius: 10px 2px 10px 2px;
+      background:
+        linear-gradient(135deg, #1b1a16 0 48%, transparent 48%),
+        linear-gradient(45deg, #c96f32 0 52%, #f1c18e 52%);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+      transform: rotate(-3deg);
+    }
+    .nav-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .nav-link {
+      font-family: var(--mono);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 8px 2px;
+    }
+    .nav-link:hover { color: var(--ink); }
+    .top-cta {
+      font-family: var(--mono);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 11px 18px;
+      background: var(--ink); color: var(--paper);
+      border-radius: 2px;
+      box-shadow: 0 3px 0 var(--accent);
+      transition: transform 140ms ease, box-shadow 140ms ease;
+    }
+    .top-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--accent); }
+
+    /* ---------- 2. HERO ---------- */
+    .hero { padding: clamp(50px, 8vw, 100px) 0 clamp(34px, 5vw, 60px); }
+    .hero .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .hero h1 {
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      letter-spacing: -0.045em;
+      font-size: clamp(40px, 6.4vw, 92px);
+      line-height: 0.96;
+      margin: 18px 0 22px;
+      max-width: 980px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-family: var(--serif);
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .hero .lede {
+      max-width: 660px;
+      font-size: clamp(17px, 1.6vw, 21px);
+      color: var(--ink);
+      opacity: 0.82;
+      margin: 0 0 28px;
+    }
+    .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+    .btn {
+      font-family: var(--mono);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 15px 22px;
+      border-radius: 2px;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+      min-height: 48px;
+      border: 0;
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: var(--ink); color: var(--paper);
+      box-shadow: 0 3px 0 var(--accent);
+    }
+    .btn.primary:hover { transform: translateY(-1px); box-shadow: 0 5px 0 var(--accent); }
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.4);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .btn.secondary:hover { background: #fff; }
+    .btn.accent {
+      background: var(--accent); color: var(--paper);
+      box-shadow: 0 3px 0 var(--ink);
+    }
+    .btn.accent:hover { transform: translateY(-1px); box-shadow: 0 5px 0 var(--ink); }
+    .hero-meta {
+      display: inline-flex; gap: 14px; align-items: center;
+      font-family: var(--mono);
+      font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 6px;
+      flex-wrap: wrap;
+    }
+    .hero-meta .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--ok); box-shadow: 0 0 10px rgba(31, 106, 60, 0.5); }
+
+    /* ---------- 3. SECTION SHELL ---------- */
+    section.block { padding: clamp(48px, 7vw, 90px) 0; border-top: 1px solid var(--line); }
+    section.block .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    section.block h2 {
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      letter-spacing: -0.035em;
+      font-size: clamp(32px, 4.4vw, 56px);
+      line-height: 1.04;
+      margin: 0 0 20px;
+      max-width: 920px;
+    }
+    section.block h2 em { color: var(--accent); font-family: var(--serif); }
+    section.block .lede {
+      max-width: 720px;
+      font-size: clamp(16px, 1.4vw, 19px);
+      color: var(--ink);
+      opacity: 0.8;
+      margin: 0 0 36px;
+    }
+    section.block h3 {
+      font-family: var(--display); font-style: italic; font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    /* ---------- 4. WHAT WE MEAN ---------- */
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+    @media (max-width: 880px) { .three-col { grid-template-columns: 1fr; } }
+    .pillar {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid var(--line);
+      padding: 26px 24px;
+      border-radius: 2px;
+      display: flex; flex-direction: column;
+    }
+    .pillar .num {
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      font-size: 32px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .pillar p { margin: 0 0 12px; color: var(--ink); opacity: 0.82; font-size: 15px; }
+    .pillar ul { margin: 8px 0 0; padding-left: 18px; font-size: 14px; color: var(--ink); opacity: 0.78; }
+    .pillar ul li { margin-bottom: 6px; }
+
+    /* ---------- 5. ANTI-OVERPROMISE ---------- */
+    .honest {
+      background: linear-gradient(180deg, #fff5ec 0%, #fde9d3 100%);
+      border: 1px solid var(--accent-light);
+      padding: clamp(28px, 4vw, 44px);
+      border-radius: 2px;
+    }
+    .honest h2 { color: var(--ink); }
+    .honest .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px 32px;
+      margin-top: 28px;
+    }
+    @media (max-width: 720px) { .honest .row { grid-template-columns: 1fr; } }
+    .honest .col h3 { font-style: italic; }
+    .honest .col p { font-size: 15px; margin: 0 0 10px; opacity: 0.85; }
+    .control-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+    .control-list li {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .control-list li:last-child { border-bottom: 0; }
+    .control-list .pct {
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+    .timeline {
+      margin-top: 28px;
+      padding: 0;
+      list-style: none;
+      counter-reset: month;
+    }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 18px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .timeline li:last-child { border-bottom: 1px solid var(--line); }
+    .timeline .when {
+      font-family: var(--mono);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .timeline .what { font-size: 15px; opacity: 0.86; }
+
+    /* ---------- 6. PRICING ---------- */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 22px;
+      margin-top: 28px;
+    }
+    @media (max-width: 980px) { .pricing-grid { grid-template-columns: 1fr; } }
+    .audit-card {
+      margin-top: 28px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 30px 32px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      border-radius: 2px;
+      box-shadow: 0 4px 0 var(--accent);
+    }
+    @media (max-width: 720px) { .audit-card { grid-template-columns: 1fr; } }
+    .audit-card .tag {
+      font-family: var(--mono);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 8px;
+    }
+    .audit-card h3 {
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      font-size: 30px;
+      margin: 0 0 8px;
+      color: var(--paper);
+    }
+    .audit-card p { margin: 0; font-size: 15px; opacity: 0.86; max-width: 540px; }
+    .audit-card .price-block {
+      text-align: right;
+      font-family: var(--mono);
+    }
+    .audit-card .price-num {
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      font-size: 56px;
+      color: var(--accent-light);
+      line-height: 1;
+    }
+    .audit-card .price-tag {
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--accent-light);
+      opacity: 0.85;
+      display: block; margin-top: 6px;
+    }
+
+    .tier {
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid var(--line);
+      padding: 28px 26px 32px;
+      border-radius: 2px;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .tier.popular {
+      background: linear-gradient(180deg, #fff9f0 0%, #fff3de 100%);
+      border-color: var(--accent);
+      box-shadow: 0 6px 0 var(--accent);
+    }
+    .tier .label {
+      position: absolute;
+      top: -12px; left: 22px;
+      font-family: var(--mono);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      background: var(--accent); color: var(--paper);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .tier .name {
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      margin: 0 0 4px;
+    }
+    .tier .price {
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      font-size: 44px;
+      color: var(--accent-dark);
+      line-height: 1;
+      margin: 8px 0 4px;
+    }
+    .tier .price small {
+      font-family: var(--mono);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-left: 4px;
+    }
+    .tier .pitch {
+      font-size: 14px; opacity: 0.78;
+      margin: 6px 0 18px;
+    }
+    .tier ul {
+      list-style: none;
+      padding: 0; margin: 0 0 22px;
+      font-size: 14.5px;
+      flex: 1;
+    }
+    .tier ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--faint);
+      display: flex; gap: 10px; align-items: baseline;
+    }
+    .tier ul li::before {
+      content: "→";
+      color: var(--accent);
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+    .tier ul li.off { opacity: 0.4; }
+    .tier ul li.off::before { content: "×"; color: var(--muted); }
+    .tier .cta-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+    .tier .note {
+      font-family: var(--mono);
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* ---------- 7. COST VS HIRE ---------- */
+    .cost-table {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.55);
+    }
+    .cost-table .row {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1.5fr;
+      gap: 16px;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .cost-table .row:last-child { border-bottom: 0; }
+    .cost-table .row.head {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .cost-table .row.us { background: linear-gradient(180deg, #fff9f0 0%, #fff3de 100%); }
+    .cost-table .opt { font-weight: 700; font-size: 15px; }
+    .cost-table .price-c {
+      font-family: var(--mono);
+      font-weight: 700;
+      color: var(--accent-dark);
+      font-size: 15px;
+    }
+    .cost-table .price-c small {
+      display: block;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .cost-table .note { font-size: 14px; opacity: 0.78; }
+    @media (max-width: 720px) {
+      .cost-table .row { grid-template-columns: 1fr; gap: 4px; padding: 14px 16px; }
+      .cost-table .row.head { display: none; }
+      .cost-table .opt::before { content: "Option · "; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 2px; font-weight: 500; }
+    }
+
+    /* ---------- 8. VERTICAL FIT ---------- */
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
+    @media (max-width: 720px) { .fit-grid { grid-template-columns: 1fr; } }
+    .fit {
+      padding: 26px 24px;
+      border-radius: 2px;
+      border: 1px solid var(--line);
+    }
+    .fit.good { background: rgba(31, 106, 60, 0.06); border-color: rgba(31, 106, 60, 0.3); }
+    .fit.bad { background: rgba(176, 69, 39, 0.05); border-color: rgba(176, 69, 39, 0.28); }
+    .fit h3 { margin-top: 0; }
+    .fit .badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 10px;
+    }
+    .fit.good .badge { background: var(--ok); color: #fff; }
+    .fit.bad .badge { background: var(--warn); color: #fff; }
+    .fit ul { margin: 12px 0 0; padding-left: 20px; font-size: 15px; }
+    .fit ul li { margin-bottom: 6px; opacity: 0.85; }
+
+    /* ---------- 9. FAQ ---------- */
+    .faq-list { margin-top: 8px; max-width: 880px; }
+    .faq-list details {
+      border-top: 1px solid var(--line);
+      padding: 18px 0;
+    }
+    .faq-list details:last-child { border-bottom: 1px solid var(--line); }
+    .faq-list summary {
+      cursor: pointer;
+      font-family: var(--display); font-style: italic; font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.015em;
+      list-style: none;
+      display: flex; justify-content: space-between; gap: 16px;
+      align-items: baseline;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after {
+      content: "+";
+      font-family: var(--mono);
+      font-size: 22px;
+      color: var(--accent);
+      font-weight: 700;
+      transition: transform 160ms ease;
+    }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list .answer {
+      margin-top: 14px;
+      font-size: 16px;
+      opacity: 0.85;
+      max-width: 720px;
+    }
+    .faq-list .answer p { margin: 0 0 10px; }
+    .faq-list .answer p:last-child { margin-bottom: 0; }
+
+    /* ---------- 10. NEXT STEP ---------- */
+    .next-step {
+      padding: clamp(40px, 6vw, 80px) 0;
+      border-top: 1px solid var(--line);
+    }
+    .next-step .panel {
+      background: var(--ink);
+      color: var(--paper);
+      padding: clamp(34px, 5vw, 56px);
+      border-radius: 2px;
+      box-shadow: 0 6px 0 var(--accent);
+    }
+    .next-step .panel h2 {
+      font-family: var(--display); font-style: italic; font-weight: 800;
+      letter-spacing: -0.035em;
+      font-size: clamp(30px, 4.2vw, 50px);
+      line-height: 1.04;
+      margin: 0 0 16px;
+      color: var(--paper);
+    }
+    .next-step .panel h2 em { color: var(--accent-light); font-family: var(--serif); }
+    .next-step .panel p {
+      max-width: 620px;
+      margin: 0 0 24px;
+      opacity: 0.82;
+      font-size: 17px;
+    }
+    .next-step .options {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+
+    /* ---------- skip-link, generic ---------- */
+    .cmt-skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 6px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      z-index: 1000;
+    }
+    .cmt-skip-link:focus { left: 16px; }
+
+    @media print {
+      .topbar, .next-step { display: none; }
+      body { background: #fff; color: #000; }
+    }
+  </style>
+  <link rel="stylesheet" href="/_partials/cohesion.css">
+</head>
+<body>
+
+<a class="cmt-skip-link" href="#main">Skip to main content</a>
+
+<!-- COHESION:STRIP-START -->
+<!-- (auto-generated by scripts/inject-cohesion.py — DO NOT EDIT) -->
+<aside class="callmeie-strip" role="navigation" aria-label="CallMeIE Technologies parent">
+  <div class="callmeie-strip-inner">
+    <a class="callmeie-mark" href="/">
+      <span class="callmeie-mark-name">CallMeIE</span>
+      <span class="callmeie-mark-tag">Technologies</span>
+    </a>
+    <details class="callmeie-products">
+      <summary>Products</summary>
+      <div class="callmeie-products-menu" role="menu">
+        <a role="menuitem" href="/receptionist/">
+          <strong>AI Receptionist</strong>
+          <em>Answers your phone 24/7</em>
+        </a>
+        <a role="menuitem" href="/docs/">
+          <strong>Document Ops</strong>
+          <em>Open-source OCR. We catch the mistakes.</em>
+        </a>
+        <a role="menuitem" href="/websites/">
+          <strong>AI-First Websites</strong>
+          <em>Sites with AI baked in</em>
+        </a>
+      </div>
+    </details>
+    <a class="callmeie-cta" href="mailto:hello@callmeie.ie?subject=Talk%20to%20CallMeIE%20Technologies">Talk to us</a>
+  </div>
+</aside>
+<!-- COHESION:STRIP-END -->
+
+<!-- COHESION:BREADCRUMB-START section="Local SEO" section_url="/local-seo/" page="Overview" -->
+<!-- (auto-generated by scripts/inject-cohesion.py — DO NOT EDIT) -->
+<nav class="callmeie-breadcrumb" aria-label="breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/local-seo/">Local SEO</a></li>
+    <li aria-current="page">Overview</li>
+  </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://callmeie.ie/"},
+    {"@type": "ListItem", "position": 2, "name": "Local SEO", "item": "https://callmeie.ie/local-seo/"},
+    {"@type": "ListItem", "position": 3, "name": "Overview"}
+  ]
+}
+</script>
+<!-- COHESION:BREADCRUMB-END -->
+
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="mark" href="/" aria-label="CallMeIE Technologies home">
+        <span class="mark-badge" aria-hidden="true"></span>
+        <span>CallMeIE<small style="display:block;font-size:0.55em;letter-spacing:0.18em;text-transform:uppercase;opacity:0.7;margin-top:2px;">Technologies</small></span>
+      </a>
+      <nav class="nav-row" aria-label="Page sections">
+        <a class="nav-link" href="#what">What it is</a>
+        <a class="nav-link" href="#honest">What we don't promise</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="nav-link" href="#fit">Who it suits</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="top-cta" href="mailto:hello@callmeie.ie?subject=Book%20a%2020-min%20local%20SEO%20%2F%20GBP%20audit%20call&body=Hi%20Adam%20%E2%80%94%20I%27d%20like%20to%20book%20a%2020-min%20call%20about%20local%20SEO%20%2F%20GBP.%0A%0AMy%20business%3A%20%0AWhere%20I%27m%20based%3A%20%0AWhat%27s%20broken%20today%3A%20%0A">Book a 20-min audit call →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== 2. HERO ========== -->
+    <section class="shell hero">
+      <div class="eyebrow">CallMeIE Technologies · Local SEO + Google Business Profile · Limerick</div>
+      <h1>So your customers <em>actually find you</em> when they search.</h1>
+      <p class="lede">
+        We claim, fill and grow your Google Business Profile so you turn up in the Maps pack and the local 3-pack — not on page 4. Done by humans in Limerick. We don't do tricks, we don't promise top-3 in 30 days, and we won't lock you in. Just steady, careful work on the parts of search Google actually rewards.
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn primary" href="mailto:hello@callmeie.ie?subject=Book%20a%2020-min%20local%20SEO%20%2F%20GBP%20audit%20call&body=Hi%20Adam%20%E2%80%94%20I%27d%20like%20to%20book%20a%2020-min%20call%20about%20local%20SEO%20%2F%20GBP.%0A%0AMy%20business%3A%20%0AWhere%20I%27m%20based%3A%20%0AWhat%27s%20broken%20today%3A%20%0A">
+          Book a 20-min audit call →
+        </a>
+        <a class="btn secondary" href="https://wa.me/353857863564?text=%5Bref%3Alocal-seo%5D%0AHi%20CallMeIE%20%E2%80%94%20I%27d%20like%20to%20chat%20about%20local%20SEO%20%2F%20GBP.%20My%20business%3A%20" target="_blank" rel="noopener">
+          WhatsApp us →
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Limerick · Ireland</span>
+        <span>·</span>
+        <span>€95–495/mo · €99 audit one-off</span>
+        <span>·</span>
+        <span>Cancel any month</span>
+      </div>
+    </section>
+
+    <!-- ========== 3. WHAT WE MEAN BY LOCAL SEO ========== -->
+    <section class="shell block" id="what">
+      <div class="eyebrow">§ 1 · Plain English</div>
+      <h2>What we <em>actually mean</em> by "local SEO".</h2>
+      <p class="lede">
+        Three things, and only three things. We do them carefully every month and we send you a one-page report so you can see what changed. If anyone tries to sell you "100 backlinks" or "guaranteed page 1" — show them the door. That's not what moves the needle for an Irish small business in 2026.
+      </p>
+
+      <div class="three-col">
+        <div class="pillar">
+          <span class="num">1</span>
+          <h3>Google Business Profile</h3>
+          <p>Your profile is the box that shows up beside the Map when someone searches "plumber Limerick" or "dentist near me". A complete, active profile beats an empty one every time.</p>
+          <ul>
+            <li>Claim and verify the listing</li>
+            <li>Fill every field — categories, services, hours, attributes</li>
+            <li>Weekly photos (real ones, your van, your shop, your team)</li>
+            <li>4–12 posts a month (offers, news, what's on)</li>
+            <li>Monthly Q&amp;A pass so we answer common questions before competitors do</li>
+          </ul>
+        </div>
+
+        <div class="pillar">
+          <span class="num">2</span>
+          <h3>Reviews engine</h3>
+          <p>The single biggest local-search signal we can move. We hook into your AI Receptionist call data (or your booking system) so the moment a job is done, an SMS goes out asking the customer to leave a review.</p>
+          <ul>
+            <li>Automated SMS-after-job ask</li>
+            <li>One link, one tap, lands on your Google review form</li>
+            <li>Optional pre-filter: unhappy customers route to you privately first</li>
+            <li>Monthly review-rate report so you can see what's working</li>
+            <li>Honest by design — we never write fake reviews and we never bulk-flag bad ones</li>
+          </ul>
+        </div>
+
+        <div class="pillar">
+          <span class="num">3</span>
+          <h3>Local citations</h3>
+          <p>Your name, address and phone (NAP) need to match across the directories Google checks. We sweep the dozen-or-so that move the needle for Irish SMBs and we keep them aligned every month.</p>
+          <ul>
+            <li>Yelp + Yelp Ireland</li>
+            <li>TrustATrader.ie / RatedPeople (trades)</li>
+            <li>Brownbook · Hotfrog · Cylex · Foursquare</li>
+            <li>Tripadvisor (hospitality only)</li>
+            <li>Industry-specific: Yell.ie, Goldenpages, Independent.ie business directory</li>
+            <li>Apple Maps + Bing Places (small audience, same NAP)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. WHAT WE DON'T PROMISE ========== -->
+    <section class="shell block" id="honest">
+      <div class="honest">
+        <div class="eyebrow">§ 2 · Honesty first</div>
+        <h2>What we <em>don't</em> promise.</h2>
+        <p class="lede">
+          Every Irish trades business has had a cold call from "an SEO agency in Dublin" promising "top 3 in 30 days, money back guarantee." It's nonsense, and it's usually how a profile ends up suspended. Here's what we will and won't say to you.
+        </p>
+
+        <div class="row">
+          <div class="col">
+            <h3>We won't say:</h3>
+            <p>✗ "Top 3 in 30 days."</p>
+            <p>✗ "Guaranteed page-one ranking for [keyword]."</p>
+            <p>✗ "100 backlinks for €99 / link farm packages."</p>
+            <p>✗ "Buy 50 reviews from a Fiverr seller."</p>
+            <p>✗ "We have a Google insider."</p>
+            <p>None of those are real. The first three will hurt you. The middle ones can get your profile suspended. The last one is a lie.</p>
+          </div>
+          <div class="col">
+            <h3>We will say:</h3>
+            <p>Google ranks local results on three things: <strong>proximity</strong> (where the searcher is), <strong>relevance</strong> (does your profile match what they typed), and <strong>prominence</strong> (reviews + citations + activity). We control different amounts of each.</p>
+            <ul class="control-list">
+              <li><span>Profile completeness</span><span class="pct">100%</span></li>
+              <li><span>Posting cadence + photos</span><span class="pct">100%</span></li>
+              <li><span>Review ask delivery</span><span class="pct">100%</span></li>
+              <li><span>Citation consistency</span><span class="pct">~30%</span></li>
+              <li><span>What customers click on</span><span class="pct">0%</span></li>
+              <li><span>Review content quality</span><span class="pct">0%</span></li>
+              <li><span>Competitor moves</span><span class="pct">0%</span></li>
+              <li><span>Google's algorithm changes</span><span class="pct">0%</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 36px;">Realistic shape, first 6 months on the Growth tier:</h3>
+        <ol class="timeline">
+          <li><span class="when">Month 1</span><span class="what">Profile claimed and verified, every field filled, baseline screenshots saved. First batch of posts and photos live. Citation sweep starts. <strong>You won't see ranking changes yet</strong> — the work is below the surface.</span></li>
+          <li><span class="when">Month 2</span><span class="what">Reviews engine on. Profile views start to lift (Google tracks this in your insights). First small bump in "how customers found you" → Search → Direct.</span></li>
+          <li><span class="when">Month 3</span><span class="what">Typical first verifiable lift in profile-views and discovery searches. If your category isn't crowded, first Maps-pack appearances on long-tail queries (e.g. "emergency plumber Castletroy" not just "plumber Limerick").</span></li>
+          <li><span class="when">Months 4–6</span><span class="what">Maps-pack improvement on broader queries <em>if competitor density allows</em>. Review count compounding. Decision point: is this category winnable for you, or do we need a different approach (e.g. Google Ads alongside)?</span></li>
+          <li><span class="when">Month 6+</span><span class="what">Steady-state. We keep doing the work, you keep getting found. If month 6 hasn't moved the needle in a measurable way, we'll tell you straight and refund the last month — see FAQ.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== 5. PRICING ========== -->
+    <section class="shell block" id="pricing">
+      <div class="eyebrow">§ 3 · Pricing</div>
+      <h2>One audit, three care tiers.</h2>
+      <p class="lede">
+        Start with the audit if you're not sure. It's a one-off €99, you get a 6-page report and a 30-min call walking through it, and if you sign on for any monthly tier we credit the full €99 toward your first month. So if it's not for you, you're out €99 for a real audit (cheaper than most "free" ones, which are sales pitches in disguise).
+      </p>
+
+      <!-- Audit one-off -->
+      <div class="audit-card">
+        <div>
+          <span class="tag">One-off · No subscription</span>
+          <h3>The Audit</h3>
+          <p>GBP audit + competitor map of your top 3 local rivals + first-month roadmap with priorities. Delivered as a 6-page PDF and a 30-min call. Credited in full toward month 1 of any care tier.</p>
+        </div>
+        <div class="price-block">
+          <div class="price-num">€99</div>
+          <span class="price-tag">one-off</span>
+          <a class="btn accent" style="margin-top: 14px;" href="mailto:hello@callmeie.ie?subject=I%27d%20like%20to%20buy%20the%20%E2%82%AC99%20local%20SEO%20%2F%20GBP%20audit&body=Hi%20Adam%20%E2%80%94%20I%27d%20like%20to%20buy%20the%20%E2%82%AC99%20audit.%0A%0AMy%20business%3A%20%0AWhere%20I%27m%20based%3A%20%0AGBP%20URL%20(if%20I%20know%20it)%3A%20%0A">Buy the audit →</a>
+        </div>
+      </div>
+
+      <!-- Tier cards -->
+      <div class="pricing-grid">
+        <!-- Essential -->
+        <div class="tier">
+          <div class="name">Essential</div>
+          <div class="price">€95<small>/ month</small></div>
+          <p class="pitch">Quiet, careful upkeep. For solo traders and small shops who want their profile minded properly without a song and dance.</p>
+          <ul>
+            <li>GBP claim + verify (first time only)</li>
+            <li>Profile completeness pass — every field</li>
+            <li>4 posts / month (offers, news, photos)</li>
+            <li>1 fresh photo / week</li>
+            <li>Monthly Q&amp;A pass + spam-Q removal</li>
+            <li>Monthly insights report (1 page, plain English)</li>
+            <li>Email support, 1-business-day reply</li>
+            <li class="off">Reviews engine (off this tier)</li>
+            <li class="off">Citations sweep (off this tier)</li>
+            <li class="off">Strategy call (off this tier)</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:hello@callmeie.ie?subject=Start%20Essential%20local%20SEO%20care%20(%E2%82%AC95%2Fmo)&body=Hi%20Adam%20%E2%80%94%20I%27d%20like%20to%20start%20on%20the%20Essential%20tier.%0A%0AMy%20business%3A%20%0AWhere%20I%27m%20based%3A%20%0AGBP%20URL%20(if%20I%20know%20it)%3A%20%0A">Start Essential</a>
+          </div>
+          <div class="note">Cancel any month</div>
+        </div>
+
+        <!-- Growth (popular) -->
+        <div class="tier popular">
+          <span class="label">Recommended</span>
+          <div class="name">Growth</div>
+          <div class="price">€245<small>/ month</small></div>
+          <p class="pitch">Everything in Essential plus the bits that actually grow you — reviews engine, citation consistency, and a monthly look at what's working.</p>
+          <ul>
+            <li>Everything in Essential</li>
+            <li><strong>Reviews engine ON</strong> — SMS-after-job, integrates with the AI Receptionist if you have it</li>
+            <li>12 posts / month (3 / week)</li>
+            <li>Citations sweep across 12–15 IE directories</li>
+            <li>Monthly NAP-consistency check + fixes</li>
+            <li>Monthly 30-min strategy call (Adam, by Zoom or in person if Limerick)</li>
+            <li>Slack / WhatsApp channel for quick questions</li>
+            <li>Insights report includes review-rate trend</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:hello@callmeie.ie?subject=Start%20Growth%20local%20SEO%20care%20(%E2%82%AC245%2Fmo)&body=Hi%20Adam%20%E2%80%94%20I%27d%20like%20to%20start%20on%20the%20Growth%20tier.%0A%0AMy%20business%3A%20%0AWhere%20I%27m%20based%3A%20%0AGBP%20URL%20(if%20I%20know%20it)%3A%20%0ADo%20I%20already%20have%20the%20AI%20Receptionist%3F%20%0A">Start Growth</a>
+          </div>
+          <div class="note">Cancel any month · 6-month no-progress refund (see FAQ)</div>
+        </div>
+
+        <!-- Concierge -->
+        <div class="tier">
+          <div class="name">Concierge</div>
+          <div class="price">€495<small>/ month</small></div>
+          <p class="pitch">For competitive categories where every position matters. Limited to 4 active clients at a time — waitlist when full.</p>
+          <ul>
+            <li>Everything in Growth</li>
+            <li>Weekly competitor monitoring (top 3 rivals tracked)</li>
+            <li>GBP-attribute experiments (categories, services, descriptions)</li>
+            <li>Maps-pack response time SLA — Q&amp;A and reviews replied within 4 business hours</li>
+            <li>1 short, locally-relevant blog post / month tied to seasonal search demand</li>
+            <li>Quarterly on-site visit (Limerick + Munster) for fresh photo set</li>
+            <li>Direct WhatsApp to Adam, same-day reply</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:hello@callmeie.ie?subject=Concierge%20waitlist%20%2F%20availability%20(%E2%82%AC495%2Fmo)&body=Hi%20Adam%20%E2%80%94%20I%27m%20interested%20in%20the%20Concierge%20tier.%0A%0AMy%20business%3A%20%0AWhere%20I%27m%20based%3A%20%0AWhat%20makes%20my%20category%20competitive%3A%20%0A">Check availability</a>
+          </div>
+          <div class="note">4 clients max · waitlist when full</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 6. COST VS HIRE ========== -->
+    <section class="shell block">
+      <div class="eyebrow">§ 4 · Cost vs hire</div>
+      <h2>Quick maths against your other options.</h2>
+      <p class="lede">
+        Some clients have asked us "should I just hire someone in-house?" Worth doing the maths properly. A junior digital-marketing assistant in Ireland is loaded cost €2,400–3,000/mo by the time you add PRSI, holidays and software — and they'll need supervision. A freelance contractor sits in the middle. Growth tier sits at the bottom of the range, and the work is bundled with the rest of the studio.
+      </p>
+
+      <div class="cost-table">
+        <div class="row head">
+          <span>Option</span>
+          <span>Monthly cost</span>
+          <span>What you get</span>
+        </div>
+        <div class="row">
+          <span class="opt">Junior in-house assistant</span>
+          <span class="price-c">€2,400–3,000<small>loaded · IE 2026</small></span>
+          <span class="note">Salary + PRSI + holidays + software seats. Needs management. Often spread across SEO, social, ads, email — not specialist.</span>
+        </div>
+        <div class="row">
+          <span class="opt">Freelance SEO contractor</span>
+          <span class="price-c">€600–1,200<small>monthly retainer</small></span>
+          <span class="note">Variable quality. Most don't specialise in local; many are remote and don't know the Irish directory landscape.</span>
+        </div>
+        <div class="row us">
+          <span class="opt"><strong>CallMeIE Growth</strong></span>
+          <span class="price-c">€245<small>monthly · cancel anytime</small></span>
+          <span class="note">Limerick-based. Specialist in local + GBP only. Plugs into the AI Receptionist + Document Ops if you use them. One studio, one invoice.</span>
+        </div>
+        <div class="row">
+          <span class="opt">DIY (you do it)</span>
+          <span class="price-c">€0<small>+ ~5 hours / week</small></span>
+          <span class="note">Real option for some. We're happy to do the audit and hand you a checklist if you want to run it yourself. We won't push you toward a tier you don't need.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 7. VERTICAL FIT ========== -->
+    <section class="shell block" id="fit">
+      <div class="eyebrow">§ 5 · Who this suits</div>
+      <h2>Honest about the fit.</h2>
+      <p class="lede">
+        Local SEO works for businesses where customers physically search "[thing] near me" or "[thing] [town]". If that's not you, we'll say so and point you somewhere else.
+      </p>
+
+      <div class="fit-grid">
+        <div class="fit good">
+          <span class="badge">Good fit</span>
+          <h3>Where local SEO + GBP earns its keep</h3>
+          <ul>
+            <li><strong>Trades</strong> — plumber, electrician, mechanic, motor factors, roofer, locksmith. The Maps pack is where the work comes from.</li>
+            <li><strong>Hospitality</strong> — restaurant, café, hotel, B&amp;B. Reviews + photos + opening hours are make-or-break.</li>
+            <li><strong>Healthcare</strong> — dental, GP, physio, pharmacy. Trust signals matter; review-handling needs care (and we know the GDPR side).</li>
+            <li><strong>Professional services</strong> — solicitor, accountant, consultant. Lower volume, higher value per call. Profile completeness + reviews drive the inbound.</li>
+            <li><strong>Personal services</strong> — salon, barber, beautician, fitness. Photos and posts do heavy lifting.</li>
+          </ul>
+        </div>
+
+        <div class="fit bad">
+          <span class="badge">Wrong fit · we'll say so</span>
+          <h3>Where local SEO is the wrong tool</h3>
+          <ul>
+            <li><strong>Pure e-commerce</strong> with no physical premises and no service area — your search game is national/international SEO + product feeds, not GBP.</li>
+            <li><strong>International SaaS</strong> — buyers don't search "near me". Different toolkit entirely.</li>
+            <li><strong>Wholesale-only B2B</strong> with under 50 known buyers — direct outreach beats discovery search.</li>
+            <li><strong>"I just want top of Google"</strong> with no specific search query in mind — we'll talk you through what's actually realistic before taking your money.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 8. FAQ ========== -->
+    <section class="shell block" id="faq">
+      <div class="eyebrow">§ 6 · Honest answers</div>
+      <h2>Six questions we get every week.</h2>
+
+      <div class="faq-list">
+
+        <details>
+          <summary>Can you guarantee top-3 placement?</summary>
+          <div class="answer">
+            <p>No. And nobody else can either — anyone who does is either lying or about to get your profile suspended. Google's local algorithm uses proximity (where the searcher is standing), relevance (does your profile match what they typed), and prominence (reviews + citations + activity). We control the prominence levers. We do not control where your customers physically stand or what Google decides relevance means this month.</p>
+            <p>What we do guarantee: the work itself happens every month, on time, and you get a one-page report showing exactly what changed.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How long until I see results?</summary>
+          <div class="answer">
+            <p>Per Google's own published guidance and what we see in practice: <strong>profile-view lift around month 2–3</strong> (visible in your GBP insights tab — we screenshot it monthly), <strong>Maps-pack improvement around month 4–6</strong> if your category density allows. Crowded categories (e.g. "plumber Limerick city" with 40+ verified competitors) take longer than less competitive ones (e.g. "tile fitter Castletroy"). We tell you upfront which side of that line you're on.</p>
+            <p>If 6 months of Growth tier hasn't moved your insights numbers in any measurable direction, we refund the most recent month and recommend either (a) Google Ads to compensate or (b) honestly, that local SEO isn't where your time and money should go.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What about reviews from upset customers?</summary>
+          <div class="answer">
+            <p>We don't manipulate them. We don't bulk-flag legitimate negative reviews. We don't pay for reviews and we don't write them.</p>
+            <p>What we do: set up the SMS-after-job ask so the moment a happy customer's job is done, they get a one-tap link to leave a review. Most of them weren't going to bother on their own — they're happy, they just forget. The ask surfaces the silent majority. Bad reviews still happen and we'll help you reply professionally, which Google rewards.</p>
+            <p>If a review is fake or breaks Google's policy (slurs, off-topic, conflict of interest), we'll help you flag it through the proper channel. That's not the same as gaming the system.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do you handle Google Ads too?</summary>
+          <div class="answer">
+            <p>No. Different product, different skill set, and we'd rather do one thing properly than two things adequately.</p>
+            <p>If your category is too crowded for organic Maps-pack alone, you probably do need Ads alongside. We can recommend a specialist (we keep a short list of Irish PPC freelancers we trust) — or, honestly, a lot of small businesses are fine running their own Google Ads after a 1-hour walkthrough. We can do that as a one-off if it's useful.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do you need access to my Google account?</summary>
+          <div class="answer">
+            <p>Only the Google Business Profile listing itself, never your personal Google account. The transfer pattern is: you stay the primary owner of the listing, you add hello@callmeie.ie as a manager, we do the work, and the day you stop working with us you remove our access in 30 seconds. Your listing, your data, your call.</p>
+            <p>We never ask for passwords. We never log in as you. If anyone in the SEO industry asks you for your Google account password, walk away.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I cancel any time?</summary>
+          <div class="answer">
+            <p>Yes — every monthly tier is month-to-month. No annual contract, no early-termination fee, cancel by emailing hello@callmeie.ie before your renewal date and you're done. The audit is a one-off you keep regardless.</p>
+            <p>The only "lock-in" is the 6-month no-progress refund on the Growth tier — that's a promise from us, not a commitment from you. If month 6 numbers haven't moved, we refund the last month. You're free to leave at any earlier point too.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ========== 9. CONCRETE NEXT STEP ========== -->
+    <section class="shell next-step">
+      <div class="panel">
+        <div class="eyebrow" style="color: var(--accent-light);">§ 7 · Next step</div>
+        <h2>Want a real <em>look at your profile</em>?</h2>
+        <p>
+          Easiest path: book the €99 audit. We pull your GBP, map your top 3 local competitors, write up a 6-page priorities report, and walk you through it on a 30-min call. If you sign on after, we credit the €99 toward your first month. If you don't, you keep the audit. Sound fair.
+        </p>
+        <div class="options">
+          <a class="btn accent" href="mailto:hello@callmeie.ie?subject=I%27d%20like%20to%20buy%20the%20%E2%82%AC99%20local%20SEO%20%2F%20GBP%20audit&body=Hi%20Adam%20%E2%80%94%20I%27d%20like%20to%20buy%20the%20%E2%82%AC99%20audit.%0A%0AMy%20business%3A%20%0AWhere%20I%27m%20based%3A%20%0AGBP%20URL%20(if%20I%20know%20it)%3A%20%0A">Buy the €99 audit →</a>
+          <a class="btn secondary" style="background: rgba(255,255,255,0.12); color: var(--paper); border-color: rgba(255,255,255,0.2);" href="https://wa.me/353857863564?text=%5Bref%3Alocal-seo%5D%0AHi%20CallMeIE%20%E2%80%94%20I%27d%20like%20to%20chat%20about%20local%20SEO%20%2F%20GBP.%20My%20business%3A%20" target="_blank" rel="noopener">WhatsApp first →</a>
+          <a class="btn secondary" style="background: rgba(255,255,255,0.12); color: var(--paper); border-color: rgba(255,255,255,0.2);" href="mailto:hello@callmeie.ie?subject=Question%20about%20local%20SEO%20%2F%20GBP">Email a question →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<!-- COHESION:FOOTER-START -->
+<!-- (auto-generated by scripts/inject-cohesion.py — DO NOT EDIT) -->
+<footer class="callmeie-footer" role="contentinfo">
+  <div class="callmeie-footer-inner">
+    <div class="callmeie-footer-brand">
+      <strong>CallMeIE Technologies</strong>
+      <span>AI ops infrastructure · Limerick · Ireland</span>
+      <a href="mailto:hello@callmeie.ie">hello@callmeie.ie</a>
+    </div>
+    <nav class="callmeie-footer-nav" aria-label="Site sections">
+      <div class="callmeie-footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/receptionist/">AI Receptionist</a></li>
+          <li><a href="/docs/">Document Ops</a></li>
+          <li><a href="/websites/">AI-First Websites</a></li>
+        </ul>
+      </div>
+      <div class="callmeie-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="mailto:hello@callmeie.ie">Contact</a></li>
+          <li><span>Limerick · Ireland</span></li>
+        </ul>
+      </div>
+      <div class="callmeie-footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://portal.callmeie.ie/portal/login" title="Doc Ops customers only — receptionist + websites portals coming after launch">Doc Ops portal</a></li>
+          <li><a href="/docs/#pricing">Pricing</a></li>
+          <li><a href="/docs/#faq">Document Ops FAQ</a></li>
+        </ul>
+      </div>
+      <div class="callmeie-footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/legal/">Legal index</a></li>
+          <li><a href="/legal/privacy.html">Privacy</a></li>
+          <li><a href="/legal/terms.html">Terms</a></li>
+          <li><a href="/legal/dpa.html">DPA</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="callmeie-footer-band">
+    <span><strong>CallMeIE Technologies</strong> · Adam Vaughan t/a · Limerick, Ireland · IE VAT-registered · GDPR-compliant data processor</span>
+    <span><a href="/legal/dpa.html">Data Processing Agreement</a> · Limited-company incorporation in progress (DPA pre-novated for assignment on incorporation)</span>
+  </div>
+</footer>
+<!-- COHESION:FOOTER-END -->
+
+<!-- COHESION:CHATBOT-START page_context="local-seo" -->
+<!-- (auto-generated by scripts/inject-cohesion.py — DO NOT EDIT) -->
+<!--
+  Discovery chatbot widget (P3) — vanilla JS, no build step.
+  Tokens substituted by scripts/inject-cohesion.py:
+    local-seo — one of: hub | receptionist | docs | websites
+  Sits bottom-LEFT to avoid the WhatsApp FAB at bottom-right.
+  All conversation state lives in sessionStorage; no PII reaches the
+  server until the visitor answers all four questions and the widget
+  POSTs the payload to /api/discovery.
+-->
+<button type="button" class="cmt-chat-fab"
+        aria-label="Open CallMeIE discovery chatbot"
+        data-cmt-chat-context="local-seo">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+  </svg>
+  <span class="cmt-chat-label">Find your fit · 30 sec</span>
+</button>
+
+<div class="cmt-chat-shell" role="dialog" aria-modal="true"
+     aria-labelledby="cmt-chat-title" hidden>
+  <div class="cmt-chat-card">
+    <header class="cmt-chat-head">
+      <span class="cmt-chat-eyebrow">CallMeIE · Limerick</span>
+      <h2 id="cmt-chat-title">Quick fit-check</h2>
+      <button type="button" class="cmt-chat-close" aria-label="Close">×</button>
+    </header>
+
+    <div class="cmt-chat-body" data-cmt-chat-body>
+      <!-- Filled in client-side as the visitor advances. -->
+    </div>
+
+    <footer class="cmt-chat-foot">
+      <span class="cmt-chat-progress" data-cmt-chat-progress>1 / 4</span>
+      <span class="cmt-chat-disclosure">AI quiz · Adam reviews every booking · alerts via private Telegram bot (owner-only) — see <a href="/legal/privacy.html#sec-5" style="color:inherit;text-decoration:underline">privacy</a></span>
+    </footer>
+  </div>
+</div>
+
+<style>
+  .cmt-chat-fab {
+    position: fixed;
+    left: 20px; bottom: 20px;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 18px 12px 14px;
+    border: 0; border-radius: 999px;
+    background: var(--cmt-brand, #1d3557);
+    color: #ffffff;
+    font-family: var(--cmt-font-body, 'Inter', system-ui, sans-serif);
+    font-size: 13px; font-weight: 600; letter-spacing: 0.01em;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18), 0 2px 6px rgba(0,0,0,.12);
+    z-index: 95;
+    cursor: pointer;
+    transition: transform .15s cubic-bezier(.22,1,.36,1),
+                box-shadow .15s cubic-bezier(.22,1,.36,1);
+  }
+  .cmt-chat-fab:hover, .cmt-chat-fab:focus-visible {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0,0,0,.22), 0 4px 8px rgba(0,0,0,.14);
+  }
+  .cmt-chat-fab:focus-visible {
+    outline: 3px solid var(--cmt-accent, #c96f32);
+    outline-offset: 4px;
+  }
+  .cmt-chat-fab svg { display: block; }
+  @media (max-width: 480px) {
+    .cmt-chat-fab {
+      left: 16px; bottom: 16px;
+      padding: 10px 14px 10px 12px;
+      font-size: 12px;
+    }
+    .cmt-chat-label { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cmt-chat-fab, .cmt-chat-fab:hover { transition: none; transform: none; }
+  }
+  @media print {
+    .cmt-chat-fab, .cmt-chat-shell { display: none !important; }
+  }
+
+  .cmt-chat-shell {
+    position: fixed; inset: 0;
+    z-index: 200;
+    background: rgba(15, 23, 42, 0.42);
+    display: flex; align-items: flex-end; justify-content: flex-start;
+    padding: 24px;
+    backdrop-filter: blur(2px);
+  }
+  .cmt-chat-shell[hidden] { display: none !important; }
+  .cmt-chat-card {
+    width: min(440px, 100%);
+    max-height: min(640px, calc(100vh - 48px));
+    display: flex; flex-direction: column;
+    background: var(--cmt-paper, #f8f5f0);
+    color: var(--cmt-ink, #1c1f24);
+    border-radius: 12px;
+    box-shadow: 0 24px 64px rgba(0,0,0,.32), 0 6px 16px rgba(0,0,0,.16);
+    overflow: hidden;
+    font-family: var(--cmt-font-body, 'Inter', system-ui, sans-serif);
+  }
+  @media (max-width: 480px) {
+    .cmt-chat-shell { padding: 0; align-items: stretch; justify-content: stretch; }
+    .cmt-chat-card { width: 100%; max-height: 100vh; border-radius: 0; }
+  }
+
+  .cmt-chat-head {
+    position: relative;
+    padding: 18px 56px 14px 22px;
+    border-bottom: 1px solid var(--cmt-line, #d8cfc1);
+    background: var(--cmt-paper-alt, #efe9de);
+  }
+  .cmt-chat-eyebrow {
+    display: block;
+    font-family: var(--cmt-font-mono, 'JetBrains Mono', ui-monospace, monospace);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cmt-brand, #1d3557);
+  }
+  #cmt-chat-title {
+    margin: 4px 0 0;
+    font-family: var(--cmt-font-display, 'Fraunces', Georgia, serif);
+    font-style: italic; font-weight: 700;
+    font-size: 22px; line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .cmt-chat-close {
+    position: absolute; top: 14px; right: 14px;
+    width: 32px; height: 32px;
+    border: 0; border-radius: 50%;
+    background: rgba(0,0,0,.06);
+    font-size: 22px; line-height: 1;
+    color: inherit; cursor: pointer;
+    display: grid; place-items: center;
+  }
+  .cmt-chat-close:hover { background: rgba(0,0,0,.12); }
+  .cmt-chat-close:focus-visible {
+    outline: 2px solid var(--cmt-brand, #1d3557); outline-offset: 2px;
+  }
+
+  .cmt-chat-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 22px 22px 8px;
+  }
+  .cmt-chat-prompt {
+    margin: 0 0 14px;
+    font-size: 16px; line-height: 1.45;
+    color: var(--cmt-ink, #1c1f24);
+  }
+  .cmt-chat-prompt strong { font-weight: 700; }
+  .cmt-chat-chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 0 0 14px;
+  }
+  .cmt-chat-chip {
+    border: 1px solid var(--cmt-line, #d8cfc1);
+    background: #fff;
+    color: var(--cmt-ink, #1c1f24);
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-size: 13px; font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .12s ease, border-color .12s ease;
+  }
+  .cmt-chat-chip:hover { background: var(--cmt-paper-alt, #efe9de); }
+  .cmt-chat-chip[aria-pressed="true"] {
+    background: var(--cmt-brand, #1d3557); color: #fff;
+    border-color: var(--cmt-brand, #1d3557);
+  }
+  .cmt-chat-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--cmt-line, #d8cfc1);
+    border-radius: 6px;
+    background: #fff;
+    font: inherit;
+    color: inherit;
+    margin: 0 0 12px;
+  }
+  .cmt-chat-input:focus-visible {
+    outline: 2px solid var(--cmt-brand, #1d3557); outline-offset: 1px;
+  }
+  .cmt-chat-skip-row {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .cmt-chat-btn {
+    border: 0; cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .cmt-chat-btn-primary {
+    background: var(--cmt-brand, #1d3557);
+    color: #fff;
+    box-shadow: 0 2px 0 rgba(0,0,0,.12);
+  }
+  .cmt-chat-btn-primary:hover {
+    background: var(--cmt-brand-hover, #14253f);
+  }
+  .cmt-chat-btn-ghost {
+    background: transparent;
+    color: var(--cmt-muted, #6b665d);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 8px 4px;
+  }
+  .cmt-chat-btn-ghost:hover { color: var(--cmt-ink, #1c1f24); }
+
+  .cmt-chat-result {
+    background: #fff;
+    border: 1px solid var(--cmt-line, #d8cfc1);
+    border-left: 4px solid var(--cmt-brand, #1d3557);
+    border-radius: 6px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .cmt-chat-result-tag {
+    font-family: var(--cmt-font-mono, 'JetBrains Mono', ui-monospace, monospace);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cmt-brand, #1d3557);
+    display: block; margin-bottom: 6px;
+  }
+  .cmt-chat-result-anchor {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--cmt-paper-alt, #efe9de);
+    font-size: 12px; font-weight: 600;
+    color: var(--cmt-ink, #1c1f24);
+  }
+  .cmt-chat-result-text {
+    margin: 4px 0 0;
+    font-size: 14px; line-height: 1.5;
+    color: var(--cmt-ink, #1c1f24);
+  }
+  .cmt-chat-cta-list {
+    display: flex; flex-direction: column; gap: 8px;
+    margin: 14px 0 8px;
+  }
+  .cmt-chat-cta {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px; font-weight: 600;
+    text-align: center;
+  }
+  .cmt-chat-cta[data-kind="primary"] {
+    background: #25D366; color: #fff;
+  }
+  .cmt-chat-cta[data-kind="primary"]:hover { filter: brightness(0.96); }
+  .cmt-chat-cta[data-kind="secondary"] {
+    background: var(--cmt-brand, #1d3557); color: #fff;
+  }
+  .cmt-chat-cta[data-kind="secondary"]:hover {
+    background: var(--cmt-brand-hover, #14253f);
+  }
+  .cmt-chat-cta[data-kind="tertiary"] {
+    background: transparent; color: var(--cmt-brand, #1d3557);
+    border: 1px solid var(--cmt-line, #d8cfc1);
+  }
+  .cmt-chat-cta[data-kind="tertiary"]:hover {
+    background: var(--cmt-paper-alt, #efe9de);
+  }
+
+  .cmt-chat-loading {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 0;
+    font-size: 14px;
+    color: var(--cmt-muted, #6b665d);
+  }
+  .cmt-chat-loading::before {
+    content: ""; width: 14px; height: 14px;
+    border: 2px solid var(--cmt-line, #d8cfc1);
+    border-top-color: var(--cmt-brand, #1d3557);
+    border-radius: 50%;
+    animation: cmt-chat-spin 0.8s linear infinite;
+  }
+  @keyframes cmt-chat-spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .cmt-chat-loading::before { animation: none; border-top-color: transparent; }
+  }
+
+  .cmt-chat-error {
+    background: #fff5f0;
+    border: 1px solid #d97757;
+    color: #8b3a18;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 0 0 12px;
+    font-size: 13px;
+  }
+
+  .cmt-chat-foot {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px;
+    padding: 12px 22px 16px;
+    border-top: 1px solid var(--cmt-line, #d8cfc1);
+    background: var(--cmt-paper-alt, #efe9de);
+  }
+  .cmt-chat-progress {
+    font-family: var(--cmt-font-mono, 'JetBrains Mono', ui-monospace, monospace);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cmt-brand, #1d3557);
+  }
+  .cmt-chat-disclosure {
+    font-size: 11px; line-height: 1.4;
+    color: var(--cmt-muted, #6b665d);
+    text-align: right;
+    flex: 1; min-width: 0;
+  }
+</style>
+
+<script>
+(function () {
+  // Skip if widget already wired (e.g. multiple sentinels per page).
+  if (window.__cmtChatBound) return;
+  window.__cmtChatBound = true;
+
+  var fab = document.querySelector('.cmt-chat-fab');
+  var shell = document.querySelector('.cmt-chat-shell');
+  if (!fab || !shell) return;
+
+  var body = shell.querySelector('[data-cmt-chat-body]');
+  var progress = shell.querySelector('[data-cmt-chat-progress]');
+  var closeBtn = shell.querySelector('.cmt-chat-close');
+  var pageContext = (fab.getAttribute('data-cmt-chat-context') || 'hub').slice(0, 32);
+
+  var DISCOVERY_ENDPOINT = 'https://api.callmeie.ie/api/discovery';
+
+  var STEPS = [
+    {
+      key: 'business',
+      prompt: '<strong>What\'s your business?</strong>',
+      options: [
+        { value: 'dental', label: 'Dental' },
+        { value: 'motor-factors', label: 'Motor factors' },
+        { value: 'salon', label: 'Salon' },
+        { value: 'solicitor', label: 'Solicitor' },
+        { value: 'restaurant', label: 'Restaurant' },
+        { value: 'other', label: 'Other' }
+      ],
+      allowOther: true
+    },
+    {
+      key: 'pain',
+      prompt: '<strong>Biggest unfinished labour each week?</strong>',
+      options: [
+        { value: 'missed-calls', label: 'Missed calls' },
+        { value: 'invoice-review', label: 'Invoice review' },
+        { value: 'outdated-website', label: 'Outdated website' },
+        { value: 'lead-capture', label: 'Lead capture' },
+        { value: 'other', label: 'Something else' }
+      ],
+      allowOther: true
+    },
+    {
+      key: 'team_size',
+      prompt: '<strong>Team size?</strong>',
+      options: [
+        { value: 'solo', label: 'Just me' },
+        { value: '2-5', label: '2 – 5' },
+        { value: '6-15', label: '6 – 15' },
+        { value: '16-50', label: '16 – 50' }
+      ]
+    },
+    {
+      key: 'urgency',
+      prompt: '<strong>Urgency?</strong>',
+      options: [
+        { value: 'this-month', label: 'This month' },
+        { value: 'next-quarter', label: 'Next quarter' },
+        { value: 'exploring', label: 'Just exploring' }
+      ]
+    }
+  ];
+
+  var state = {
+    stepIndex: -1, // -1 = intro screen, 0..3 = questions, 4 = result
+    answers: {},
+    submitting: false
+  };
+
+  function openShell() {
+    state.stepIndex = -1;
+    state.answers = {};
+    state.submitting = false;
+    shell.hidden = false;
+    document.body.style.overflow = 'hidden';
+    renderIntro();
+    setTimeout(function () { (closeBtn || shell).focus(); }, 30);
+  }
+
+  function closeShell() {
+    shell.hidden = true;
+    document.body.style.overflow = '';
+    fab.focus();
+  }
+
+  function escClose(e) { if (e.key === 'Escape' && !shell.hidden) closeShell(); }
+
+  fab.addEventListener('click', openShell);
+  closeBtn.addEventListener('click', closeShell);
+  shell.addEventListener('click', function (e) { if (e.target === shell) closeShell(); });
+  document.addEventListener('keydown', escClose);
+
+  function setProgress(text) { progress.textContent = text; }
+
+  function renderIntro() {
+    setProgress('Intro');
+    body.innerHTML = '';
+    var p = document.createElement('p');
+    p.className = 'cmt-chat-prompt';
+    p.innerHTML = 'I match Irish SMBs to the right CallMeIE product — receptionist, document ops, or AI-first website. <strong>4 quick questions, ~30 seconds.</strong>';
+    var note = document.createElement('p');
+    note.className = 'cmt-chat-prompt';
+    note.style.fontSize = '13px';
+    note.style.color = 'var(--cmt-muted, #6b665d)';
+    note.textContent = 'I\'m an AI quiz. Adam (founder) reviews every booking before he contacts you.';
+
+    var actions = document.createElement('div');
+    actions.className = 'cmt-chat-skip-row';
+    var start = document.createElement('button');
+    start.type = 'button';
+    start.className = 'cmt-chat-btn cmt-chat-btn-primary';
+    start.textContent = 'Start →';
+    start.addEventListener('click', function () { state.stepIndex = 0; renderStep(); });
+    var direct = document.createElement('a');
+    direct.href = 'mailto:hello@callmeie.ie?subject=Talk%20to%20CallMeIE';
+    direct.className = 'cmt-chat-btn cmt-chat-btn-ghost';
+    direct.textContent = 'Email Adam directly →';
+
+    actions.appendChild(start);
+    actions.appendChild(direct);
+
+    body.appendChild(p);
+    body.appendChild(note);
+    body.appendChild(actions);
+  }
+
+  function renderStep() {
+    var step = STEPS[state.stepIndex];
+    setProgress((state.stepIndex + 1) + ' / ' + STEPS.length);
+    body.innerHTML = '';
+    var p = document.createElement('p');
+    p.className = 'cmt-chat-prompt';
+    p.innerHTML = step.prompt;
+    body.appendChild(p);
+
+    var chips = document.createElement('div');
+    chips.className = 'cmt-chat-chips';
+    var current = state.answers[step.key];
+    step.options.forEach(function (opt) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'cmt-chat-chip';
+      btn.textContent = opt.label;
+      btn.setAttribute('aria-pressed', current === opt.value ? 'true' : 'false');
+      btn.addEventListener('click', function () { selectChip(step, opt.value); });
+      chips.appendChild(btn);
+    });
+    body.appendChild(chips);
+
+    // Build the Next/Submit button up-front so the "Other" input handler
+    // below can close over `next` and live-update its disabled state on
+    // every keystroke. (Earlier version built the input first then the
+    // button — so typing into the Other field updated state but never
+    // re-evaluated the button. Adam caught this on /docs/ 2026-05-09:
+    // pick Other → type → Next stayed grayed out.)
+    var next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'cmt-chat-btn cmt-chat-btn-primary';
+    // After P2-7 the contact step (renderContactStep) sits between the
+    // last chip step and submit, so even the final chip page is
+    // logically "Next →" — the "See my fit" button lives in the
+    // contact step.
+    next.textContent = 'Next →';
+    next.addEventListener('click', advance);
+
+    function syncNext() {
+      var v = state.answers[step.key];
+      // Disabled when: no answer at all, OR Other is selected but the
+      // free-text field is still empty (state === 'other:' literal).
+      next.disabled = !v || v === 'other:';
+      next.style.opacity = next.disabled ? '0.55' : '1';
+    }
+
+    // Custom-text fallback for "Other"
+    if (step.allowOther && current && current.indexOf('other:') === 0) {
+      var inputWrap = document.createElement('div');
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.className = 'cmt-chat-input';
+      input.placeholder = 'Tell me in a few words…';
+      input.maxLength = 120;
+      input.value = current.slice('other:'.length);
+      input.addEventListener('input', function () {
+        state.answers[step.key] = 'other:' + input.value.trim();
+        syncNext();
+      });
+      // Pressing Enter in the Other input advances when valid (no need to
+      // reach for the mouse).
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !next.disabled) {
+          e.preventDefault();
+          advance();
+        }
+      });
+      inputWrap.appendChild(input);
+      body.appendChild(inputWrap);
+    }
+
+    var nav = document.createElement('div');
+    nav.className = 'cmt-chat-skip-row';
+    if (state.stepIndex > 0) {
+      var back = document.createElement('button');
+      back.type = 'button';
+      back.className = 'cmt-chat-btn cmt-chat-btn-ghost';
+      back.textContent = '← Back';
+      back.addEventListener('click', function () { state.stepIndex -= 1; renderStep(); });
+      nav.appendChild(back);
+    }
+    var spacer = document.createElement('span');
+    spacer.style.flex = '1';
+    nav.appendChild(spacer);
+    syncNext();
+    nav.appendChild(next);
+    body.appendChild(nav);
+
+    // If the Other input is on screen, focus it so the visitor can type
+    // immediately without an extra click.
+    var openInput = body.querySelector('.cmt-chat-input');
+    if (openInput) {
+      try { openInput.focus(); } catch (_) { /* noop */ }
+    }
+  }
+
+  function selectChip(step, value) {
+    if (value === 'other' && step.allowOther) {
+      state.answers[step.key] = 'other:';
+    } else {
+      state.answers[step.key] = value;
+    }
+    renderStep();
+  }
+
+  function advance() {
+    if (state.stepIndex < STEPS.length - 1) {
+      state.stepIndex += 1;
+      renderStep();
+    } else if (!state.askedContact) {
+      // P2-7 — after the 4 chip questions, ask one optional contact
+      // step before firing the submit. Visitor can skip with the
+      // ghost button. If they skip, the server-side handoff result
+      // text will steer them to the visible mailto button instead of
+      // promising "Adam will email you" (which can't be delivered
+      // when no email was given).
+      state.askedContact = true;
+      renderContactStep();
+    } else {
+      submit();
+    }
+  }
+
+  function renderContactStep() {
+    setProgress('Almost done');
+    body.innerHTML = '';
+    var p = document.createElement('p');
+    p.className = 'cmt-chat-prompt';
+    p.innerHTML = '<strong>How can Adam reach you?</strong> Optional — if you\'d rather email us first, skip this and we\'ll show the address.';
+    body.appendChild(p);
+
+    var emailInput = document.createElement('input');
+    emailInput.type = 'email';
+    emailInput.className = 'cmt-chat-input';
+    emailInput.placeholder = 'Email (optional)';
+    emailInput.maxLength = 160;
+    emailInput.value = state.answers.contact_email || '';
+    emailInput.addEventListener('input', function () {
+      state.answers.contact_email = emailInput.value.trim();
+    });
+    body.appendChild(emailInput);
+
+    var nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.className = 'cmt-chat-input';
+    nameInput.placeholder = 'Your name (optional)';
+    nameInput.maxLength = 80;
+    nameInput.value = state.answers.contact_name || '';
+    nameInput.addEventListener('input', function () {
+      state.answers.contact_name = nameInput.value.trim();
+    });
+    body.appendChild(nameInput);
+
+    var nav = document.createElement('div');
+    nav.className = 'cmt-chat-skip-row';
+
+    var back = document.createElement('button');
+    back.type = 'button';
+    back.className = 'cmt-chat-btn cmt-chat-btn-ghost';
+    back.textContent = '← Back';
+    back.addEventListener('click', function () {
+      state.askedContact = false;
+      renderStep();
+    });
+    nav.appendChild(back);
+
+    var spacer = document.createElement('span');
+    spacer.style.flex = '1';
+    nav.appendChild(spacer);
+
+    var skip = document.createElement('button');
+    skip.type = 'button';
+    skip.className = 'cmt-chat-btn cmt-chat-btn-ghost';
+    skip.textContent = 'Skip · I\'ll email';
+    skip.addEventListener('click', function () {
+      state.answers.contact_email = '';
+      state.answers.contact_name = '';
+      submit();
+    });
+    nav.appendChild(skip);
+
+    var done = document.createElement('button');
+    done.type = 'button';
+    done.className = 'cmt-chat-btn cmt-chat-btn-primary';
+    done.textContent = 'See my fit →';
+    done.addEventListener('click', submit);
+    nav.appendChild(done);
+
+    body.appendChild(nav);
+    try { emailInput.focus(); } catch (_) { /* noop */ }
+  }
+
+  function submit() {
+    if (state.submitting) return;
+    state.submitting = true;
+    setProgress('Matching…');
+    body.innerHTML = '';
+    var loader = document.createElement('div');
+    loader.className = 'cmt-chat-loading';
+    loader.textContent = 'Matching you to the closest CallMeIE product…';
+    body.appendChild(loader);
+
+    var payload = {
+      page_context: pageContext,
+      business: state.answers.business || '',
+      pain: state.answers.pain || '',
+      team_size: state.answers.team_size || '',
+      urgency: state.answers.urgency || '',
+      contact_email: state.answers.contact_email || '',
+      contact_name: state.answers.contact_name || ''
+    };
+
+    fetch(DISCOVERY_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) {
+        if (!r.ok) {
+          // Carry the status + parsed body up so renderError can branch
+          // on 400 (invalid input) vs 429 (rate-limit, has Retry-After)
+          // vs 5xx (real server error). Without this every non-2xx
+          // showed the same "couldn't reach backend" message — see P0-8.
+          return r.json().catch(function () { return {}; }).then(function (errBody) {
+            var e = new Error('http_' + r.status);
+            e.status = r.status;
+            e.errBody = errBody || {};
+            throw e;
+          });
+        }
+        return r.json();
+      })
+      .then(renderResult)
+      .catch(renderError);
+  }
+
+  function renderResult(data) {
+    setProgress('Done');
+    body.innerHTML = '';
+
+    var card = document.createElement('div');
+    card.className = 'cmt-chat-result';
+    var tag = document.createElement('span');
+    tag.className = 'cmt-chat-result-tag';
+    tag.textContent = labelForProduct(data.recommended_product);
+    card.appendChild(tag);
+
+    if (data.tier_anchor) {
+      var anchor = document.createElement('span');
+      anchor.className = 'cmt-chat-result-anchor';
+      anchor.textContent = data.tier_anchor;
+      card.appendChild(anchor);
+    }
+
+    var text = document.createElement('p');
+    text.className = 'cmt-chat-result-text';
+    text.textContent = data.result_text || 'I\'m flagging this one for Adam — he\'ll email you in the next day or two.';
+    card.appendChild(text);
+    body.appendChild(card);
+
+    var ctas = document.createElement('div');
+    ctas.className = 'cmt-chat-cta-list';
+    (data.ctas || []).forEach(function (c) {
+      var a = document.createElement('a');
+      a.className = 'cmt-chat-cta';
+      a.href = c.href;
+      a.textContent = c.label;
+      a.setAttribute('data-kind', c.kind || 'secondary');
+      if (c.href.indexOf('http') === 0) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      }
+      ctas.appendChild(a);
+    });
+    body.appendChild(ctas);
+
+    state.submitting = false;
+  }
+
+  function renderError(err) {
+    setProgress('Error');
+    body.innerHTML = '';
+
+    // Branch the message on what actually failed so the visitor doesn't
+    // see "couldn't reach backend" when they were actually rate-limited
+    // or sent malformed input. (P0-8 — paired with server.py setting
+    // Retry-After + RateLimit-* headers on 429 + the JSON envelope on
+    // every other status.)
+    var status = err && err.status ? err.status : 0;
+    var errBody = (err && err.errBody) || {};
+    var msg, showRetry = true;
+
+    if (status === 429) {
+      var retryAfter = parseInt(errBody.retry_after || '0', 10);
+      var minutes = retryAfter > 0 ? Math.max(1, Math.ceil(retryAfter / 60)) : 0;
+      if (errBody.error === 'daily_cap_reached') {
+        msg = 'Today\'s quiz quota is fully booked. ' +
+              'Easiest path: email hello@callmeie.ie or message us on WhatsApp (the green button) — Adam reads both same-day.';
+        showRetry = false;
+      } else if (minutes > 0) {
+        msg = 'You\'ve already submitted a few quizzes from this address. ' +
+              'Try again in about ' + minutes + ' min — or skip the wait and email hello@callmeie.ie / WhatsApp the green button.';
+        showRetry = false;
+      } else {
+        msg = 'You\'ve already submitted a few quizzes from this address. ' +
+              'Try again in a few minutes — or skip the wait and email hello@callmeie.ie / WhatsApp the green button.';
+        showRetry = false;
+      }
+    } else if (status === 400) {
+      msg = 'The form sent something I couldn\'t read. Refresh the page and try the quiz again — if it keeps happening, email hello@callmeie.ie and Adam will sort it.';
+    } else if (status >= 500) {
+      msg = 'Our matcher hit an error on our side. Fastest path: email hello@callmeie.ie or message us on WhatsApp (the green button) — Adam reads both same-day.';
+    } else {
+      // Status 0 = network failure, fetch rejection, CORS, offline.
+      msg = 'Couldn\'t reach our matcher — looks like a network hiccup. Try again, or email hello@callmeie.ie / WhatsApp the green button.';
+    }
+
+    var p = document.createElement('div');
+    p.className = 'cmt-chat-error';
+    p.textContent = msg;
+    body.appendChild(p);
+
+    var nav = document.createElement('div');
+    nav.className = 'cmt-chat-skip-row';
+    if (showRetry) {
+      var retry = document.createElement('button');
+      retry.type = 'button';
+      retry.className = 'cmt-chat-btn cmt-chat-btn-primary';
+      retry.textContent = 'Try again';
+      retry.addEventListener('click', function () { state.submitting = false; submit(); });
+      nav.appendChild(retry);
+    }
+    var mail = document.createElement('a');
+    mail.href = 'mailto:hello@callmeie.ie?subject=Talk%20to%20CallMeIE%20%E2%80%94%20discovery%20widget%20error';
+    mail.className = 'cmt-chat-btn cmt-chat-btn-ghost';
+    mail.textContent = 'Email Adam';
+    nav.appendChild(mail);
+    body.appendChild(nav);
+
+    state.submitting = false;
+    if (window.console) console.warn('[cmt-chat] discovery submit failed:', err);
+  }
+
+  function labelForProduct(rec) {
+    switch (rec) {
+      case 'receptionist': return 'AI Receptionist';
+      case 'docs':         return 'Document Ops';
+      case 'websites':     return 'AI-First Websites';
+      case 'founder-handoff': return 'Adam will follow up';
+      default:             return 'Match';
+    }
+  }
+})();
+</script>
+<!-- COHESION:CHATBOT-END -->
+
+<!-- COHESION:WHATSAPP-START prefill="Hi%20CallMeIE%20%E2%80%94%20I%27d%20like%20to%20chat%20about%20local%20SEO%20%2F%20GBP.%20My%20business%3A%20" utm_content="local-seo" -->
+<!-- (auto-generated by scripts/inject-cohesion.py — DO NOT EDIT) -->
+<!--
+  P2-3 — every prefill message starts with a `[ref:<page>]` line so
+  that even when WhatsApp strips URL params (some clients do, some
+  don't), Adam can still grep his phone for "ref:salon" and see which
+  page sent the lead. The URL-level UTM is the canonical capture; the
+  in-message ref line is the belt-and-braces fallback.
+-->
+<a class="cmt-wa-fab"
+   href="https://wa.me/353857863564?text=%5Bref%3Alocal-seo%5D%0AHi%20CallMeIE%20%E2%80%94%20I%27d%20like%20to%20chat%20about%20local%20SEO%20%2F%20GBP.%20My%20business%3A%20&utm_source=callmeie&utm_medium=wa-fab&utm_campaign=site-2026-q2&utm_content=local-seo"
+   target="_blank"
+   rel="noopener"
+   aria-label="Chat with CallMeIE on WhatsApp"
+   data-page-context="local-seo">
+  <svg class="cmt-wa-glyph" viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411zm-8.475 18.296h-.004c-1.793 0-3.55-.48-5.083-1.392l-.365-.215-3.787.989 1.018-3.673-.236-.378c-1.001-1.586-1.529-3.42-1.528-5.304.002-5.495 4.477-9.967 9.987-9.967 2.665.001 5.171 1.038 7.054 2.916 1.883 1.879 2.92 4.376 2.918 7.029-.003 5.494-4.477 9.965-9.984 9.965z"/>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+  </svg>
+  <span class="cmt-wa-label">WhatsApp</span>
+</a>
+<!-- COHESION:WHATSAPP-END -->
+
+<!-- COHESION:BOTTOM-CTA-START label="Local SEO" phone="+16617643212" wa_text="Hi%20CallMeIE%20%E2%80%94%20local%20SEO%3A%20" email="hello@callmeie.ie" -->
+<!-- (auto-generated by scripts/inject-cohesion.py — DO NOT EDIT) -->
+<!--
+  P3-5 — sticky bottom CTA on long pages.
+  Injected on /receptionist/* + /docs/ + /websites/ where the user can
+  scroll past every primary CTA. The bar sticks at viewport bottom and
+  surfaces the three actions Adam can field today: ring (US +1 demo
+  line until Twilio +353 lands), WhatsApp, email.
+  Tokens substituted by scripts/inject-cohesion.py:
+    +16617643212    — primary tel:+ link, e.g. +16617643212
+    Hi%20CallMeIE%20%E2%80%94%20local%20SEO%3A%20  — pre-filled WhatsApp message, URL-encoded
+    hello@callmeie.ie    — mailto: address (always hello@callmeie.ie)
+    Local SEO    — short label for the bar — e.g. "Receptionist demo"
+  When this partial is present on a page, scripts/inject-cohesion.py
+  also adds the `.has-bottom-cta` class to the body element so the
+  WhatsApp FAB at bottom-right lifts above the bar (cohesion.css L517).
+-->
+<aside class="cmt-bottom-cta" role="complementary" aria-label="Quick contact">
+  <span class="cmt-bottom-cta__label">Local SEO</span>
+  <a class="cmt-bottom-cta__btn cmt-bottom-cta__btn--primary"
+     href="tel:+16617643212"
+     data-cmt-cta="ring">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>Ring</span>
+  </a>
+  <a class="cmt-bottom-cta__btn cmt-bottom-cta__btn--whatsapp"
+     href="https://wa.me/353857863564?text=Hi%20CallMeIE%20%E2%80%94%20local%20SEO%3A%20"
+     target="_blank" rel="noopener"
+     data-cmt-cta="whatsapp">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+      <path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411z"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+  <a class="cmt-bottom-cta__btn cmt-bottom-cta__btn--ghost"
+     href="mailto:hello@callmeie.ie"
+     data-cmt-cta="email">
+    <span>Email</span>
+  </a>
+</aside>
+
+<style>
+  .cmt-bottom-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px env(safe-area-inset-bottom, 10px);
+    background: rgba(15, 23, 42, 0.96);
+    color: #f8fafc;
+    box-shadow: 0 -8px 24px rgba(0,0,0,.18);
+    font-family: var(--cmt-font-body, 'Inter', system-ui, sans-serif);
+    font-size: 13px;
+    backdrop-filter: blur(6px);
+  }
+  .cmt-bottom-cta__label {
+    color: #cbd5e1;
+    margin-right: auto;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  @media (max-width: 600px) {
+    .cmt-bottom-cta__label { display: none; }
+  }
+  .cmt-bottom-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: filter 0.15s ease, transform 0.15s ease;
+  }
+  .cmt-bottom-cta__btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+  .cmt-bottom-cta__btn--primary { background: var(--cmt-brand, #1d3557); }
+  .cmt-bottom-cta__btn--whatsapp { background: #25D366; color: #073b1f; }
+  .cmt-bottom-cta__btn--ghost {
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,.18);
+  }
+  .cmt-bottom-cta__btn--ghost:hover { color: #f8fafc; border-color: rgba(255,255,255,.36); }
+  @media print {
+    .cmt-bottom-cta { display: none !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cmt-bottom-cta__btn,
+    .cmt-bottom-cta__btn:hover { transition: none; transform: none; }
+  }
+</style>
+
+<script>
+  // Body class so the WhatsApp FAB at bottom-right lifts above this bar.
+  // Cohesion CSS at _partials/cohesion.css L517 already targets
+  // body.has-bottom-cta .cmt-wa-fab — this script wires the trigger.
+  (function () {
+    if (document.body) {
+      document.body.classList.add('has-bottom-cta');
+    } else {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('has-bottom-cta');
+      }, { once: true });
+    }
+  })();
+</script>
+<!-- COHESION:BOTTOM-CTA-END -->
+
+</body>
+</html>
