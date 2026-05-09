@@ -188,7 +188,7 @@ _(Example shape only. Keep live assistant ids and routing in sync with the curre
 |------|---------|-----------|-----------------|---------|---------------|
 | **Starter** | €149/mo | €297 | 300 min/mo | €0.22/min | ~€102 (68%) |
 | **Professional** | €249/mo | €297 | 600 min/mo | €0.20/min | ~€157 (63%) |
-| **Growth** | €347/mo | €497 | 1,200 min/mo | €0.18/min | ~€165 (47%) |
+| **Growth** | €397/mo | €497 | 1,200 min/mo | €0.20/min | ~€220 (56%) |
 | **Enterprise** | Custom | Custom | Custom | Custom | — |
 
 **Our cost per client (Vapi PAYG):**

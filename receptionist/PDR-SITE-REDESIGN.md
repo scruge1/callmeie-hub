@@ -20,7 +20,7 @@
 | Product | AI phone receptionist for Irish SMBs |
 | Stack | Vapi + Twilio + Google Calendar + FastAPI on Render |
 | Demo line | +1 (661) 764-3212 |
-| Pricing | Starter €149/mo +€297 setup · Professional €249/mo +€297 · Growth €347/mo +€497 · Enterprise quoted |
+| Pricing | Starter €149/mo +€297 setup · Professional €249/mo +€297 · Growth €397/mo +€497 · Enterprise quoted |
 | Verticals | Dental · Motor factors · Hair salons · Solicitors · catch-all |
 | Competitors | VoiceFleet €99-199/mo · Trillet €299/mo (white-label we avoid) |
 | Contact | callmeie@proton.me · Limerick, Ireland |
