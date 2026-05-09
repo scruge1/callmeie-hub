@@ -2280,7 +2280,7 @@
       if (status) { status.className = 'cf-status'; status.textContent = ''; }
       const fd = Object.fromEntries(new FormData(f));
       try {
-        const r = await fetch('https://callmeie.onrender.com/owl/submit', {
+        const r = await fetch('https://api.callmeie.ie/owl/submit', {
           method: 'POST',
           headers: {'Content-Type':'application/json'},
           body: JSON.stringify({site_id: 'owl-studio-sales', form_data: fd, submitted_from: location.href})
@@ -2635,7 +2635,7 @@
       if (b.nickname) { closeModal(); return; }   // bot honeypot — silently drop
 
       try {
-        const r = await fetch('https://callmeie.onrender.com/owl/submit', {
+        const r = await fetch('https://api.callmeie.ie/owl/submit', {
           method: 'POST',
           headers: {'Content-Type':'application/json'},
           body: JSON.stringify({
@@ -3143,7 +3143,7 @@
   var closeBtn = shell.querySelector('.cmt-chat-close');
   var pageContext = (fab.getAttribute('data-cmt-chat-context') || 'hub').slice(0, 32);
 
-  var DISCOVERY_ENDPOINT = 'https://callmeie.onrender.com/api/discovery';
+  var DISCOVERY_ENDPOINT = 'https://api.callmeie.ie/api/discovery';
 
   var STEPS = [
     {
