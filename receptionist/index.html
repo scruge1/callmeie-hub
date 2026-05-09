@@ -352,15 +352,63 @@
       Built in Limerick. Live on a real line.
     </p>
 
-    <span class="demo-number__label">Live demo line · Answers 24 hours</span>
+    <!-- P3-3 — 45-second sample of Claire taking a cafe booking. Niamh's
+         #1 fear is "will it sound robotic / will my regulars hate it" —
+         this lets her hear the tone before she dials. Voice: ElevenLabs
+         (British female, Irish-leaning until the paid Beckie/Maeve
+         Irish voices are wired in).
+    -->
+    <figure class="hero__audio" aria-label="Sample call: Claire taking a cafe booking">
+      <figcaption class="hero__audio-label">Hear Claire · 45-sec sample · cafe booking</figcaption>
+      <audio controls preload="metadata" src="assets/audio/claire-cafe-booking.mp3">
+        Your browser does not support audio playback. Ring the demo line below to hear Claire instead.
+      </audio>
+      <span class="hero__audio-caption">Real synthesis. Real call flow. Customer rings, Claire books the table, texts the owner, sends a reminder.</span>
+    </figure>
+
+    <span class="demo-number__label">Or ring the live line — answers 24 hours</span>
     <a class="demo-number" href="tel:+16617643212" aria-label="Ring the demo on plus one six six one seven six four three two one two">+1 (661) 764-3212</a>
-    <span class="demo-number__caption">Ring it now — this number is a real CallMeIE instance running in receptionist mode.</span>
+    <span class="demo-number__caption">US sandbox demo line until Twilio +353 launches week of 2026-05-12. Behaviour identical.</span>
 
     <div class="hero__actions">
       <a class="btn-primary" href="tel:+16617643212">Ring the demo</a>
       <a class="btn-secondary" href="onboard.html">See it onboard a business →</a>
     </div>
   </section>
+
+  <style>
+    .hero__audio {
+      margin: 0 0 24px;
+      padding: 16px 18px 14px;
+      border: 1px solid var(--ink, #0b0a08);
+      background: rgba(255,255,255,0.6);
+      max-width: 540px;
+    }
+    .hero__audio-label {
+      display: block;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--burgundy, #5A1420);
+      margin-bottom: 8px;
+    }
+    .hero__audio audio {
+      width: 100%;
+      max-width: 480px;
+    }
+    .hero__audio-caption {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--ink-soft, #2a2622);
+      font-style: italic;
+    }
+    @media (max-width: 600px) {
+      .hero__audio { max-width: 100%; padding: 12px 14px; }
+    }
+  </style>
 
   <!-- ANCHOR-COST: above-fold price contrast -->
   <section class="anchor-cost" aria-labelledby="anchor-cost-title">
