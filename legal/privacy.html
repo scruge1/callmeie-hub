@@ -148,7 +148,8 @@
 <h2>3 · Where your data lives</h2>
 <ul>
     <li><strong>Document Ops + AI-First Websites Postgres + object storage:</strong> Coolify on a Hetzner Online GmbH dedicated server in Nuremberg, Germany.</li>
-    <li><strong>AI Receptionist server (FastAPI):</strong> Render Inc. Frankfurt region (EU).</li>
+    <li><strong>AI Receptionist + Discovery quiz API (FastAPI):</strong> Render Inc. Frankfurt region (EU). Migration to Hetzner Coolify Nuremberg in progress (no end-of-life date set; no change to your data residency — both regions are EU).</li>
+    <li><strong>Onboarding form intake (webhook relay):</strong> Railway Corp. (US-managed control plane) — used as a webhook receiver for the Receptionist signup form (<code>/submit-onboarding</code>) which forwards directly into the Receptionist FastAPI for persistence. Form payload (business name, contact name, contact phone, contact email, address, hours, services) transits Railway and is not retained on Railway storage beyond request lifetime. SCCs in place; Railway data plane region pinned to EU where supported.</li>
     <li><strong>Vapi voice runtime + call recordings:</strong> Vapi.ai US infrastructure with EU routing where the carrier supports it. Recordings retained 90 days then auto-deleted.</li>
     <li><strong>Twilio telephony + SMS:</strong> Twilio Inc. region depends on the phone number country (Irish numbers route via EU; US fallback +1 (661) 764-3212 demo line routes via US).</li>
     <li><strong>Backups:</strong> encrypted at rest, retained per the Order Form retention window. No transfers outside the EEA without an explicit additional clause.</li>
@@ -170,7 +171,7 @@
 
 <section id="sec-5">
 <h2>5 · Sub-processors</h2>
-<p>Per Article 28(2) GDPR. Current sub-processor list as of 2026-05-04:</p>
+<p>Per Article 28(2) GDPR. Current sub-processor list as of 2026-05-09:</p>
 <table class="legal-table">
     <thead>
         <tr><th>Sub-processor</th><th>Used by</th><th>Location</th><th>Function</th></tr>
@@ -185,7 +186,9 @@
         <tr><td>Cloudflare Inc.</td><td>All 3 (DNS / CDN)</td><td>Global with EU routing</td><td>DNS · CDN · DDoS protection</td></tr>
         <tr><td>HumanSignal Inc. (Label Studio)</td><td>Doc Ops</td><td>Self-hosted on Hetzner DE — no data egress</td><td>Reviewer tool</td></tr>
         <tr><td>Resend (Resend.com Inc.)</td><td>Websites · Receptionist (transactional email)</td><td>EU</td><td>Transactional email</td></tr>
-        <tr><td>Render Inc.</td><td>Receptionist server</td><td>Frankfurt, DE</td><td>FastAPI hosting</td></tr>
+        <tr><td>Render Inc.</td><td>Receptionist + Discovery API server</td><td>Frankfurt, DE</td><td>FastAPI hosting (migration to Hetzner Coolify in progress)</td></tr>
+        <tr><td>Railway Corp.</td><td>Receptionist (onboarding form webhook relay)</td><td>US control plane · EU data plane where supported</td><td>Webhook relay only — no persistent storage beyond request lifetime; transits payload to Render-hosted FastAPI for persistence</td></tr>
+        <tr><td>xAI Corp.</td><td>Discovery quiz · Document Ops sandbox normaliser</td><td>US (under DPF + SCCs)</td><td>LLM API for visitor-quiz classification + sandbox-doc field extraction. Anonymised text snippets only; no document bytes; no identifying chat content beyond what the visitor types into the four-question quiz.</td></tr>
     </tbody>
 </table>
 <p>Any change to the sub-processor list triggers <strong>30-day prior written notice</strong>, with a Controller objection right per the DPA.</p>

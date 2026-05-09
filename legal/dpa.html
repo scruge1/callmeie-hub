@@ -90,7 +90,8 @@
 <h2>3 · Where your data lives</h2>
 <ul>
     <li><strong>Document Ops + AI-First Websites:</strong> Coolify on a Hetzner Online GmbH dedicated server in Nuremberg, Germany (EU jurisdiction).</li>
-    <li><strong>AI Receptionist server (FastAPI):</strong> Render Inc. Frankfurt region (EU).</li>
+    <li><strong>AI Receptionist + Discovery quiz API (FastAPI):</strong> Render Inc. Frankfurt region (EU). Migration to Hetzner Coolify Nuremberg in progress; no change to your data residency (both EU).</li>
+    <li><strong>Onboarding form intake (webhook relay):</strong> Railway Corp. — webhook receiver for <code>/submit-onboarding</code>; payload transits Railway and forwards to Render-hosted FastAPI for persistence; not retained on Railway storage beyond request lifetime; EU data plane where supported.</li>
     <li><strong>Vapi voice runtime + call recordings:</strong> Vapi.ai US infrastructure with EU routing where supported. Call recordings retained 90 days then auto-deleted from Vapi.</li>
     <li><strong>Twilio telephony + SMS:</strong> Twilio Inc. region depends on the phone number country.</li>
     <li><strong>Object storage for Document Ops original-form documents:</strong> Hetzner Object Storage (EU, S3-compatible, Nuremberg).</li>
@@ -112,7 +113,7 @@
 
 <section id="sec-5">
 <h2>5 · Sub-processors</h2>
-<p>Per Article 28(2) GDPR, the current sub-processor list as of 2026-05-04 is itemised in <a href="/legal/privacy.html#sec-5">Privacy Policy §5</a>. Any change triggers <strong>30-day prior written notice</strong> with a Controller objection right. The notice is delivered to your Order Form contact email.</p>
+<p>Per Article 28(2) GDPR, the current sub-processor list as of 2026-05-09 is itemised in <a href="/legal/privacy.html#sec-5">Privacy Policy §5</a>. Any change triggers <strong>30-day prior written notice</strong> with a Controller objection right. The notice is delivered to your Order Form contact email.</p>
 <p>Per-product Schedules (A, B, C below) call out which sub-processors apply to each product.</p>
 </section>
 
@@ -164,7 +165,7 @@
     <tbody>
         <tr><td>Categories of personal data</td><td>Caller phone number, call recording + transcript, caller name + intent, calendar event details, SMS content, anomaly diagnosis</td></tr>
         <tr><td>Categories of data subjects</td><td>Your callers (your customers + prospects who phone in)</td></tr>
-        <tr><td>Sub-processors</td><td>Vapi.ai (US, EU routing where supported), Twilio Inc. (US/IE number-dependent), Google LLC Workspace (Calendar API, EU residency), Anthropic PBC (anomaly diagnosis, US under DPF), Render Inc. (Frankfurt DE)</td></tr>
+        <tr><td>Sub-processors</td><td>Vapi.ai (US, EU routing where supported), Twilio Inc. (US/IE number-dependent), Google LLC Workspace (Calendar API, EU residency), Anthropic PBC (anomaly diagnosis, US under DPF), xAI Corp. (Discovery quiz classifier, US under DPF + SCCs — anonymised text snippets only), Render Inc. (Frankfurt DE), Railway Corp. (webhook relay only, no persistent storage)</td></tr>
         <tr><td>Retention</td><td>Call data 12 months from last call; recordings 90 days then auto-delete from Vapi; anomaly diagnosis 90 days</td></tr>
         <tr><td>Transfers outside EEA</td><td>Vapi (US — DPF + SCCs); Twilio (US — DPF + SCCs); Anthropic (US — DPF)</td></tr>
         <tr><td>Special category data?</td><td>Generally no. Callers may volunteer health / sensitive info during a call; we treat all call content as confidential and do not pass it through any third-party LLM other than the failed-call anomaly diagnosis loop (Anthropic) which is anonymised + scoped to call metadata, not call content</td></tr>
