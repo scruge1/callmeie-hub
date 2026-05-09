@@ -468,6 +468,26 @@
     });
     body.appendChild(chips);
 
+    // Build the Next/Submit button up-front so the "Other" input handler
+    // below can close over `next` and live-update its disabled state on
+    // every keystroke. (Earlier version built the input first then the
+    // button — so typing into the Other field updated state but never
+    // re-evaluated the button. Adam caught this on /docs/ 2026-05-09:
+    // pick Other → type → Next stayed grayed out.)
+    var next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'cmt-chat-btn cmt-chat-btn-primary';
+    next.textContent = (state.stepIndex === STEPS.length - 1) ? 'See my fit →' : 'Next →';
+    next.addEventListener('click', advance);
+
+    function syncNext() {
+      var v = state.answers[step.key];
+      // Disabled when: no answer at all, OR Other is selected but the
+      // free-text field is still empty (state === 'other:' literal).
+      next.disabled = !v || v === 'other:';
+      next.style.opacity = next.disabled ? '0.55' : '1';
+    }
+
     // Custom-text fallback for "Other"
     if (step.allowOther && current && current.indexOf('other:') === 0) {
       var inputWrap = document.createElement('div');
@@ -479,6 +499,15 @@
       input.value = current.slice('other:'.length);
       input.addEventListener('input', function () {
         state.answers[step.key] = 'other:' + input.value.trim();
+        syncNext();
+      });
+      // Pressing Enter in the Other input advances when valid (no need to
+      // reach for the mouse).
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !next.disabled) {
+          e.preventDefault();
+          advance();
+        }
       });
       inputWrap.appendChild(input);
       body.appendChild(inputWrap);
@@ -497,15 +526,16 @@
     var spacer = document.createElement('span');
     spacer.style.flex = '1';
     nav.appendChild(spacer);
-    var next = document.createElement('button');
-    next.type = 'button';
-    next.className = 'cmt-chat-btn cmt-chat-btn-primary';
-    next.textContent = (state.stepIndex === STEPS.length - 1) ? 'See my fit →' : 'Next →';
-    next.disabled = !state.answers[step.key] || state.answers[step.key] === 'other:';
-    next.style.opacity = next.disabled ? '0.55' : '1';
-    next.addEventListener('click', advance);
+    syncNext();
     nav.appendChild(next);
     body.appendChild(nav);
+
+    // If the Other input is on screen, focus it so the visitor can type
+    // immediately without an extra click.
+    var openInput = body.querySelector('.cmt-chat-input');
+    if (openInput) {
+      try { openInput.focus(); } catch (_) { /* noop */ }
+    }
   }
 
   function selectChip(step, value) {
