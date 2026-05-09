@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Lab — CallMeIE · experimental site styles</title>
+  <meta name="description" content="Twenty experimental website style demos from CallMeIE: glassmorphism, claymorphism, neumorphism, brutalism, 3D hyperrealism, dark OLED, and more. Browse every direction we'll consider for a bespoke build.">
+  <link rel="canonical" href="https://callmeie.ie/lab/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Lab — CallMeIE experimental styles">
+  <meta property="og:description" content="20 experimental website style demos. Glassmorphism, claymorphism, brutalism, 3D hyperrealism, dark OLED, more.">
+  <meta property="og:url" content="https://callmeie.ie/lab/">
+  <meta property="og:image" content="https://callmeie.ie/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,500..700&family=Inter:wght@400..700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --ink: #0e0e10;
+      --muted: #565664;
+      --rule: rgba(14,14,16,0.10);
+      --accent: #1a1a1a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .page { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    header.lab-head {
+      padding: 48px 0 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .crumbs {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .crumbs a { color: var(--muted); text-decoration: none; }
+    .crumbs a:hover { color: var(--ink); text-decoration: underline; }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+    }
+    .lede {
+      font-size: 18px;
+      max-width: 60ch;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+    .lede strong { color: var(--ink); font-weight: 500; }
+    .nav-back {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+    }
+    .nav-back:hover { opacity: 0.7; }
+
+    section.lab-grid { padding: 56px 0 24px; }
+    .grid-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+    .grid-meta {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    a.card {
+      display: block;
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    a.card:hover {
+      transform: translateY(-2px);
+      border-color: var(--ink);
+      box-shadow: 0 8px 24px -12px rgba(14,14,16,0.18);
+    }
+    .card-num {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .card-title {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 4px 0 6px;
+      letter-spacing: -0.01em;
+    }
+    .card-style {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .card-cta {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 1px;
+    }
+
+    .footer-strip {
+      margin: 64px 0 48px;
+      padding: 28px 24px;
+      background: var(--ink);
+      color: white;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-strip h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 22px;
+      font-weight: 500;
+      margin: 0;
+    }
+    .footer-strip p { margin: 4px 0 0; opacity: 0.78; font-size: 14px; }
+    .footer-strip a {
+      background: white;
+      color: var(--ink);
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .footer-strip a:hover { background: rgba(255,255,255,0.85); }
+    footer.foot {
+      padding: 24px 0 48px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--rule);
+    }
+    footer.foot a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <header class="lab-head">
+    <div class="crumbs">
+      <a href="/">CallMeIE</a> · <a href="/websites/">Websites</a> · The Lab
+    </div>
+    <h1>The Lab</h1>
+    <p class="lede">
+      <strong>Twenty experimental website style demos.</strong> Anything you'd consider for a bespoke build that needs to stand out differently from a typical Irish SMB site — glassmorphism, claymorphism, neumorphism, editorial brutalism, 3D hyperrealism, dark OLED, retro-futurism, more. Each demo is a real working page; nothing here is a screenshot.
+    </p>
+    <p class="lede">
+      Two collections: <em>Pure styles</em> shows each style on a generic content shape. <em>Industries</em> ships the same styles fitted to a real Irish vertical (dental, solicitor, vet, architects, financial, accountants, opticians, physio, trade pro, local services).
+    </p>
+    <a class="nav-back" href="/websites/">← Back to Websites</a>
+  </header>
+
+  <section class="lab-grid">
+    <div class="grid-head">
+      <h2>Industries</h2>
+      <div class="grid-meta">10 demos · style fitted to vertical</div>
+    </div>
+    <div class="cards">
+      <a class="card" href="/websites/samples/industries/01-dental-swiss.html">
+        <div class="card-num">L01</div>
+        <div class="card-title">Dental — Swiss</div>
+        <div class="card-style">Clinical, calm, grid-aligned. For practices that lead on trust and clarity.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/02-solicitor-swiss.html">
+        <div class="card-num">L02</div>
+        <div class="card-title">Solicitor — Swiss</div>
+        <div class="card-style">Authoritative, restrained, formal. For matter-led practices.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/03-accountant-minimalism.html">
+        <div class="card-num">L03</div>
+        <div class="card-title">Accountant — Minimalism</div>
+        <div class="card-style">Generous whitespace, monospace numerics. For trust at a glance.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/04-physio-neumorphism.html">
+        <div class="card-num">L04</div>
+        <div class="card-title">Physio — Neumorphism</div>
+        <div class="card-style">Soft, tactile shadows. Calming, body-centered, modern wellness.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/05-opticians-glassmorphism.html">
+        <div class="card-num">L05</div>
+        <div class="card-title">Opticians — Glassmorphism</div>
+        <div class="card-style">Frosted-glass surfaces. Optical, light, premium.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/06-trade-pro-dark-oled.html">
+        <div class="card-num">L06</div>
+        <div class="card-title">Trade Pro — Dark OLED</div>
+        <div class="card-style">Industrial, high-contrast, mobile-first for tradies on the van.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/07-vet-claymorphism.html">
+        <div class="card-num">L07</div>
+        <div class="card-title">Vet — Claymorphism</div>
+        <div class="card-style">Soft 3D forms. Friendly, family-friendly, tactile.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/08-financial-brutalism-editorial.html">
+        <div class="card-num">L08</div>
+        <div class="card-title">Wealth — Editorial Brutalism</div>
+        <div class="card-style">Sharp typography, oversized numerics. For financial advisors who want gravitas.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/09-architects-3d.html">
+        <div class="card-num">L09</div>
+        <div class="card-title">Architects — 3D Hyperrealism</div>
+        <div class="card-style">Render-led hero, depth, materiality. Showcases a portfolio.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/industries/10-local-services-brutalism.html">
+        <div class="card-num">L10</div>
+        <div class="card-title">Local Services — Mondrian</div>
+        <div class="card-style">Bold blocks, primary palette. High-impact, no-nonsense.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="lab-grid">
+    <div class="grid-head">
+      <h2>Pure styles</h2>
+      <div class="grid-meta">10 demos · style on generic content</div>
+    </div>
+    <div class="cards">
+      <a class="card" href="/websites/samples/01-minimalism-swiss.html">
+        <div class="card-num">S01</div>
+        <div class="card-title">Minimalism / Swiss</div>
+        <div class="card-style">Grid, restraint, hierarchy. The spine for trust-led brands.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/02-neumorphism.html">
+        <div class="card-num">S02</div>
+        <div class="card-title">Neumorphism</div>
+        <div class="card-style">Soft shadows, embossed-tactile UI. Calm, modern, body-centered.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/03-glassmorphism.html">
+        <div class="card-num">S03</div>
+        <div class="card-title">Glassmorphism</div>
+        <div class="card-style">Frosted layers, blur, depth. Premium, optical, tech.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/04-brutalism.html">
+        <div class="card-num">S04</div>
+        <div class="card-title">Brutalism</div>
+        <div class="card-style">Raw, oversized, intentionally ugly-on-purpose. For confident brands.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/05-3d-hyperrealism.html">
+        <div class="card-num">S05</div>
+        <div class="card-title">3D Hyperrealism</div>
+        <div class="card-style">Render-led visuals, materiality. For portfolios + product brands.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/06-vibrant-block.html">
+        <div class="card-num">S06</div>
+        <div class="card-title">Vibrant Block</div>
+        <div class="card-style">Saturated colour fields, flat geometry. Energy-forward.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/07-dark-oled.html">
+        <div class="card-num">S07</div>
+        <div class="card-title">Dark OLED</div>
+        <div class="card-style">High-contrast on pure black. Industrial, mobile-friendly, premium feel.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/08-claymorphism.html">
+        <div class="card-num">S08</div>
+        <div class="card-title">Claymorphism</div>
+        <div class="card-style">Soft 3D clay surfaces. Friendly, approachable, family-led.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/09-aurora-ui.html">
+        <div class="card-num">S09</div>
+        <div class="card-title">Aurora UI</div>
+        <div class="card-style">Gradient mesh, atmospheric. For SaaS, AI, modern tech.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+      <a class="card" href="/websites/samples/10-retro-futurism.html">
+        <div class="card-num">S10</div>
+        <div class="card-title">Retro Futurism</div>
+        <div class="card-style">80s-90s nostalgia meets modern tech. For creative + entertainment.</div>
+        <span class="card-cta">Open sample →</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="footer-strip">
+    <div>
+      <h3>Found a direction you like?</h3>
+      <p>Tell us which demo, which industry, and a 20-min call slots a real build for your business.</p>
+    </div>
+    <a href="mailto:hello@callmeie.ie?subject=Style-match%20call%20—%20Lab%20demo&body=Hi%20Adam%2C%0A%0AI%20liked%20demo%20%23%20%5BLnn%5D%20on%20The%20Lab.%20My%20business%3A%20%5B...%5D%2C%20industry%3A%20%5B...%5D.%20Available%20for%20a%2020-min%20call%3A%20%5B...%5D%0A%0AThanks">Book a 20-min call →</a>
+  </div>
+
+  <footer class="foot">
+    <p>
+      The Lab · CallMeIE Technologies · Limerick, Ireland ·
+      <a href="/websites/">Back to Websites</a> ·
+      <a href="/">Home</a>
+    </p>
+  </footer>
+</div>
+
+</body>
+</html>
