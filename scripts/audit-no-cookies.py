@@ -6,24 +6,40 @@
      python scripts/audit-no-cookies.py            # walk repo HTML, exit 1 on hit
      python scripts/audit-no-cookies.py --verbose  # show per-page status
 
-   P2-1 STATUS (2026-05-09):
-   ------------------------
-   Operator-visibility task to add web analytics is BLOCKED by the rules
-   below. callmeie.ie ships with no analytics and no cookie banner on
-   purpose — the brand promise is "no cookies, no tracking." Three
-   options for getting analytics without breaking that:
+   P2-1 DECISION (2026-05-09 evening — recommend path A):
+   ------------------------------------------------------
+   Brand promise on /legal/privacy + DPA + footer is "no cookies, no
+   tracking, no banner." Three paths were evaluated; A is the only one
+   that preserves the promise AND closes the operator-visibility gap.
 
-     A) Move callmeie.ie onto a Cloudflare-proxied A record (currently
-        GitHub Pages, proxied:false in DNS). Cloudflare Web Analytics
-        (server-side, no JS, no cookies) becomes available + the audit
-        rules below remain green.
-     B) Add Umami via analytics.owlzone.trade on a "no localStorage"
-        config + add the consent banner. Loses the no-banner promise.
-     C) Keep zero analytics. Accept the operator-visibility blind spot
-        as the price of the brand promise.
+     A) [RECOMMENDED] Migrate static hosting GitHub Pages → Cloudflare
+        Pages, then enable CF Web Analytics (free tier, server-side,
+        zero JS, zero cookies, zero localStorage). Audit rules below
+        stay green. callmeie-hub is already a public GitHub repo, so
+        CF Pages can build directly from it (no-build static site).
+        Migration runbook: callmeie-hub/MIGRATION-GH-PAGES-TO-CF.md.
+        Adam-keyboard step: create the CF Pages project + swap apex
+        DNS to CF Pages target. Terraform/API not used here — one-time
+        click.
+     B) [REJECTED] Self-host Umami at analytics.owlzone.trade in
+        no-localStorage mode. Forces a consent banner under Irish DPC
+        + ePrivacy interpretation. Breaks the "no banner" brand line
+        on /legal/privacy + footer. Trust cost > visibility win.
+     C) [REJECTED] Keep zero analytics. Accept blind spot. Means we
+        cannot measure conversion on /docs/, /lab/, /local-seo/, the
+        five new vertical landings, or the discovery quiz funnel
+        beyond Stripe checkout. Visibility we now have is too thin
+        for the surface area we just shipped.
 
-   Defer to Adam. Until decided, P2-1 stays deferred and this comment
-   is the audit trail.
+   Current DNS state (verified 2026-05-09 nslookup):
+     callmeie.ie A → 185.199.108-111.153 (GitHub Pages)
+     CF DNS proxied:false (orange cloud OFF)
+   Resume PRD line 100 "Cloudflare Pages, GitHub-backed" was stale —
+   callmeie.ie is on GitHub Pages today, not CF Pages.
+
+   Until path A executes, this audit script remains the only enforcement
+   surface and the brand promise still holds (no analytics in HTML →
+   no banner → audit green).
 """
 from __future__ import annotations
 import argparse
