@@ -477,7 +477,11 @@
     var next = document.createElement('button');
     next.type = 'button';
     next.className = 'cmt-chat-btn cmt-chat-btn-primary';
-    next.textContent = (state.stepIndex === STEPS.length - 1) ? 'See my fit →' : 'Next →';
+    // After P2-7 the contact step (renderContactStep) sits between the
+    // last chip step and submit, so even the final chip page is
+    // logically "Next →" — the "See my fit" button lives in the
+    // contact step.
+    next.textContent = 'Next →';
     next.addEventListener('click', advance);
 
     function syncNext() {
@@ -551,9 +555,87 @@
     if (state.stepIndex < STEPS.length - 1) {
       state.stepIndex += 1;
       renderStep();
+    } else if (!state.askedContact) {
+      // P2-7 — after the 4 chip questions, ask one optional contact
+      // step before firing the submit. Visitor can skip with the
+      // ghost button. If they skip, the server-side handoff result
+      // text will steer them to the visible mailto button instead of
+      // promising "Adam will email you" (which can't be delivered
+      // when no email was given).
+      state.askedContact = true;
+      renderContactStep();
     } else {
       submit();
     }
+  }
+
+  function renderContactStep() {
+    setProgress('Almost done');
+    body.innerHTML = '';
+    var p = document.createElement('p');
+    p.className = 'cmt-chat-prompt';
+    p.innerHTML = '<strong>How can Adam reach you?</strong> Optional — if you\'d rather email us first, skip this and we\'ll show the address.';
+    body.appendChild(p);
+
+    var emailInput = document.createElement('input');
+    emailInput.type = 'email';
+    emailInput.className = 'cmt-chat-input';
+    emailInput.placeholder = 'Email (optional)';
+    emailInput.maxLength = 160;
+    emailInput.value = state.answers.contact_email || '';
+    emailInput.addEventListener('input', function () {
+      state.answers.contact_email = emailInput.value.trim();
+    });
+    body.appendChild(emailInput);
+
+    var nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.className = 'cmt-chat-input';
+    nameInput.placeholder = 'Your name (optional)';
+    nameInput.maxLength = 80;
+    nameInput.value = state.answers.contact_name || '';
+    nameInput.addEventListener('input', function () {
+      state.answers.contact_name = nameInput.value.trim();
+    });
+    body.appendChild(nameInput);
+
+    var nav = document.createElement('div');
+    nav.className = 'cmt-chat-skip-row';
+
+    var back = document.createElement('button');
+    back.type = 'button';
+    back.className = 'cmt-chat-btn cmt-chat-btn-ghost';
+    back.textContent = '← Back';
+    back.addEventListener('click', function () {
+      state.askedContact = false;
+      renderStep();
+    });
+    nav.appendChild(back);
+
+    var spacer = document.createElement('span');
+    spacer.style.flex = '1';
+    nav.appendChild(spacer);
+
+    var skip = document.createElement('button');
+    skip.type = 'button';
+    skip.className = 'cmt-chat-btn cmt-chat-btn-ghost';
+    skip.textContent = 'Skip · I\'ll email';
+    skip.addEventListener('click', function () {
+      state.answers.contact_email = '';
+      state.answers.contact_name = '';
+      submit();
+    });
+    nav.appendChild(skip);
+
+    var done = document.createElement('button');
+    done.type = 'button';
+    done.className = 'cmt-chat-btn cmt-chat-btn-primary';
+    done.textContent = 'See my fit →';
+    done.addEventListener('click', submit);
+    nav.appendChild(done);
+
+    body.appendChild(nav);
+    try { emailInput.focus(); } catch (_) { /* noop */ }
   }
 
   function submit() {
@@ -571,7 +653,9 @@
       business: state.answers.business || '',
       pain: state.answers.pain || '',
       team_size: state.answers.team_size || '',
-      urgency: state.answers.urgency || ''
+      urgency: state.answers.urgency || '',
+      contact_email: state.answers.contact_email || '',
+      contact_name: state.answers.contact_name || ''
     };
 
     fetch(DISCOVERY_ENDPOINT, {
