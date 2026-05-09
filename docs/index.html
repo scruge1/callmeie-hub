@@ -314,7 +314,7 @@
           <p>33 docs per week: 25 supplier invoices (FB Euro, GSF, Comline distributor, oil supplier, tyre wholesaler), 8 delivery dockets — five typed counter-printouts and <strong>three handwritten</strong> dockets from the small local supplier who still works on a triplicate book.</p>
           <h4>What the customer sees</h4>
           <p>A pre-mapped CSV for Xero supplier-bill import. Handwritten dockets bounce back via a quick re-key form on the phone (typed substitution for the unreadable field, not full re-upload). Bookkeeper finishes the batch on the next available morning.</p>
-          <p class="caveat"><strong>Honest caveats.</strong> We do not OCR handwriting on the Auto tier — that is a specific decision, not a hidden limitation. Handwritten dockets bounce on critical-field uncertainty (no positive handwriting heuristic; we just cannot reach the 0.98 gate without legible printed text). The bounce-back re-key form is faster than re-uploading a typed version because it skips a second OCR pass.</p>
+          <p class="caveat"><strong>Honest caveats.</strong> We do not OCR handwriting on the Auto tier — that is a specific decision, not a hidden limitation. Handwritten dockets go to the review queue on critical-field uncertainty (no positive handwriting heuristic; we just cannot reach the 98%-certain auto-post threshold without legible printed text). The re-key form is faster than re-uploading a typed version because it skips a second OCR pass.</p>
         </div>
         <figure class="pipeline-log">
           <figcaption class="pipeline-log__kicker">Pipeline log · Auto tier · €99/mo · illustrative bounce-path</figcaption>
@@ -355,7 +355,7 @@
           <span class="pipeline-log__line"><span class="pipeline-log__time">Day 0</span><span class="pipeline-log__who pipeline-log__who--reviewer">Reviewer</span><span class="pipeline-log__text">Scoping call — TMS schema, HS-code conventions, multi-leg link convention</span></span>
           <span class="pipeline-log__line"><span class="pipeline-log__time">Day 1-3</span><span class="pipeline-log__who pipeline-log__who--reviewer">Reviewer</span><span class="pipeline-log__text">Bespoke schema build — per-carrier CMR map + ROS customs parser</span></span>
           <span class="pipeline-log__line"><span class="pipeline-log__time">Weekly</span><span class="pipeline-log__who">Upload</span><span class="pipeline-log__text">Forwarder uploads ~45-50 docs to tenant inbox</span></span>
-          <span class="pipeline-log__line"><span class="pipeline-log__time">Same day</span><span class="pipeline-log__who">Pipeline</span><span class="pipeline-log__text">OSS ensemble + EU verifier dual-pass; conservative 0.98 gate</span></span>
+          <span class="pipeline-log__line"><span class="pipeline-log__time">Same day</span><span class="pipeline-log__who">Pipeline</span><span class="pipeline-log__text">Two AI models cross-check (open-source AI ensemble + EU-hosted second-pass verifier); conservative 98%-certain auto-post threshold</span></span>
           <span class="pipeline-log__line"><span class="pipeline-log__time">Same day</span><span class="pipeline-log__who pipeline-log__who--gate">Gate</span><span class="pipeline-log__text">~70% clear → auto-export to TMS w/ consignment-id link</span></span>
           <span class="pipeline-log__line"><span class="pipeline-log__time">≤5 biz days</span><span class="pipeline-log__who pipeline-log__who--reviewer">Reviewer</span><span class="pipeline-log__text">~30% land in review queue — completes ambiguous fields, HS-code corrections</span></span>
           <span class="pipeline-log__line"><span class="pipeline-log__time">Monthly</span><span class="pipeline-log__who pipeline-log__who--reviewer">Reviewer</span><span class="pipeline-log__text">Summary email — docs processed, review actions, schema change patterns</span></span>
@@ -460,7 +460,7 @@ Gross total                              170.97</code></pre>
   "vat_rate":        <span class="try-it__field try-it__field--ok">0.23</span>                 <span class="try-it__chip try-it__chip--ok">1.00</span>,
   "gross_total":     <span class="try-it__field try-it__field--ok">170.97</span>               <span class="try-it__chip try-it__chip--ok">1.00</span>
 }</code></pre>
-            <p class="try-it__output-foot">Math gate passed (139.00 + 31.97 = 170.97). Routes straight to your Sage / Xero / BrightBooks export queue.</p>
+            <p class="try-it__output-foot">Totals reconcile ✓ (139.00 + 31.97 = 170.97). Routes straight to your Sage / Xero / BrightBooks export queue.</p>
           </div>
         </div>
         <button type="button" class="try-it__btn" data-try-extract>Extract →</button>
@@ -488,8 +488,8 @@ VAT 23%             ~5̲5̲.̲4̲̲̲1̲~  (smudged)
 Gross                          296.31</code></pre>
           <div class="try-it__output" data-try-output hidden>
             <div class="try-it__output-head">
-              <span class="try-it__output-tag">Extracted JSON · 1 field below 0.98 gate</span>
-              <span class="try-it__output-confidence try-it__output-confidence--warn">Bounce-back fired</span>
+              <span class="try-it__output-tag">Extracted JSON · 1 field below 98% auto-post threshold</span>
+              <span class="try-it__output-confidence try-it__output-confidence--warn">Sent to review queue</span>
             </div>
             <pre class="try-it__json"><code>{
   "supplier_name":   <span class="try-it__field try-it__field--ok">"Munster Cleaning Svcs"</span>     <span class="try-it__chip try-it__chip--ok">0.99</span>,
@@ -501,7 +501,7 @@ Gross                          296.31</code></pre>
   "vat_rate":        <span class="try-it__field try-it__field--ok">0.23</span>                    <span class="try-it__chip try-it__chip--ok">1.00</span>,
   "gross_total":     <span class="try-it__field try-it__field--ok">296.31</span>                  <span class="try-it__chip try-it__chip--ok">1.00</span>
 }</code></pre>
-            <p class="try-it__output-foot">vat_amount = 0.93 &lt; 0.98 gate. Routed to your bookkeeper review queue with one-line reason: <em>"VAT cell partially obscured — confirm 55.41 vs invoice math (240.90 × 0.23 = 55.41 ✓)."</em> Math agrees, so reviewer 1-clicks accept.</p>
+            <p class="try-it__output-foot">VAT amount confidence 93% — below the 98% auto-post threshold. Routed to your bookkeeper review queue with one-line reason: <em>"VAT cell partially obscured — confirm 55.41 vs invoice math (240.90 × 0.23 = 55.41 ✓)."</em> Totals reconcile, so reviewer 1-clicks accept.</p>
           </div>
         </div>
         <button type="button" class="try-it__btn" data-try-extract>Extract →</button>
@@ -509,7 +509,7 @@ Gross                          296.31</code></pre>
 
       <article class="try-it__card" data-try-id="sample-bounce" role="listitem">
         <header class="try-it__head">
-          <span class="try-it__badge try-it__badge--bounce">Bounce-back</span>
+          <span class="try-it__badge try-it__badge--bounce">Review queue</span>
           <h3 class="try-it__title">M.J. Quinn Joinery — handwritten quote</h3>
           <p class="try-it__sub">Multiple uncertain fields · routes to bookkeeper</p>
         </header>
@@ -529,8 +529,8 @@ total                           2233.68
 cash on completion ta MJQ</code></pre>
           <div class="try-it__output" data-try-output hidden>
             <div class="try-it__output-head">
-              <span class="try-it__output-tag">Extracted JSON · 3 fields below 0.98 gate</span>
-              <span class="try-it__output-confidence try-it__output-confidence--bounce">Bounce-back fired</span>
+              <span class="try-it__output-tag">Extracted JSON · 3 fields below 98% auto-post threshold</span>
+              <span class="try-it__output-confidence try-it__output-confidence--bounce">Sent to review queue</span>
             </div>
             <pre class="try-it__json"><code>{
   "supplier_name":   <span class="try-it__field try-it__field--ok">"M.J. Quinn Joinery"</span>      <span class="try-it__chip try-it__chip--ok">0.98</span>,
@@ -542,7 +542,7 @@ cash on completion ta MJQ</code></pre>
   "vat_amount":      <span class="try-it__field try-it__field--ok">265.68</span>                  <span class="try-it__chip try-it__chip--ok">0.99</span>,
   "gross_total":     <span class="try-it__field try-it__field--ok">2233.68</span>                  <span class="try-it__chip try-it__chip--ok">0.99</span>
 }</code></pre>
-            <p class="try-it__output-foot">3 fields below gate. Document type detected as <em>quote, not invoice</em>. Bounced back with: <em>"This is a quote, not a Revenue-compliant invoice — supplier VAT missing, no invoice number, partial date. Ask supplier for proper invoice on completion."</em> Never silently goes into your books.</p>
+            <p class="try-it__output-foot">3 fields needing human check. Document type detected as <em>quote, not invoice</em>. Sent to review queue with: <em>"This is a quote, not a Revenue-compliant invoice — supplier VAT missing, no invoice number, partial date. Ask supplier for proper invoice on completion."</em> Never silently goes into your books.</p>
           </div>
         </div>
         <button type="button" class="try-it__btn" data-try-extract>Extract →</button>
@@ -562,7 +562,7 @@ cash on completion ta MJQ</code></pre>
     <span class="proof-eyebrow">§ 05c — Drop your own</span>
     <h2 id="drop-it-title" class="section-title">Drop a real invoice. See the extractor work for yourself.</h2>
     <p class="section-lede">
-      Upload any PDF — digital or scanned. Digital PDFs go through pdfplumber in &lt;200 ms; scans get rendered via pypdfium2, preprocessed (Lanczos 3.5× upscale + Hough deskew + adaptive Gaussian threshold) and run through the Tesseract + RapidOCR ensemble. Fields are then normalised by our Irish-VAT prompt and confidence-gated against the math invariant + IE statutory rate set. <strong>The bytes you upload never touch our disk and are dropped from memory the moment we have the text.</strong>
+      Upload any PDF — digital or scanned. Digital PDFs go through pdfplumber in &lt;200 ms; scans get image-cleaned (3.5× upscale + de-skew rotation + smart contrast) and run through the Tesseract + RapidOCR ensemble. Fields are then normalised by our Irish-VAT prompt and confidence-gated against the totals check + IE statutory rate set. <strong>The bytes you upload never touch our disk and are dropped from memory the moment we have the text.</strong>
     </p>
 
     <form class="drop-it__form" data-drop-form aria-describedby="drop-it-disclosure">
@@ -583,7 +583,7 @@ cash on completion ta MJQ</code></pre>
     <div class="drop-it__result" data-drop-result hidden></div>
 
     <p class="drop-it__disclosure" id="drop-it-disclosure">
-      <strong>Privacy contract.</strong> Your bytes are read into memory, parsed by pdfplumber for digital PDFs (sub-100ms text-layer path) or — for image-only / scanned PDFs — rendered at 300 DPI via pypdfium2, preprocessed (Lanczos 3.5× upscale + Hough deskew + adaptive Gaussian threshold), then run through both Tesseract 5 and RapidOCR 3 in ensemble. The byte buffer is dropped before the response goes out, and the resulting text is sent to our IE-VAT prompt. We keep an audit row holding the size in bytes, page count, and a SHA-256 digest of the input — no content, no metadata that could rebuild your document. Processing region: Hetzner Nuremberg DE (same infrastructure paying clients run on). Sub-processor: xAI (Grok-4) for the field-normalisation step (US under EU-US Data Privacy Framework). Three uploads per visitor per hour. <strong>What's still missing vs. paying tier:</strong> Ollama-hosted GLM-OCR / Qwen2.5-VL vision verifier (lands when our home-GPU host is wired in), per-word voter-agreement scoring, line-item table parser via RapidTable, Hetzner Object Storage with 7-year VATCA retention, and the Label Studio bounce-back queue. Want a pilot on your own invoices with the full stack? <a href="mailto:hello@callmeie.ie?subject=Doc%20Ops%20pilot%20%E2%80%94%20pipeline%20test">Email Adam</a>.
+      <strong>Privacy contract.</strong> Your bytes are read into memory, parsed by pdfplumber for digital PDFs (sub-100ms text-layer path) or — for image-only / scanned PDFs — rendered at 300 DPI via pypdfium2, image-cleaned (3.5× upscale + de-skew rotation + smart contrast), then run through both Tesseract 5 and RapidOCR 3 in ensemble. The byte buffer is dropped before the response goes out, and the resulting text is sent to our IE-VAT prompt. We keep an audit row holding the size in bytes, page count, and a fingerprint of the file (proves no copy kept) — no content, no metadata that could rebuild your document. Processing region: Hetzner Nuremberg DE (same servers paying clients run on). Sub-processor: xAI (Grok-4) for the field-normalisation step (US under EU-US Data Privacy Framework). Three uploads per visitor per hour. <strong>What's still missing vs. paying tier:</strong> Ollama-hosted GLM-OCR / Qwen2.5-VL vision verifier (lands when our home-GPU host is wired in), per-word voter-agreement scoring, line-item table parser via RapidTable, Hetzner Object Storage with 7-year retention under Irish VAT records law (VATCA s.84(3)), and the Label Studio review queue. Want a pilot on your own invoices with the full stack? <a href="mailto:hello@callmeie.ie?subject=Doc%20Ops%20pilot%20%E2%80%94%20pipeline%20test">Email Adam</a>.
     </p>
   </div>
 </section>
@@ -1153,7 +1153,7 @@ cash on completion ta MJQ</code></pre>
     html += '<span class="drop-it__result-tag">' + escapeHtml(typeLabel) + ' · ' + (body.page_count || '?') + ' page' + (body.page_count === 1 ? '' : 's') + '</span>';
     html += '<span class="drop-it__result-badge drop-it__result-badge--' + (bounce ? 'bounce' : 'ok') + '">';
     if (isTightInvoice) {
-      html += bounce ? 'Bounce-back fired' : 'Invoice math gate ✓';
+      html += bounce ? 'Sent to review queue' : 'Totals reconcile ✓';
     } else if (isInvoice) {
       html += 'Statement extract';
     } else {
@@ -1187,6 +1187,25 @@ cash on completion ta MJQ</code></pre>
     }
 
     // 3. Invoice-shaped fields w/ confidence chips — only when relevant
+    //    (P4-1: snake_case JSON keys stay as JSON keys for the API contract,
+    //    but the displayed label is the plain-English name from FIELD_LABELS.)
+    var FIELD_LABELS = {
+      supplier_name: 'Supplier',
+      supplier_vat: 'Supplier VAT no.',
+      buyer_name: 'Buyer',
+      buyer_vat: 'Buyer VAT no.',
+      invoice_number: 'Invoice number',
+      issue_date: 'Invoice date',
+      due_date: 'Due date',
+      period_start: 'Period start',
+      period_end: 'Period end',
+      currency: 'Currency',
+      net_total: 'Net total (€)',
+      vat_amount: 'VAT (€)',
+      vat_rate: 'VAT rate',
+      gross_total: 'Total (€)'
+    };
+    function fieldLabel(k) { return FIELD_LABELS[k] || k.replace(/_/g, ' '); }
     if (isInvoice) {
       var inv = ex.invoice_fields || {};
       html += '<h4 class="drop-it__section-h">Invoice fields · confidence-gated</h4>';
@@ -1203,7 +1222,7 @@ cash on completion ta MJQ</code></pre>
               : '<span class="drop-it__result-val--' + t + '">"' + escapeHtml(v) + '"</span>');
         var chipText = c === 0 ? '— missing' : c.toFixed(2);
         html += '<div class="drop-it__result-row">' +
-          '<span class="drop-it__result-key">' + escapeHtml(k) + '</span>' +
+          '<span class="drop-it__result-key">' + escapeHtml(fieldLabel(k)) + '</span>' +
           display +
           '<span class="drop-it__result-conf" style="' + chipBg(c) + '">' + chipText + '</span>' +
         '</div>';
@@ -1264,7 +1283,7 @@ cash on completion ta MJQ</code></pre>
     // 6. Monetary — every currency value w/ label
     var money = ex.monetary_values || [];
     if (money.length > 0) {
-      html += '<h4 class="drop-it__section-h">Monetary values</h4>';
+      html += '<h4 class="drop-it__section-h">Money mentions</h4>';
       money.forEach(function (m) {
         html += '<div class="drop-it__kv">';
         html += '<span class="drop-it__kv-label">' + escapeHtml(m.label || '—') + '</span>';
@@ -1301,7 +1320,7 @@ cash on completion ta MJQ</code></pre>
     if (isTightInvoice && body.review_note) {
       html += '<p class="drop-it__result-foot">Review queue: <em>' + escapeHtml(body.review_note) + '</em></p>';
     } else if (isTightInvoice && body.math_gate_passed) {
-      html += '<p class="drop-it__result-foot">Math gate passed — net + VAT = gross. Would route straight to a Sage / Xero / BrightBooks export queue on a paying tier.</p>';
+      html += '<p class="drop-it__result-foot">Totals reconcile (math gate ✓) — net + VAT = gross. Would route straight to a Sage / Xero / BrightBooks export queue on a paying tier.</p>';
     }
 
     // 10. Raw-text fold — collapsible, lets the visitor see what we read
@@ -1315,7 +1334,7 @@ cash on completion ta MJQ</code></pre>
     }
 
     // 11. Audit receipt
-    html += '<p class="drop-it__result-receipt">audit · ' + body.size_bytes + ' bytes · sha-' + (body.digest || '').slice(0, 16) + ' · ' + (body.elapsed_ms || 0) + 'ms · payload dropped</p>';
+    html += '<p class="drop-it__result-receipt">Audit row kept: ' + body.size_bytes + ' bytes · fingerprint ' + (body.digest || '').slice(0, 16) + ' · ' + (body.elapsed_ms || 0) + 'ms · file dropped</p>';
 
     resultEl.innerHTML = html;
     resultEl.hidden = false;
@@ -1542,10 +1561,10 @@ cash on completion ta MJQ</code></pre>
 
     <div class="proof-tail">
       <div class="proof-metrics">
-        <span class="proof-metric"><strong>STR</strong> Straight-through rate at 0.98 gate</span>
+        <span class="proof-metric"><strong>STR</strong> Straight-through rate at 98%-certain auto-post threshold</span>
         <span class="proof-metric"><strong>FLA</strong> Field-level accuracy when not flagged</span>
         <span class="proof-metric"><strong>SFR</strong> Silent-failure rate (auto-exported but wrong)</span>
-        <span class="proof-metric"><strong>BPS</strong> Bounce-back rate</span>
+        <span class="proof-metric"><strong>BPS</strong> Review-queue rate (sent to bookkeeper for human check)</span>
       </div>
       <a class="proof-cta" href="https://github.com/scruge1/proof-fixtures" rel="noopener" target="_blank">
         View the open corpus on GitHub <span aria-hidden="true">→</span>
@@ -1594,8 +1613,8 @@ cash on completion ta MJQ</code></pre>
         <div class="price-amount">€99 <small>/ month</small></div>
         <ul class="price-feats">
           <li>200 documents / month</li>
-          <li>0.98 confidence gate on critical fields</li>
-          <li>doubtful docs bounce back to you</li>
+          <li>98%-certain auto-post on critical fields</li>
+          <li>doubtful docs go to your review queue</li>
           <li>no human review — you spot-check exports</li>
         </ul>
         <a href="https://buy.stripe.com/14A9AS9uzgdggvW95XaIM0f" target="_blank" rel="noopener" class="btn btn-primary">Start Auto · €99/mo</a>
@@ -1605,7 +1624,7 @@ cash on completion ta MJQ</code></pre>
         <div class="price-amount">€249 <small>/ month</small></div>
         <ul class="price-feats">
           <li>600 documents / month</li>
-          <li>same 0.98 gate, multi-tenant for bookkeeping practices</li>
+          <li>same 98%-certain auto-post, multi-tenant for bookkeeping practices</li>
           <li>2 tenant seats included; €40/mo per extra seat</li>
           <li>no human review — you spot-check exports</li>
         </ul>
@@ -1655,7 +1674,7 @@ cash on completion ta MJQ</code></pre>
         </div>
         <div class="cost-calc__row">
           <h4>5-bookkeeper practice · 12 clients · ~1,800 docs/mo total</h4>
-          <p>Auto Plus (€249/mo · 600 docs/mo cap · 2 tenant seats included). For 12 clients you need 10 extra seats @ €40/mo = <strong>€649/mo all-in</strong>. AutoEntry comparable spend at €95/company × 12 = €1,140/mo. Net: ~€491/mo saved vs AutoEntry, plus the bookkeeper review absorbed for sub-0.98 docs. Above 600 docs/mo total you graduate to Rescue + Export or talk to us.</p>
+          <p>Auto Plus (€249/mo · 600 docs/mo cap · 2 tenant seats included). For 12 clients you need 10 extra seats @ €40/mo = <strong>€649/mo all-in</strong>. AutoEntry comparable spend at €95/company × 12 = €1,140/mo. Net: ~€491/mo saved vs AutoEntry, plus the bookkeeper review absorbed for review-queue docs (those that didn't reach the 98%-certain auto-post threshold). Above 600 docs/mo total you graduate to Rescue + Export or talk to us.</p>
         </div>
         <div class="cost-calc__row">
           <h4>Freight forwarder · ~200 docs/mo · BOL+CMR+customs</h4>
@@ -1685,7 +1704,7 @@ cash on completion ta MJQ</code></pre>
       </div>
       <div class="faq-item">
         <div class="faq-q">"What if your extraction is wrong?"</div>
-        <p class="faq-a">Critical fields (vendor, total, VAT, date) only auto-export when the confidence gate scores them above 0.98. If any critical field falls below the gate, the doc bounces back with a one-line reason. Self-serve plans rely on the bounce-back as the safety net — there is no human review. Rescue + Export adds 10 docs per month where we clean up ambiguous cases; anything beyond bounces back as normal. You still spot-check the CSV before pasting — that responsibility stays with you. Currently-known limitations we are upfront about: handwritten content, multi-invoice-in-one-PDF (no splitter shipped — bounces with "split + re-upload"), and RCT formats Revenue has just changed (we monitor and ship validator updates).</p>
+        <p class="faq-a">Critical fields (vendor, total, VAT, date) only auto-export when we're 98% certain (the auto-post threshold). If any critical field falls below that threshold, the doc goes to the review queue with a one-line reason. Self-serve plans rely on the review queue as the safety net — there is no human review on our side. Rescue + Export adds 10 docs per month where we clean up ambiguous cases; anything beyond goes to your review queue as normal. You still spot-check the CSV before pasting — that responsibility stays with you. Currently-known limitations we are upfront about: handwritten content, multi-invoice-in-one-PDF (no splitter shipped — sent to review queue with "split + re-upload"), and RCT formats Revenue has just changed (we monitor and ship validator updates).</p>
       </div>
       <div class="faq-item">
         <div class="faq-q">"Where does our data live?"</div>
@@ -1697,7 +1716,7 @@ cash on completion ta MJQ</code></pre>
       </div>
       <div class="faq-item">
         <div class="faq-q">"What if your CSV puts wrong VAT into Sage and Revenue queries it?"</div>
-        <p class="faq-a">Honest answer: you spot-check before paste, and that responsibility stays with you — see the §5 caveats. The 0.98 confidence gate exists so we never auto-export rows we're uncertain about, but no extraction tool removes the bookkeeper's review-before-paste step. Our DPA limits Processor liability per the Master Service Agreement; we maintain professional indemnity cover and will negotiate a per-engagement liability cap on Bespoke contracts. We do not file returns; we extract data so you can.</p>
+        <p class="faq-a">Honest answer: you spot-check before paste, and that responsibility stays with you — see the §5 caveats. The 98%-certain auto-post threshold exists so we never auto-export rows we're uncertain about, but no extraction tool removes the bookkeeper's review-before-paste step. Our DPA limits Processor liability per the Master Service Agreement; we maintain professional indemnity cover and will negotiate a per-engagement liability cap on Bespoke contracts. We do not file returns; we extract data so you can.</p>
       </div>
       <div class="faq-item">
         <div class="faq-q">"Do you do freight / property / law?"</div>
@@ -1721,7 +1740,7 @@ cash on completion ta MJQ</code></pre>
   <div class="callmeie-footer-inner">
     <div class="callmeie-footer-brand">
       <strong>CallMeIE Technologies</strong>
-      <span>AI ops infrastructure · Limerick · Ireland</span>
+      <span>AI staff for Irish small businesses · Limerick · Ireland</span>
       <a href="mailto:hello@callmeie.ie">hello@callmeie.ie</a>
     </div>
     <nav class="callmeie-footer-nav" aria-label="Site sections">
