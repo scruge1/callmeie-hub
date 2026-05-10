@@ -6,11 +6,19 @@
      python scripts/audit-no-cookies.py            # walk repo HTML, exit 1 on hit
      python scripts/audit-no-cookies.py --verbose  # show per-page status
 
-   P2-1 DECISION (2026-05-09 evening — recommend path A):
-   ------------------------------------------------------
-   Brand promise on /legal/privacy + DPA + footer is "no cookies, no
-   tracking, no banner." Three paths were evaluated; A is the only one
-   that preserves the promise AND closes the operator-visibility gap.
+   P2-1 DECISION (2026-05-10 — Adam picked path B over recommended A):
+   --------------------------------------------------------------------
+   Adam overrode the recommended path A (CF Pages migration + CF Web
+   Analytics) and picked path B (self-hosted Umami at analytics.owlzone.trade
+   + cookie-banner site-wide). This is now LIVE: Umami site id
+   `29c5ad13-7ab8-4dc9-84ec-2a513279ab6c`, tracker loads ONLY after explicit
+   consent via `_partials/cohesion-consent-banner.html`. Brand-promise update:
+   "no cookies, no tracking, no banner" -> "you decide if we count, no
+   third-party trackers, no cross-site profile". Self-hosted Umami in DNT
+   mode = no localStorage on tracking calls (consent flag itself is
+   essential-cookie exempt under ePrivacy strictly-necessary).
+
+   Legacy path A/B/C audit trail (kept for context):
 
      A) [RECOMMENDED] Migrate static hosting GitHub Pages → Cloudflare
         Pages, then enable CF Web Analytics (free tier, server-side,
@@ -67,7 +75,9 @@ PATTERNS = [
     (r"\bhotjar\b",                           "CRITICAL", "Hotjar session recording"),
     (r"\bfullstory\b",                        "CRITICAL", "FullStory session recording"),
     (r"\bclarity\.ms\b",                      "CRITICAL", "Microsoft Clarity"),
-    (r"localStorage\.setItem\s*\(",           "HIGH",     "localStorage write — needs consent if non-essential"),
+    # P2-1 path B: consent flag itself is essential-cookie exempt under
+    # ePrivacy. Allow ONLY the cmt-consent key. Anything else = HIGH.
+    (r"localStorage\.setItem\s*\(\s*['\"](?!cmt-consent['\"])", "HIGH", "localStorage write — needs consent if non-essential"),
     (r"sessionStorage\.setItem\s*\(",         "MEDIUM",   "sessionStorage write — same-tab only, lower risk"),
     (r"document\.cookie\s*=",                 "HIGH",     "Direct cookie write"),
     (r"linkedin\.com/insight",                "HIGH",     "LinkedIn Insight Tag"),
