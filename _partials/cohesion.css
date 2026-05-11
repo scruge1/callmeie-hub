@@ -318,6 +318,27 @@
 }
 .callmeie-footer-brand a:hover { color: var(--cmt-brand); }
 
+/* Footer social row — compact icon+text row under the brand contact links.
+   Reuses brand-column anchor sizing for visual cohesion. */
+.callmeie-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.callmeie-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cmt-ink-soft);
+  text-decoration: none;
+  transition: color var(--cmt-duration-fast) var(--cmt-ease);
+}
+.callmeie-footer-social a:hover { color: var(--cmt-brand); }
+.callmeie-footer-social svg { flex: 0 0 auto; }
+
 .callmeie-footer-nav {
   display: contents;
 }
