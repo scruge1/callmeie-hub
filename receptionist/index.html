@@ -353,14 +353,25 @@
       Built in Limerick. Live on a real line.
     </p>
 
-    <!-- P3-3 — ~35-second sample of Claire taking a cafe booking. Niamh's
-         #1 fear is "will it sound robotic / will my regulars hate it" —
-         this lets her hear the tone before she dials. Voice updated
-         2026-05-11 to match the live Vapi squad: ElevenLabs voice "Clare —
-         Soft and Warm" (3Q0HiHNecynsdqicntLT, Irish female, middle-aged,
-         shared library) generated via Flash v2.5 with the same
-         voice_settings (stability 0.4, similarity 0.75, style 0.1,
-         speakerBoost) used on the live demo line +353 61 788 120.
+    <!-- P3-3 — ~33-second two-voice cafe-booking demo. Niamh's #1 fear
+         is "will it sound robotic / will my regulars hate it" — this lets
+         her hear the tone + a real customer interaction before she dials.
+         Re-rendered 2026-05-11 (v3) after the first single-voice cut
+         landed flat ("a bit depressed", em-dash misread as "samam"):
+           - Two voices stitched with ffmpeg + 250ms inter-turn silence
+           - Receptionist: ElevenLabs "Clare — Soft and Warm"
+             (3Q0HiHNecynsdqicntLT, Irish female, middle-aged) — same
+             voice as the live Vapi assistant on +353 61 788 120
+           - Customer:     ElevenLabs "Colleen — Warm Southern Irish Woman"
+             (1OYA2kgM85gF2eGN8HEp, Irish female, middle-aged) — distinct
+             enough from Clare so listeners can tell who's who
+           - Model: eleven_turbo_v2_5 (matches Vapi runtime)
+           - voice_settings: stability 0.45, similarity_boost 0.78,
+             style 0.45 (lifted from 0.1 to add expressive range),
+             use_speaker_boost true
+           - Em-dashes replaced with periods/commas everywhere to avoid
+             the ElevenLabs TTS em-dash-vocalisation bug.
+         Render script: ~/AppData/Local/Temp/render-dialog.py
     -->
     <figure class="hero__audio" aria-label="Sample call: Claire taking a cafe booking">
       <figcaption class="hero__audio-label">Hear Claire · ~35-sec sample · cafe booking</figcaption>
