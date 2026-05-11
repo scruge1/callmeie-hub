@@ -366,9 +366,15 @@
              (1OYA2kgM85gF2eGN8HEp, Irish female, middle-aged) — distinct
              enough from Clare so listeners can tell who's who
            - Model: eleven_turbo_v2_5 (matches Vapi runtime)
-           - voice_settings: stability 0.45, similarity_boost 0.78,
-             style 0.45 (lifted from 0.1 to add expressive range),
-             use_speaker_boost true
+           - voice_settings differ per speaker (v4, 2026-05-11):
+               Claire receptionist: stab 0.35, sim 0.78, style 0.70,
+                                    speakerBoost true
+               (style bumped 0.45 -> 0.70 + stability dropped 0.45 -> 0.35
+                so the expressive variance has room to land; v3 sounded
+                "depressed/dull" at style 0.45)
+               Colleen customer:    stab 0.45, sim 0.78, style 0.45,
+                                    speakerBoost true (unchanged - Adam
+                                    liked her at these settings)
            - Em-dashes replaced with periods/commas everywhere to avoid
              the ElevenLabs TTS em-dash-vocalisation bug.
          Render script: ~/AppData/Local/Temp/render-dialog.py
