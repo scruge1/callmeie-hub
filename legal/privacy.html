@@ -178,8 +178,8 @@
         <tr><th>Sub-processor</th><th>Used by</th><th>Location</th><th>Function</th></tr>
     </thead>
     <tbody>
-        <tr><td>Hetzner Online GmbH</td><td>Doc Ops · Websites · Receptionist DB-mirror · self-hosted Umami at analytics.owlzone.trade (consent-gated, callmeie.ie page counts only)</td><td>Nuremberg, DE</td><td>Hosting · object storage · self-hosted analytics</td></tr>
-        <tr><td>Vapi.ai</td><td>Receptionist</td><td>US (with EU routing where supported)</td><td>Voice agent runtime · call recording</td></tr>
+        <tr><td>Hetzner Online GmbH</td><td>Doc Ops · Websites · Receptionist DB-mirror · self-hosted Umami at analytics.owlzone.trade (consent-gated, callmeie.ie page counts only) · <strong>Receptionist call-recording archive (90 days)</strong></td><td>Nuremberg, DE</td><td>Hosting · object storage · self-hosted analytics · durable call-recording storage</td></tr>
+        <tr><td>Vapi.ai</td><td>Receptionist</td><td>US (with EU routing where supported)</td><td>Voice agent runtime · transient call-recording working copy (≤14 days, then mirrored to Hetzner)</td></tr>
         <tr><td>Twilio Inc.</td><td>Receptionist</td><td>US / IE (number-dependent)</td><td>Telephony · SMS</td></tr>
         <tr><td>Google LLC (Workspace)</td><td>Receptionist</td><td>EU residency where set</td><td>Calendar API</td></tr>
         <tr><td>Anthropic PBC</td><td>Receptionist (anomaly diagnosis)</td><td>US</td><td>LLM API for failed-call diagnosis</td></tr>
@@ -253,11 +253,26 @@
 <p>Supervisory authority: Irish Data Protection Commission, 21 Fitzwilliam Square South, Dublin 2, D02 RD28, Ireland · <a href="https://www.dataprotection.ie" rel="noopener" target="_blank">dataprotection.ie</a>.</p>
 </section>
 
+<section id="sec-12">
+<h2>12 · Call recording on the demo line</h2>
+<p>The CallMeIE demo line <strong>+353 61 788 120</strong> records every inbound call. Recording starts the moment the AI assistant Clare picks up; Clare states the recording disclosure in her first sentence so callers know before they speak.</p>
+<ul>
+    <li><strong>What is recorded:</strong> the full inbound audio (caller + assistant) and a verbatim transcript.</li>
+    <li><strong>Why:</strong> product quality assurance, prompt tuning, abuse prevention, and to give Adam the evidence to fix any call that goes wrong. Not used for advertising, profiling, or training third-party AI models.</li>
+    <li><strong>Lawful basis (GDPR Art 6):</strong> <strong>Article 6(1)(f) — legitimate interests</strong>. Our interest in continuously improving a live voice-AI product is balanced against the caller's privacy interest by (a) up-front disclosure in the assistant's first sentence, (b) a real opt-out path (tell Clare "I'd rather not be recorded" and she will note it; the recording is then manually deleted from storage within 24 hours), (c) restricted internal access (Adam only), (d) bounded retention (90 days), (e) EU-only data residency. Balancing test on record in our DPA.</li>
+    <li><strong>Retention:</strong> 90 days from call end, then auto-deletion. Vapi (the voice-runtime sub-processor) holds the file in its own US-with-EU-routing storage for the first 14 days only as a transient working copy; within that window the recording is mirrored to <strong>Hetzner Object Storage (Nuremberg, DE)</strong> — our already-disclosed EU sub-processor — and the durable archive lives there for the remaining 90-day window with a server-side lifecycle policy enforcing auto-delete. After 90 days no copy remains on either side.</li>
+    <li><strong>Opt-out:</strong> tell Clare during the call: "I'd rather not be recorded." She will acknowledge and note the opt-out flag on the call record. Within 24 hours of the call ending, the recording + transcript for that call are manually deleted from both Vapi and Hetzner storage. You can also email <a href="mailto:hello@callmeie.ie?subject=Demo%20call%20recording%20deletion">hello@callmeie.ie</a> with the date/time of your call and we will purge it within 24 hours.</li>
+    <li><strong>Your rights:</strong> the standard §6 GDPR rights apply to your recording — access, erasure, restriction, objection, portability. Email <a href="mailto:hello@callmeie.ie?subject=Demo%20call%20recording%20rights%20request">hello@callmeie.ie</a> with the date/time of your call.</li>
+</ul>
+<p class="legal-note"><strong>Real-client deployments (paying tier) — different lawful basis:</strong> when CallMeIE is deployed as a receptionist for a real Irish business that you ring on the business's own number, the recording is processed under <strong>Article 6(1)(b) contract</strong> (the recording IS the service the business has contracted for) and the business is the controller. That business's own privacy notice governs that recording; CallMeIE is the processor. The 90-day retention + EU-residency + Hetzner archive posture is the same.</p>
+</section>
+
 <section id="sec-11">
 <h2>11 · Changes to this policy</h2>
 <p>We will give you <strong>30 days' written notice</strong> of any material change to this Privacy Policy. Notice is delivered to the contact email on your Order Form. Continued use after the notice period is acceptance. The "Last updated" stamp at the top reflects the most recent change.</p>
 <p>Version history:</p>
 <ul>
+    <li><strong>v1.1 · 2026-05-11</strong> — added §12 explicitly covering call recording on the +353 61 788 120 demo line (disclosure, lawful basis Art 6(1)(f), 90-day retention via Hetzner Object Storage archive, opt-out path).</li>
     <li><strong>v1.0 · 2026-05-04</strong> — first multi-product version (covers all three products: AI Receptionist + Document Ops + AI-First Websites). Replaces the previous Receptionist-only version at <code>/receptionist/privacy.html</code>.</li>
 </ul>
 </section>
