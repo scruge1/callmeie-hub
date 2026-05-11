@@ -151,7 +151,7 @@
     <li><strong>AI Receptionist + Discovery quiz API (FastAPI):</strong> Render Inc. Frankfurt region (EU). Migration to Hetzner Coolify Nuremberg in progress (no end-of-life date set; no change to your data residency — both regions are EU).</li>
     <li><strong>Onboarding form intake (webhook relay):</strong> Railway Corp. (US-managed control plane) — used as a webhook receiver for the Receptionist signup form (<code>/submit-onboarding</code>) which forwards directly into the Receptionist FastAPI for persistence. Form payload (business name, contact name, contact phone, contact email, address, hours, services) transits Railway and is not retained on Railway storage beyond request lifetime. SCCs in place; Railway data plane region pinned to EU where supported.</li>
     <li><strong>Vapi voice runtime + call recordings:</strong> Vapi.ai US infrastructure with EU routing where the carrier supports it. Recordings retained 90 days then auto-deleted.</li>
-    <li><strong>Twilio telephony + SMS:</strong> Twilio Inc. region depends on the phone number country (Irish numbers route via EU; US fallback +1 (661) 764-3212 demo line routes via US).</li>
+    <li><strong>Twilio telephony + SMS:</strong> Twilio Inc. region depends on the phone number country (Irish numbers route via EU; the Limerick line +353 61 788 120 also routes via EU).</li>
     <li><strong>Backups:</strong> encrypted at rest, retained per the Order Form retention window. No transfers outside the EEA without an explicit additional clause.</li>
 </ul>
 </section>
