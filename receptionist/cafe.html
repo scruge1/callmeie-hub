@@ -1664,8 +1664,8 @@
   P3-5 — sticky bottom CTA on long pages.
   Injected on /receptionist/* + /docs/ + /websites/ where the user can
   scroll past every primary CTA. The bar sticks at viewport bottom and
-  surfaces the three actions Adam can field today: ring (US +1 demo
-  line until Twilio +353 lands), WhatsApp, email.
+  surfaces the three actions Adam can field today: ring the Limerick line
+  +353 61 788 120 (live since 2026-05-11), WhatsApp, email.
   Tokens substituted by scripts/inject-cohesion.py:
     +35361788120    — primary tel:+ link, e.g. +35361788120
     Hi%20CallMeIE%20%E2%80%94%20caf%C3%A9%20receptionist%3A%20  — pre-filled WhatsApp message, URL-encoded
@@ -1684,16 +1684,16 @@
     <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
       <path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411z"/>
     </svg>
-    <span>WhatsApp · +353 85 786 3564</span>
+    <span class="cmt-bottom-cta__text"><span class="cmt-bottom-cta__text-full">WhatsApp · 085 786 3564</span><span class="cmt-bottom-cta__text-short">WhatsApp</span></span>
   </a>
   <a class="cmt-bottom-cta__btn cmt-bottom-cta__btn--ghost"
      href="tel:+35361788120"
      data-cmt-cta="ring"
-     title="US sandbox demo line until Twilio +353 launches week of 2026-05-12">
+    >
     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
     </svg>
-    <span>Ring demo (US)</span>
+    <span class="cmt-bottom-cta__text"><span class="cmt-bottom-cta__text-full">Ring 061 788 120</span><span class="cmt-bottom-cta__text-short">Ring</span></span>
   </a>
   <a class="cmt-bottom-cta__btn cmt-bottom-cta__btn--ghost"
      href="mailto:hello@callmeie.ie"
@@ -1727,6 +1727,14 @@
   }
   @media (max-width: 600px) {
     .cmt-bottom-cta__label { display: none; }
+    .cmt-bottom-cta { gap: 6px; padding: 8px 8px env(safe-area-inset-bottom, 8px); }
+    .cmt-bottom-cta__btn { padding: 8px 10px; font-size: 12px; }
+  }
+  .cmt-bottom-cta__text-full { display: inline; }
+  .cmt-bottom-cta__text-short { display: none; }
+  @media (max-width: 540px) {
+    .cmt-bottom-cta__text-full { display: none; }
+    .cmt-bottom-cta__text-short { display: inline; }
   }
   .cmt-bottom-cta__btn {
     display: inline-flex;
@@ -1739,6 +1747,7 @@
     text-decoration: none;
     color: #fff;
     transition: filter 0.15s ease, transform 0.15s ease;
+    white-space: nowrap;
   }
   .cmt-bottom-cta__btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
   .cmt-bottom-cta__btn--primary { background: var(--cmt-brand, #1d3557); }
