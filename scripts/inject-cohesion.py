@@ -57,6 +57,13 @@ SENTINEL_RE = re.compile(
 COHESION_STYLE_LINK = '<link rel="stylesheet" href="/_partials/cohesion.css">'
 COHESION_STYLE_MARKER = "/_partials/cohesion.css"
 
+# fb:pages meta tag — asserts site officially represents the Callmeie Technologies
+# FB page. Required by Meta App Review path A (per Phase B unblock notes).
+# NOT a Pixel — no tracking, no JS, no consent gating required.
+# Page ID 1105012356028968 = "Callmeie Technologies" (META_PAGE_ID in ~/.claude/routes/.env).
+FB_PAGES_META = '<meta property="fb:pages" content="1105012356028968">'
+FB_PAGES_MARKER = 'property="fb:pages"'
+
 # Attribute parser: key="value" or key=value (no quotes, no spaces in value).
 ATTR_RE = re.compile(r'(\w+)\s*=\s*(?:"([^"]*)"|(\S+))')
 
@@ -121,6 +128,13 @@ def inject_one(page_path: Path) -> tuple[str, bool]:
             new_content = new_content.replace("</head>", f"  {COHESION_STYLE_LINK}\n</head>", 1)
         elif "<head>" in new_content:
             new_content = new_content.replace("<head>", f"<head>\n  {COHESION_STYLE_LINK}", 1)
+
+    # Inject fb:pages meta tag into <head> if sentinels present and tag missing.
+    if FB_PAGES_MARKER not in new_content:
+        if "</head>" in new_content:
+            new_content = new_content.replace("</head>", f"  {FB_PAGES_META}\n</head>", 1)
+        elif "<head>" in new_content:
+            new_content = new_content.replace("<head>", f"<head>\n  {FB_PAGES_META}", 1)
 
     return new_content, new_content != raw
 
