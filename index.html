@@ -592,14 +592,39 @@
   if (window.__cmtChatBound) return;
   window.__cmtChatBound = true;
 
-  var fab = document.querySelector('.cmt-chat-fab');
+  // The chatbot sentinel typically renders ABOVE the bottom-cta sentinel in the
+  // document, so [data-cmt-cta="quiz"] may not exist yet when this script first
+  // parses. Defer the trigger query + binding until DOMContentLoaded.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+
+  function init() {
+  // Two trigger types:
+  //   .cmt-chat-fab           — standalone floating fab (hub pages)
+  //   [data-cmt-cta="quiz"]   — in-banner quiz btn (banner-bearing pages, where
+  //                             the standalone fab is hidden via cohesion.css)
+  // Both open the same discovery modal so the funnel never loses a trigger.
+  var triggers = Array.prototype.slice.call(
+    document.querySelectorAll('.cmt-chat-fab, [data-cmt-cta="quiz"]')
+  );
   var shell = document.querySelector('.cmt-chat-shell');
-  if (!fab || !shell) return;
+  if (!triggers.length || !shell) return;
 
   var body = shell.querySelector('[data-cmt-chat-body]');
   var progress = shell.querySelector('[data-cmt-chat-progress]');
   var closeBtn = shell.querySelector('.cmt-chat-close');
-  var pageContext = (fab.getAttribute('data-cmt-chat-context') || 'hub').slice(0, 32);
+  // Page context lives on the .cmt-chat-fab data-attribute set per page
+  // (e.g. "receptionist", "docs", "websites", "local-seo"). The banner quiz btn
+  // carries no data-cmt-chat-context, so prefer the fab; fall back to 'hub'.
+  var contextSource = triggers.filter(function (t) {
+    return t.classList && t.classList.contains('cmt-chat-fab');
+  })[0] || triggers[0];
+  var pageContext = (contextSource.getAttribute('data-cmt-chat-context') || 'hub').slice(0, 32);
+  // Track which trigger opened the modal so focus returns there on close.
+  var lastTrigger = triggers[0];
 
   var DISCOVERY_ENDPOINT = 'https://api.callmeie.ie/api/discovery';
 
@@ -673,12 +698,17 @@
   function closeShell() {
     shell.hidden = true;
     document.body.style.overflow = '';
-    fab.focus();
+    try { lastTrigger.focus(); } catch (_) { /* noop */ }
   }
 
   function escClose(e) { if (e.key === 'Escape' && !shell.hidden) closeShell(); }
 
-  fab.addEventListener('click', openShell);
+  triggers.forEach(function (t) {
+    t.addEventListener('click', function () {
+      lastTrigger = t;
+      openShell();
+    });
+  });
   closeBtn.addEventListener('click', closeShell);
   shell.addEventListener('click', function (e) { if (e.target === shell) closeShell(); });
   document.addEventListener('keydown', escClose);
@@ -1069,6 +1099,7 @@
       case 'founder-handoff': return 'Adam will follow up';
       default:             return 'Match';
     }
+  }
   }
 })();
 </script>

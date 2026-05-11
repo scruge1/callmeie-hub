@@ -512,15 +512,15 @@
   }
 }
 
-/* Avoid stacking on top of any inline tel: bottom-bar on receptionist demo pages.
-   Those pages can override via a body class .has-bottom-cta to lift the FAB. */
-body.has-bottom-cta .cmt-wa-fab {
-  bottom: 92px;
-}
-@media (max-width: 480px) {
-  body.has-bottom-cta .cmt-wa-fab {
-    bottom: 84px;
-  }
+/* When a page renders the cmt-bottom-cta banner (sector landing pages, docs,
+   websites, local-seo), it surfaces every CTA — including a primary AI-quiz btn
+   and a WhatsApp btn. The standalone floating .cmt-wa-fab AND .cmt-chat-fab
+   would duplicate those, so suppress both on banner pages.
+   Previously (pre-2026-05-11) .cmt-wa-fab was lifted to bottom:92px instead of
+   hidden; that left a duplicate WhatsApp glyph + collided with .cmt-chat-fab. */
+body.has-bottom-cta .cmt-wa-fab,
+body.has-bottom-cta .cmt-chat-fab {
+  display: none !important;
 }
 
 /* Hide on print */
