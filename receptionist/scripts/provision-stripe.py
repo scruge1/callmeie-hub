@@ -98,6 +98,37 @@ CATALOGUE = [
             {"key": "site-pro-deposit", "amount": 79800, "interval": None},
         ],
     },
+    # D5 (PRICING-SSOT 2026-05-19) — Managed Website recurring ladder.
+    # Build + host + maintain, €0 onboarding, source retained (managed
+    # service). Minimum term (12/12/18 mo) is CONTRACTUAL only — see
+    # order-form-template.md §B1b + websites/managed-plans-scope.md — NOT a
+    # Stripe schedule (plain monthly recurring price; T&C enforces the term).
+    # No setup price (€0 onboarding). Scope/copy single-sources from
+    # managed-plans-scope.md.
+    {
+        "key": "site-managed-launch",
+        "name": "Owl Studio · Managed Website — Launch",
+        "description": "Managed website: we build, host and maintain it. €69/month, 12-month minimum term (contractual). €0 onboarding. 1-page build + 30 min/mo edits to existing content, 2-business-day SLA. Out-of-scope work quoted at €60/hr (never billed silently). Source code retained while on plan; to own it outright take the one-off Build instead. Full scope: callmeie.ie/websites/managed-plans-scope",
+        "prices": [
+            {"key": "site-managed-launch-monthly", "amount": 6900, "interval": "month"},
+        ],
+    },
+    {
+        "key": "site-managed-business",
+        "name": "Owl Studio · Managed Website — Business",
+        "description": "Managed website: we build, host and maintain it. €100/month, 12-month minimum term (contractual). €0 onboarding. Up-to-5-page build + 2 hr/mo content updates + 1 new page/quarter, 1-business-day SLA. Out-of-scope work quoted at €60/hr (never billed silently). Source code retained while on plan; to own it outright take the one-off Build instead. Full scope: callmeie.ie/websites/managed-plans-scope",
+        "prices": [
+            {"key": "site-managed-business-monthly", "amount": 10000, "interval": "month"},
+        ],
+    },
+    {
+        "key": "site-managed-premium",
+        "name": "Owl Studio · Managed Website — Premium",
+        "description": "Managed website: we build, host and maintain it. €149/month, 18-month minimum term (contractual). €0 onboarding. Bespoke/multi-page build + unlimited fair-use edits (6hr/mo rolling 90-day avg, 8hr single-month ceiling) + quarterly refresh, same-business-day SLA. Out-of-scope work quoted at €55/hr (never billed silently). Source code retained while on plan; to own it outright take the one-off Build instead. Full scope: callmeie.ie/websites/managed-plans-scope",
+        "prices": [
+            {"key": "site-managed-premium-monthly", "amount": 14900, "interval": "month"},
+        ],
+    },
 ]
 
 WEBHOOK_EVENTS = [
@@ -276,7 +307,12 @@ def ensure_webhook(client: httpx.Client, url: str, events: list[str]) -> tuple[d
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--key", help="Stripe secret key. Falls back to STRIPE_API / OWL_STRIPE_API env var")
-    ap.add_argument("--webhook-url", default="https://callmeie.onrender.com/owl/stripe/webhook")
+    # Canonical backend moved off Render → api.callmeie.ie (2026; see INFRA.md).
+    # The old onrender URL is intentionally a DISABLED endpoint in Stripe; using
+    # it as the default made a re-run re-create + re-enable a stray endpoint
+    # (with a fresh, unsaved signing secret). Default fixed to the live canonical
+    # URL so a re-run matches the existing enabled endpoint ([exists], no churn).
+    ap.add_argument("--webhook-url", default="https://api.callmeie.ie/owl/stripe/webhook")
     args = ap.parse_args()
 
     key = args.key or os.environ.get("STRIPE_API") or os.environ.get("OWL_STRIPE_API", "")
