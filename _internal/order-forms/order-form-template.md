@@ -51,6 +51,36 @@ also has a Care plan).
 "approved" reply to the launch-handoff email, OR (b) the lapse of 14 calendar
 days following the launch-handoff email without written objection.
 
+### B1b. AI-First Websites — Managed (recurring build + maintain, €0 upfront)
+
+  [ ] **Launch** — €69/mo · **12-month minimum** · 1-page build included + 30 min/mo edits · 2 biz-day SLA · €60/hr overage
+  [ ] **Business** — €100/mo · **12-month minimum** · up-to-5-page build included + 2 hr/mo edits + 1 new page/quarter · 1 biz-day SLA · €60/hr overage
+  [ ] **Premium** — €149/mo · **18-month minimum** · bespoke build included + unlimited fair-use (6hr/mo rolling 90-day avg, 8hr single-month ceiling) + quarterly refresh · same-day SLA · €55/hr overage
+
+Detailed inclusions + scope at: https://callmeie.ie/websites/managed-plans-scope
+
+**Payment (Managed):** **€0 on signature.** First month billed on go-live; monthly
+via Stripe thereafter on the same day each month. **No setup fee.** Cancel after the
+minimum term with 30 days' written notice (per §H1).
+
+**Minimum term & early termination (Managed-specific — OVERRIDES §H1/§H2 for this
+engagement type):** the site is built and delivered at €0 upfront; the minimum term
+is solely how the build cost is recovered. If the Customer cancels before the end of
+the minimum term, the remaining minimum-term monthly fees become payable as one
+final invoice. There is no separate kill fee or deposit (none was taken). After the
+minimum term, the engagement is month-to-month per §H1.
+
+**IP (Managed-specific — OVERRIDES §C2 and §F2 for this engagement type):** Managed
+is a managed service. CallMeIE Technologies retains the source code and hosting for
+the duration of the engagement; the §C2 / §F2 source-code-transfer-on-payment terms
+**do not apply** to a Managed engagement. The Customer purchases a built, hosted and
+maintained website — not the code. A Customer who wants to own the source code
+outright takes the one-off Build offer (§B1) instead; there is no separate buy-out.
+Customer-supplied content remains the Customer's property (§F1 unchanged). On valid
+end of engagement, hosting transfer-of-control and data export proceed per §G, except
+that the deliverable is a static export of the live site content — **no source-code
+repository handover** for Managed.
+
 ### B2. AI-First Websites — Care plan (monthly subscription)
 
   [ ] **Essential** — €45/mo or €450/yr — 30 min/mo edits · 2 biz-day SLA · €60/hr overage
