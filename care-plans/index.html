@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Care Plans · CallMeIE Technologies — Limerick, Ireland</title>
+<meta name="description" content="Monthly maintenance for a site you already own — Essential €45, Growth €95, Concierge €195. Hosting, SSL, edits, security patches, monthly report. Cancel any month, 30 days' notice. No annual lock-in.">
+<link rel="canonical" href="https://callmeie.ie/care-plans/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CallMeIE Technologies">
+<meta property="og:title" content="Website Care Plans · CallMeIE">
+<meta property="og:description" content="Monthly maintenance for sites you already own — €45 / €95 / €195. Hosting, edits, security, monthly report. 30 days' notice, no lock-in.">
+<meta property="og:url" content="https://callmeie.ie/care-plans/">
+<meta property="og:locale" content="en_IE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Website Care Plans · CallMeIE">
+<meta name="twitter:description" content="€45 / €95 / €195. Hosting, edits, security, monthly report. 30 days' notice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600..800;1,9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/_partials/cohesion.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cmt-paper);
+    color: var(--cmt-ink);
+    font-family: var(--cmt-font-body);
+    line-height: 1.6;
+    font-size: var(--cmt-fs-body);
+  }
+  a { color: var(--cmt-brand); }
+  .shell { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 36px); }
+  .crumbs {
+    font-family: var(--cmt-font-mono);
+    font-size: var(--cmt-fs-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--cmt-muted);
+    margin: 24px 0 12px;
+  }
+  .crumbs a { color: var(--cmt-muted); text-decoration: none; }
+  .crumbs a:hover { color: var(--cmt-brand); }
+
+  /* HERO */
+  .hero { padding: clamp(20px, 4vw, 44px) 0 clamp(36px, 6vw, 64px); }
+  .hero h1 {
+    font-family: var(--cmt-font-display);
+    font-style: italic;
+    font-weight: 800;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0 0 18px;
+    max-width: 22ch;
+  }
+  .hero p.lede {
+    font-size: clamp(17px, 1.6vw, 21px);
+    line-height: 1.45;
+    color: var(--cmt-ink-soft);
+    max-width: 62ch;
+    margin: 0 0 14px;
+  }
+  .hero .audience {
+    display: inline-block;
+    font-family: var(--cmt-font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--cmt-brand);
+    background: var(--cmt-brand-soft);
+    padding: 6px 12px;
+    border-radius: var(--cmt-radius-pill);
+    margin-bottom: 18px;
+  }
+
+  /* TIER GRID */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding-bottom: 36px;
+  }
+  @media (max-width: 880px) { .tier-grid { grid-template-columns: 1fr; } }
+  .tier {
+    background: #fff;
+    border: 1px solid var(--cmt-line);
+    border-radius: var(--cmt-radius-card);
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 200ms var(--cmt-ease), box-shadow 200ms var(--cmt-ease), border-color 200ms var(--cmt-ease);
+  }
+  .tier:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(29, 53, 87, 0.08);
+    border-color: rgba(29, 53, 87, 0.3);
+  }
+  .tier--featured {
+    background: linear-gradient(180deg, #fff 0%, var(--cmt-brand-soft) 100%);
+    border-color: var(--cmt-brand);
+    box-shadow: 0 4px 18px rgba(29, 53, 87, 0.12);
+  }
+  .tier__badge {
+    font-family: var(--cmt-font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cmt-brand);
+    background: #fff;
+    border: 1px solid var(--cmt-brand);
+    padding: 4px 9px;
+    border-radius: var(--cmt-radius-pill);
+    align-self: flex-start;
+  }
+  .tier__name {
+    font-family: var(--cmt-font-display);
+    font-style: italic;
+    font-weight: 800;
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .tier__price {
+    font-family: var(--cmt-font-display);
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1;
+    margin: 6px 0 2px;
+  }
+  .tier__price span {
+    font-family: var(--cmt-font-body);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--cmt-muted);
+    margin-left: 6px;
+  }
+  .tier__yearly {
+    font-family: var(--cmt-font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cmt-muted);
+    margin: 0 0 4px;
+  }
+  .tier__yearly a { color: var(--cmt-muted); text-decoration: underline; text-underline-offset: 2px; }
+  .tier__yearly a:hover { color: var(--cmt-brand); }
+  .tier__pitch {
+    font-size: 15px;
+    color: var(--cmt-ink-soft);
+    margin: 4px 0 6px;
+  }
+  .tier__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14.5px;
+  }
+  .tier__list li {
+    padding-left: 18px;
+    position: relative;
+  }
+  .tier__list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--cmt-brand);
+    font-weight: 700;
+  }
+  .tier__cta {
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    font-family: var(--cmt-font-body);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 18px;
+    border-radius: var(--cmt-radius-button);
+    background: var(--cmt-brand);
+    color: #fff;
+    text-decoration: none;
+    transition: background 200ms var(--cmt-ease);
+  }
+  .tier__cta:hover { background: var(--cmt-brand-hover); }
+  .tier--featured .tier__cta { background: var(--cmt-ink); }
+  .tier--featured .tier__cta:hover { background: #000; }
+
+  /* SECTIONS */
+  .section { padding: 36px 0; border-top: 1px solid var(--cmt-line); }
+  .section h2 {
+    font-family: var(--cmt-font-display);
+    font-style: italic;
+    font-weight: 800;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    max-width: 28ch;
+  }
+  .section p { max-width: 65ch; font-size: 16.5px; }
+  .section ul { padding-left: 22px; max-width: 65ch; }
+  .section ul li { margin-bottom: 8px; }
+
+  /* CONTRAST CALLOUT */
+  .vs-managed {
+    background: var(--cmt-paper-alt);
+    border: 1px solid var(--cmt-line);
+    border-radius: var(--cmt-radius-card);
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .vs-managed h3 {
+    margin: 0 0 10px;
+    font-family: var(--cmt-font-display);
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .vs-managed p:last-child { margin-bottom: 0; }
+
+  /* FAQ */
+  details {
+    border-top: 1px solid var(--cmt-line-soft);
+    padding: 16px 0;
+  }
+  details summary {
+    cursor: pointer;
+    font-family: var(--cmt-font-display);
+    font-weight: 700;
+    font-size: 17px;
+    list-style: none;
+    color: var(--cmt-ink);
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: " →"; color: var(--cmt-brand); }
+  details[open] summary::after { content: " ↓"; }
+  details p { margin: 10px 0 0; font-size: 15.5px; color: var(--cmt-ink-soft); }
+
+  /* CLOSING */
+  .closing-cta {
+    background: var(--cmt-ink);
+    color: var(--cmt-paper);
+    padding: 48px 0;
+    margin-top: 40px;
+  }
+  .closing-cta h2 {
+    font-family: var(--cmt-font-display);
+    font-style: italic;
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 44px);
+    margin: 0 0 14px;
+    color: var(--cmt-paper);
+  }
+  .closing-cta p { color: rgba(248, 245, 240, 0.78); max-width: 60ch; font-size: 16.5px; }
+  .closing-cta a.btn {
+    display: inline-block;
+    background: var(--cmt-paper);
+    color: var(--cmt-ink);
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: var(--cmt-radius-button);
+    text-decoration: none;
+    margin-top: 14px;
+    transition: background 200ms var(--cmt-ease);
+  }
+  .closing-cta a.btn:hover { background: #fff; }
+</style>
+</head>
+<body>
+
+<header class="shell">
+  <p class="crumbs"><a href="/">CallMeIE</a> · Website Care Plans</p>
+</header>
+
+<main>
+
+  <section class="hero shell">
+    <span class="audience">For sites you already own</span>
+    <h1>Looking after the website you already have.</h1>
+    <p class="lede">Hosting, SSL, daily backups, security patches, monthly edits, monthly report. Plain English. Cancel any month with 30 days' notice. <strong>No annual lock-in.</strong></p>
+    <p class="lede">If you need a NEW site built and maintained, take a <a href="/websites/">Managed plan</a> instead — same maintenance, build included.</p>
+  </section>
+
+  <section class="shell">
+    <div class="tier-grid">
+
+      <article class="tier">
+        <span class="tier__badge">I · Essential</span>
+        <h2 class="tier__name">Essential</h2>
+        <div class="tier__price">€45<span>/ month</span></div>
+        <p class="tier__yearly">or <a href="https://buy.stripe.com/aFa9AS8qv2mqa7y0zraIM02" target="_blank" rel="noopener">€450 yearly</a> (save 2 months)</p>
+        <p class="tier__pitch">Keep the lights on. Hosting, SSL, security patches and small text edits each month.</p>
+        <ul class="tier__list">
+          <li>Hosting, SSL, DNS, daily backups</li>
+          <li>Uptime monitoring (5-min checks)</li>
+          <li>Security patches within 7 days of disclosure</li>
+          <li><strong>30 min/month</strong> edits to existing content</li>
+          <li>Monthly 1-line summary email</li>
+          <li>2-business-day response SLA</li>
+        </ul>
+        <a class="tier__cta" href="https://buy.stripe.com/00w9AS227gdg5Ri3LDaIM01" target="_blank" rel="noopener">Start Essential — €45/mo →</a>
+      </article>
+
+      <article class="tier tier--featured">
+        <span class="tier__badge">II · Growth</span>
+        <h2 class="tier__name">Growth</h2>
+        <div class="tier__price">€95<span>/ month</span></div>
+        <p class="tier__yearly">or <a href="https://buy.stripe.com/9B64gy7mr4uya7yaa1aIM04" target="_blank" rel="noopener">€950 yearly</a> (save 2 months)</p>
+        <p class="tier__pitch">Active care. Everything in Essential, plus content updates, quarterly new pages and a monthly report.</p>
+        <ul class="tier__list">
+          <li>Everything in Essential</li>
+          <li><strong>2 hr/month</strong> content updates</li>
+          <li><strong>1 new page/quarter</strong> in your existing design</li>
+          <li>Quarterly Lighthouse + SEO sweep</li>
+          <li>Google Business Profile sync</li>
+          <li>Monthly 1-page traffic report</li>
+          <li>1-business-day response SLA</li>
+        </ul>
+        <a class="tier__cta" href="https://buy.stripe.com/00wdR85ej4uygvWdmdaIM03" target="_blank" rel="noopener">Start Growth — €95/mo →</a>
+      </article>
+
+      <article class="tier">
+        <span class="tier__badge">III · Concierge</span>
+        <h2 class="tier__name">Concierge</h2>
+        <div class="tier__price">€195<span>/ month</span></div>
+        <p class="tier__yearly">or <a href="https://buy.stripe.com/9B6eVccGLbX06Vm2HzaIM06" target="_blank" rel="noopener">€1,950 yearly</a> (save 2 months)</p>
+        <p class="tier__pitch">You forward the email or the photo, we do the work. Same-day on messages before 14:00.</p>
+        <ul class="tier__list">
+          <li>Everything in Growth</li>
+          <li><strong>Unlimited fair-use edits</strong> (6 hr/mo rolling, 8 hr ceiling)</li>
+          <li>2 blog posts + all GBP posts drafted &amp; published</li>
+          <li>Contact-form triage within 1 business day</li>
+          <li>Monthly 20-min planning call</li>
+          <li>Quarterly accessibility audit</li>
+          <li><strong>Same-day SLA</strong> for messages before 14:00</li>
+          <li>Out-of-scope work at €55/hr (€5/hr discount)</li>
+        </ul>
+        <a class="tier__cta" href="https://buy.stripe.com/5kQ8wOdKP9OS3Ja4PHaIM05" target="_blank" rel="noopener">Start Concierge — €195/mo →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section shell">
+    <h2>The simple rule (we don't bill silently)</h2>
+    <p><strong>Edits to existing content</strong> (text, photos, hours, phone, prices) = <strong>included</strong>, up to your tier's monthly time budget.</p>
+    <p><strong>New design work</strong> (new pages, new sections, branding, copywriting, photography) = <strong>quoted separately at €60/hour</strong> (€55/hr for Concierge customers), billed only after you reply <code style="font-family:var(--cmt-font-mono); background:var(--cmt-paper-alt); padding:1px 6px; border-radius:4px;">do it</code>.</p>
+    <p>If a request would exceed your monthly budget, we email you BEFORE doing the work. Full boundary and worked examples → <a href="/websites/care-plans-scope.html">Care Plans — Scope</a>.</p>
+
+    <div class="vs-managed">
+      <h3>Care vs Managed — pick the one that matches your situation</h3>
+      <p><strong>Care</strong> (this page) is for customers who already have a website and only want it looked after. €45 / €95 / €195/mo. Cancel any month with 30 days' notice. <strong>No build included.</strong></p>
+      <p><strong><a href="/websites/">Managed</a></strong> is for customers who want us to build AND maintain a new site for a fixed monthly fee, €0 upfront. €69 / €100 / €149/mo with a 12 or 18-month minimum term (because the build is fronted). Source code stays with us during the term.</p>
+    </div>
+  </section>
+
+  <section class="section shell">
+    <h2>What every Care plan includes by default</h2>
+    <ul>
+      <li>Emails in plain English, not jargon</li>
+      <li>Every change shows up on the live site within minutes, not days</li>
+      <li>Every change goes into your Git repo — the history is yours forever</li>
+      <li>One report a month — never more than one page</li>
+      <li>Cancel any month with 30 days' notice; no auto-renew traps</li>
+    </ul>
+  </section>
+
+  <section class="section shell" id="faq">
+    <h2>Common questions</h2>
+
+    <details>
+      <summary>Do I need to be on a Care plan to get my site looked after?</summary>
+      <p>No, but it's a lot cheaper than one-off hourly. A Care plan caps your monthly cost, keeps hosting/security/backups inside the fee, and gives you a predictable response SLA. One-off hourly is €60/hr with no SLA.</p>
+    </details>
+
+    <details>
+      <summary>What counts as "an edit to existing content"?</summary>
+      <p>Phone number change, opening-hours update, swap a photo, fix a typo, price change, add a Christmas-hours banner. Anything that touches text or media that's already on the site. New pages, new sections, new branding, new integrations are NEW design work and get a separate quote.</p>
+    </details>
+
+    <details>
+      <summary>How do you stop the bill quietly creeping up?</summary>
+      <p>We email you BEFORE going over your monthly budget and ask what you want to do — "do it" (billed at €60/hr) or "wait until next month" (deferred). Time is tracked in 15-minute increments, rounded up to the nearest 5 minutes, and itemised on your monthly invoice. No silent overage charges.</p>
+    </details>
+
+    <details>
+      <summary>What's the difference between Essential's "30 min/mo" and Growth's "2 hr/mo"?</summary>
+      <p>Same scope (edits to existing content), bigger time budget. Growth is for sites with regular content changes — new blog posts, seasonal banners, occasional new staff bios. Essential is for sites that mostly sit still and just need the lights kept on.</p>
+    </details>
+
+    <details>
+      <summary>What does Concierge "unlimited" actually mean?</summary>
+      <p>"Unlimited" means you stop having to count. The soft cap is 6 hours/month on a rolling 90-day average, with an 8-hour single-month ceiling. If you cross the soft cap two months running, we have a friendly conversation — not a bill — about whether your usage has changed enough to need a custom retainer. We have never asked anyone to upgrade in the first 12 months on Concierge.</p>
+    </details>
+
+    <details>
+      <summary>Can I switch between tiers?</summary>
+      <p>Yes — month-to-month. Email <a href="mailto:support@callmeie.ie">support@callmeie.ie</a> and the new tier kicks in next billing cycle. No upgrade or downgrade fees.</p>
+    </details>
+
+    <details>
+      <summary>What if I cancel?</summary>
+      <p>30 days' written notice to <a href="mailto:support@callmeie.ie">support@callmeie.ie</a>. We provide a static export of your live site content within 7 days. If your site is hosted with us, we'll give you a portable copy plus DNS-handover instructions.</p>
+    </details>
+
+    <details>
+      <summary>I want a new site too — should I take Care or Managed?</summary>
+      <p>If you already have a site, take Care. If you don't have a site yet, <a href="/websites/">Managed</a> bundles the build + the maintenance for a single monthly fee at €0 upfront — cheaper than buying a one-off Build and then adding Care on top.</p>
+    </details>
+  </section>
+
+  <section class="closing-cta">
+    <div class="shell">
+      <h2>Not sure which plan fits?</h2>
+      <p>Forward us your site URL and a one-line description of how often things change. We'll reply within 24 hours with a tier recommendation and a sample monthly time budget.</p>
+      <a class="btn" href="mailto:hello@callmeie.ie?subject=Care%20plan%20recommendation">Email hello@callmeie.ie</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="callmeie-footer" role="contentinfo">
+  <div class="callmeie-footer-inner">
+    <div class="callmeie-footer-brand">
+      <strong>CallMeIE Technologies</strong>
+      <span>AI staff for Irish small businesses · By appointment · Serving Limerick &amp; Munster · Ireland</span>
+      <a href="mailto:hello@callmeie.ie">hello@callmeie.ie</a>
+      <a href="https://wa.me/353857863564" target="_blank" rel="noopener">WhatsApp +353 85 786 3564</a>
+    </div>
+    <nav class="callmeie-footer-nav" aria-label="Site sections">
+      <div class="callmeie-footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/receptionist/">AI Receptionist</a></li>
+          <li><a href="/docs/">Document Ops</a></li>
+          <li><a href="/websites/">AI-First Websites</a></li>
+        </ul>
+      </div>
+      <div class="callmeie-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="mailto:hello@callmeie.ie">Contact</a></li>
+          <li><span>Limerick · Ireland</span></li>
+        </ul>
+      </div>
+      <div class="callmeie-footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/websites/care-plans-scope.html">Care Plans — Scope</a></li>
+          <li><a href="/websites/managed-plans-scope.html">Managed Plans — Scope</a></li>
+        </ul>
+      </div>
+      <div class="callmeie-footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/legal/">Legal index</a></li>
+          <li><a href="/legal/privacy.html">Privacy</a></li>
+          <li><a href="/legal/terms.html">Terms</a></li>
+          <li><a href="/legal/dpa.html">DPA</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="callmeie-footer-band">
+    <span><strong>CallMeIE Technologies</strong> · Adam Vaughan t/a · Limerick, Ireland · IE VAT-registered · GDPR-compliant data processor</span>
+    <span><a href="/legal/dpa.html">Data Processing Agreement</a> · Limited-company incorporation in progress</span>
+  </div>
+</footer>
+
+</body>
+</html>
