@@ -1,0 +1,33 @@
+{
+  "_source": "Machine-readable mirror of voice-catalog.md. Edit voice-catalog.md first (human-facing), then sync this file. Stage 03a + setup-new-client.py read this.",
+  "_provenance": "claude-mem confirmed 2026-05-20 (obs 20846, 20851, 21036, 21048, 21052, 21061, 22245)",
+  "_provider_defaults": {
+    "provider": "11labs",
+    "model": "eleven_flash_v2_5",
+    "stability": 0.4,
+    "similarityBoost": 0.75
+  },
+  "live_vapi_line": [
+    {"role": "qualifier", "label": "Claire qualifier (demo line +353 61 788 120)", "vapi_assistant_id": "adee3d89-99d8-4f58-9dc3-78c38b9f2a7c", "voice_name": "Clare - Soft and Warm", "voice_id": "3Q0HiHNecynsdqicntLT"},
+    {"role": "demo", "label": "Bright Smile Dental", "vapi_assistant_id": "0b37deb5-2fc2-4e7b-81b1-e61e97103506", "voice_name": "Maeve", "voice_id": "kOvUpYLYS0rKGldsKcD1"},
+    {"role": "demo", "label": "Murphy's Motor Factors", "vapi_assistant_id": "8a533a56-2ca4-486f-b328-69183b59fa41", "voice_name": "Conor", "voice_id": "LhG6Tsjmn5tklSCyReiu"},
+    {"role": "demo", "label": "Salon demo (Colleen -> Laura swap on PSTN exhaustion)", "vapi_assistant_id": "db4ab378-cd8a-40f5-b3f9-8fcaaba408b0", "voice_name": "Laura", "voice_id": "3b8fXc91YHS1i2DYAlBQ"},
+    {"role": "demo", "label": "Solicitor demo", "vapi_assistant_id": "7774b535-95fe-4e75-b571-dde098e2f8fb", "voice_name": "Cillian Deep", "voice_id": "U3AWuAe8WcVA50PuDMrY"}
+  ],
+  "vertical_voice_map": {
+    "dental": {"voice_name": "Maeve", "voice_id": "kOvUpYLYS0rKGldsKcD1", "source": "live dental demo precedent + claude-mem obs 21061, 20846"},
+    "motor_factors": {"voice_name": "Conor", "voice_id": "LhG6Tsjmn5tklSCyReiu", "source": "live motor demo precedent + obs 21061"},
+    "salon": {"voice_name": "Laura", "voice_id": "3b8fXc91YHS1i2DYAlBQ", "source": "live salon precedent (post Colleen->Laura swap, obs 21035, 21036)"},
+    "solicitor": {"voice_name": "Cillian Deep", "voice_id": "U3AWuAe8WcVA50PuDMrY", "source": "live solicitor demo precedent + obs 20851"},
+    "restaurant": {"voice_name": "Clare - Soft and Warm", "voice_id": "3Q0HiHNecynsdqicntLT", "source": "restaurant.html landing exists, no bespoke Vapi assistant yet, default to Clare"},
+    "cafe": {"voice_name": "Clare - Soft and Warm", "voice_id": "3Q0HiHNecynsdqicntLT", "source": "alias of restaurant"},
+    "default": {"voice_name": "Clare - Soft and Warm", "voice_id": "3Q0HiHNecynsdqicntLT", "source": "fallback for unmapped industry; safer than legacy hardcoded dN8hviqdNrAsEcL57yFj"}
+  },
+  "stale_references": [
+    {"file": "callmeie-hub/receptionist/scripts/create-demo-assistants.py:272", "stale_voice_id": "EXAVITQu4vr4xnSDxMaL", "stale_voice_name": "Sarah (ElevenLabs library)", "reason": "predates Azure->ElevenLabs Irish migration; live Vapi was patched to Clare"},
+    {"file": "callmeie-fix/scripts/setup-new-client.py:114", "stale_voice_id": "dN8hviqdNrAsEcL57yFj", "stale_voice_name": "(legacy default, no name recorded)", "reason": "dead code; every deployed assistant has been bespoke-patched. Patch via D6."},
+    {"file": "callmeie-fix/scripts/server.py:2999", "stale_voice_id": "dN8hviqdNrAsEcL57yFj", "stale_voice_name": "(legacy default)", "reason": "same as above"},
+    {"file": "callmeie-hub/receptionist/scripts/setup-new-client.py:158", "stale_voice_id": "dN8hviqdNrAsEcL57yFj", "stale_voice_name": "(legacy default)", "reason": "same; this is the active deployed copy on Render"},
+    {"file": "callmeie-hub/receptionist/scripts/server.py:1708", "stale_voice_id": "dN8hviqdNrAsEcL57yFj", "stale_voice_name": "(legacy default)", "reason": "same; provision_client() path the admin portal Provision button takes"}
+  ]
+}
