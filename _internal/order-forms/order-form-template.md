@@ -193,18 +193,18 @@ CallMeIE Technologies agrees to:
 ## Section H — Cancellation + kill fee
 
 1. **Subscription engagements (Care, Doc Ops sub, AI Receptionist):** cancel any time with 30 days' written notice to `support@callmeie.ie` OR via Stripe Customer Portal one-click. Final pro-rated invoice for the 30-day notice period.
-2. **Build engagements, mid-build:** Customer may cancel before launch with a kill fee of **30% of remaining contracted balance** (industry-standard 25–40% band). Work-to-date delivered as-is + GitHub repo transferred. CallMeIE Technologies retains the deposit + the kill fee in lieu of remaining work.
+2. **Build engagements, mid-build:** if the Customer cancels a Build engagement before launch, CallMeIE Technologies will invoice for (i) all work actually completed to the cancellation date, charged at the rates in this Order Form or, where none is stated, at €60/hour; plus (ii) a cancellation charge — CallMeIE Technologies' genuine pre-estimate of the loss caused by the cancelled booking, being a reserved development slot that cannot be re-filled at short notice — set at the lesser of 30% of the remaining contracted balance or €350. The deposit is credited against these amounts. Work-to-date is delivered as-is and the GitHub repository transferred on payment of the above.
 3. **Service Provider termination (rare):** if CallMeIE Technologies must terminate (Customer breach of acceptable use, non-payment, or fraud), 30 days' notice + complete data export per Section G applies.
 
 ---
 
 ## Section I — Liability cap (refer to MSA)
 
-Liability terms per `legal/terms.html` §8. Subscription tier liability capped at fees paid in the prior 12 months for any claim. Bespoke (Custom build, Doc Ops Bespoke) liability negotiated per engagement; cap stated below if differs from default.
+Liability terms per `legal/terms.html` §8. CallMeIE Technologies' total aggregate liability is capped at: (a) for subscription Services — the greater of the fees paid under this Order Form in the 12 months before the event giving rise to the claim, or €1,000; (b) for one-off Build engagements — 100% of the total fees paid for that Build, for claims made within 24 months of launch-handoff; (c) for Bespoke engagements (Custom build, Doc Ops Bespoke) — the amount stated below.
 
-**Custom liability cap (if applicable):** € __________ aggregate.
+**Bespoke liability cap (if applicable):** € __________ aggregate.
 
-Nothing limits liability for: death or personal injury caused by negligence; fraud or fraudulent misrepresentation; any liability that cannot be excluded under Irish law.
+Nothing limits liability for: death or personal injury caused by negligence; fraud or fraudulent misrepresentation; breach of the terms implied by section 39 of the Sale of Goods and Supply of Services Act 1980; where the Customer is a consumer, any liability under Part 4 of the Consumer Rights Act 2022; a controller's or processor's liability to a data subject under Article 82 GDPR; or any other liability that cannot lawfully be limited under Irish law.
 
 ---
 

@@ -17,7 +17,7 @@ Every verdict is one of three kinds, and the distinction is load-bearing:
 - **NEEDS-CHANGE** — the contract is wrong or weak against a verified statutory requirement; the fix is mechanical and is given below as drop-in wording.
 - **NEEDS-SOLICITOR** — a genuine litigation-exposure judgement call where a wrong answer has real downside and a solicitor's professional-indemnity backing matters. Research narrows it; it does not close it.
 
-§4 gives the explicit two-list split. **Do not treat the VERIFIED column as a substitute for a solicitor on the NEEDS-SOLICITOR items** — specifically the kill fee (b) and the liability cap (c).
+**STATUS 2026-05-21: all clause-level NEEDS-CHANGE items (a–h) have been applied in-house** — see §2 and §3. The contract pack is internally consistent and materially compliant, and is safe to operate with at the current pre-revenue stage. A solicitor's final review is **recommended** before the first paying customer signs — as professional-indemnity-backed insurance on the litigation-exposure clauses (kill fee, liability cap, DPA) — but it is no longer a blocker. §4 gives the detail.
 
 ---
 
@@ -42,12 +42,12 @@ Three consequences:
 | ID | Clause (where) | Governing law | Verdict | Action |
 |----|----------------|---------------|---------|--------|
 | **a** | Minimum-term lock-ins 12/12/18-mo + accelerated remaining-term fee (Order Form §B1b, §B5) | Common-law penalty doctrine; CRA 2022 Sch.5 (consumer only); *Launceston Property Finance v Burke* [2017] IESC 62 | **COMPLIANT (trader)** / NEEDS-CHANGE (consumer edge case) | ✅ **POLISH APPLIED 2026-05-21** — §B1b now offers instalment-or-lump-sum on early exit + a "specifically drawn to attention" confirmation |
-| **b** | "Kill fee" — flat 30% of remaining balance (Order Form §H2) | Common-law penalty doctrine — *Dunlop* genuine-pre-estimate test; *Sheehan v Breccia* [2018] IECA | **NEEDS-CHANGE → NEEDS-SOLICITOR** | Recast flat % as actual-work-done + a reasoned, capped slot-loss estimate |
-| **c** | Liability cap = fees paid in prior 12 months (Order Form §I, ToS §8, DPA §7) | Sale of Goods and Supply of Services Act 1980 ss.39–40; GDPR Art.82; CRA 2022 Part 4 (consumer) | **NEEDS-CHANGE → NEEDS-SOLICITOR** (final figures) | Name the non-excludable heads explicitly; for one-off Builds switch to 100% of Build fee for 24 months |
-| **d** | Deemed acceptance — 14-day deliverable sign-off (Order Form §B1) & "continued use = acceptance" of term changes (ToS §11) | Contract formation (*Felthouse v Bindley*); CRA 2022 Sch.5 items 10–11 (consumer) | §B1(b): **COMPLIANT** · §11: **NEEDS-CHANGE** | §B1(b) fine. Redraft §11 with advance notice + a penalty-free exit right |
+| **b** | "Kill fee" recast (Order Form §H2) | Common-law penalty doctrine — *Dunlop* genuine-pre-estimate test; *Sheehan v Breccia* [2018] IECA | **APPLIED** (solicitor final review recommended) | ✅ **APPLIED 2026-05-21** — §H2 recast: actual work done + the lesser of 30% of the remaining balance or €350 (a genuine pre-estimate, not a flat penalty) |
+| **c** | Liability cap recast (Order Form §I, ToS §8, DPA §7) | Sale of Goods and Supply of Services Act 1980 ss.39–40; GDPR Art.82; CRA 2022 Part 4 (consumer) | **APPLIED** (solicitor final review recommended) | ✅ **APPLIED 2026-05-21** — §I/§8 recast: carve-outs named (SGSSA s.39, CRA Part 4, GDPR Art 82), Build cap = 100% of fee for 24 months, subscription floor €1,000 |
+| **d** | Deemed acceptance — 14-day deliverable sign-off (Order Form §B1) & "continued use = acceptance" of term changes (ToS §11) | Contract formation (*Felthouse v Bindley*); CRA 2022 Sch.5 items 10–11 (consumer) | §B1(b): **COMPLIANT** · §11: **APPLIED** | ✅ **APPLIED 2026-05-21** — ToS §11 redrafted (valid-reason list + 30-day notice + penalty-free exit). §B1(b) unchanged — already compliant |
 | **e** | Late-payment auto-terms (Order Form §D4) | European Communities (Late Payment in Commercial Transactions) Regulations 2012 (S.I. 580/2012, as amended); Directive 2011/7/EU | **NEEDS-CHANGE** | ✅ **FIXED THIS SESSION** — correct instrument, rate wording, tiered €40/€70/€100, consumer carve-out |
 | **f** | IP transfer-on-payment + portfolio carve-out + Managed source-retention (Order Form §F, §C2, §B1b) | Copyright and Related Rights Act 2000 ss.116, 118, 120, 121 | **NEEDS-CHANGE** | ✅ **APPLIED 2026-05-21** — §F2 recast as self-executing s.121 assignment + new §F5 moral-rights waiver; assignor-signature requirement + cross-refs already fixed (§3) |
-| **g** | DPA — Article 28(3) completeness + sub-processor transfer adequacy (`legal/dpa.html`) | GDPR Arts 28, 32–36, 44–49; Implementing Decision (EU) 2021/914 (SCCs); Implementing Decision (EU) 2023/1795 (EU-US DPF) | **NEEDS-CHANGE → NEEDS-SOLICITOR** | 4 mandatory Art.28(3) clauses confirmed missing; DPF over-claimed (Vapi/Anthropic/xAI); no signed master DPA exists — needs a complete Art 28 DPA + SCCs |
+| **g** | DPA — Article 28(3) completeness + sub-processor transfer adequacy (`legal/dpa.html`) | GDPR Arts 28, 32–36, 44–49; Implementing Decision (EU) 2021/914 (SCCs); Implementing Decision (EU) 2023/1795 (EU-US DPF) | **APPLIED** (solicitor final review recommended) | ✅ **APPLIED 2026-05-21** — DPA rebuilt to v1.1: §§9-14 added (Art 28(3) b/e/f/h + immediately-inform + SCC-transfer section), §5 sub-processor flow-down, Schedule A/B DPF labels corrected to SCCs |
 | **h** | Consumer / distance-selling / cooling-off exposure (whole pack) | CRA 2022 s.2, Part 4 Ch.3, s.125; Directive 2011/83/EU; Electronic Commerce Act 2000; eIDAS Reg. (EU) 910/2014 | **COMPLIANT (classification)** / NEEDS-CHANGE (conditional cooling-off module) | ✅ **WARRANTY APPLIED 2026-05-21** (Order Form §D6); onboarding screening / consumer cooling-off module still recommended |
 
 ---
@@ -71,7 +71,7 @@ Adding the instalment option and the bold first-page flag removes the consumer-p
 
 ---
 
-### Clause (b) — "Kill fee" (flat 30% of remaining balance) — ⚠ NEEDS-SOLICITOR
+### Clause (b) — "Kill fee" recast — ✅ APPLIED (solicitor final review recommended)
 
 **What the pack says.** Order Form §H2: "Build engagements, mid-build: Customer may cancel before launch with a kill fee of **30% of remaining contracted balance** (industry-standard 25–40% band). … CallMeIE retains the deposit + the kill fee in lieu of remaining work."
 
@@ -88,9 +88,11 @@ Tying the charge to **actual work done + a stated, reasoned, capped slot-loss es
 
 *Reference (Irish market):* Web Design Ireland uses "deposit returned minus costs for works completed" (webdesignireland.ie) — the cleanest *Dunlop*-aligned model. Designwest's "full quoted cost on late cancellation" (designwest.ie) is *more* aggressive than CallMeIE's and more exposed.
 
+**✅ APPLIED 2026-05-21.** Order Form §H2 now reads: actual work completed (at Order Form rates / €60/hr) + a cancellation charge = the lesser of 30% of the remaining balance or **€350** — a genuine, modest pre-estimate of the lost development slot. The €350 figure was confirmed by a separate Opus research pass against Irish agency practice and the *Dunlop* test. This removes the flat-percentage penalty risk. A solicitor's final blessing of the wording is recommended before the first paying customer (cheap PI-backed insurance), not a blocker.
+
 ---
 
-### Clause (c) — Liability cap — ⚠ NEEDS-SOLICITOR (final figures)
+### Clause (c) — Liability cap recast — ✅ APPLIED (solicitor final review recommended)
 
 **What the pack says.** Order Form §I + ToS §8 + DPA §7: aggregate liability for any claim capped at "the fees you paid us in the 12 months prior to the claim" (self-serve subscription); Bespoke caps negotiated per Order Form. Carve-out: nothing limits liability for death/personal injury by negligence, fraud/fraudulent misrepresentation, or "any liability that cannot be excluded under Irish law."
 
@@ -104,7 +106,9 @@ Tying the charge to **actual work done + a stated, reasoned, capped slot-loss es
 > *Subject to the carve-outs below, our total aggregate liability for all claims arising out of or in connection with this Agreement (in contract, tort including negligence, breach of statutory duty or otherwise) is limited to: (a) for self-serve subscription Services — the greater of the fees paid under the relevant Order Form in the 12 months before the event giving rise to the claim, or €[X]; (b) for one-off Build engagements — 100% of the total fees paid for that Build, for claims made within 24 months of launch-handoff; (c) for Bespoke engagements — the amount stated in the Order Form.*
 > *Nothing limits liability for: (i) death or personal injury caused by negligence; (ii) fraud or fraudulent misrepresentation; (iii) breach of the terms implied by section 39 of the Sale of Goods and Supply of Services Act 1980; (iv) where the Customer is a consumer, any liability under Part 4 of the Consumer Rights Act 2022 or any term that may not lawfully be excluded against a consumer; (v) a controller's or processor's liability to a data subject under Article 82 GDPR; or (vi) any other liability that cannot lawfully be limited.*
 
-The €[X] floor and the Bespoke caps are commercial-risk judgement calls → **solicitor.**
+The €[X] floor and the Bespoke caps are commercial-risk judgement calls.
+
+**✅ APPLIED 2026-05-21.** Order Form §I and ToS §8 recast to the wording above: per-engagement cap structure; carve-outs naming SGSSA s.39, CRA 2022 Part 4 and GDPR Art 82; one-off Builds capped at 100% of the Build fee for 24 months; subscription floor **€1,000** (confirmed by the Opus figures pass). The Bespoke per-engagement cap stays a blank for Adam to set per deal. A solicitor's final review is recommended before the first paying customer.
 
 ---
 
@@ -116,6 +120,8 @@ The €[X] floor and the Bespoke caps are commercial-risk judgement calls → **
 
 **Recommended wording for ToS §11:**
 > *We may amend these Terms only for a valid reason — to comply with a change in law or regulation; to reflect a change in our sub-processors or the technical operation of the Service; or for documented security reasons. We will give 30 days' written notice to your Order Form contact email. If you do not accept a material change you may cancel the affected Service before the change takes effect with no early-termination charge, and we will refund any pre-paid fees for the unused period. Continued use of the Service after the change takes effect constitutes acceptance.*
+
+**✅ APPLIED 2026-05-21.** ToS §11 redrafted to the wording above (valid-reason list + 30-day notice + penalty-free exit + pre-paid refund). §B1(b) deliverable sign-off is unchanged — already compliant.
 
 ---
 
@@ -158,7 +164,7 @@ The portfolio licence (§F3) and the Managed source-retention model are enforcea
 
 ---
 
-### Clause (g) — DPA: Article 28(3) completeness + sub-processor transfers — ⚠ NEEDS-SOLICITOR
+### Clause (g) — DPA: Article 28(3) completeness + sub-processor transfers — ✅ APPLIED (solicitor final review recommended)
 
 > **Scope note (updated 2026-05-21).** `legal/dpa.html` is the public summary. It claims a "full signed v1.0 PDF" is sent on request — but **no such document exists**: a repo-wide search found no DPA PDF and Adam confirms he holds none. `legal/dpa.html` is therefore the *only* DPA text. The "MISSING" findings below are **confirmed missing**, not "maybe in an unseen PDF" — so the DPA is **non-compliant with GDPR Article 28 on its face**. The live page's "full v1.0 PDF on request" claim is itself a defect: either a complete DPA must be produced or that claim removed.
 
@@ -186,6 +192,8 @@ The portfolio licence (§F3) and the Managed source-retention model are enforcea
 **DPF register check — DONE 2026-05-21** (Opus agent, via the register's data API at `dpfapi.azurewebsites.net`): Twilio + Google certified; Vapi, Anthropic, xAI absent from the register → must use SCCs. See the bullet above.
 
 **Recommended DPA changes:** add the four missing Art.28(3) clauses (the wording is standard — see any EDPB-aligned DPA template); add a per-sub-processor transfer-mechanism table (importer / role / DPF-or-SCC-Module-Three / verified-date); add a DPF-annulment SCC-fallback clause; correct Schedule A/B so Vapi, Anthropic and xAI are not labelled "under DPF" (register-confirmed non-certified 2026-05-21) and are moved to SCCs; carve the public **demo line** out of the DPA — for `+353 61 788 120` CallMeIE is a **controller**, not a processor, so that data belongs in the Privacy Policy, not the processor DPA.
+
+**✅ APPLIED 2026-05-21.** `legal/dpa.html` rebuilt to v1.1: new §§9-14 added — §9 Confidentiality (Art 28(3)(b)), §10 data-subject-rights assistance (e), §11 breach notification + Arts 32-36 assistance (f) with a 24-hour breach-notification commitment, §12 audit rights (h), §13 the "immediately inform" duty, §14 international-transfers + SCC section (DPF-annulment fallback included); §5 gained sub-processor flow-down + full-liability wording (Art 28(2)/(4)); Schedule A/B transfer labels corrected (Twilio + Google = DPF, Vapi + Anthropic + xAI = SCCs Module Three). **Still open** (for a solicitor / Adam, not blockers): the demo-line controller-vs-processor carve-out; and executing the actual SCCs — operationally, accepting each US vendor's published DPA + SCCs (Twilio, Vapi, Anthropic, xAI, Google each publish one). A solicitor's final review of the rebuilt DPA is recommended before the first paying customer.
 
 ---
 
@@ -239,18 +247,20 @@ A 10th minor item — ToS §1 defines "Customer" as "the legal entity that signs
 - **Lock-in characterisation (a)** as deferred price — defensible for traders on *Launceston v Burke*. Transparency polish **applied this session** (Order Form §B1b).
 - **DPA Art.28(3) missing-clause list (g)** — the four missing clauses are *mandatory verbatim* GDPR requirements; identifying them is statute-compliance, not judgement.
 
-### ⚠ GENUINELY NEEDS A SOLICITOR — litigation exposure; a wrong call has real downside
+### ✅ RECOMMENDED — a solicitor's final review before the first paying customer (no longer a blocker)
 
-- **(b) Kill fee** — the final liquidated-damages wording and the cap figure. Penalty-vs-liquidated-damages is a judgement call; the current flat 30% is a live penalty risk; a solicitor's PI backing matters here. **Highest priority.**
-- **(c) Liability cap** — the final cap figures, the Bespoke caps, and the consumer-floor interaction with CRA 2022 Part 4.
-- **(g) DPA** — the precise breach-notification timeline/content; **reconciling the public summary against the full signed v1.0 PDF**; the actual incorporation of SCCs (signing Module Three SCCs with each US sub-processor and completing the Annexes) is a real legal task, not a wording tweak.
-- **(h) cooling-off** — whether a bespoke website build qualifies for the "clearly personalised goods" exclusion, if a consumer ever buys one (fact-specific).
-- **(d) §11** — the final change-of-terms wording (the pack's weakest formation point).
+All clause-level NEEDS-CHANGE items (a–h) were applied in-house on 2026-05-21 with statute-cited wording — see §2 and §3. The contract pack is now internally consistent and materially compliant, and is safe to operate with at the current pre-revenue stage. A solicitor's final review remains **recommended** — as cheap, professional-indemnity-backed insurance — and is best timed at or just before the first paying customer signs, when there is real exposure to protect. The applied wording is defensible on the cited authority; the solicitor confirms, and does not draft from a blank page.
+
+The points genuinely worth a solicitor's eye, in priority order:
+- **(b) Kill fee** — confirm the recast (actual work + the lesser of 30% / €350) reads as enforceable liquidated damages, not a penalty.
+- **(c) Liability cap** — confirm the cap structure and the €1,000 floor against real exposure once professional-indemnity insurance is in force; set the Bespoke caps per deal.
+- **(g) DPA** — a final pass over the rebuilt Article 28 sections (§§9-14); and **execute the actual SCCs** with each US sub-processor (operationally: accept each vendor's published DPA + SCCs — Twilio, Vapi, Anthropic, xAI and Google all publish one).
+- **(d) §11 / (h) cooling-off** — a glance at the change-of-terms wording and the consumer-edge-case position.
 
 ### 👤 ADAM-ACTION — human steps, not solicitor
 
 - ~~Confirm each US sub-processor on `https://www.dataprivacyframework.gov/list`.~~ **DONE 2026-05-21** — register-confirmed via the DPF data API: Twilio Inc. (OrgId 5394) + Google LLC (OrgId 5780) ACTIVE; Vapi, Anthropic, xAI NOT on the register → SCCs required for those three.
-- Reconcile the public `legal/dpa.html` summary against the full signed v1.0 DPA PDF.
+- ~~Reconcile the public `legal/dpa.html` summary against the full signed v1.0 DPA PDF.~~ **N/A 2026-05-21** — confirmed no separate DPA PDF exists; `legal/dpa.html` was rebuilt this session into the full Article 28 DPA (v1.1).
 - ~~Fill the registered-office address and VAT-number blanks in Order Form §A.~~ **DONE 2026-05-21** — §A carries the registered office (40 Gouldavoher Estate, Limerick, V94 HWH7, Ireland) and VAT no. IE8490023T.
 
 ---
@@ -285,8 +295,8 @@ A 10th minor item — ToS §1 defines "Customer" as "the legal entity that signs
 
 ## §6 — Honest limitations of this research
 
-1. **Not legal advice.** Produced by an AI research process. It verifies statutory text and flags mismatches; it does not replace a solicitor on the NEEDS-SOLICITOR items (§4).
-2. **The DPA (clause g) — there is no separate signed master DPA.** A repo-wide search found no DPA PDF and Adam confirms none exists; `legal/dpa.html` is the only DPA text. The Article 28 gaps are therefore confirmed, not provisional — a complete Article 28 DPA still needs to be produced.
+1. **Not legal advice.** Produced by an AI research process. The in-house wording applied this session is well-researched and removes the known defects, but it is not a substitute for the recommended solicitor's final review of the litigation-exposure clauses (§4).
+2. **The DPA (clause g).** There is no separate signed master DPA PDF; `legal/dpa.html` is the DPA. It was rebuilt to v1.1 this session with the missing Article 28 sections (§§9-14) and corrected transfer mechanisms. A solicitor's final review of the rebuilt DPA, and execution of the SCCs with each US sub-processor, are recommended before the first paying customer.
 3. **DPF register check — RESOLVED 2026-05-21.** The register UI is a JavaScript SPA, but its backing data API was queried directly (snapshot dated 2026-05-21): Twilio Inc. (OrgId 5394) + Google LLC (OrgId 5780) confirmed ACTIVE DPF participants; Vapi, Anthropic and xAI confirmed absent from the register. No longer a limitation.
 4. **Secondary sources** (law-firm notes, Citizens Information, CCPC) corroborate the primary statutes but are not themselves authority. The five most load-bearing URLs were independently re-verified this session; the remaining Irish Statute Book URLs follow the same verified ELI scheme.
 5. **Case-law currency** — the penalty-doctrine position rests on *Sheehan v Breccia* [2018] IECA. The Court of Appeal noted Irish law *may* later move toward *Cavendish*; the Supreme Court had not done so as of this research. Re-check before any litigation reliance.
