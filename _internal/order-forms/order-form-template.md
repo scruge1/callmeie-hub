@@ -9,13 +9,12 @@
 
 ## Section A — Parties
 
-**Service Provider (CallMeIE Technologies):**
-Adam Vaughan trading as CallMeIE Technologies
-Limerick, Ireland · IE VAT-registered (VAT no. _________________)
-Primary contact: adam@callmeie.ie · +353 85 786 3564
-Limited-company incorporation in progress; on incorporation, this Order Form
-auto-novates to the new Ltd entity per `legal/dpa.html` §8 (no re-papering
-required from the Customer).
+**Service Provider:**
+CallMeIE Technologies Limited — a private company limited by shares,
+registered in Ireland, CRO no. 816273 (incorporated 21 May 2026).
+Registered office: _________________________________________
+IE VAT-registered (VAT no. _________________)
+Primary contact: hello@callmeie.ie · +353 85 786 3564
 
 **Customer:**
 Business name: _____________________________
