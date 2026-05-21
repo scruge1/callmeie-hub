@@ -47,7 +47,7 @@ Three consequences:
 | **d** | Deemed acceptance — 14-day deliverable sign-off (Order Form §B1) & "continued use = acceptance" of term changes (ToS §11) | Contract formation (*Felthouse v Bindley*); CRA 2022 Sch.5 items 10–11 (consumer) | §B1(b): **COMPLIANT** · §11: **NEEDS-CHANGE** | §B1(b) fine. Redraft §11 with advance notice + a penalty-free exit right |
 | **e** | Late-payment auto-terms (Order Form §D4) | European Communities (Late Payment in Commercial Transactions) Regulations 2012 (S.I. 580/2012, as amended); Directive 2011/7/EU | **NEEDS-CHANGE** | ✅ **FIXED THIS SESSION** — correct instrument, rate wording, tiered €40/€70/€100, consumer carve-out |
 | **f** | IP transfer-on-payment + portfolio carve-out + Managed source-retention (Order Form §F, §C2, §B1b) | Copyright and Related Rights Act 2000 ss.116, 118, 120, 121 | **NEEDS-CHANGE** | ✅ **APPLIED 2026-05-21** — §F2 recast as self-executing s.121 assignment + new §F5 moral-rights waiver; assignor-signature requirement + cross-refs already fixed (§3) |
-| **g** | DPA — Article 28(3) completeness + sub-processor transfer adequacy (`legal/dpa.html`) | GDPR Arts 28, 32–36, 44–49; Implementing Decision (EU) 2021/914 (SCCs); Implementing Decision (EU) 2023/1795 (EU-US DPF) | **NEEDS-CHANGE → NEEDS-SOLICITOR** | 4 mandatory Art.28(3) clauses missing in the public summary; DPF over-claimed; reconcile against full signed PDF |
+| **g** | DPA — Article 28(3) completeness + sub-processor transfer adequacy (`legal/dpa.html`) | GDPR Arts 28, 32–36, 44–49; Implementing Decision (EU) 2021/914 (SCCs); Implementing Decision (EU) 2023/1795 (EU-US DPF) | **NEEDS-CHANGE → NEEDS-SOLICITOR** | 4 mandatory Art.28(3) clauses confirmed missing; DPF over-claimed (Vapi/Anthropic/xAI); no signed master DPA exists — needs a complete Art 28 DPA + SCCs |
 | **h** | Consumer / distance-selling / cooling-off exposure (whole pack) | CRA 2022 s.2, Part 4 Ch.3, s.125; Directive 2011/83/EU; Electronic Commerce Act 2000; eIDAS Reg. (EU) 910/2014 | **COMPLIANT (classification)** / NEEDS-CHANGE (conditional cooling-off module) | ✅ **WARRANTY APPLIED 2026-05-21** (Order Form §D6); onboarding screening / consumer cooling-off module still recommended |
 
 ---
@@ -160,7 +160,7 @@ The portfolio licence (§F3) and the Managed source-retention model are enforcea
 
 ### Clause (g) — DPA: Article 28(3) completeness + sub-processor transfers — ⚠ NEEDS-SOLICITOR
 
-> **Scope caveat.** This was audited against the **public summary** `legal/dpa.html`. An internal note in that file states a **full signed v1.0 PDF exists separately** and a solicitor-reviewed v1.1 is planned. The full PDF was **not** reviewed. Some "MISSING" findings below may already be in the unseen PDF — **Adam must reconcile the public summary against the full signed DPA.** If the full PDF also omits them, the DPA is non-compliant on its face.
+> **Scope note (updated 2026-05-21).** `legal/dpa.html` is the public summary. It claims a "full signed v1.0 PDF" is sent on request — but **no such document exists**: a repo-wide search found no DPA PDF and Adam confirms he holds none. `legal/dpa.html` is therefore the *only* DPA text. The "MISSING" findings below are **confirmed missing**, not "maybe in an unseen PDF" — so the DPA is **non-compliant with GDPR Article 28 on its face**. The live page's "full v1.0 PDF on request" claim is itself a defect: either a complete DPA must be produced or that claim removed.
 
 **Article 28(3) completeness — VERIFIED against GDPR Art.28.** Of the nine mandatory stipulations a processor contract must contain, the public summary shows:
 
@@ -286,7 +286,7 @@ A 10th minor item — ToS §1 defines "Customer" as "the legal entity that signs
 ## §6 — Honest limitations of this research
 
 1. **Not legal advice.** Produced by an AI research process. It verifies statutory text and flags mismatches; it does not replace a solicitor on the NEEDS-SOLICITOR items (§4).
-2. **The DPA audit (clause g) saw only the public summary** `legal/dpa.html`, not the full signed v1.0 PDF. Findings must be reconciled against the full document.
+2. **The DPA (clause g) — there is no separate signed master DPA.** A repo-wide search found no DPA PDF and Adam confirms none exists; `legal/dpa.html` is the only DPA text. The Article 28 gaps are therefore confirmed, not provisional — a complete Article 28 DPA still needs to be produced.
 3. **DPF register check — RESOLVED 2026-05-21.** The register UI is a JavaScript SPA, but its backing data API was queried directly (snapshot dated 2026-05-21): Twilio Inc. (OrgId 5394) + Google LLC (OrgId 5780) confirmed ACTIVE DPF participants; Vapi, Anthropic and xAI confirmed absent from the register. No longer a limitation.
 4. **Secondary sources** (law-firm notes, Citizens Information, CCPC) corroborate the primary statutes but are not themselves authority. The five most load-bearing URLs were independently re-verified this session; the remaining Irish Statute Book URLs follow the same verified ELI scheme.
 5. **Case-law currency** — the penalty-doctrine position rests on *Sheehan v Breccia* [2018] IECA. The Court of Appeal noted Irish law *may* later move toward *Cavendish*; the Supreme Court had not done so as of this research. Re-check before any litigation reliance.
