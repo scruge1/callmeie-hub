@@ -12,8 +12,8 @@
 **Service Provider:**
 CallMeIE Technologies Limited — a private company limited by shares,
 registered in Ireland, CRO no. 816273 (incorporated 21 May 2026).
-Registered office: _________________________________________
-IE VAT-registered (VAT no. _________________)
+Registered office: 40 Gouldavoher Estate, Limerick, V94 HWH7, Ireland
+IE VAT-registered (VAT no. IE8490023T)
 Primary contact: hello@callmeie.ie · +353 85 786 3564
 
 **Customer:**
@@ -64,10 +64,14 @@ minimum term with 30 days' written notice (per §H1).
 
 **Minimum term & early termination (Managed-specific — OVERRIDES §H1/§H2 for this
 engagement type):** the site is built and delivered at €0 upfront; the minimum term
-is solely how the build cost is recovered. If the Customer cancels before the end of
-the minimum term, the remaining minimum-term monthly fees become payable as one
-final invoice. There is no separate kill fee or deposit (none was taken). After the
-minimum term, the engagement is month-to-month per §H1.
+is solely how the build cost is recovered — it is deferred payment for that build,
+not a penalty. If the Customer cancels before the end of the minimum term, the
+Customer may either (a) continue paying the remaining minimum-term monthly fees on
+the normal monthly schedule, or (b) settle the remaining balance in one final
+invoice. There is no separate kill fee or deposit (none was taken). After the
+minimum term, the engagement is month-to-month per §H1. **This minimum-term
+commitment is an important term and the Customer confirms it has been specifically
+drawn to their attention.**
 
 **IP (Managed-specific — OVERRIDES §C2 and §F2 for this engagement type):** Managed
 is a managed service. CallMeIE Technologies retains the source code and hosting for
@@ -116,7 +120,7 @@ to support@callmeie.ie. No auto-renew traps.
 
 **For Build engagements**, the Customer will receive on completion:
 1. The live site at the agreed URL (Customer's domain or `{slug}.callmeie.ie`)
-2. Full source code in a GitHub repository, ownership transferred to Customer (collaborator + can be promoted to repo owner)
+2. Full source code in a GitHub repository, ownership transferred to Customer (collaborator + can be promoted to repo owner) — except for Managed engagements, where CallMeIE Technologies retains the source code (see §B1b)
 3. CMS admin credentials (Decap GitHub OAuth for Pro; Payload account for Custom; n/a for Quick Page / Starter)
 4. The "Stack Sheet" — single-page PDF listing every service, account holder, registered email, renewal date, monthly cost
 5. One Loom training video (5–8 minutes) covering Customer-self-edit workflows
@@ -146,8 +150,9 @@ The Customer agrees to:
 1. Provide brand assets (logo in vector form, brand colours, fonts owned/licensed, photography rights) within 3 business days of signature.
 2. Warrant that all content supplied to CallMeIE Technologies (text, images, logos, customer-data extracts) is owned by the Customer or licensed to the Customer for the purpose. Customer indemnifies CallMeIE Technologies against third-party copyright claims arising from supplied content.
 3. Maintain the accuracy of their own knowledge base (services, prices, hours, FAQs) for AI Receptionist engagements. Customer is the data controller; the AI is decision-support to the Customer's instruction.
-4. Pay invoices within 14 days of issue. Late payment terms per the Late Payment in Commercial Transactions Regulations 2002 (8% above ECB rate + €40 fixed fee on overdue invoices) auto-apply.
+4. Pay invoices within 14 days of issue. For business customers, late payment is governed by the European Communities (Late Payment in Commercial Transactions) Regulations 2012 (S.I. No. 580 of 2012, as amended): statutory interest accrues automatically at 8 percentage points above the European Central Bank main refinancing reference rate, together with fixed recovery-cost compensation of €40, €70 or €100 according to the size of the overdue amount, plus reasonable further recovery costs. (Those Regulations do not apply to a consumer customer.)
 5. Respond to revision requests within 5 business days. After 14 days of unresponsiveness ("ghosting"): project is paused; deposit retained; work-to-date delivered as-is; restart billed at €60/hr from the pause point.
+6. Warrant that the Customer is entering this Agreement wholly for purposes relating to its trade, business, craft or profession and not as a consumer, and acknowledge that consumer-protection law, including the Consumer Rights Act 2022, does not apply to this Agreement.
 
 ---
 
@@ -167,9 +172,11 @@ CallMeIE Technologies agrees to:
 ## Section F — IP ownership
 
 1. **Customer-supplied content** (text, images, logos, brand) remains the Customer's property.
-2. **CallMeIE-developed deliverables** (code, design, configuration, AI prompts) transfer to the Customer upon full payment of all milestone invoices for that engagement.
+2. **CallMeIE-developed deliverables.** With effect from CallMeIE Technologies' receipt of payment in full of all milestone invoices for an engagement, CallMeIE Technologies assigns to the Customer — by way of present assignment of future copyright under section 121 of the Copyright and Related Rights Act 2000 — all copyright and other intellectual property rights in the CallMeIE-developed deliverables for that engagement (code, design, configuration, AI prompts), such rights to vest in the Customer automatically on their coming into existence and on payment, with no further document required. This does not apply to Managed engagements, where CallMeIE Technologies retains the source code (see §B1b), or to pre-existing CallMeIE IP (§F4).
 3. **Portfolio licence (carve-out):** CallMeIE Technologies retains a non-exclusive, royalty-free licence to display the work in our portfolio (including case studies, before/after screenshots, traffic + uptime metrics in aggregate) UNLESS the Customer opts out in writing within 14 days of the launch-handoff email.
 4. **Pre-existing CallMeIE IP** (templates, internal tooling, the Doc Ops extraction pipeline itself, the AI Receptionist Vapi configuration system, scripts under `scripts/`, the Decap CMS / Payload CMS configurations as a reusable system) is licensed to the Customer for the duration of their engagement. On engagement termination, the Customer keeps the configured instance (their site, their tenant, their Vapi assistant) but does not retain a licence to redistribute the underlying tooling.
+
+5. **Moral rights.** To the fullest extent permitted by sections 116 and 118 of the Copyright and Related Rights Act 2000, CallMeIE Technologies unconditionally and irrevocably waives all moral rights in the CallMeIE-developed deliverables — including the paternity right and the integrity right — in favour of the Customer and its successors and licensees.
 
 ---
 
@@ -214,7 +221,7 @@ This Order Form, the MSA (`legal/terms.html`), and the DPA (`legal/dpa.html`) to
 **CallMeIE Technologies signature:**
 
   Name (print): Adam Vaughan
-  Title: Sole Trader (until Ltd incorporation per DPA §8)
+  Title: Director, CallMeIE Technologies Limited
   Signature: _________________________ Date: __________
 
 ---
@@ -223,5 +230,5 @@ This Order Form, the MSA (`legal/terms.html`), and the DPA (`legal/dpa.html`) to
 
 - This template lives at `_internal/order-forms/order-form-template.md`. Customer-facing PDF is generated from this on demand (export to PDF or use Documenso when D-LIFE-16 lifts and Documenso lands at customer #5).
 - Solicitor review still pending as of v1.0 draft. The 10 clauses called out in `_research/2026-05-06-websites-lifecycle.md` Part 3 are all addressed in this template (see deliverable enumeration / milestone schedule / revision cap / scope-creep boundary / IP+portfolio carve-out / hosting transfer schedule / acceptance criteria / kill fee / late-payment per Irish law / customer-content warranty).
-- For first paying customer (rounds 1–4): Adam fills in Section A + B as a print-PDF, emails to customer, customer replies "I agree" with a signed PDF attachment. That's legally binding under Irish e-commerce law and avoids the Documenso install at this scale.
+- For first paying customer (rounds 1–4): Adam fills in Section A + B as a print-PDF, **signs the §J CallMeIE Technologies signature block himself first**, then emails it to the customer, who replies "I agree" with the counter-signed PDF attached. Both signatures are required: a customer-only signature does NOT satisfy section 120(3) of the Copyright and Related Rights Act 2000 for the IP assignment in §F (the assignor — CallMeIE — must sign). A contract executed this way is binding under the Electronic Commerce Act 2000 (ss. 9, 13, 19) and the eIDAS Regulation (EU) 910/2014, and avoids the Documenso install at this scale.
 - When Documenso lands (customer #5+): import this template as a Documenso template; the per-tier checkboxes become Documenso form fields; signature + 50% deposit collected in one click.
