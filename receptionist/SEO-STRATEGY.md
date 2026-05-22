@@ -23,6 +23,7 @@
 - salon: `AI receptionist Irish hair salon`
 - motor-factors: `AI receptionist Irish motor factors`
 - solicitor: `AI receptionist Irish solicitors`
+- accounting: `AI receptionist Irish accountants`
 
 ### LSI Keywords (30)
 Irish phone answering service, 24/7 call answering Ireland, missed call recovery Ireland, AI call handling Ireland, automated receptionist Ireland, virtual receptionist Ireland, small business phone answering Ireland, after-hours call cover Ireland, appointment booking AI Ireland, call forwarding solution Ireland, GDPR-compliant call answering, Irish accent voice AI, Vapi Ireland receptionist, SME phone solution Ireland, Irish business AI assistant, no-miss call solution Ireland, automated booking Ireland, text-back missed call Ireland, phone receptionist Limerick, AI phone answering Munster, remote receptionist Ireland, call overflow Ireland, Irish SMB answering service, no-contract phone receptionist Ireland, live demo phone receptionist, call answering from €149, Twilio Ireland call forwarding, GDPR phone handling Ireland, AI secretary Ireland, busy phone coverage Ireland
@@ -145,11 +146,13 @@ Irish phone answering service, 24/7 call answering Ireland, missed call recovery
 | / | /salon.html | "phone answering for hair salons" |
 | / | /motor-factors.html | "call handling for motor factors" |
 | / | /solicitor.html | "AI receptionist for solicitors" |
+| / | /accounting.html | "AI receptionist for accounting practices" |
 | / | /onboard.html | "get started in 24 hours" |
 | /dental.html | / | "AI phone receptionist service" |
 | /dental.html | /onboard.html | "set up your dental receptionist" |
 | /salon.html | /onboard.html | "automate your salon bookings" |
 | /motor-factors.html | /onboard.html | "never miss a trade enquiry" |
 | /solicitor.html | /onboard.html | "handle client intake calls 24/7" |
+| /accounting.html | /onboard.html | "answer deadline-week calls without losing the partners' time" |
 | All sector pages | / | "callmeie.ie" (brand link) |
 | All blog posts | /onboard.html | "book a free demo call" (CTA) |
