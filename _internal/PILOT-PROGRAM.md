@@ -168,6 +168,18 @@ Sent automatically based on prospect action / inaction.
 - Pilot data retained 90 days post-cancellation then purged (per existing retention policy in `legal/privacy.html`)
 - Pilot prospect's card-on-file PCI-DSS handled entirely by Stripe (we never see PAN)
 
+## SMS routing constraint — Twilio confirmed 2026-05-29 (ticket #26945699)
+
+Twilio Onboarding & Compliance (Monisha) confirmed that **IE Local numbers are voice-only** and **IE Mobile SMS-capable variants are currently out of stock**. It is **not possible to purchase an IE-routed SMS number via Twilio at this time**, indefinite ETA on restock.
+
+Consequence for the pilot SMS flow:
+
+- All customer-facing SMS (Day 0 welcome, Day 14 mid-pilot, Day 28 usage report, Day 31 conversion confirm) must route through the existing US TWILIO_FROM number `+16624397271` until either (a) Twilio IE Mobile restocks or (b) an alphanumeric sender ID (e.g. "CallMeIE") is provisioned via the ComReg SMS Sender ID Registry (~2-week registration, awaiting Twilio guidance per ticket #26945699 reply) or (c) we adopt a separate IE-routed SMS gateway (e.g. Vonage Ireland Mobile, BulkSMS).
+- US-sourced SMS to IE customer mobiles may flag as "Likely Scam" on Three IE (Three's filter is more aggressive than Vodafone/Eir). Mitigation: prefer Stripe Checkout links via email; use SMS sparingly for time-sensitive items only.
+- For the first 1-3 pilots: lead with voice call + email; treat SMS as backup channel; flag any "Likely Scam" deliverability complaint from the prospect immediately for ticket re-open.
+- KYC ticket #27189947 (Primary Compliance Profile) is the upstream blocker — once that resolves, US A2P 10DLC registration on Messaging Service `MG5773dd9d6b3b577d9517361ebcb758d0` reduces the spam-flag risk on the US-sourced SMS path.
+
 ## Change log
 
 - 2026-05-22 — initial draft after Twilio purchase press-back; pilot economics computed from PRICING-SSOT §2 + Vapi €0.10/min reference
+- 2026-05-29 — added "SMS routing constraint" section after Twilio confirmation IE Local = voice-only / IE Mobile = OOS (ticket #26945699). Pilot SMS path = US-sourced until alphanumeric sender ID or third-party gateway resolved.
