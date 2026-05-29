@@ -264,11 +264,19 @@ curl -X POST https://api.callmeie.ie/admin/api/pilot/signup \
 #    sqlite3 /tmp/callmeie.db
 #      UPDATE pilots SET vapi_assistant_id='<id>', twilio_phone_sid='<PN_SID>', twilio_phone_number='+35361xxxxxx' WHERE id=<pilot_id>;
 
-# 6. Send the checkout_url to prospect (email + SMS for redundancy)
+# 6. Send the checkout_url to prospect via EMAIL FIRST (SMS as backup only)
 #    Subject: "CallMeIE pilot — your link"
 #    Body: "Hi [name], here's your card-on-file link to start your 30-day pilot:
 #           [checkout_url]
 #           Your dedicated number goes live within 24 hours of card capture. — Adam"
+#
+#    SMS routing note (Twilio confirmed 2026-05-29 ticket #26945699): IE-routed
+#    SMS is NOT available — IE Local = voice-only, IE Mobile SMS-capable is
+#    OOS indefinite. All outbound SMS routes through US TWILIO_FROM
+#    +16624397271, which Three IE may flag as "Likely Scam". Therefore:
+#    prefer email for the checkout link, use SMS only as a same-day reminder
+#    if email shows zero engagement. See PILOT-PROGRAM.md "SMS routing
+#    constraint" section for the full background + workaround timeline.
 
 # 7. After prospect completes Stripe Checkout (you'll see it via webhook
 #    customer.subscription.created with trial_end set), confirm the
@@ -339,3 +347,4 @@ Below target on any metric for 2 consecutive weeks → revise the relevant secti
 ## Change log
 
 - 2026-05-22 — initial draft after PILOT-PROGRAM.md + Stage A endpoint shipped same day.
+- 2026-05-29 — provisioning checklist step 6 reworded "email first, SMS backup only" after Twilio ticket #26945699 confirmed IE outbound SMS unavailable; cross-link to PILOT-PROGRAM.md "SMS routing constraint" added.
