@@ -2373,6 +2373,25 @@
     s.setAttribute('data-do-not-track', 'true');
     s.setAttribute('data-cache', 'false');
     document.head.appendChild(s);
+    bindCtaTracking();
+  }
+
+  // Funnel events: fire umami.track on any [data-cmt-cta] click (quiz / whatsapp
+  // / ring / email — the four money actions). Delegated + idempotent. Only ever
+  // active after consent (called from loadUmami). Waits for the umami global.
+  var ctaBound = false;
+  function bindCtaTracking() {
+    if (ctaBound) return;
+    ctaBound = true;
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('[data-cmt-cta]');
+      if (!el) return;
+      var name = el.getAttribute('data-cmt-cta');
+      var page = (location.pathname || '/');
+      if (window.umami && typeof window.umami.track === 'function') {
+        window.umami.track('cta-' + name, { page: page });
+      }
+    }, true);
   }
 
   function storedChoice() {
