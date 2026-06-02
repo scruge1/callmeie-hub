@@ -179,7 +179,17 @@ Consequence for the pilot SMS flow:
 - For the first 1-3 pilots: lead with voice call + email; treat SMS as backup channel; flag any "Likely Scam" deliverability complaint from the prospect immediately for ticket re-open.
 - KYC ticket #27189947 (Primary Compliance Profile) is the upstream blocker — once that resolves, US A2P 10DLC registration on Messaging Service `MG5773dd9d6b3b577d9517361ebcb758d0` reduces the spam-flag risk on the US-sourced SMS path.
 
+### Update 2026-06-02 — alpha sender CONFIGURED but NOT REGISTERED (ticket #27259801)
+
+Verified via live Twilio REST API + a full console walk:
+
+- Alpha sender `CALLMEIE` is already assigned to Messaging Service `MG5773dd9d6b3b577d9517361ebcb758d0` ("CallMeIE Ireland Outbound") — but it is **NOT regulatory-registered**. Sending now → **confirmed "Likely Scam" overstamp** (Adam saw it on a real received message).
+- Registration is **not doable by API** (`messaging/v1/AlphaSenderRegistrations` → 404) **nor by this US1 console**: no Trust Hub "Registrations" item; Senders shows only Short codes + WhatsApp; Regulatory Compliance is A2P-10DLC/US only; global search returns docs only. The docs' Trust-Hub registration flow is not surfaced for this account.
+- **Path:** reply on Twilio ticket **27259801** (Camila A, closed 2026-06-02 "reply if you need more") → ask Twilio Messaging to register `CALLMEIE` for IE + submit to ComReg as Participating Aggregator + send the doc list (help article 33333263397787). Registration proof = **CRO 816273** cert, **NOT DUNS** (DUNS is the separate A2P-10DLC blocker — do not conflate). Gmail draft created 2026-06-02 in swarm inbox (reply addr `support+idPLKW6Z-PXLNL@twilio.zendesk.com`) awaiting Adam send. Alt path: register direct at comreg.ie/senderid.
+- **Interim (unchanged): lead with voice + email.** Booking confirmations via Resend `hello@callmeie.ie` (working — INFRA §). Hold SMS until registration clears (~days ComReg provisioning). Corrects the earlier hope that an alpha sender was an easy DUNS-free unblock — the *assign* is easy, the *registration* is the same regulator gate.
+
 ## Change log
 
 - 2026-05-22 — initial draft after Twilio purchase press-back; pilot economics computed from PRICING-SSOT §2 + Vapi €0.10/min reference
 - 2026-05-29 — added "SMS routing constraint" section after Twilio confirmation IE Local = voice-only / IE Mobile = OOS (ticket #26945699). Pilot SMS path = US-sourced until alphanumeric sender ID or third-party gateway resolved.
+- 2026-06-02 — Twilio (Camila, ticket #27259801) recommended a registered alpha sender ID as the IE path. Verified `CALLMEIE` is configured-but-unregistered; registration is not API/console self-serve in this account → support + ComReg. Email interim. See MEMORY.md `project_ie-alpha-sender-not-registered`.
