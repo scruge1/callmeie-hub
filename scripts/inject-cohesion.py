@@ -64,6 +64,13 @@ COHESION_STYLE_MARKER = "/_partials/cohesion.css"
 FB_PAGES_META = '<meta property="fb:pages" content="1105012356028968">'
 FB_PAGES_MARKER = 'property="fb:pages"'
 
+# LocalBusiness JSON-LD — the local-SEO signal (telephone / geo / areaServed=Limerick) that
+# feeds the Google local pack + AI answers for "callmeie limerick". COMPLEMENTS (does not
+# duplicate) the existing Organization JSON-LD — schema.org allows multiple typed entities.
+# Generated from optimisation-audit/clients/callmeie.seo.json (verified data, 2026-06-03).
+LOCALBUSINESS_JSONLD = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"CallMeIE Technologies","url":"https://callmeie.ie/","image":"https://callmeie.ie/og-image.png","telephone":"+353-61-788-120","priceRange":"€€","address":{"@type":"PostalAddress","addressLocality":"Limerick","addressRegion":"Limerick","addressCountry":"IE"},"geo":{"@type":"GeoCoordinates","latitude":52.668,"longitude":-8.6305},"areaServed":{"@type":"City","name":"Limerick"}}</script>'
+LOCALBUSINESS_MARKER = '"@type":"ProfessionalService"'
+
 # Attribute parser: key="value" or key=value (no quotes, no spaces in value).
 ATTR_RE = re.compile(r'(\w+)\s*=\s*(?:"([^"]*)"|(\S+))')
 
@@ -135,6 +142,13 @@ def inject_one(page_path: Path) -> tuple[str, bool]:
             new_content = new_content.replace("</head>", f"  {FB_PAGES_META}\n</head>", 1)
         elif "<head>" in new_content:
             new_content = new_content.replace("<head>", f"<head>\n  {FB_PAGES_META}", 1)
+
+    # Inject LocalBusiness JSON-LD into <head> if sentinels present and block missing.
+    if LOCALBUSINESS_MARKER not in new_content:
+        if "</head>" in new_content:
+            new_content = new_content.replace("</head>", f"  {LOCALBUSINESS_JSONLD}\n</head>", 1)
+        elif "<head>" in new_content:
+            new_content = new_content.replace("<head>", f"<head>\n  {LOCALBUSINESS_JSONLD}", 1)
 
     return new_content, new_content != raw
 
