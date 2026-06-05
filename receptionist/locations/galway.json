@@ -1,0 +1,117 @@
+{
+  "_note": "Authored Galway location page. Honest: Irish-built/operated from Limerick (Dooradoyle), serves Galway remotely (is_home:false). Distinct angle = tourism/seasonal call surges + Gaeilge (Gaeltacht nearby). LocalBusiness address = real Limerick base; areaServed = Galway. >=300 unique local words.",
+  "city": "Galway",
+  "is_home": false,
+  "name_long": "AI Receptionist Galway",
+  "locality": "Dooradoyle",
+  "region": "Limerick",
+  "geo_region": "IE-G",
+  "lat": "53.2707",
+  "lng": "-9.0568",
+  "area_served": ["Galway", "Co. Galway", "Salthill", "Oranmore"],
+
+  "title": "AI Receptionist Galway | 24/7 Call Answering for Galway Businesses — CallMeIE",
+  "meta_description": "AI phone receptionist for Galway businesses. Answers every call 24/7 in an Irish accent, books appointments, texts back missed callers. Gaeilge available. From €149/mo.",
+  "og_title": "AI Receptionist Galway — 24/7 Call Answering, Gaeilge Available",
+  "og_description": "Never miss a Galway customer again. AI receptionist answers 24/7, books appointments, handles seasonal surges, texts back missed callers. From €149/mo.",
+  "topbar_meta": "Serving Galway & the West",
+
+  "vertical_links": [
+    {"label": "Dental", "href": "dental.html"},
+    {"label": "Motor Factors", "href": "motor-factors.html"},
+    {"label": "Hair Salon", "href": "salon.html"},
+    {"label": "Solicitors", "href": "solicitor.html"},
+    {"label": "Accountants", "href": "accounting.html"}
+  ],
+
+  "hero": {
+    "kicker": "For Galway businesses — hear it on a real line, sign up today",
+    "headline": "When Galway gets busy, the calls you can't get to are the ones that pay.",
+    "sub": "CallMeIE is an AI phone receptionist for Galway businesses. <em>It answers your phone 24/7 in a natural Irish accent, books appointments straight into your diary, and texts back every missed caller within a minute — and it can work as Gaeilge.</em> Built for the seasonal surges a Galway business actually gets."
+  },
+
+  "sections": [
+    {
+      "id": "local",
+      "num": "§ 01 — Local",
+      "title": "Built for Galway's busy seasons — and available as Gaeilge",
+      "dek": "Festival weekends, the summer tourist run, race week — Galway call volume spikes when you're least able to answer. CallMeIE absorbs the surge 24/7, and for Gaeltacht-facing businesses it can greet, book and confirm entirely as Gaeilge.",
+      "body": "    <div class=\"founder\">\n      <p class=\"founder__body\">\n        Galway runs on seasons. A salon in Salthill, a restaurant in the Latin Quarter, a garage in Oranmore or a practice in Knocknacarra gets hit with call spikes around the festivals, race week and the summer tourist run — exactly when the front desk is too busy to pick up. Every call that rings out in that window is a booking lost to the next business on Google. CallMeIE covers the line every hour of every day, absorbs the surge without putting anyone on hold, and texts back any caller it couldn't reach within a minute. Because Galway has a strong Gaeltacht, the system can also be configured to greet, book and confirm entirely as Gaeilge, or in a bilingual handover. Built and operated in-house from Limerick — no offshore call centre, caller data never sold on.\n      </p>\n    </div>"
+    },
+    {
+      "id": "handles",
+      "num": "§ 02 — Capabilities",
+      "title": "What it handles for a Galway business",
+      "dek": "Six jobs, one system, working the hours and the surges a Galway front desk can't. Not a generic chatbot — a receptionist that happens to be software.",
+      "body": "    <div class=\"handles-grid\">\n      <article class=\"handles-item\"><div class=\"handles-item__num\">I — Answer</div><h3 class=\"handles-item__title\">Answers every call, 24/7</h3><p>Festival weekends, late nights, the summer rush — covered. Callers get a real conversation, not a voicemail beep, so they book instead of ringing a competitor.</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">II — Book</div><h3 class=\"handles-item__title\">Books into your diary</h3><p>Reads your Google Calendar live, quotes a real slot, confirms the appointment — no double-booking, no \"we'll call you back\".</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">III — Text back</div><h3 class=\"handles-item__title\">Missed-call text-back (60s)</h3><p>Any call that still rings out during a surge gets an SMS within a minute offering to book or answer a quick question. No Galway lead goes cold.</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">IV — Qualify</div><h3 class=\"handles-item__title\">Takes the details that matter</h3><p>Name, number, reason, urgency — captured every time and waiting for you, instead of a half-remembered note.</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">V — Escalate</div><h3 class=\"handles-item__title\">Forwards the urgent ones</h3><p>Genuinely urgent calls route straight to your mobile, with an SMS summary at the same time. You set the rules.</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">VI — Report</div><h3 class=\"handles-item__title\">Monday morning summary</h3><p>A plain email each Monday: calls taken, appointments booked, missed-call recoveries, top questions this week. Ninety seconds.</p></article>\n    </div>"
+    },
+    {
+      "id": "verticals",
+      "num": "§ 03 — By trade",
+      "title": "Set up for your trade in Galway",
+      "dek": "Same engine, tuned per trade. These are the pre-configured setups — if yours isn't listed, ring the line and we'll scope it in under a week.",
+      "body": "    <ul class=\"irish-list\">\n      <li><span><a href=\"dental.html\">Dental practices</a></span><span>Books exams, triages pain, knows VHI/Laya/Irish Life/Aviva and PRSI Treatment Benefit.</span></li>\n      <li><span><a href=\"salon.html\">Hair salons &amp; barbers</a></span><span>Books cuts, colours and treatments by stylist, fills cancellations, handles the festival-weekend rush.</span></li>\n      <li><span><a href=\"motor-factors.html\">Motor factors &amp; garages</a></span><span>Takes parts enquiries and reg numbers, books services and NCT-prep slots, routes trade accounts.</span></li>\n      <li><span><a href=\"solicitor.html\">Solicitors</a></span><span>Screens new enquiries by matter type, takes callback details, never gives legal advice.</span></li>\n      <li><span><a href=\"accounting.html\">Accountants</a></span><span>Handles deadline-season call volume, books consultations, captures returns queries.</span></li>\n    </ul>"
+    },
+    {
+      "id": "cost",
+      "num": "§ 04 — Arithmetic",
+      "title": "A Galway receptionist versus CallMeIE",
+      "dek": "Figures use published Irish payroll ranges for a part-time front-desk hire in 2026 — and a part-time hire still can't scale for a festival weekend. CallMeIE covers all 168 hours at one flat starting price.",
+      "body": "    <div class=\"cost-compare\">\n      <div class=\"cost-col\"><div class=\"cost-col__kicker\">Option A</div><h3 class=\"cost-col__head\">Part-time receptionist</h3><p>25 hours a week at a typical Galway front-desk rate, plus Employer PRSI, auto-enrolment pension and holiday accrual. Misses nights, weekends, lunch — and can't absorb a surge.</p><div class=\"cost-row\"><span class=\"cost-row__label\">25 hrs × 4.33 wks (€14–€18/hr)</span><span class=\"cost-row__value\">€1,516 – €1,950</span></div><div class=\"cost-row\"><span class=\"cost-row__label\">+ Employer PRSI, pension, holiday</span><span class=\"cost-row__value\">€324 – €416</span></div><div class=\"cost-row\"><span class=\"cost-row__label\"><strong>Total monthly</strong></span><span class=\"cost-row__value\">€1,840 – €2,366</span></div><p class=\"cost-note\">Covers 25 hours. The festival-weekend overflow still rings out.</p></div>\n      <div class=\"cost-col\"><div class=\"cost-col__kicker\">Option B</div><h3 class=\"cost-col__head\">CallMeIE</h3><p>24/7 cover that scales with the season at no extra base cost. No PRSI, no holiday pay, no sick days. Handles a Sunday-night enquiry the same way it handles a Tuesday-morning booking.</p><div class=\"cost-row\"><span class=\"cost-row__label\">From</span><span class=\"cost-row__value\">€149 / month</span></div><div class=\"cost-row\"><span class=\"cost-row__label\">Coverage</span><span class=\"cost-row__value\">24 / 7 / 365</span></div><div class=\"cost-row\"><span class=\"cost-row__label\"><strong>Versus a part-time hire</strong></span><span class=\"cost-row__value\">~1/10th the cost</span></div><p class=\"cost-note\">Not a replacement for your front-desk human — a complement covering the hours and surges they can't.</p></div>\n    </div>"
+    },
+    {
+      "id": "irish",
+      "num": "§ 05 — Irish",
+      "title": "Built for Ireland, not for \"UK & Ireland\"",
+      "dek": "The specifics that come up on a real Galway call — including Gaeilge. Generic global-AI receptionists fail on every line in this list.",
+      "body": "    <ul class=\"irish-list\">\n      <li><span>Gaeilge</span><span>For Gaeltacht-area and Irish-language businesses, Claire can greet, book and confirm entirely as Gaeilge, or in a bilingual \"Dia duit / Hello\" handover. Configured per business.</span></li>\n      <li><span>Connacht accents</span><span>Tuned and tested against real Irish caller recordings across Connacht and the West. Strong accents are understood, not bounced to a menu.</span></li>\n      <li><span>091 &amp; mobile formats</span><span>Handles 091 landlines and 085/086/087/089 mobiles interchangeably — no rejected numbers.</span></li>\n      <li><span>Bank holidays &amp; festivals</span><span>Respects the standard bank holidays and your own closure calendar — and stays on through the festival weekends when you're busiest.</span></li>\n      <li><span>GDPR</span><span>Call data processed under a Data Processing Agreement, EU infrastructure, recordings deleted on a fixed schedule. Caller data is never sold.</span></li>\n      <li><span>Keep your number</span><span>We sit behind your existing 091 line via call forwarding — your customers ring the number already on your card and Google listing.</span></li>\n    </ul>"
+    },
+    {
+      "id": "pricing",
+      "num": "§ 06 — Pricing",
+      "title": "From €149/month. One setup fee. No lock-in.",
+      "dek": "Most Galway businesses start on the entry tier and move up only if call volume needs it. Month-to-month, cancel anytime — €149/mo is the starting price, not a flat rate.",
+      "body": "    <div class=\"founder\">\n      <p class=\"founder__body\">\n        Pricing starts at <strong>€149/month</strong> plus a one-time setup fee, with higher tiers adding 24/7 after-hours cover, missed-call text-back, SMS confirmation on every booking, and a knowledge base built from your own services. No minimum seat count and no annual contract on the entry tiers — useful for a seasonal Galway business that wants cover through the busy months without a year-long commitment. The fastest way to judge it is to ring the live line on +353 61 788 120 and hear exactly what your own callers would hear.\n      </p>\n    </div>"
+    }
+  ],
+
+  "faq_dek": "Asked the way Galway owners actually ask them — answered honestly, including where it isn't the right fit.",
+  "faq": [
+    {
+      "q": "Do you cover Galway city and county?",
+      "a_plain": "Yes — Galway city, Co. Galway, Salthill, Oranmore, Knocknacarra and the wider county. The service is software-delivered, so there's no travel; setup is remote and the AI answers your existing line wherever in Galway your business is based.",
+      "a_html": "          <p>Yes — Galway city, Co. Galway, Salthill, Oranmore, Knocknacarra and the wider county. The service is software-delivered, so there's no travel; setup is remote and the AI answers your existing line wherever in Galway your business is based.</p>"
+    },
+    {
+      "q": "Can the receptionist work as Gaeilge?",
+      "a_plain": "Yes. For Gaeltacht-area or Irish-language businesses, the receptionist can be configured to greet, book and confirm entirely as Gaeilge, or in a bilingual handover pattern. It's set per business at onboarding, not on by default — mention it when you sign up.",
+      "a_html": "          <p>Yes. For Gaeltacht-area or Irish-language businesses, the receptionist can be configured to greet, book and confirm entirely as Gaeilge, or in a bilingual handover pattern. It's set per business at onboarding, not on by default — mention it when you sign up.</p>"
+    },
+    {
+      "q": "Where are you based?",
+      "a_plain": "CallMeIE is Irish-built and operated in-house from Limerick. We serve Galway businesses remotely — setup is done over a call and online, with no offshore call centre and no caller data sold or shared outside running your service.",
+      "a_html": "          <p>CallMeIE is Irish-built and operated in-house from Limerick. We serve Galway businesses remotely — setup is done over a call and online, with no offshore call centre and no caller data sold or shared outside running your service.</p>"
+    },
+    {
+      "q": "Can it handle the festival and tourist surges?",
+      "a_plain": "Yes — that's a core reason to use it in Galway. The AI answers every call at once without putting anyone on hold, so a festival-weekend or summer-tourist spike doesn't overwhelm the line, and any call it can't complete is texted back within a minute.",
+      "a_html": "          <p>Yes — that's a core reason to use it in Galway. The AI answers every call at once without putting anyone on hold, so a festival-weekend or summer-tourist spike doesn't overwhelm the line, and any call it can't complete is texted back within a minute.</p>"
+    },
+    {
+      "q": "How much does it cost?",
+      "a_plain": "Pricing starts at €149 per month plus a one-time setup fee. Higher tiers add 24/7 after-hours cover, missed-call text-back and a knowledge base built from your own services. The entry tiers are month-to-month with no lock-in. €149 is the starting price, not a flat rate.",
+      "a_html": "          <p>Pricing starts at €149 per month plus a one-time setup fee. Higher tiers add 24/7 after-hours cover, missed-call text-back and a knowledge base built from your own services. The entry tiers are month-to-month with no lock-in — €149 is the starting price, not a flat rate.</p>"
+    },
+    {
+      "q": "Is it GDPR compliant?",
+      "a_plain": "Yes, when configured properly. Call data is processed within EU infrastructure under a Data Processing Agreement, recordings are deleted on a fixed retention schedule, and you remain the data controller while CallMeIE acts as processor under Article 28 of the GDPR.",
+      "a_html": "          <p>Yes, when configured properly. Call data is processed within EU infrastructure under a Data Processing Agreement, recordings are deleted on a fixed retention schedule, and you remain the data controller while CallMeIE acts as processor under Article 28 of the GDPR.</p>"
+    }
+  ],
+
+  "final_cta": {
+    "kicker": "The demo answers on a real line",
+    "headline": "Hear it answer before you spend a euro",
+    "sub": "Takes ninety seconds. Ring the live line, describe your Galway business, and hear exactly what your own callers would get — 24/7, in an Irish accent. Try to catch it out."
+  }
+}
