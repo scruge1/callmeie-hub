@@ -1,0 +1,117 @@
+{
+  "_note": "Authored Cork location page. Honest: Irish-built/operated from Limerick (Dooradoyle, a Munster neighbour), serves Cork remotely (is_home:false). LocalBusiness address = real Limerick base; areaServed = Cork. >=300 unique local words.",
+  "city": "Cork",
+  "is_home": false,
+  "name_long": "AI Receptionist Cork",
+  "locality": "Dooradoyle",
+  "region": "Limerick",
+  "geo_region": "IE-CO",
+  "lat": "51.8985",
+  "lng": "-8.4756",
+  "area_served": ["Cork", "Co. Cork", "Cork City", "Carrigaline"],
+
+  "title": "AI Receptionist Cork | 24/7 Call Answering for Cork Businesses — CallMeIE",
+  "meta_description": "AI phone receptionist for Cork businesses. Answers every call 24/7 in an Irish accent, books appointments, texts back missed callers. Munster-built. From €149/mo.",
+  "og_title": "AI Receptionist Cork — 24/7 Call Answering, Munster-Built",
+  "og_description": "Never miss a Cork customer again. AI receptionist answers 24/7, books appointments, texts back missed callers. From €149/mo.",
+  "topbar_meta": "Serving Cork & Munster",
+
+  "vertical_links": [
+    {"label": "Dental", "href": "dental.html"},
+    {"label": "Motor Factors", "href": "motor-factors.html"},
+    {"label": "Hair Salon", "href": "salon.html"},
+    {"label": "Solicitors", "href": "solicitor.html"},
+    {"label": "Accountants", "href": "accounting.html"}
+  ],
+
+  "hero": {
+    "kicker": "For Cork businesses — hear it on a real line, sign up today",
+    "headline": "In Cork, a missed lunchtime call is a customer ringing the next place on Pana.",
+    "sub": "CallMeIE is an AI phone receptionist for Cork businesses, built up the road in Munster. <em>It answers your phone 24/7 in a natural Irish accent, books appointments straight into your diary, and texts back every missed caller within a minute.</em> Tuned for the way Cork callers actually speak."
+  },
+
+  "sections": [
+    {
+      "id": "local",
+      "num": "§ 01 — Local",
+      "title": "A Munster neighbour, tuned for the Cork accent",
+      "dek": "CallMeIE is built and run from Limerick — the same province, an hour up the road — and the voice system is tuned to understand a strong Cork accent rather than ask callers to repeat themselves.",
+      "body": "    <div class=\"founder\">\n      <p class=\"founder__body\">\n        A customer ringing a Douglas dental practice, a Ballincollig garage, or a city-centre salon off Patrick Street expects the phone to be answered — and when it rings out at lunchtime or after closing, most of them don't leave a voicemail. They ring the next business on the list. CallMeIE covers that line every hour of every day, in a natural Irish accent, and it's tuned to handle a genuine Cork accent without bouncing the caller to a menu. It serves businesses across Cork city, Douglas, Ballincollig, Mahon, Carrigaline and the wider county. Built and operated in-house from Limerick — a Munster neighbour, not an offshore call centre — with caller data never sold on.\n      </p>\n    </div>"
+    },
+    {
+      "id": "handles",
+      "num": "§ 02 — Capabilities",
+      "title": "What it handles for a Cork business",
+      "dek": "Six jobs, one system, working the hours a Cork front desk can't. Not a generic chatbot — a receptionist that happens to be software.",
+      "body": "    <div class=\"handles-grid\">\n      <article class=\"handles-item\"><div class=\"handles-item__num\">I — Answer</div><h3 class=\"handles-item__title\">Answers every call, 24/7</h3><p>Lunchtime, after closing, weekends, bank holidays — covered. Callers get a real conversation, not a voicemail beep, so they book instead of ringing a competitor.</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">II — Book</div><h3 class=\"handles-item__title\">Books into your diary</h3><p>Reads your Google Calendar live, quotes a real slot, confirms the appointment — no double-booking, no \"we'll call you back\".</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">III — Text back</div><h3 class=\"handles-item__title\">Missed-call text-back (60s)</h3><p>Any call that still rings out gets an SMS within a minute offering to book or answer a quick question. No Cork lead goes cold.</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">IV — Qualify</div><h3 class=\"handles-item__title\">Takes the details that matter</h3><p>Name, number, reason, urgency — captured every time and waiting for you, instead of a half-remembered note.</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">V — Escalate</div><h3 class=\"handles-item__title\">Forwards the urgent ones</h3><p>Genuinely urgent calls route straight to your mobile, with an SMS summary at the same time. You set the rules.</p></article>\n      <article class=\"handles-item\"><div class=\"handles-item__num\">VI — Report</div><h3 class=\"handles-item__title\">Monday morning summary</h3><p>A plain email each Monday: calls taken, appointments booked, missed-call recoveries, top questions this week. Ninety seconds.</p></article>\n    </div>"
+    },
+    {
+      "id": "verticals",
+      "num": "§ 03 — By trade",
+      "title": "Set up for your trade in Cork",
+      "dek": "Same engine, tuned per trade. These are the pre-configured setups — if yours isn't listed, ring the line and we'll scope it in under a week.",
+      "body": "    <ul class=\"irish-list\">\n      <li><span><a href=\"dental.html\">Dental practices</a></span><span>Books exams, triages pain, knows VHI/Laya/Irish Life/Aviva and PRSI Treatment Benefit.</span></li>\n      <li><span><a href=\"salon.html\">Hair salons &amp; barbers</a></span><span>Books cuts, colours and treatments by stylist, fills cancellations, handles the Saturday rush.</span></li>\n      <li><span><a href=\"motor-factors.html\">Motor factors &amp; garages</a></span><span>Takes parts enquiries and reg numbers, books services and NCT-prep slots, routes trade accounts.</span></li>\n      <li><span><a href=\"solicitor.html\">Solicitors</a></span><span>Screens new enquiries by matter type, takes callback details, never gives legal advice.</span></li>\n      <li><span><a href=\"accounting.html\">Accountants</a></span><span>Handles deadline-season call volume, books consultations, captures returns queries.</span></li>\n    </ul>"
+    },
+    {
+      "id": "cost",
+      "num": "§ 04 — Arithmetic",
+      "title": "A Cork receptionist versus CallMeIE",
+      "dek": "Figures use published Irish payroll ranges for a part-time front-desk hire in 2026. A part-time receptionist covers ~25 hours; CallMeIE covers all 168.",
+      "body": "    <div class=\"cost-compare\">\n      <div class=\"cost-col\"><div class=\"cost-col__kicker\">Option A</div><h3 class=\"cost-col__head\">Part-time receptionist</h3><p>25 hours a week at a typical Cork front-desk rate, plus Employer PRSI, auto-enrolment pension and holiday accrual. Misses nights, weekends, lunch and sick days.</p><div class=\"cost-row\"><span class=\"cost-row__label\">25 hrs × 4.33 wks (€14–€18/hr)</span><span class=\"cost-row__value\">€1,516 – €1,950</span></div><div class=\"cost-row\"><span class=\"cost-row__label\">+ Employer PRSI, pension, holiday</span><span class=\"cost-row__value\">€324 – €416</span></div><div class=\"cost-row\"><span class=\"cost-row__label\"><strong>Total monthly</strong></span><span class=\"cost-row__value\">€1,840 – €2,366</span></div><p class=\"cost-note\">Covers 25 hours. Lunchtime and after-hours calls still ring out.</p></div>\n      <div class=\"cost-col\"><div class=\"cost-col__kicker\">Option B</div><h3 class=\"cost-col__head\">CallMeIE</h3><p>24/7 cover. No PRSI, no holiday pay, no sick days. Handles a Sunday-night enquiry the same way it handles a Tuesday-morning booking.</p><div class=\"cost-row\"><span class=\"cost-row__label\">From</span><span class=\"cost-row__value\">€149 / month</span></div><div class=\"cost-row\"><span class=\"cost-row__label\">Coverage</span><span class=\"cost-row__value\">24 / 7 / 365</span></div><div class=\"cost-row\"><span class=\"cost-row__label\"><strong>Versus a part-time hire</strong></span><span class=\"cost-row__value\">~1/10th the cost</span></div><p class=\"cost-note\">Not a replacement for your front-desk human — a complement covering the hours and overflow they can't.</p></div>\n    </div>"
+    },
+    {
+      "id": "irish",
+      "num": "§ 05 — Irish",
+      "title": "Built for Ireland, not for \"UK & Ireland\"",
+      "dek": "The specifics that come up on a real Cork call. Generic global-AI receptionists fail on every line in this list.",
+      "body": "    <ul class=\"irish-list\">\n      <li><span>Cork &amp; Munster accents</span><span>Tuned and tested against real Irish caller recordings. A strong Cork accent is understood, not routed to \"press 9 for English\".</span></li>\n      <li><span>021 &amp; mobile formats</span><span>Handles 021 landlines and 085/086/087/089 mobiles interchangeably — no rejected numbers.</span></li>\n      <li><span>Bank holidays</span><span>St Patrick's Day, Easter Monday, the May/June/August bank holidays, October, Christmas and St Stephen's Day — auto-respects your closure calendar.</span></li>\n      <li><span>GDPR</span><span>Call data processed under a Data Processing Agreement, EU infrastructure, recordings deleted on a fixed schedule. Caller data is never sold.</span></li>\n      <li><span>Keep your number</span><span>We sit behind your existing 021 line via call forwarding — your customers ring the number already on your card and Google listing.</span></li>\n      <li><span>Gaeilge available</span><span>Opt-in bilingual greeting and booking for businesses that want it.</span></li>\n    </ul>"
+    },
+    {
+      "id": "pricing",
+      "num": "§ 06 — Pricing",
+      "title": "From €149/month. One setup fee. No lock-in.",
+      "dek": "Most Cork businesses start on the entry tier and move up only if call volume needs it. Month-to-month, cancel anytime — €149/mo is the starting price, not a flat rate.",
+      "body": "    <div class=\"founder\">\n      <p class=\"founder__body\">\n        Pricing starts at <strong>€149/month</strong> plus a one-time setup fee, with higher tiers adding 24/7 after-hours cover, missed-call text-back, SMS confirmation on every booking, and a knowledge base built from your own services. No minimum seat count and no annual contract on the entry tiers — start small, see the missed-call recoveries land, and move up only if the volume justifies it. The fastest way to judge it is to ring the live line on +353 61 788 120 and hear exactly what your own callers would hear.\n      </p>\n    </div>"
+    }
+  ],
+
+  "faq_dek": "Asked the way Cork owners actually ask them — answered honestly, including where it isn't the right fit.",
+  "faq": [
+    {
+      "q": "Do you cover Cork city and county?",
+      "a_plain": "Yes — Cork city, Co. Cork, Douglas, Ballincollig, Carrigaline and the wider county. The service is software-delivered, so there's no travel; setup is remote and the AI answers your existing line wherever in Cork your business is based.",
+      "a_html": "          <p>Yes — Cork city, Co. Cork, Douglas, Ballincollig, Carrigaline and the wider county. The service is software-delivered, so there's no travel; setup is remote and the AI answers your existing line wherever in Cork your business is based.</p>"
+    },
+    {
+      "q": "Where are you based?",
+      "a_plain": "CallMeIE is Irish-built and operated in-house from Limerick — a Munster neighbour an hour up the road. We serve Cork businesses remotely, with no offshore call centre and no caller data sold or shared outside running your service.",
+      "a_html": "          <p>CallMeIE is Irish-built and operated in-house from Limerick — a Munster neighbour, an hour up the road. We serve Cork businesses remotely, with no offshore call centre and no caller data sold or shared outside running your service.</p>"
+    },
+    {
+      "q": "Can it handle a strong Cork accent?",
+      "a_plain": "Yes. The voice system is tuned and tested against real Irish caller recordings across Munster, including Cork. Callers with strong regional accents are understood and answered, not bounced to a menu.",
+      "a_html": "          <p>Yes. The voice system is tuned and tested against real Irish caller recordings across Munster, including Cork. Callers with strong regional accents are understood and answered — not bounced to a \"press 9 for English\" menu.</p>"
+    },
+    {
+      "q": "Can I keep my existing 021 number?",
+      "a_plain": "Yes. We don't take your number — we sit behind it. You set call forwarding on busy, no-answer and optionally after-hours from your existing line to a CallMeIE number, a standard Eir/Vodafone/Three business feature. Your customers keep ringing the number on your card and Google listing.",
+      "a_html": "          <p>Yes. We don't take your number — we sit behind it. You set call forwarding on busy, no-answer and (optionally) after-hours from your existing line to a CallMeIE number, a standard Eir / Vodafone / Three business feature. Your customers keep ringing the number already on your card and Google listing.</p>"
+    },
+    {
+      "q": "How much does it cost?",
+      "a_plain": "Pricing starts at €149 per month plus a one-time setup fee. Higher tiers add 24/7 after-hours cover, missed-call text-back and a knowledge base built from your own services. The entry tiers are month-to-month with no lock-in. €149 is the starting price, not a flat rate.",
+      "a_html": "          <p>Pricing starts at €149 per month plus a one-time setup fee. Higher tiers add 24/7 after-hours cover, missed-call text-back and a knowledge base built from your own services. The entry tiers are month-to-month with no lock-in — €149 is the starting price, not a flat rate.</p>"
+    },
+    {
+      "q": "Is it GDPR compliant?",
+      "a_plain": "Yes, when configured properly. Call data is processed within EU infrastructure under a Data Processing Agreement, recordings are deleted on a fixed retention schedule, and you remain the data controller while CallMeIE acts as processor under Article 28 of the GDPR.",
+      "a_html": "          <p>Yes, when configured properly. Call data is processed within EU infrastructure under a Data Processing Agreement, recordings are deleted on a fixed retention schedule, and you remain the data controller while CallMeIE acts as processor under Article 28 of the GDPR.</p>"
+    }
+  ],
+
+  "final_cta": {
+    "kicker": "The demo answers on a real line",
+    "headline": "Hear it answer before you spend a euro",
+    "sub": "Takes ninety seconds. Ring the live line, describe your Cork business, and hear exactly what your own callers would get — 24/7, in an Irish accent. Try to catch it out."
+  }
+}
