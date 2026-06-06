@@ -1,6 +1,8 @@
 # CallMeIE — Agent Context
 
-AI phone receptionist agency for Irish SMBs. Stack: Vapi + Twilio + Google Calendar + FastAPI on Render.
+AI phone receptionist agency for Irish SMBs. Stack: Vapi + Twilio + Google Calendar + FastAPI on Hetzner/Coolify.
+
+> **⚠ HOST MIGRATION (verified 2026-05-30, re-confirmed 2026-06-06).** The backend migrated **off Render onto Hetzner/Coolify** (`178.104.205.255`). Canonical admin = **`https://admin.callmeie.ie`**; API/webhooks = **`https://api.callmeie.ie`**. `callmeie.onrender.com` is a **dead/stale** secondary deploy (now timing out; its DB was frozen at id≤45 / 2026-04-26 and it could silently accept admin writes with the same `ADMIN_TOKEN` — never hit it). DB is now Coolify-managed **Postgres** (persistent — the old `/tmp` SQLite-wipe issue no longer applies). Canonical infra: `owl-studio-website-directions/INFRA.md` §3 banner + `callmeie-fix/KNOWN-ISSUES.md` BUG-06/07.
 
 ## ⚡ Read on entry — HIGHEST PRIORITY (session-boot load)
 
@@ -29,10 +31,10 @@ Prospect rings +353 61 788 120
 Real client calls → their assistant → /check-availability / /book-appointment / /vapi/call-ended
 ```
 
-**Server:** `scripts/server.py` — FastAPI, multi-tenant, SQLite at `/tmp/callmeie.db`
-**Admin portal:** `callmeie.onrender.com/admin?token=ADMIN_TOKEN`
+**Server:** `scripts/server.py` — FastAPI, multi-tenant, **Postgres on Coolify** (`DATABASE_URL`; sqlite3 fallback for local dev only)
+**Admin portal:** `https://admin.callmeie.ie/admin?token=ADMIN_TOKEN` (Coolify; NOT onrender — that deploy is dead)
 **Live call log:** Admin portal → Call Log tab (auto-refreshes every 5s)
-**Deploy:** push to `main` → Render auto-deploys (3–5 min)
+**Deploy:** push to `main` → **Coolify** auto-deploys (was Render until 2026-05-30)
 
 ---
 
@@ -98,7 +100,7 @@ Vapi API key + Twilio creds: see `SYSTEM.md` Section 2 and 5c.
    - `demo-complete` missing → tool not in demo assistant's model.tools (re-run restore_tools.py)
    - `call-ended` missing → serverUrl not set on that assistant
    - Transfer silently failing → assistantName in transferCall doesn't match squad member name
-4. Check Render logs for Python exceptions: `render.com → callmeie-receptionist → Logs`
+4. Check Coolify logs for Python exceptions: Coolify dashboard (`178.104.205.255`) → callmeie-receptionist service → Logs (NOT render.com — that deploy is dead)
 
 ### Fix Vapi tool stripping
 **Critical gotcha:** When you PATCH `model.messages` without including `model.tools`, Vapi clears the tools.
@@ -134,7 +136,7 @@ Real client calls are scored for anomalies in `/vapi/call-ended`. If score ≥ 0
 
 **Guards:** idempotency (one diagnosis per call_id) + per-hour circuit breaker (5/hr, stops storm flooding from one root cause) + daily ceiling (200/day for high-volume clients).
 
-**Required env var:** `ANTHROPIC_API_KEY` on Render — without it, diagnosis is silently skipped.
+**Required env var:** `ANTHROPIC_API_KEY` on Coolify (service env) — without it, diagnosis is silently skipped.
 
 The GM peer (`callmeie-ops`) handles scheduled aggregate health checks. The webhook handles real-time anomalies. Together they form the full hybrid monitoring layer.
 
@@ -142,7 +144,7 @@ The GM peer (`callmeie-ops`) handles scheduled aggregate health checks. The webh
 
 ## Known Issues / Gotchas
 
-- **Render free tier:** SQLite at `/tmp/callmeie.db` is wiped on redeploy. Submissions/leads are ephemeral. SMS fires immediately so leads aren't lost, just the DB record.
+- **DB persistence (RESOLVED):** backend is now **Coolify Postgres** (`DATABASE_URL`), persistent across redeploys. The old **Render `/tmp` SQLite-wipe** hazard no longer applies (migrated off Render 2026-05-30). SMS still fires immediately regardless.
 - **Twilio:** Live Limerick line +353 61 788 120 (Newcastle West, Co. Limerick) since 2026-05-11. RC bundle approved. Voice live. SMS pending Twilio per-number enable ticket.
 - **HTTPS on callmeie.ie:** Blocked until IEDR grants DNS control (Irish citizenship verification pending).
 - **Vapi `assistantName` routing:** Must match the `name` field on the Vapi assistant exactly. Demo assistants are named `dental`, `motor_factors`, `salon`, `solicitor` (simple slugs, not display names).
