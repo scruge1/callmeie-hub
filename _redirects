@@ -1,0 +1,4 @@
+# Document Ops withdrawn from sale 2026-06-07 — product page removed, OCR retained as internal ingestion arm.
+# 301 any inbound /docs/ traffic (bookmarks, index, old links) to the homepage.
+/docs/*  /  301
+/docs    /  301
