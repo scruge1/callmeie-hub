@@ -574,3 +574,14 @@ Touch gate: each G requires a different substrate (runtime G0/G2/G3/G-HARD/G-ACC
 6. **Codex-peer pre-review — RESOLVED: DONE.** `_codex-docops-review.md` (findings 1-17) returned "DO NOT IMPLEMENT YET"; incorporated into this revision (§5A hardening, §5B acceptance, §8A capacity, §6 P3 worker+UX, §11 honest rollback, §11A hard-to-reverse register, the positioning change). The review pressed back and was incorporated — the touch gate on the PRD is satisfied.
 
 **Status: ready to dispatch.** Open dependencies before client docs flow: G-HARD (§5A) + G-ACCEPT (§5B) as Phase 0/1 gates; the positioning/legal copy update (§4.3 / Phase 4, out-of-scope to author here, gated at G4); Mistral EU-DPA confirmation (§5A.5).
+
+
+<!-- reconcile-judge:start -->
+## 🔧 Reconcile findings — 2026-06-25
+
+_Auto-stamped by `scripts/reconcile_annotate.py` (feeder→rig-judge→verify). Re-run to refresh. Don't hand-edit between the markers._
+
+**🔴 GAP — done-claim absent everywhere (UNVERIFIED — run the rig judge) → real gap or dead reference:**
+- `ZBOOK-LAB-RIG-OPTIMIZATION-2026-05-29.md`
+
+<!-- reconcile-judge:end -->
