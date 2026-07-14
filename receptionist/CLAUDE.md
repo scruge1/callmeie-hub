@@ -78,7 +78,7 @@ Vapi API key + Twilio creds: see `SYSTEM.md` Section 2 and 5c.
 ### Add a new demo assistant (new business vertical)
 1. Create assistant via `POST https://api.vapi.ai/assistant` with name = routing slug (e.g. `pharmacy`)
 2. Add 5 tools: `google.calendar.availability.check`, `google.calendar.event.create`, `sms`, transferToOwner, `demoComplete`
-3. Set `serverUrl: https://callmeie.onrender.com/vapi/call-ended`
+3. Set `serverUrl: https://api.callmeie.ie/vapi/call-ended`  (Coolify — NOT onrender.com, that deploy is DEAD)
 4. Add to squad: `PATCH /squad/ff47df7a...` — include in members array with `assistantDestinations: []`
 5. Update Claire's squad member destinations to include new assistant
 6. Add `transferToX` tool on Claire pointing to new assistant name
@@ -90,7 +90,7 @@ Vapi API key + Twilio creds: see `SYSTEM.md` Section 2 and 5c.
 2. Click Provision — creates Vapi assistant + 4 tools automatically
 3. SMS client: share Google Calendar with `callmeie-receptionist@callme-ie.iam.gserviceaccount.com`
 4. Assign Twilio number to new assistant in Vapi dashboard
-5. Add assistant ID to `CLIENTS_JSON` env var on Render
+5. Add assistant ID to `CLIENTS_JSON` env var on Coolify (callmeie-receptionist service)
 
 ### Debug a failed call
 1. Admin portal → Call Log tab
@@ -190,7 +190,7 @@ This peer oversees ALL clients, not just the demo system. Every provisioned clie
 
 ### Needs owner approval before acting:
 - PATCH any live Vapi assistant (risk: tool stripping)
-- Push to GitHub main (triggers Render redeploy)
+- Push to GitHub main (triggers Coolify redeploy)
 - Send SMS via Twilio
 - Provision a new client
 - Change any client's phone number or calendar config
