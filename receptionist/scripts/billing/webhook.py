@@ -1,7 +1,7 @@
 """AUD-038 — Vapi end-of-call HMAC receiver.
 
 HMAC verify pattern matches the Owl Studio gold standard handler at
-``callmeie-fix/scripts/server.py:_owl_verify_stripe_sig``: timestamp + v1
+``receptionist/scripts/server.py:_owl_verify_stripe_sig`` (moved from the former callmeie-fix path, now gone): timestamp + v1
 header parts, ±300s replay tolerance, ``hmac.compare_digest`` comparison.
 
 Vapi signs with HMAC-SHA512 (Stripe uses SHA-256). Two helpers, two secrets,

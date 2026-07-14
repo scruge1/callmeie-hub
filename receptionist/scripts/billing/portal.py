@@ -2,7 +2,7 @@
 
 Mints a short-lived portal session URL for the client whose
 ``admin_token`` matches. Same auth pattern as Owl Studio's per-site
-admin_token (callmeie-fix/scripts/server.py:_owl_admin_lookup).
+admin_token (receptionist/scripts/server.py:_owl_site_by_token; moved from the former callmeie-fix path).
 
 Security model:
   - Server-side token-to-customer lookup. Never accept ``customer_id``

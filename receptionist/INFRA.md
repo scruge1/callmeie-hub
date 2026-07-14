@@ -1,5 +1,11 @@
 # INFRA · Owl Studio + CallMeIE — canonical reference
 
+> **SUPERSEDED 2026-07-14 — this is a STALE local mirror.** Canonical infra SSOT =
+> `owl-studio-website-directions/INFRA.md` (mirrored to `callmeie-fix/INFRA.md`). Backend MIGRATED
+> off Render onto Hetzner/Coolify **2026-05-30**: admin=`https://admin.callmeie.ie`,
+> API/webhooks=`https://api.callmeie.ie`, `178.104.205.255`. Every `callmeie.onrender.com` below is
+> the DEAD secondary deploy (frozen DB, can silently accept admin writes — never hit it).
+
 > Authoritative source of truth for every piece of Owl Studio + CallMeIE
 > infrastructure. If anything is NOT in this file, it doesn't exist yet.
 > Every service, every URL, every API key LOCATION (never values), every
@@ -98,7 +104,7 @@ The table is `service_applications` (NOT `services_applications`). `custom_label
 
 ---
 
-## 3 · Render (cloud runtime — to migrate to Coolify later)
+## 3 · Render (DEAD secondary — migration to Coolify COMPLETED 2026-05-30; retained for decommission only)
 
 | Field | Value |
 |---|---|
