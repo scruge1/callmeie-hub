@@ -4,3 +4,12 @@
 node_modules/
 .idea/
 .vscode/
+
+# Keep browser captures and local test output out of Git.
+/qa-screenshots/
+/websites/renders/
+**/debug_screenshot.png
+/.playwright-cli/
+/output/playwright/
+/test-results/
+/playwright-report/
