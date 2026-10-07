@@ -1,6 +1,6 @@
 # callmeie-hub
 
-Parent-brand hub for **CallMeIE Technologies Ltd** — the Limerick AI ops studio.
+Public brand site for **CallMeIE**, currently operated by **Adam Vaughan trading as CallMeIE**. The brand is not itself a separate legal person. Historical company references do not identify the current supplier.
 This repo serves the apex domain `callmeie.ie` via GitHub Pages.
 
 - **Live**: https://callmeie.ie

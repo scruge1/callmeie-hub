@@ -44,7 +44,7 @@
     <div class="legal-inner">
         <span class="legal-eyebrow">CallMeIE Technologies · GDPR Article 28 contract</span>
         <h1 class="legal-headline">Data Processing Agreement.</h1>
-        <p class="legal-stamp"><strong>Version:</strong> 1.1 · <strong>Last updated:</strong> 2026-05-21 · <strong>Effective:</strong> 2026-05-21 on signature</p>
+        <p class="legal-stamp"><strong>Version:</strong> 1.2 · <strong>Last updated:</strong> 2026-10-07 · <strong>Effective:</strong> on agreement with the applicable Order Form</p>
         <p class="legal-lede">
             This DPA is the GDPR Article 28 contract that sits alongside your Order Form for any CallMeIE Technologies product that processes personal data: <strong>AI Receptionist</strong>, <strong>Document Ops</strong>, and/or <strong>AI-First Websites</strong>. The DPA highlights are below; the full signed copy is sent on email request before any pilot or subscription starts.
         </p>
@@ -65,7 +65,7 @@
         <li><a href="#sec-5">Sub-processors</a></li>
         <li><a href="#sec-6">Security measures</a></li>
         <li><a href="#sec-7">Liability + indemnity</a></li>
-        <li><a href="#sec-8">Processor identity — CallMeIE Technologies Limited</a></li>
+        <li><a href="#sec-8">Processor identity — CallMeIE</a></li>
         <li><a href="#sec-9">Confidentiality</a></li>
         <li><a href="#sec-10">Assisting you with data-subject rights</a></li>
         <li><a href="#sec-11">Personal-data breaches, security and impact assessments</a></li>
@@ -95,66 +95,41 @@
 </section>
 
 <section id="sec-3">
-<h2>3 · Where your data lives</h2>
-<ul>
-    <li><strong>Document Ops + AI-First Websites:</strong> Coolify on a Hetzner Online GmbH dedicated server in Nuremberg, Germany (EU jurisdiction).</li>
-    <li><strong>AI Receptionist + Discovery quiz API (FastAPI):</strong> Render Inc. Frankfurt region (EU). Migration to Hetzner Coolify Nuremberg in progress; no change to your data residency (both EU).</li>
-    <li><strong>Onboarding form intake (webhook relay):</strong> Railway Corp. — webhook receiver for <code>/submit-onboarding</code>; payload transits Railway and forwards to Render-hosted FastAPI for persistence; not retained on Railway storage beyond request lifetime; EU data plane where supported.</li>
-    <li><strong>Vapi voice runtime:</strong> Vapi.ai US infrastructure with EU routing where supported.</li>
-    <li><strong>Call recordings — two-stage storage:</strong> Vapi holds the transient working copy for up to 14 days (its own US-with-EU-routing storage). Within that window the recording is mirrored to <strong>Hetzner Object Storage (Nuremberg, DE — EU)</strong> via the post-call webhook on api.callmeie.ie. The durable archive on Hetzner is the canonical 90-day copy; the bucket carries an S3 lifecycle rule that auto-expires objects at day 90. After 90 days no copy remains on either side. The demo line +353 61 788 120 also runs an opt-out path (caller says "I'd rather not be recorded" → recording manually purged from both stages within 24 hours of call end). Demo-line lawful basis = Art 6(1)(f) legitimate interests; paying-tier client lawful basis = Art 6(1)(b) contract (the recording IS the service).</li>
-    <li><strong>Twilio telephony + SMS:</strong> Twilio Inc. region depends on the phone number country.</li>
-    <li><strong>Object storage for Document Ops original-form documents:</strong> Hetzner Object Storage (EU, S3-compatible, Nuremberg).</li>
-    <li><strong>Backups:</strong> encrypted at rest, retained per the Order Form retention window.</li>
-    <li>No transfers outside the EEA without an explicit additional clause (Standard Contractual Clauses or DPF).</li>
-</ul>
+<h2>3 · Hosting, providers and retention</h2>
+<p>The receptionist backend is hosted on Hetzner infrastructure in Germany. Voice processing and other configured third-party services may process data outside the EEA. EU storage does not mean that the complete service operates only in the EU.</p>
+<p>The applicable Schedule and Order Form must identify the actual processing, providers, locations and retention settings before Customer Personal Data is processed. Provider-held audio, transcripts, logs and backups are separate copies; their retention is not inferred from the archive's expiry rule. Demo/admin storage is separate from a customer's agreed retention profile.</p>
+<p>International transfers must meet Chapter V GDPR. See §14.</p>
 </section>
 
 <section id="sec-4">
-<h2>4 · Cancellation + data export</h2>
-<p>You may cancel a monthly subscription at any time from the Stripe customer portal. Pilots are one-off and do not auto-renew. On cancellation:</p>
-<ul>
-    <li>Within <strong>7 calendar days</strong>: full CSV export of all extracted rows / call data / form submissions + a ZIP of original-form documents (where applicable).</li>
-    <li>Within <strong>30 days</strong> (or sooner on written request): permanent delete from primary storage + backups.</li>
-    <li>Statutory retention exceptions take precedence (e.g. VATCA s.84(3) 6-year original-form retention for Irish accounting source documents). These are held for the statutory minimum then deleted.</li>
-    <li>Nothing is retained past the contractual + statutory retention windows.</li>
-</ul>
+<h2>4 · End of service and data return</h2>
+<p>Cancellation and notice terms are set out in the Order Form and <a href="/legal/terms.html#sec-7">Terms §7</a>.</p>
+<p>At the Controller's choice, CallMeIE will delete or return Customer Personal Data after the processing service ends and delete existing copies, unless Union or Member State law requires storage. The agreed procedure must cover provider copies and backups, and any legally required retention must be identified. This summary does not promise a blanket seven-day export or thirty-day purge of every system.</p>
 </section>
 
 <section id="sec-5">
 <h2>5 · Sub-processors</h2>
-<p>Per Article 28(2) GDPR, the current sub-processor list as of 2026-05-09 is itemised in <a href="/legal/privacy.html#sec-5">Privacy Policy §5</a>. Any change triggers <strong>30-day prior written notice</strong> with a Controller objection right. The notice is delivered to your Order Form contact email.</p>
-<p>CallMeIE Technologies imposes on each sub-processor, by written contract, data-protection obligations equivalent to those in this DPA (in particular the Article 32 security obligations), and remains <strong>fully liable</strong> to the Controller for any sub-processor's failure to meet those obligations, in line with Article 28(2) and 28(4) GDPR.</p>
-<p>Per-product Schedules (A, B, C below) call out which sub-processors apply to each product.</p>
+<p>CallMeIE will not engage another processor without the Controller's prior specific or general written authorisation. With general authorisation, CallMeIE will inform the Controller of intended additions or replacements so that the Controller can object before engagement. Any agreed notice period is recorded in the Order Form.</p>
+<p>CallMeIE will impose the same data-protection obligations on each sub-processor by contract, including sufficient guarantees for appropriate technical and organisational measures, and remains fully liable to the Controller for that sub-processor's performance of those obligations under Article 28(4) GDPR.</p>
+<p>The service-specific list and provider contract coverage must be confirmed before processing; the <a href="/legal/privacy.html#sec-5">privacy notice</a> describes provider roles.</p>
 </section>
 
 <section id="sec-6">
 <h2>6 · Security measures</h2>
-<ul>
-    <li>TLS 1.3 in transit (Cloudflare-managed certificates).</li>
-    <li>Encryption at rest for backups + object storage.</li>
-    <li>Per-tenant database isolation enforced at the application middleware layer (Document Ops).</li>
-    <li>Magic-link authentication; no shared accounts; admin actions audit-logged to a JSONL event store.</li>
-    <li>Annual review of technical + organisational measures.</li>
-    <li>Document Ops 0.98 confidence gate + bounce-back path: doubtful extractions returned to you with a one-line reason rather than silently exported.</li>
-    <li>AI Receptionist anomaly diagnosis loop: failed calls scored + escalated to LLM-assisted root-cause analysis within 5 minutes.</li>
-</ul>
+<p>CallMeIE will implement appropriate technical and organisational measures required by Article 32 GDPR, taking account of the processing and its risks. The signed Schedule records the service's access controls, transport protection, storage and backup controls, tenant separation, logging and recovery arrangements.</p>
+<p>A product feature or an intended monitoring target is not a security guarantee. Human support is asynchronous and scheduled unless a different service level is agreed. Statutory breach-notification duties remain separate from support windows.</p>
 </section>
 
 <section id="sec-7">
-<h2>7 · Liability + indemnity</h2>
-<p>Per the Master Service Agreement at <a href="/legal/terms.html#sec-8">Terms §8</a>:</p>
-<ul>
-    <li>Self-serve subscription tiers: aggregate Processor liability capped at the fees you paid us in the 12 months prior to the claim.</li>
-    <li>Bespoke engagements: liability cap negotiated per engagement during the scoping call; the Order Form is the binding cap.</li>
-    <li>We carry professional indemnity insurance (carrier + cover details available on request).</li>
-    <li>Nothing limits liability for: death or personal injury caused by negligence; fraud or fraudulent misrepresentation; any other liability that cannot be excluded under Irish law.</li>
-</ul>
+<h2>7 · Liability</h2>
+<p>Commercial liability terms are governed by the applicable Order Form and <a href="/legal/terms.html#sec-8">Terms §8</a>. Nothing in this DPA limits duties or liability that cannot lawfully be limited, including applicable Article 82 GDPR rights.</p>
 </section>
 
 <section id="sec-8">
 <h2>8 · Processor identity</h2>
-<p>The Processor is <strong>CallMeIE Technologies Limited</strong>, a private company limited by shares registered in Ireland (CRO no. 816273, incorporated 21 May 2026), VAT-registered, operating in Limerick, Ireland.</p>
-<p>Because the Processor is an incorporated company rather than an individual, the contract and your data are not tied to any one person — they survive changes in directors, staff, or ownership. The company is the continuing legal entity responsible for all Processor obligations under this DPA.</p>
+<p>The Processor is <strong>Adam Vaughan trading as CallMeIE</strong>, a sole trader operating in Ireland. Contact: <a href="mailto:hello@callmeie.ie">hello@callmeie.ie</a>. The applicable Order Form identifies the contracting parties.</p>
+<p>CallMeIE business-name registration: Companies Registration Office number 784516. The individual remains the contracting Processor.</p>
+<p>Provider address: 40 Gouldavoher Estate, Limerick, V94 HWH7, Ireland. Telephone: <a href="tel:+353857863564">+353 85 786 3564</a>.</p>
 </section>
 
 <section id="sec-9">
@@ -171,7 +146,7 @@
 <h2>11 · Personal-data breaches, security and impact assessments</h2>
 <p>CallMeIE Technologies assists the Controller in ensuring compliance with Articles 32 to 36 GDPR, taking into account the nature of the processing and the information available to it. In particular:</p>
 <ul>
-    <li><strong>Breach notification.</strong> CallMeIE Technologies notifies the Controller without undue delay, and in any event within <strong>24 hours</strong>, after becoming aware of a personal-data breach affecting the Controller's data, and provides the information the Controller reasonably needs to meet its own Article 33 (notification to the Data Protection Commission) and Article 34 (communication to data subjects) obligations.</li>
+    <li><strong>Breach notification.</strong> CallMeIE will notify the Controller without undue delay after becoming aware of a personal data breach affecting Customer Personal Data and will provide reasonable information available to assist the Controller with its obligations.</li>
     <li><strong>Security.</strong> CallMeIE Technologies maintains the technical and organisational measures required by Article 32, as set out in §6 of this DPA.</li>
     <li><strong>DPIAs and prior consultation.</strong> CallMeIE Technologies provides reasonable assistance to the Controller with any data-protection impact assessment (Article 35) and any prior consultation with the Data Protection Commission (Article 36) that relates to the processing under this DPA.</li>
 </ul>
@@ -189,76 +164,38 @@
 </section>
 
 <section id="sec-14">
-<h2>14 · International transfers and Standard Contractual Clauses</h2>
-<p>Primary storage of Controller personal data is within the EEA (see §3). Where a sub-processor processes Controller personal data outside the EEA, the transfer is governed by one of the following mechanisms, identified per sub-processor in the Schedules:</p>
-<ul>
-    <li><strong>EU-US Data Privacy Framework</strong> — for sub-processors holding a current, active certification under the EU-US Data Privacy Framework (Commission Implementing Decision (EU) 2023/1795). As at 21 May 2026, verified against the official Data Privacy Framework register, this applies to <strong>Twilio Inc.</strong> and <strong>Google LLC</strong>.</li>
-    <li><strong>Standard Contractual Clauses</strong> — for every other non-EEA sub-processor, the transfer is governed by the Standard Contractual Clauses (Commission Implementing Decision (EU) 2021/914), Module Three (processor-to-processor), as incorporated into CallMeIE Technologies' data processing agreement with that sub-processor. As at 21 May 2026 this applies to <strong>Vapi, Anthropic and xAI</strong>, none of which is certified under the Data Privacy Framework.</li>
-</ul>
-<p>If the EU-US Data Privacy Framework adequacy decision is suspended or annulled, transfers previously relying on it fall back automatically to the Standard Contractual Clauses. CallMeIE Technologies carries out a transfer impact assessment for each non-EEA sub-processor.</p>
+<h2>14 · International transfers</h2>
+<p>CallMeIE processes Customer Personal Data only on the Controller's documented instructions, including instructions concerning international transfers, unless required by Union or Member State law. CallMeIE will inform the Controller of that legal requirement before processing unless the law prohibits it on important public-interest grounds.</p>
+<p>Before a transfer requiring a Chapter V safeguard, the applicable provider, recipient, processing locations and lawful transfer mechanism must be recorded in the signed Schedule. An adequacy decision applies only where its conditions are met; Standard Contractual Clauses apply only where the appropriate clauses are actually in place. This page does not certify providers, claim automatic fallback to SCCs, or guarantee no non-EEA processing.</p>
 </section>
 
 <hr class="legal-rule">
 
 <section id="schedule-a">
-<h2>Schedule A · AI Receptionist data flow</h2>
-<p>Per-product Article 28(3) annex.</p>
-<table class="legal-table">
-    <thead>
-        <tr><th>Field</th><th>Detail</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Categories of personal data</td><td>Caller phone number, call recording + transcript, caller name + intent, calendar event details, SMS content, anomaly diagnosis</td></tr>
-        <tr><td>Categories of data subjects</td><td>Your callers (your customers + prospects who phone in)</td></tr>
-        <tr><td>Sub-processors</td><td>Vapi.ai (US, EU routing where supported — voice runtime + transient ≤14-day recording working copy), Hetzner Online GmbH (Nuremberg DE — durable 90-day call-recording archive via post-call webhook mirror), Twilio Inc. (US/IE number-dependent), Google LLC Workspace (Calendar API, EU residency), Anthropic PBC (anomaly diagnosis, US under SCCs), xAI Corp. (Discovery quiz classifier, US under SCCs — anonymised text snippets only), Render Inc. (Frankfurt DE), Railway Corp. (webhook relay only, no persistent storage)</td></tr>
-        <tr><td>Retention</td><td>Call data 12 months from last call; recordings 90 days total (≤14d transient on Vapi → mirrored to Hetzner Object Storage Nuremberg → S3 lifecycle auto-expires at day 90); anomaly diagnosis 90 days</td></tr>
-        <tr><td>Transfers outside EEA</td><td>Twilio (US — EU-US Data Privacy Framework); Vapi (US — Standard Contractual Clauses); Anthropic (US — Standard Contractual Clauses)</td></tr>
-        <tr><td>Special category data?</td><td>Generally no. Callers may volunteer health / sensitive info during a call; we treat all call content as confidential and do not pass it through any third-party LLM other than the failed-call anomaly diagnosis loop (Anthropic) which is anonymised + scoped to call metadata, not call content</td></tr>
-    </tbody>
-</table>
+<h2>Schedule A · AI Receptionist</h2>
+<p>Data subjects: the customer's callers. Data can include incoming number, caller-provided information, audio, transcripts, routing and call outcomes, and any agreed booking or message details. Processing includes answering, retrieving approved information, routing, reporting and agreed service checks.</p>
+<p>The signed Schedule identifies the enabled operations, voice/model/telephony providers, hosting and processing locations, transfer safeguards and separate retention periods for each data type and provider copy. Customer data is not authorised for general-purpose model training by this DPA. The business customer determines the caller-facing lawful basis and notices.</p>
+<p>Special-category data is not enabled merely because a customer operates in healthcare. Any required processing must be specifically assessed and documented before activation.</p>
 </section>
 
 <section id="schedule-b">
-<h2>Schedule B · Document Ops data flow</h2>
-<p>Per-product Article 28(3) annex.</p>
-<table class="legal-table">
-    <thead>
-        <tr><th>Field</th><th>Detail</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Categories of personal data</td><td>Original-form accounting documents (invoices, receipts, credit notes, statements) which may contain: customer names, addresses, IE VAT numbers, IBANs, BICs, phone, email, dates, amounts. Reviewer corrections (Label Studio annotations). Tenant config + magic-link auth identifiers. Stripe customer ID</td></tr>
-        <tr><td>Categories of data subjects</td><td>Your suppliers + customers (whoever appears as vendor or customer on your accounting source documents)</td></tr>
-        <tr><td>Sub-processors</td><td>Hetzner Online GmbH (Nuremberg DE — hosting + object storage), HumanSignal Inc. Label Studio (self-hosted on Hetzner — no data egress), Stripe Payments Europe Ltd (Dublin IE — billing), Cloudflare Inc. (DNS + CDN + EU routing). <strong>Public sandbox extractor only</strong> at <code>callmeie.ie/docs/#drop-it</code>: Hetzner Online GmbH (Nuremberg DE — same Coolify deployment as paying-tier portal, real Tesseract OCR + pypdfium2 text layer, no third-country compute) + xAI Inc. (US under Standard Contractual Clauses — Grok-4 text-snippet field normalisation only, transient, no document storage). The sandbox runs the same OCR engine you'd get on a paying tier; what's missing vs. paying tier is the RapidOCR ensemble + voter agreement + GLM-OCR vision verifier + LineItems table parser + 6-year VATCA retention + Label Studio bounce-back queue. Production paying-tier OCR engine + LLM normalisation provider are pinned per Order Form (xAI may be replaced by a self-hosted Ollama deployment for clients with a no-third-country requirement)</td></tr>
-        <tr><td>Retention</td><td>Per Order Form. Default = 6 years for original-form documents (VATCA s.84(3) statutory retention); extracted fields + reviewer corrections per Order Form contractual window. <strong>Public sandbox:</strong> upload bytes are read into a memory buffer, run through OCR + LLM normalisation, and the buffer is explicitly dropped before the response goes out. Only an audit log line holding size in bytes, page count, and a SHA-256 truncated digest is kept (no document content recoverable from the digest)</td></tr>
-        <tr><td>Transfers outside EEA</td><td>None by default — all primary OCR + storage stays on Hetzner Nuremberg. The public sandbox extractor routes a transient text snippet (already OCR'd from the bytes that never left Frankfurt) to xAI Inc. (US, under Standard Contractual Clauses — Module Three) for the field-normalisation step. xAI receives only the extracted text, not the original PDF, and is bound by the Standard Contractual Clauses incorporated into CallMeIE Technologies' data processing agreement with xAI</td></tr>
-        <tr><td>Special category data?</td><td>Generally no. Customers should not upload Article 9 special category data (health, religious, political, biometric) to Document Ops; if you have a vertical that requires this (e.g. dental clinics with patient billing), contact us before signing the Order Form for additional terms</td></tr>
-    </tbody>
-</table>
+<h2>Schedule B · Document Ops</h2>
+<p>Data subjects: people identified in the customer's accounting documents. Data can include names, addresses, contact and payment details, invoice fields, extracted results and reviewer corrections. Processing includes extraction, review and agreed export.</p>
+<p>The signed Schedule records hosting, extraction/model providers, any international transfers and retention. A customer's obligation to retain tax records does not automatically require CallMeIE to store every document for six years. Public sandbox processing must be disclosed separately; this DPA does not certify zero logging or third-country processing.</p>
+<p>Do not submit special-category data unless its processing has been specifically assessed and agreed.</p>
 </section>
 
 <section id="schedule-c">
-<h2>Schedule C · AI-First Websites data flow</h2>
-<p>Per-product Article 28(3) annex.</p>
-<table class="legal-table">
-    <thead>
-        <tr><th>Field</th><th>Detail</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Categories of personal data</td><td>Site visitor IP (anonymised by Umami), form submission content (whatever your site forms collect — typically name, email, message), Cloudflare DNS + CDN logs</td></tr>
-        <tr><td>Categories of data subjects</td><td>Visitors to your hosted site</td></tr>
-        <tr><td>Sub-processors</td><td>Hetzner Online GmbH (Nuremberg DE — site hosting + Postgres + Umami self-hosted), Cloudflare Inc. (DNS + CDN with EU routing), Resend (Resend.com Inc., EU — transactional email forwarding for form submissions), Stripe Payments Europe Ltd (Dublin IE — only if commerce wired)</td></tr>
-        <tr><td>Retention</td><td>Visitor analytics 12 months aggregated (no per-visitor profile); form submissions 90 days then auto-delete; logs per Cloudflare retention</td></tr>
-        <tr><td>Transfers outside EEA</td><td>None by default. Cloudflare uses EU routing where DNS is configured for it</td></tr>
-        <tr><td>Special category data?</td><td>None by default. If you collect special category data via your site forms (e.g. health intake forms), you must disclose this on your own site privacy notice + obtain explicit consent per Article 9 GDPR; you remain the Controller</td></tr>
-    </tbody>
-</table>
+<h2>Schedule C · Websites</h2>
+<p>Data subjects: visitors and people submitting forms to the customer's website. Data can include form contents, network/security logs and consented analytics information. Processing includes hosting, form delivery and the agreed analytics configuration.</p>
+<p>The signed Schedule records the enabled hosting, CDN, form/email, analytics and payment providers, their locations and transfer arrangements, and retention periods or criteria. Analytics consent and any special-category forms require site-specific configuration; neither is enabled by default through this DPA.</p>
 </section>
 
 <hr class="legal-rule">
 
 <section>
 <h2>Get the full DPA</h2>
-<p>Email <a href="mailto:hello@callmeie.ie?subject=Full%20DPA%20request">hello@callmeie.ie</a> with the subject "DPA request" and we send the full v1.0 (PDF) within one business day. We sign per the Order Form before any pilot starts.</p>
+<p>Email <a href="mailto:hello@callmeie.ie?subject=Full%20DPA%20request">hello@callmeie.ie</a> to arrange the DPA and service-specific Schedule. They must be agreed before customer personal data is processed.</p>
 </section>
 
 <p class="legal-footer-note">
@@ -305,8 +242,8 @@ This DPA is part of CallMeIE Technologies' legal pack. The full pack is: <a href
     cmt-consent = 'declined'  -> banner suppressed permanently, no tracking
     cmt-consent = (unset)     -> banner shown until user picks
 
-  Self-hosted EU-only (Coolify Hetzner Nuremberg DE). No cross-site tracking,
-  no profile building. Disclosed in /legal/privacy + DPA Schedule B.
+  Self-hosted analytics. Hosting does not certify the location or anonymity
+  of every request. Disclosed in /legal/privacy#analytics.
 -->
 <style>
   .cmt-consent {
@@ -365,7 +302,7 @@ This DPA is part of CallMeIE Technologies' legal pack. The full pack is: <a href
 <aside class="cmt-consent" id="cmtConsent" role="dialog" aria-labelledby="cmtConsentHd" aria-describedby="cmtConsentBd">
   <p class="cmt-consent__hd" id="cmtConsentHd">A small ask</p>
   <p class="cmt-consent__body" id="cmtConsentBd">
-    We run anonymous, aggregate page counts on our own server in Hetzner Nuremberg (Umami, self-hosted, EU-only). No third party. No cross-site tracking. No profile of you. <a href="/legal/privacy.html#analytics">More in our privacy notice.</a>
+    With your permission, we use self-hosted Umami to count page visits and interactions. It is optional. Your choice is stored in this browser. You can withdraw permission in <a href="/legal/privacy.html#analytics">Privacy settings</a>.
   </p>
   <div class="cmt-consent__row">
     <button class="cmt-consent__btn" type="button" data-cmt-consent="accept">Allow page counts</button>

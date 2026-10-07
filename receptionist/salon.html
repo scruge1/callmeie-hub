@@ -83,7 +83,7 @@
       <div class="callmeie-products-menu" role="menu">
         <a role="menuitem" href="/receptionist/">
           <strong>AI Receptionist</strong>
-          <em>Answers your phone 24/7</em>
+          <em>AI answering during agreed plan hours</em>
         </a>
         <a role="menuitem" href="/websites/">
           <strong>AI-First Websites</strong>
@@ -360,7 +360,7 @@
   <section class="editorial" id="pricing" aria-labelledby="pricing-title">
     <div class="section-head">
       <div class="section-num">§ 04 — Pricing</div>
-      <h2 id="pricing-title" class="section-title">Three tiers. One setup fee. No lock-in.</h2>
+      <h2 id="pricing-title" class="section-title">Three tiers. Clear setup and plan terms.</h2>
     </div>
     <p class="section-dek">
       Most salons land on <strong>Professional</strong> — it's the tier with deposit-taking,
@@ -422,7 +422,7 @@
       <h3 class="enterprise__name">Multi-location</h3>
       <p class="enterprise__body">
         Two or more salons under one owner, or a salon group with per-site diaries.
-        White-glove setup, named engineer, SLA in writing. Quoted on scope.
+        White-glove setup, named technical contact, SLA in writing. Quoted on scope.
       </p>
       <div class="enterprise__price">Quoted · mail hello@callmeie.ie</div>
     </div>
@@ -525,7 +525,7 @@
         <div class="founder__caption">
           <strong>Owner · CallMeIE</strong>
           Limerick, Ireland · Operated in-house<br>
-          Built on Vapi, Twilio, and FastAPI on Render
+          Built on Vapi, Twilio, and Hetzner-hosted backend
         </div>
       </div>
     </div>
@@ -648,16 +648,10 @@
           <span class="faq-toggle"></span>
         </summary>
         <div class="faq-body">
-          <p>
-            Call audio: 30 days then deleted. Transcripts: 90 days then deleted. Bookings go into
-            your salon system (Phorest / Timely / Booker / Google Calendar) — we don't duplicate
-            client records. Deposit payments are handled by Stripe under their PCI-compliant
-            processing; we never see card numbers.
-          </p>
-          <p>
-            A client can request erasure — email hello@callmeie.ie and we purge within 72 hours.
-            DPA on request for Growth; standard processor terms included with Starter / Professional.
-          </p>
+<p>For customer calls, your business is Controller and CallMeIE is Processor. Recording, retention, access, providers and any international transfers are agreed and checked before activation. Audio, transcripts and provider copies can have different retention settings; a demo archive is not the customer policy.</p>
+          <p>Privacy requests can be sent to hello@callmeie.ie and are handled under the applicable privacy notice and customer instructions. A DPA is agreed before customer personal data is processed, regardless of plan. We do not promise complete erasure across providers and backups within seventy-two hours.</p>
+<p>For customer calls, your business is Controller and CallMeIE is Processor. Recording, retention, access, providers and any international transfers are agreed and checked before activation. Audio, transcripts and provider copies can have different retention settings; a demo archive is not the customer policy.</p>
+          <p>Privacy requests can be sent to hello@callmeie.ie and are handled under the applicable privacy notice and customer instructions. A DPA is agreed before customer personal data is processed, regardless of plan. We do not promise complete erasure across providers and backups within seventy-two hours.</p>
         </div>
       </details>
 
@@ -711,7 +705,7 @@
       <div class="footer-col">
         <h4>CallMeIE · Hair Salon</h4>
         <p>AI phone receptionist for Irish salons, barbers, and beauty spas. Built &amp; operated from Limerick, Ireland.</p>
-        <p>Stack: Vapi · Twilio · Google Calendar · FastAPI on Render.</p>
+        <p>Stack: Vapi · Twilio · Google Calendar · Hetzner-hosted backend.</p>
         <p>Email: <a href="mailto:hello@callmeie.ie" class="mono-val">hello@callmeie.ie</a></p>
         <p>Demo line: <span class="mono-val">+353 61 788 120</span></p>
       </div>
@@ -803,7 +797,7 @@
     </nav>
   </div>
   <div class="callmeie-footer-band">
-    <span><strong>CallMeIE Technologies Limited</strong> · Registered in Ireland · CRO 816273 · Limerick, Ireland · IE VAT-registered · GDPR-compliant</span>
+    <span><strong>CallMeIE</strong> · Adam Vaughan trading as CallMeIE · Limerick, Ireland · <a href="/legal/terms.html#sec-1">Provider details</a></span>
     <span><a href="/legal/dpa.html">Data Processing Agreement</a></span>
   </div>
 </footer>
@@ -1940,8 +1934,8 @@
     cmt-consent = 'declined'  -> banner suppressed permanently, no tracking
     cmt-consent = (unset)     -> banner shown until user picks
 
-  Self-hosted EU-only (Coolify Hetzner Nuremberg DE). No cross-site tracking,
-  no profile building. Disclosed in /legal/privacy + DPA Schedule B.
+  Self-hosted analytics. Hosting does not certify the location or anonymity
+  of every request. Disclosed in /legal/privacy#analytics.
 -->
 <style>
   .cmt-consent {
@@ -2000,7 +1994,7 @@
 <aside class="cmt-consent" id="cmtConsent" role="dialog" aria-labelledby="cmtConsentHd" aria-describedby="cmtConsentBd">
   <p class="cmt-consent__hd" id="cmtConsentHd">A small ask</p>
   <p class="cmt-consent__body" id="cmtConsentBd">
-    We run anonymous, aggregate page counts on our own server in Hetzner Nuremberg (Umami, self-hosted, EU-only). No third party. No cross-site tracking. No profile of you. <a href="/legal/privacy.html#analytics">More in our privacy notice.</a>
+    With your permission, we use self-hosted Umami to count page visits and interactions. It is optional. Your choice is stored in this browser. You can withdraw permission in <a href="/legal/privacy.html#analytics">Privacy settings</a>.
   </p>
   <div class="cmt-consent__row">
     <button class="cmt-consent__btn" type="button" data-cmt-consent="accept">Allow page counts</button>

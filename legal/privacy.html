@@ -47,7 +47,7 @@
     <div class="legal-inner">
         <span class="legal-eyebrow">CallMeIE Technologies · GDPR Article 13/14 disclosure</span>
         <h1 class="legal-headline">Privacy Policy.</h1>
-        <p class="legal-stamp"><strong>Version:</strong> 1.0 · <strong>Last updated:</strong> 2026-05-04 · <strong>Effective:</strong> 2026-05-04</p>
+        <p class="legal-stamp"><strong>Version:</strong> 1.2 · <strong>Last updated:</strong> 2026-10-07</p>
         <p class="legal-lede">
             This policy covers all three CallMeIE Technologies products: <strong>AI Receptionist</strong>, <strong>Document Ops</strong>, and <strong>AI-First Websites</strong>. Per-product data flows, sub-processors, and retention windows are itemised below per GDPR Article 13/14. The Data Processing Agreement (Article 28 contract) lives at <a href="/legal/dpa.html">/legal/dpa.html</a>.
         </p>
@@ -83,149 +83,80 @@
 
 <section id="sec-1">
 <h2>1 · Roles + scope</h2>
-<p>The data Controller-or-Processor party trading as "CallMeIE" / "CallMeIE Technologies" is <strong>CallMeIE Technologies Ltd</strong>, an Irish private company limited by shares (CRO no. 816273, incorporated 21 May 2026), VAT-registered, operating in Limerick, Ireland.</p>
+<p><strong>Adam Vaughan trading as CallMeIE</strong> is the Controller of personal data collected for CallMeIE's own website enquiries, customer administration and demo service. Contact: <a href="mailto:hello@callmeie.ie">hello@callmeie.ie</a>.</p>
+<p>Postal contact: 40 Gouldavoher Estate, Limerick, V94 HWH7, Ireland. Telephone: <a href="tel:+353857863564">+353 85 786 3564</a>.</p>
 <p>For each product:</p>
 <ul>
     <li><strong>AI Receptionist:</strong> we are the Processor; you are the Controller of your callers' personal data.</li>
     <li><strong>Document Ops:</strong> we are the Processor; you are the Controller of any personal data contained in the documents you submit.</li>
     <li><strong>AI-First Websites:</strong> we are the Processor of visitor analytics + form submissions; you are the Controller of your end-customer relationships.</li>
 </ul>
-<p>This Privacy Policy is entered into pursuant to Article 28 GDPR + Irish Data Protection Acts 1988-2018. The full Data Processing Agreement (Article 28 contract) is at <a href="/legal/dpa.html">/legal/dpa.html</a> and the signed binding contract is the DPA + Master Service Agreement + Order Form.</p>
+<p>For customer callers and other personal data processed on a business customer's instructions, that business is the Controller and CallMeIE is its Processor. The customer's privacy notice and lawful basis apply; its contract with CallMeIE does not automatically provide a lawful basis for every caller. The <a href="/legal/dpa.html">Data Processing Agreement</a> governs processing on the customer's instructions.</p>
 </section>
 
 <section id="sec-2">
-<h2>2 · Data we process — per product</h2>
-
-<article id="sec-2a">
-<h3>2.1 · AI Receptionist</h3>
-<p>Vapi-fronted voice agent on Twilio numbers, with optional Google Calendar booking and SMS reply. We process the following categories of personal data on your behalf:</p>
-<table class="legal-table">
-    <thead>
-        <tr><th>Data category</th><th>Source</th><th>Purpose</th><th>Lawful basis</th><th>Retention</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Caller phone number</td><td>Inbound call (Twilio)</td><td>Lead capture · routing · SMS reply</td><td>Contract (Art 6(1)(b)) — to deliver the receptionist service to you</td><td>12 months from last call</td></tr>
-        <tr><td>Call recording + transcript</td><td>Inbound call (Vapi)</td><td>Quality assurance · your review of the call</td><td>Contract (Art 6(1)(b))</td><td>90 days then auto-delete from Vapi</td></tr>
-        <tr><td>Caller name + intent</td><td>Spoken in call</td><td>Lead routing · SMS confirmation</td><td>Contract (Art 6(1)(b))</td><td>12 months</td></tr>
-        <tr><td>Calendar event (booking)</td><td>Vapi → your Google Calendar</td><td>Appointment booking on your behalf</td><td>Contract (Art 6(1)(b))</td><td>Per your Google Calendar retention</td></tr>
-        <tr><td>SMS to caller</td><td>Vapi → Twilio</td><td>Confirm booking · follow-up</td><td>Contract (Art 6(1)(b))</td><td>12 months</td></tr>
-        <tr><td>Anomaly diagnosis (Claude API)</td><td>Failed-call webhook</td><td>Detect failed calls + recommend action to you</td><td>Legitimate interest (Art 6(1)(f)) — service health</td><td>90 days</td></tr>
-    </tbody>
-</table>
-</article>
-
-<article id="sec-2b">
-<h3>2.2 · Document Ops</h3>
-<p>OCR + extraction pipeline for accounting source documents (invoices, receipts, credit notes, statements). We process the following categories of personal data on your behalf:</p>
-<table class="legal-table">
-    <thead>
-        <tr><th>Data category</th><th>Source</th><th>Purpose</th><th>Lawful basis</th><th>Retention</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Original-form document (PDF/JPG)</td><td>Your upload</td><td>OCR + field extraction</td><td>Contract (Art 6(1)(b))</td><td>Per Order Form (default 6 years per VATCA s.84(3) original-form retention)</td></tr>
-        <tr><td>Extracted fields (vendor / total / VAT / date / subtotal / vendor country)</td><td>Pipeline</td><td>Your accounting software input</td><td>Contract (Art 6(1)(b))</td><td>Per Order Form</td></tr>
-        <tr><td>Reviewer corrections (Label Studio)</td><td>Human review</td><td>Improve extraction quality for your tenant</td><td>Contract (Art 6(1)(b))</td><td>Per Order Form</td></tr>
-        <tr><td>Tenant config + magic-link auth identifiers</td><td>Account creation</td><td>Account access</td><td>Contract (Art 6(1)(b))</td><td>Account lifetime + 30 days</td></tr>
-        <tr><td>Stripe customer ID</td><td>Subscription</td><td>Billing</td><td>Contract (Art 6(1)(b))</td><td>Billing lifetime per Stripe retention</td></tr>
-    </tbody>
-</table>
-</article>
-
-<article id="sec-2c">
-<h3>2.3 · AI-First Websites</h3>
-<p>Hosted client websites with privacy-friendly analytics (self-hosted Umami, no third-party trackers by default) and form submissions. We process the following categories of personal data on your behalf:</p>
-<table class="legal-table">
-    <thead>
-        <tr><th>Data category</th><th>Source</th><th>Purpose</th><th>Lawful basis</th><th>Retention</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Site visitor IP (anonymised)</td><td>Self-hosted Umami</td><td>Aggregate site analytics — no per-visitor profile</td><td>Legitimate interest (Art 6(1)(f)) — site operations</td><td>12 months aggregated</td></tr>
-        <tr><td>Form submission (contact / lead)</td><td>Site forms</td><td>Forward to you (the site owner)</td><td>Consent (Art 6(1)(a)) — visitor submits the form</td><td>90 days then auto-delete</td></tr>
-        <tr><td>Cloudflare DNS + CDN logs</td><td>All requests</td><td>Routing · DDoS protection</td><td>Legitimate interest (Art 6(1)(f)) — security</td><td>Per Cloudflare retention</td></tr>
-        <tr><td>Stripe checkout session (if commerce wired)</td><td>Site embed</td><td>Payment processing</td><td>Contract (Art 6(1)(b))</td><td>Per Stripe retention</td></tr>
-    </tbody>
-</table>
-<p class="legal-note"><strong>What we do NOT do:</strong> no Google Analytics; no Facebook pixel; no behavioural retargeting cookies; no cross-site tracking. Self-hosted Umami runs on the same Hetzner infrastructure as Document Ops — visitor data does not leave EU jurisdiction.</p>
-</article>
+<h2>2 · Information and purposes</h2>
+<h3>CallMeIE's own enquiries and customers</h3>
+<p>When you contact us or use a contact or discovery form, we receive the information you provide, such as name, contact details, business information and your request. We use it to answer you and manage the enquiry. Where you are entering a contract as an individual, necessary pre-contract steps or performance can rely on Article 6(1)(b). For business-contact administration we rely on legitimate interests in responding and operating the service. Billing and tax records are also processed to meet legal obligations.</p>
+<p>Providing enquiry details is voluntary, but we need enough information to answer or supply the requested service. Necessary network/security information is processed for service operation and abuse prevention. Optional website analytics uses your consent as described in §7; withdrawing it does not affect earlier lawful processing.</p>
+<h3>Information processed for business customers</h3>
+<ul>
+<li id="sec-2a"><strong>AI Receptionist:</strong> incoming number, caller-provided details, audio/transcript where configured, routing and call outcomes, and agreed booking/message records.</li>
+<li id="sec-2b"><strong>Document Ops:</strong> uploaded documents, extracted fields, review corrections and access identifiers.</li>
+<li id="sec-2c"><strong>Websites:</strong> form contents, service/security logs and enabled analytics or payment information.</li>
+</ul>
+<p>These operations are limited by the customer's instructions and service configuration. The business customer determines its lawful basis; it is not automatically contract just because it purchases our service. Recording, sensitive information and optional integrations require specific arrangements. Retention criteria are in §4.</p>
 </section>
 
 <section id="sec-3">
-<h2>3 · Where your data lives</h2>
-<ul>
-    <li><strong>Document Ops + AI-First Websites Postgres + object storage:</strong> Coolify on a Hetzner Online GmbH dedicated server in Nuremberg, Germany.</li>
-    <li><strong>AI Receptionist + Discovery quiz API (FastAPI):</strong> Render Inc. Frankfurt region (EU). Migration to Hetzner Coolify Nuremberg in progress (no end-of-life date set; no change to your data residency — both regions are EU).</li>
-    <li><strong>Onboarding form intake (webhook relay):</strong> Railway Corp. (US-managed control plane) — used as a webhook receiver for the Receptionist signup form (<code>/submit-onboarding</code>) which forwards directly into the Receptionist FastAPI for persistence. Form payload (business name, contact name, contact phone, contact email, address, hours, services) transits Railway and is not retained on Railway storage beyond request lifetime. SCCs in place; Railway data plane region pinned to EU where supported.</li>
-    <li><strong>Vapi voice runtime + call recordings:</strong> Vapi.ai US infrastructure with EU routing where the carrier supports it. Recordings retained 90 days then auto-deleted.</li>
-    <li><strong>Twilio telephony + SMS:</strong> Twilio Inc. region depends on the phone number country (Irish numbers route via EU; the Limerick line +353 61 788 120 also routes via EU).</li>
-    <li><strong>Backups:</strong> encrypted at rest, retained per the Order Form retention window. No transfers outside the EEA without an explicit additional clause.</li>
-</ul>
+<h2>3 · Hosting and processing locations</h2>
+<p>The receptionist backend uses Hetzner hosting in Germany. Voice, telephony, messaging and other configured providers can process data in other countries. The location of our database or archive does not establish the location of the entire processing chain.</p>
+<p>Provider roles are described in §5. Customer-specific providers and processing locations are recorded with the DPA before processing. We do not describe the full service as EU-only.</p>
 </section>
 
 <section id="sec-4">
-<h2>4 · How long we keep it</h2>
-<p>Retention windows are itemised in the per-product tables in §2. Defaults if no Order Form override:</p>
-<ul>
-    <li>AI Receptionist call data: 12 months from last call (recordings 90 days)</li>
-    <li>Document Ops corpus: 6 years (VATCA s.84(3) original-form retention; you may request earlier deletion for non-VATCA documents)</li>
-    <li>Websites visitor analytics: 12 months aggregated; no per-visitor profile</li>
-    <li>Form submissions: 90 days from submission</li>
-    <li>Auth + account metadata: account lifetime + 30 days</li>
-</ul>
-<p>On cancellation: full CSV + ZIP export within 7 calendar days, full delete from primary + backup within 30 days (or sooner on written request).</p>
+<h2>4 · Retention</h2>
+<p>For CallMeIE's own enquiries, we keep the information needed to answer the enquiry and manage any resulting customer relationship. We review continued need when an enquiry closes or the relationship ends. Billing and tax records are kept for the applicable statutory period; security records are kept where needed to investigate incidents or abuse.</p>
+<p>For customer-controlled information, retention follows the customer's documented instructions and agreed service settings, subject to applicable legal requirements. Audio, transcripts, call metadata and backups can have different periods. Customer settings are not inferred from the demo/admin archive.</p>
+<p>A storage lifecycle rule does not establish deletion of every provider copy, log or backup. Requests to delete or return data are handled under §6 and the DPA; this notice does not promise a blanket twenty-four-hour or seventy-two-hour complete erasure.</p>
 </section>
 
 <section id="sec-5">
-<h2>5 · Sub-processors</h2>
-<p>Per Article 28(2) GDPR. Current sub-processor list as of 2026-05-09:</p>
+<h2>5 · Providers and recipients</h2>
+<p>Providers depend on the service and enabled features. The customer-specific DPA Schedule identifies the actual sub-processors before processing. A payment provider or a provider acting for its own legal obligations is not automatically a sub-processor for every activity.</p>
 <table class="legal-table">
-    <thead>
-        <tr><th>Sub-processor</th><th>Used by</th><th>Location</th><th>Function</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Hetzner Online GmbH</td><td>Doc Ops · Websites · Receptionist DB-mirror · self-hosted Umami at analytics.owlzone.trade (consent-gated, callmeie.ie page counts only) · <strong>Receptionist call-recording archive (90 days)</strong></td><td>Nuremberg, DE</td><td>Hosting · object storage · self-hosted analytics · durable call-recording storage</td></tr>
-        <tr><td>Vapi.ai</td><td>Receptionist</td><td>US (with EU routing where supported)</td><td>Voice agent runtime · transient call-recording working copy (≤14 days, then mirrored to Hetzner)</td></tr>
-        <tr><td>Twilio Inc.</td><td>Receptionist</td><td>US / IE (number-dependent)</td><td>Telephony · SMS</td></tr>
-        <tr><td>Google LLC (Workspace)</td><td>Receptionist</td><td>EU residency where set</td><td>Calendar API</td></tr>
-        <tr><td>Anthropic PBC</td><td>Receptionist (anomaly diagnosis)</td><td>US</td><td>LLM API for failed-call diagnosis</td></tr>
-        <tr><td>Stripe Payments Europe Ltd</td><td>All 3 (billing)</td><td>Dublin, IE</td><td>Payment processing</td></tr>
-        <tr><td>Cloudflare Inc.</td><td>All 3 (DNS / CDN)</td><td>Global with EU routing</td><td>DNS · CDN · DDoS protection</td></tr>
-        <tr><td>HumanSignal Inc. (Label Studio)</td><td>Doc Ops</td><td>Self-hosted on Hetzner DE — no data egress</td><td>Reviewer tool</td></tr>
-        <tr><td>Resend (Resend.com Inc.)</td><td>Websites · Receptionist (transactional email)</td><td>EU</td><td>Transactional email</td></tr>
-        <tr><td>Render Inc.</td><td>Receptionist + Discovery API server</td><td>Frankfurt, DE</td><td>FastAPI hosting (migration to Hetzner Coolify in progress)</td></tr>
-        <tr><td>Railway Corp.</td><td>Receptionist (onboarding form webhook relay)</td><td>US control plane · EU data plane where supported</td><td>Webhook relay only — no persistent storage beyond request lifetime; transits payload to Render-hosted FastAPI for persistence</td></tr>
-        <tr><td>xAI Corp.</td><td>Discovery quiz · Document Ops sandbox normaliser</td><td>US (under DPF + SCCs)</td><td>LLM API for visitor-quiz classification + sandbox-doc field extraction. Anonymised text snippets only; no document bytes; no identifying chat content beyond what the visitor types into the four-question quiz.</td></tr>
-        <tr><td>Telegram FZ-LLC</td><td>Internal owner alerts only (NOT customer data flow)</td><td>UAE / global</td><td>Operator-side Slack-style notification when a discovery quiz or onboarding form lands. Payload sent: business sector + pain chip + team-size chip + urgency chip + recommended-product label + optional contact name/email IF the visitor provided one. The bot account is owner-only; no third-party access.</td></tr>
-    </tbody>
-</table>
-<p class="legal-note"><strong>On Telegram:</strong> CallMeIE uses a private Telegram bot for owner-side alerts (Adam-only). When you submit the discovery quiz or onboarding form, a notification is sent to that bot containing your sector + pain + team-size + urgency choices and any contact details you provided. This is the same content your form/quiz answers carry; nothing additional is shared. If you'd like us to skip the Telegram channel for your submission specifically, mention it in any contact field and we'll suppress it on our side.</p>
-<p>Any change to the sub-processor list triggers <strong>30-day prior written notice</strong>, with a Controller objection right per the DPA.</p>
-<p class="legal-note"><strong>On the Google service-account email:</strong> The Receptionist service account is <code>callmeie-receptionist@callme-ie.iam.gserviceaccount.com</code>. The <code>callme-ie</code> portion is a Google Cloud project-id technical identifier (Google project IDs cannot contain certain characters); it is not the brand name and not a separate legal entity. The brand is <strong>CallMeIE</strong>; the domain is <strong>callmeie.ie</strong>; the legal entity is <strong>CallMeIE Technologies Ltd</strong> (CRO no. 816273).</p>
+<thead><tr><th>Provider</th><th>Service role</th></tr></thead>
+<tbody>
+<tr><td>Hetzner Online GmbH</td><td>Backend hosting, databases and configured object storage; self-hosted site analytics infrastructure.</td></tr>
+<tr><td>Vapi</td><td>Voice-agent runtime and configured call-data processing.</td></tr>
+<tr><td>Twilio</td><td>Telephony and configured messaging.</td></tr>
+<tr><td>Google</td><td>Google Fonts requests on this site; Calendar/Workspace where enabled.</td></tr>
+<tr><td>Cloudflare and GitHub Pages</td><td>DNS, delivery, security and static site hosting.</td></tr>
+<tr><td>Resend</td><td>Configured transactional email and form delivery.</td></tr>
+<tr><td>Stripe</td><td>Payment processing where enabled.</td></tr>
+<tr><td>Configured AI providers</td><td>Answering, classification or service diagnostics where enabled. The actual provider and data sent must be identified for the service; previous configurations have included Anthropic and xAI.</td></tr>
+<tr><td>Telegram</td><td>Owner alerts where enabled; submitted business/contact details can be included. An owner-only chat is still a disclosure to the messaging provider.</td></tr>
+</tbody></table>
+<p>Providers may process information outside the EEA; see §8. For customer processing, sub-processor authorisation, equivalent contractual duties and objection rights follow the DPA. No fixed thirty-day notice or provider certification is implied unless agreed and supported.</p>
 </section>
 
 <section id="sec-6">
-<h2>6 · Your GDPR rights</h2>
-<p>You can exercise the following rights at any time by emailing <a href="mailto:hello@callmeie.ie?subject=GDPR%20rights%20request">hello@callmeie.ie</a> with the subject "GDPR rights request":</p>
-<ul>
-    <li><strong>Right of access</strong> (Art 15): receive a copy of all personal data we hold about you.</li>
-    <li><strong>Right to rectification</strong> (Art 16): correct inaccurate or incomplete data.</li>
-    <li><strong>Right to erasure</strong> (Art 17): delete your data ("right to be forgotten") subject to overriding obligations (e.g. VATCA 6-year retention on accounting source documents).</li>
-    <li><strong>Right to restrict processing</strong> (Art 18).</li>
-    <li><strong>Right to data portability</strong> (Art 20): receive your data in CSV + ZIP within 7 calendar days.</li>
-    <li><strong>Right to object</strong> (Art 21).</li>
-    <li><strong>Right not to be subject to automated decision-making</strong> (Art 22): note that the 0.98-confidence gate in Document Ops is a confidence threshold, not an automated decision with legal effect — extraction outputs are reviewed by you before they take any action.</li>
-</ul>
-<p>To exercise your data subject rights, email <a href="mailto:hello@callmeie.ie?subject=GDPR%20rights%20request">hello@callmeie.ie</a>. We use the admin-side SAR + erasure endpoints (<code>/admin/api/data-export</code> and <code>/admin/api/erase</code> on api.callmeie.ie) to fulfil these within <strong>7 calendar days</strong> of your request. Erasure is implemented as a 30-day soft-delete window followed by hard purge from primary storage and the daily backup propagation chain — this respects the Article 19 notification grace period and matches the cancellation-erasure window in §4.</p>
-<p>If you are unsatisfied with our response, you may lodge a complaint with the Irish Data Protection Commission at <a href="https://www.dataprotection.ie" rel="noopener" target="_blank">dataprotection.ie</a>.</p>
+<h2>6 · Your rights</h2>
+<p>Contact <a href="mailto:hello@callmeie.ie?subject=Privacy%20rights%20request">hello@callmeie.ie</a> to request access, correction, erasure, restriction or portability, or to object, where the relevant GDPR conditions apply. You can withdraw consent without affecting earlier lawful processing. We may need information to verify your identity, but will not request unnecessary information.</p>
+<p>We respond without undue delay and normally within one month of receipt. Where Article 12 permits an extension for complexity or number of requests, we inform you within that first month, with the reasons. Legal retention requirements and the rights of others can affect what can be provided or erased.</p>
+<p>If we act as Processor for a business customer, we pass the request to that Controller and assist it as required by the DPA. We do not use a thirty-day soft-delete period as a supposed Article 19 grace period.</p>
+<p>You can complain to the Irish <a href="https://www.dataprotection.ie" rel="noopener" target="_blank">Data Protection Commission</a>. If a service involves decisions within Article 22, applicable safeguards must be addressed; this notice does not authorise significant automated decisions about you.</p>
 </section>
 
 <section id="sec-7">
 <h2>7 · Cookies + tracking</h2>
 <p id="analytics">On <strong>callmeie.ie</strong> (this hub):</p>
 <ul>
-    <li><strong>Aggregate page-count analytics (consent-gated):</strong> if you click <em>Allow page counts</em> on the consent banner, we load a tracking script from our own server at <code>analytics.owlzone.trade</code> running self-hosted Umami. It records anonymous, aggregate counts per URL — no third party, no cross-site tracking, no profile of you, IP not stored, EU-only on Hetzner Nuremberg. If you click <em>No, thanks</em> the script never loads. Your choice is remembered in a single <code>localStorage</code> entry called <code>cmt-consent</code> (essential, exempt under ePrivacy strictly-necessary).</li>
+    <li><strong>Optional analytics:</strong> accepting <em>Allow page counts</em> loads self-hosted Umami from <code>analytics.owlzone.trade</code> to count visits and selected interactions. Declining prevents this analytics script from loading. The browser stores your choice as <code>cmt-consent</code>. This notice does not certify anonymity of all network or hosting logs.</li>
     <li>Cloudflare may set a strictly-necessary cookie for DDoS protection (<code>__cf_bm</code>, ~30 minutes).</li>
     <li>Google Fonts loaded from <code>fonts.googleapis.com</code> + <code>fonts.gstatic.com</code> — no cookies set, but Google receives the visitor IP per request.</li>
 </ul>
+<p><button type="button" onclick="try { localStorage.setItem('cmt-consent', 'declined'); location.reload(); } catch (error) { this.textContent = 'Browser storage is unavailable. Disable site storage or contact hello@callmeie.ie for help.'; }">Withdraw analytics permission</button> This stops the optional analytics script on reload. You can change a stored choice by clearing this site's browser storage and choosing again.</p>
 <p>On <strong>portal.callmeie.ie</strong> (Document Ops customer portal):</p>
 <ul>
     <li>Strictly-necessary session cookie for magic-link auth (HttpOnly, Secure, SameSite=Lax).</li>
@@ -236,46 +167,35 @@
 
 <section id="sec-8">
 <h2>8 · International transfers</h2>
-<p>Data residency by default is EU (Hetzner DE + Render DE + Stripe Dublin + Cloudflare EU routing). Sub-processors with US-based runtime (Vapi, Twilio, Anthropic) operate under the EU-US Data Privacy Framework and Standard Contractual Clauses. The DPA Schedule lists the transfer mechanism for each sub-processor.</p>
+<p>Some service providers process information outside the EEA. Where GDPR requires a transfer safeguard, the applicable arrangement must be established for the actual recipient and processing. This can involve an applicable adequacy decision or appropriate contractual safeguards; we do not claim that all providers hold a certification or that SCCs apply automatically.</p>
+<p>Contact <a href="mailto:hello@callmeie.ie?subject=International%20transfer%20information">hello@callmeie.ie</a> for information about the applicable transfer arrangement and how to obtain a copy of relevant safeguards.</p>
 </section>
 
 <section id="sec-9">
-<h2>9 · Security measures</h2>
-<ul>
-    <li>TLS 1.3 in transit (Cloudflare-managed certificates).</li>
-    <li>Encryption at rest for backups + object storage.</li>
-    <li>Per-tenant database isolation enforced at the application middleware layer (Document Ops).</li>
-    <li>Magic-link authentication; no shared accounts; admin actions audit-logged to a JSONL event store.</li>
-    <li>Annual review of technical + organisational measures.</li>
-    <li>0.98 confidence gate in Document Ops + bounce-back path: doubtful extractions are returned to you with a one-line reason rather than silently exported. This is a quality control, not a security claim, but it limits one specific failure mode.</li>
-</ul>
+<h2>9 · Security</h2>
+<p>We use technical and organisational measures appropriate to the information and processing risks. Customer-specific access, storage, logging and recovery controls are recorded in the signed DPA Schedule. No online service is free of security risk.</p>
 </section>
 
 <section id="sec-10">
 <h2>10 · Disputes + DPO contact</h2>
-<p>The data-protection contact is <strong>Adam Vaughan, Director of CallMeIE Technologies Ltd</strong>, at <a href="mailto:hello@callmeie.ie?subject=Data%20protection%20enquiry">hello@callmeie.ie</a>. We do not formally hold a DPO appointment under Article 37 (the legal threshold has not been crossed); one will be appointed if and when CallMeIE Technologies Ltd reaches a scale that requires it.</p>
-<p>Supervisory authority: Irish Data Protection Commission, 21 Fitzwilliam Square South, Dublin 2, D02 RD28, Ireland · <a href="https://www.dataprotection.ie" rel="noopener" target="_blank">dataprotection.ie</a>.</p>
+<p>The data-protection contact is <strong>Adam Vaughan</strong>, at <a href="mailto:hello@callmeie.ie?subject=Data%20protection%20enquiry">hello@callmeie.ie</a>. This contact is not presented as an appointed Data Protection Officer.</p>
+<p>Supervisory authority: Irish <a href="https://www.dataprotection.ie" rel="noopener" target="_blank">Data Protection Commission</a>. Its website provides current contact and complaint details.</p>
 </section>
 
 <section id="sec-12">
-<h2>12 · Call recording on the demo line</h2>
-<p>The CallMeIE demo line <strong>+353 61 788 120</strong> records every inbound call. Recording starts the moment the AI assistant Clare picks up; Clare states the recording disclosure in her first sentence so callers know before they speak.</p>
-<ul>
-    <li><strong>What is recorded:</strong> the full inbound audio (caller + assistant) and a verbatim transcript.</li>
-    <li><strong>Why:</strong> product quality assurance, prompt tuning, abuse prevention, and to give Adam the evidence to fix any call that goes wrong. Not used for advertising, profiling, or training third-party AI models.</li>
-    <li><strong>Lawful basis (GDPR Art 6):</strong> <strong>Article 6(1)(f) — legitimate interests</strong>. Our interest in continuously improving a live voice-AI product is balanced against the caller's privacy interest by (a) up-front disclosure in the assistant's first sentence, (b) a real opt-out path (tell Clare "I'd rather not be recorded" and she will note it; the recording is then manually deleted from storage within 24 hours), (c) restricted internal access (Adam only), (d) bounded retention (90 days), (e) EU-only data residency. Balancing test on record in our DPA.</li>
-    <li><strong>Retention:</strong> 90 days from call end, then auto-deletion. Vapi (the voice-runtime sub-processor) holds the file in its own US-with-EU-routing storage for the first 14 days only as a transient working copy; within that window the recording is mirrored to <strong>Hetzner Object Storage (Nuremberg, DE)</strong> — our already-disclosed EU sub-processor — and the durable archive lives there for the remaining 90-day window with a server-side lifecycle policy enforcing auto-delete. After 90 days no copy remains on either side.</li>
-    <li><strong>Opt-out:</strong> tell Clare during the call: "I'd rather not be recorded." She will acknowledge and note the opt-out flag on the call record. Within 24 hours of the call ending, the recording + transcript for that call are manually deleted from both Vapi and Hetzner storage. You can also email <a href="mailto:hello@callmeie.ie?subject=Demo%20call%20recording%20deletion">hello@callmeie.ie</a> with the date/time of your call and we will purge it within 24 hours.</li>
-    <li><strong>Your rights:</strong> the standard §6 GDPR rights apply to your recording — access, erasure, restriction, objection, portability. Email <a href="mailto:hello@callmeie.ie?subject=Demo%20call%20recording%20rights%20request">hello@callmeie.ie</a> with the date/time of your call.</li>
-</ul>
-<p class="legal-note"><strong>Real-client deployments (paying tier) — different lawful basis:</strong> when CallMeIE is deployed as a receptionist for a real Irish business that you ring on the business's own number, the recording is processed under <strong>Article 6(1)(b) contract</strong> (the recording IS the service the business has contracted for) and the business is the controller. That business's own privacy notice governs that recording; CallMeIE is the processor. The 90-day retention + EU-residency + Hetzner archive posture is the same.</p>
+<h2>12 · Demo calls and business customer calls</h2>
+<p>The CallMeIE demo line is <strong>+353 61 788 120</strong>. It uses an AI assistant. Depending on the configured call settings, the service processes the incoming number, audio, transcript and call metadata through the voice and telephony providers. A recording notice is separate from AI disclosure.</p>
+<p>For our demo service, CallMeIE is Controller. We use call information for the demonstration, follow-up where appropriate, service-quality checks and abuse prevention, relying on legitimate interests where applicable. We do not authorise general-purpose model training with customer call data through this notice.</p>
+<p>You can object or request access or erasure at <a href="mailto:hello@callmeie.ie?subject=Demo%20call%20privacy">hello@callmeie.ie</a>. Include the date and time so that we can locate the call; do not send unnecessary sensitive information. This notice does not promise that a spoken opt-out instantly stops recording or that every provider copy is deleted within a fixed number of hours.</p>
+<p>For a business customer's callers, that business is Controller. Its privacy notice, recording decision and lawful basis govern the processing; CallMeIE acts on its instructions. The customer's service contract with CallMeIE is not itself a blanket lawful basis for recording callers.</p>
 </section>
 
 <section id="sec-11">
 <h2>11 · Changes to this policy</h2>
-<p>We will give you <strong>30 days' written notice</strong> of any material change to this Privacy Policy. Notice is delivered to the contact email on your Order Form. Continued use after the notice period is acceptance. The "Last updated" stamp at the top reflects the most recent change.</p>
+<p>We keep this notice up to date and provide information about material processing changes as required. Updating a notice or continuing to use a service does not itself establish consent to processing that requires consent. Any contractual notice commitments remain governed by the agreed contract.</p>
 <p>Version history:</p>
 <ul>
+    <li><strong>v1.2 · 2026-10-07</strong> — corrects operating identity, Controller/Processor roles and unsupported retention, transfer and response-time claims. Earlier descriptions below are historical, not current processing promises.</li>
     <li><strong>v1.1 · 2026-05-11</strong> — added §12 explicitly covering call recording on the +353 61 788 120 demo line (disclosure, lawful basis Art 6(1)(f), 90-day retention via Hetzner Object Storage archive, opt-out path).</li>
     <li><strong>v1.0 · 2026-05-04</strong> — first multi-product version (covers all three products: AI Receptionist + Document Ops + AI-First Websites). Replaces the previous Receptionist-only version at <code>/receptionist/privacy.html</code>.</li>
 </ul>
@@ -325,8 +245,8 @@ This Privacy Policy is part of CallMeIE Technologies' legal pack. The full pack 
     cmt-consent = 'declined'  -> banner suppressed permanently, no tracking
     cmt-consent = (unset)     -> banner shown until user picks
 
-  Self-hosted EU-only (Coolify Hetzner Nuremberg DE). No cross-site tracking,
-  no profile building. Disclosed in /legal/privacy + DPA Schedule B.
+  Self-hosted analytics. Hosting does not certify the location or anonymity
+  of every request. Disclosed in /legal/privacy#analytics.
 -->
 <style>
   .cmt-consent {
@@ -385,7 +305,7 @@ This Privacy Policy is part of CallMeIE Technologies' legal pack. The full pack 
 <aside class="cmt-consent" id="cmtConsent" role="dialog" aria-labelledby="cmtConsentHd" aria-describedby="cmtConsentBd">
   <p class="cmt-consent__hd" id="cmtConsentHd">A small ask</p>
   <p class="cmt-consent__body" id="cmtConsentBd">
-    We run anonymous, aggregate page counts on our own server in Hetzner Nuremberg (Umami, self-hosted, EU-only). No third party. No cross-site tracking. No profile of you. <a href="/legal/privacy.html#analytics">More in our privacy notice.</a>
+    With your permission, we use self-hosted Umami to count page visits and interactions. It is optional. Your choice is stored in this browser. You can withdraw permission in <a href="/legal/privacy.html#analytics">Privacy settings</a>.
   </p>
   <div class="cmt-consent__row">
     <button class="cmt-consent__btn" type="button" data-cmt-consent="accept">Allow page counts</button>
