@@ -1735,14 +1735,14 @@
 
       <ol class="hero-process" aria-label="How it works in four steps">
         <li><span class="n">1</span><span>Pick a style below</span></li>
-        <li><span class="n">2</span><span>Brief + quote in 24 h</span></li>
+        <li><span class="n">2</span><span>Scope review + quote</span></li>
         <li><span class="n">3</span><span>We build in 7–14 days</span></li>
         <li><span class="n">4</span><span>Live. We host + maintain.</span></li>
       </ol>
 
       <div class="hero-meta">
         <span class="dot" aria-hidden="true"></span>
-        <span>Booking from May 2026 · 3 Pro slots open · Response within 24 h</span>
+        <span>Project dates and availability agreed after scope review</span>
       </div>
     </section>
 
@@ -2633,7 +2633,7 @@
         const j = await r.json();
         if (j.ok) {
           f.reset();
-          if (status) { status.className = 'cf-status ok'; status.textContent = j.message || 'Sent — we\'ll reply within 24 hours.'; }
+          if (status) { status.className = 'cf-status ok'; status.textContent = 'Request received. I will review it and follow up.'; }
           if (btn) { btn.textContent = 'Sent ✓'; setTimeout(() => { btn.disabled = false; btn.textContent = btn.dataset.oldText || 'Send the brief'; }, 4000); }
         } else {
           throw new Error(j.detail || 'submit failed');
@@ -2655,7 +2655,7 @@
   <dialog id="quote-modal" class="qm-dialog" aria-labelledby="qm-title">
     <form id="quote-form" class="qm-form" autocomplete="on" novalidate>
       <button type="button" class="qm-close" aria-label="Close">×</button>
-      <div class="qm-kicker">Quote request · 24 h reply · nothing to pay now</div>
+      <div class="qm-kicker">Quote request · scheduled follow-up · nothing to pay now</div>
       <h2 id="qm-title">Pick what you want. We'll send a firm quote.</h2>
 
       <fieldset class="qm-group">
@@ -2729,7 +2729,7 @@
       </fieldset>
 
       <div class="qm-foot">
-        <button type="submit" class="btn primary qm-submit">Send the brief · reply in 24 h</button>
+        <button type="submit" class="btn primary qm-submit">Send the brief</button>
         <button type="button" class="qm-email-alt">Or send as email →</button>
         <span class="qm-status" role="status" aria-live="polite"></span>
       </div>
@@ -2871,7 +2871,7 @@
       status.className = 'qm-status';
       status.textContent = '';
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send the brief · reply in 24 h';
+      submitBtn.textContent = 'Send the brief';
       // Pre-fill from data-* attrs
       if (preset) {
         if (preset.first_step) {
@@ -3004,7 +3004,7 @@
         const j = await r.json();
         if (j.ok) {
           status.className = 'qm-status ok';
-          status.textContent = j.message || 'Brief received — we\'ll reply within 24 hours.';
+          status.textContent = 'Brief received. I will review it and follow up.';
           submitBtn.textContent = 'Sent ✓';
           setTimeout(closeModal, 2400);
         } else {
