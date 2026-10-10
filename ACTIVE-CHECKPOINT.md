@@ -1,6 +1,16 @@
 # CallMeIE whole-site review and local preview
 
-## Current correction — 10 October 2026
+## Current work — 10 October 2026
+
+Adam rejected the published visual treatment as too basic: repeated arrow
+glyphs, an isolated handset and native audio controls. A further local craft
+pass is active. Recover original design direction through ask_system.py stores,
+the Codex database and source messages. Rebuild image-led compositions and a
+custom accessible audio module; review actual browser visuals and motion before
+publication under the existing publish instruction. Prior runtime checks are
+historical evidence and do not certify this new candidate or visual acceptance.
+
+## Previous published correction — 10 October 2026
 
 The corrected site is LIVE at https://callmeie.ie/. Source release:adc21bc5b8cb04b6ab4294b9362700d92c522a1c.
 GitHub Pages38085385084 and cohesion38085385236 succeeded. Actual live WebKit

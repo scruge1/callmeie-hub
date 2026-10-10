@@ -78,3 +78,94 @@ All 20 final normal viewport form images (10 routes at 375 and 1280 pixels) were
 GitNexus impact was attempted with CLI 1.6.12 against the parent New repos index. The `_owl-form` target was not found, risk remained UNKNOWN, and the FTS extension was unavailable. The anonymous IIFE and isolated worktree lookup prevent a resolved graph result. This is a documented limitation, not evidence of no impact. Manual review of all 10 HTML call sites and the exact presentation-string diff establishes the bounded change scope.
 
 Evidence is outside Git at `C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/output/playwright/final-settled/` and `form-final/`. These contain the 88-route capture results, normal viewport top images, final footer proofs, sample 05 four-width proofs and 20 final form results/contact sheets. Root owns the complete browser gate and publication decision. No confirmed visual defects remain in this lane. Source is frozen.
+
+## Editorial showcase revision after user rejection
+
+The user rejected the basic card layout and decorative arrows. This revision retains the established Great National paper, burgundy, Archivo Black and IBM Plex Sans identity. It changes composition and image hierarchy rather than replacing the palette.
+
+Reference work: read the Design Hub mandatory router, installed-tool manifest, toolchain, foundation documents, HeroSplit template and CSS scroll-driven recipe. Current project DESIGN.md overrides the historical dark/Geist hub defaults. Real browser captures of https://k95.it/ and https://metajive.com/ were visually viewed. K95's immersive canvas is a reference limitation for business conversion; Metajive's dominant imagery and editorial split informed the composition. No claims are made about unviewed references.
+
+Changed source: websites/index.html, lab/index.html and new websites/websites-showcase.css. Websites uses a large photographic Slaney Dental concept preview and one direct heading, followed by asymmetric image spreads with captions. The Lab uses a product-design preview and separates business concepts from creative directions. Gallery cards no longer have uniform framed boxes. Wide chapter images and alternating widths establish a clearer rhythm. Mobile stacks the same real previews without horizontal scrolling.
+
+Motion: CSS hover and keyboard focus reveal the gallery action and apply a restrained preview zoom. Lab preview links lift slightly on hover/focus. A guarded CSS view-timeline applies a small crop/translation settle on viewport entry. Content remains visible without animation support or JavaScript. Reduced motion disables animations and transitions. Mobile preview actions remain visible. No scroll hijacking or new 3D runtime was added.
+
+Removed decorative arrows and emoji from static page presentation. Existing script bodies were preserved. Root was notified of remaining JS-generated wizard arrow labels so they can be handled in its function-impact lane. Removed a stale May date placeholder and a duplicate Care introduction; the Care details, prices and terms remain. All approved plan prices, minimum terms, ownership rules, modal/form identifiers, integrations and endpoints remain intact. No provider settings changed and no forms were submitted.
+
+Visual QA: both pages at 375, 390, 768 and 1440 pixels, normal top and gallery viewport captures (16 images) were reviewed through two contact sheets and representative full-size images. All eight document widths match their viewports. The new stylesheet loads and reduced-motion computes animation:none. Four progressive full-page passes at 375 and 1440 verified every visible image decoded, no rendered arrow characters, both Websites forms present and keyboard focus reveals the concept action. Full-page images were visually reviewed for all gallery spreads and lower sections. Final targeted Lab footer images at 375 and 1440 verify ink text and burgundy action after a legacy white-text contrast defect was corrected.
+
+Plan-selection regression at 375, 768 and 1440: selecting Business opens the existing modal with the correct tier; close returns it to the closed state. All six pricing/modal viewport images were visually reviewed. No submission occurred.
+
+Evidence: C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/output/playwright/editorial-reference/ and editorial-showcase/. Results files: results.json (eight layout cases), full-results.json (four all-image/focus cases), modal-results.json (three no-submit selection cases). Final footer proofs are lab-375-footer-final.png and lab-1440-footer-final.png. Operator captures remain outside Git. Root owns final shared-chrome injection, global checks and publication.
+
+## Caption control correction after independent craft review
+
+Independent design-comparison-20261010.md rejected the pale image-overlay action slabs and customer-facing style taxonomy. The bounded Websites/Lab correction moves all 10 Websites concept actions outside the images, below the captions, as always-visible text links. Their underline changes on hover and focus. The black gradient and pale rectangle no longer cover any preview. Mobile and desktop use the same quiet caption control. The asymmetric spreads remain; no uniform card layout was introduced.
+
+Websites captions now name business categories such as dental practice, veterinary practice, electrical services and bakery. Lab business captions also use categories. Creative entries use concept names or plain descriptions such as Nocturne, The Grid and layered dashboard. Preview alt text identifies illustrative website concepts rather than style jargon. Scripts, plan/form identifiers, prices, terms and endpoints remain unchanged.
+
+Fresh normal viewport captures at 375, 390, 768 and 1440 pixels for both pages were visually reviewed through refreshed top and gallery contact sheets plus full-size mobile, tablet and desktop gallery frames. All eight widths are bounded and reduced motion still disables animation. Critical visual assessment: images now remain uninterrupted, captions have a clear name/category/action hierarchy, and the repeated controls are subordinate to the varied imagery. These specific gallery defects are resolved. This does not claim the separate whole-Home premium-composition gaps are resolved; those remain root-owned.
+
+Current review evidence: external editorial-showcase/gallery-sheet.jpg, websites-375-gallery.png, websites-1440-gallery.png and lab-768-gallery.png. Earlier overlay screenshots and overlay-opacity evidence are superseded by the caption-link treatment.
+
+## Final craft visual coverage
+
+The complete 320-case matrix was available before visual review. All 44 demo content routes were actually viewed at 375 and 1280 px in 30 top/footer contact sheets. External evidence: output/playwright/craft-final/demo-review/demos-375-01.jpg through -15.jpg and demos-1280-01.jpg through -15.jpg. Distinct business and creative styles remain visible.
+
+Fresh normal viewport scrolling checked all ten Websites previews at both widths. All twenty instances loaded with nonzero dimensions, opacity 1 and clip inset0. All twenty screenshots were viewed in normal/thumb-sheet.jpg. The empty Dental practice region in a full-page screenshot is a capture artefact. The Clancy restaurant preview was compared visually with Slaney and selected for the Websites hero.
+
+Sample05 normal375/390 captures show a clean header and settled typography. Sample04 normal375/390 confirmed its logo text overflows its flex box below the CTA although the element rectangles only touch. Root authorised a bounded mobile CSS repair: max560 logo responsive13-18px with reduced padding, no shrinking or wrapping; CTA13px with reduced padding and no shrinking; header gap10px. Static Hire Us arrow removed. Only sample04 HTML changed for this repair.
+
+Root owns the common dock arrow label correction. Ten affected demo routes require the fresh follow-up matrix images; other34 remain current. Initial full-page split-text and bottom mockup anomalies are capture artefacts, not verified new defects. Shared forms retained their honest enquiry copy and distinct demo bodies remain intact.
+
+| Route | Both-width sheet |
+| --- | --- |
+| /websites/demos/clancys-restaurant-cork/ | 01 |
+| /websites/demos/curtin-electrical/about/ | 01 |
+| /websites/demos/curtin-electrical/accessibility/ | 01 |
+| /websites/demos/curtin-electrical/ | 02 |
+| /websites/demos/curtin-electrical/privacy/ | 02 |
+| /websites/demos/curtin-electrical/services/ | 02 |
+| /websites/demos/murphy-plumbing-cork/ | 03 |
+| /websites/demos/slaney-dental-wexford/ | 03 |
+| /websites/demos/strand-road-dental/ | 03 |
+| /websites/demos/vetcare-limerick/about/ | 04 |
+| /websites/demos/vetcare-limerick/accessibility/ | 04 |
+| /websites/demos/vetcare-limerick/book/ | 04 |
+| /websites/demos/vetcare-limerick/contact/ | 05 |
+| /websites/demos/vetcare-limerick/ | 05 |
+| /websites/demos/vetcare-limerick/privacy/ | 05 |
+| /websites/demos/vetcare-limerick/services/consultations/ | 06 |
+| /websites/demos/vetcare-limerick/services/dental/ | 06 |
+| /websites/demos/vetcare-limerick/services/emergency/ | 06 |
+| /websites/demos/vetcare-limerick/services/ | 07 |
+| /websites/demos/vetcare-limerick/services/neutering/ | 07 |
+| /websites/demos/vetcare-limerick/services/surgery/ | 07 |
+| /websites/demos/vetcare-limerick/services/vaccinations/ | 08 |
+| /websites/demos/vetcare-limerick/team/ | 08 |
+| /websites/demos/wildflour-bakery-galway/ | 08 |
+| /websites/samples/01-minimalism-swiss.html | 09 |
+| /websites/samples/02-neumorphism.html | 09 |
+| /websites/samples/03-glassmorphism.html | 09 |
+| /websites/samples/04-brutalism.html | 10 |
+| /websites/samples/05-3d-hyperrealism.html | 10 |
+| /websites/samples/06-vibrant-block.html | 10 |
+| /websites/samples/07-dark-oled.html | 11 |
+| /websites/samples/08-claymorphism.html | 11 |
+| /websites/samples/09-aurora-ui.html | 11 |
+| /websites/samples/10-retro-futurism.html | 12 |
+| /websites/samples/industries/01-dental-swiss.html | 12 |
+| /websites/samples/industries/02-solicitor-swiss.html | 12 |
+| /websites/samples/industries/03-accountant-minimalism.html | 13 |
+| /websites/samples/industries/04-physio-neumorphism.html | 13 |
+| /websites/samples/industries/05-opticians-glassmorphism.html | 13 |
+| /websites/samples/industries/06-trade-pro-dark-oled.html | 14 |
+| /websites/samples/industries/07-vet-claymorphism.html | 14 |
+| /websites/samples/industries/08-financial-brutalism-editorial.html | 14 |
+| /websites/samples/industries/09-architects-3d.html | 15 |
+| /websites/samples/industries/10-local-services-brutalism.html | 15 |
+
+Sample04 repair verification: all six normal top/footer screenshots at320/375/390 were actually viewed. Logo textWidth equals clientWidth147/168/174px, CTA gap24.9/49.4/56.2px, horizontal overflow0. Header and footer branding are fully readable. Evidence normal/04-fixed-{320,375,390}-{top,footer}.png and04-fixed-results.json. Pending privacy prompt overlays lower content as intended until a choice is made. Source frozen.
+
+Follow-up correction: root completed and merged the92-case pass. The ten industry demo routes were re-viewed in regenerated sheets12-15 at375/1280. Parent dock labels now read Gallery, Previous and Next with no decorative arrows. Forms remain legible and shared identity is consistent. Physio full-page footer crop remains a known capture artefact; prior normal viewport form proof supplies its visual evidence. No new defect was identified in the refreshed ten-route review.
+
+Exact dock refresh coverage correction: the earlier phrase ten industry routes described a wider visual re-view, not the ten indexed dock callsites. The actual ten affected callsites are seven demo roots (Slaney, Strand Road, Vetcare, Murphy, Curtin, Clancy and Wildflour), plus industry01 dental, industry02 solicitor and industry06 trade. Fresh seven-root footer crops were now actually viewed at375/1280 in regenerated sheets01,02,03,05,08, in addition to the three affected industry routes in sheets12 and14. All twenty actual affected-route footer crops show Gallery, Previous and Next with no parent-control arrows. No new layout defect was found. This exact list supersedes the generic refresh description.

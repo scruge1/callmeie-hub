@@ -24,7 +24,16 @@ Shared styling is in `brand.css`; shared HTML is in `_partials/`.
 Run `py -3 scripts/inject-cohesion.py` after changing a partial, then its
 `--check` mode. Demo designs retain their distinct visual styles.
 
-## Current published correction — 10 October 2026
+## Current craft pass — 10 October 2026
+
+Adam rejected the published treatment as too basic. The active local candidate
+adds composed image layers, editorial real-preview galleries and custom audio
+controls. [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md) owns verification and
+publication state. Recovered direct-user requirements and independent comparisons
+are in [the history report](reports/design-direction-history-20261010.md) and
+[the design review](reports/design-comparison-20261010.md).
+
+## Previous published correction — 10 October 2026
 
 The GN house-style restoration is live at https://callmeie.ie/.
 Source release: `adc21bc5b8cb04b6ab4294b9362700d92c522a1c`. GitHub Pages and cohesion checks succeeded.

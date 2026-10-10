@@ -1,0 +1,4 @@
+/* Editorial opening width is distinct from the narrower article reading measure. */
+body[data-callmeie-page] .blog-intro{max-width:min(100%,760px)!important}
+body[data-callmeie-page] .blog-intro h1{font-size:clamp(36px,5vw,64px)!important;line-height:1.08!important;max-width:22ch}
+@media(max-width:760px){body[data-callmeie-page] .blog-intro h1{font-size:clamp(32px,8.5vw,46px)!important}}

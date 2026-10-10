@@ -1,0 +1,5 @@
+# Receptionist hero composition
+
+10 October 2026. Owned receptionist/index.html hero and new assets/css/receptionist-editorial.css only. Existing audio implementation files unchanged. Two-column contextual receiver photograph, direct headline, and foreground real sample player; mobile heading/player/photo integrated in order. Uses existing1536 and800WebP receiver-detail-v2 assets. No additional asset or motion claim. Approved hours and plan-dependent booking/SMS/transfers preserved; actual demo telephone and onboarding link retained. Removed heading trailingfullstop.
+
+Verified Chrome and installed WebKit375,390,768,1280: eight actual rendered screenshots, loaded image, zero document overflow, real audio playback advancement and pause. At1280player bottom853.6within900px viewport; at375bottom738.2 and390bottom702.4. Existing player keyboard seek/noJS/error verification in audio-player-implementation report; source audio unchanged. Captures outsideGit output/playwright/receptionist-editorial/. Visually inspected all8captures; finalWebKit recapture closes late-loading privacyoverlay for unobstructed comparison. No provider writes/publication. Source frozen.

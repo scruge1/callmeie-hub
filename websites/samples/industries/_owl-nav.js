@@ -1,10 +1,10 @@
 /**
- * Callmeie Technologies sample-preview nav bar.
+ * CallMeIE sample-preview nav bar.
  * Loaded from every demo/sample page via:
  *   - demo index pages  →  <script src="/websites/samples/industries/_owl-nav.js" defer></script>
  *   - industry sample pages  →  <script src="_owl-nav.js" defer></script>
  *
- * Fixed bottom-centre bar: back to gallery, ← Prev, 01/10, Next →, "Build this", ×
+ * Fixed bottom-centre bar: back to gallery, Previous, 01/10, Next, "Build this", ×
  */
 (function () {
   "use strict";
@@ -87,16 +87,16 @@
   var bar = document.createElement("div");
   bar.id = "owl-sample-nav";
   bar.setAttribute("role", "navigation");
-  bar.setAttribute("aria-label", "Callmeie Technologies demo navigation");
+  bar.setAttribute("aria-label", "CallMeIE demo navigation");
   bar.innerHTML =
     '<a href="' + GALLERY_URL + '" title="Back to all 10 demos">' +
-      '<span class="owl-label">Callmeie Technologies · </span>← Gallery</a>' +
+      '<span class="owl-label">CallMeIE · </span>Gallery</a>' +
     '<span class="owl-div"></span>' +
-    '<a href="' + prev.url + '" title="Previous: ' + prev.name + ' — ' + prev.style + '">← Prev</a>' +
+    '<a href="' + prev.url + '" title="Previous: ' + prev.name + ' — ' + prev.style + '">Previous</a>' +
     '<span class="owl-idx">' + String(idx + 1).padStart(2, "0") + ' / 10</span>' +
-    '<a href="' + next.url + '" title="Next: ' + next.name + ' — ' + next.style + '">Next →</a>' +
+    '<a href="' + next.url + '" title="Next: ' + next.name + ' — ' + next.style + '">Next</a>' +
     '<span class="owl-div"></span>' +
-    '<a class="owl-build" href="' + BUILD_URL + '" title="Build this direction for your business">Build this →</a>' +
+    '<a class="owl-build" href="' + BUILD_URL + '" title="Build this direction for your business">Build this</a>' +
     '<button type="button" class="owl-close" aria-label="Hide preview bar" title="Hide preview bar">×</button>';
 
   document.body.appendChild(bar);

@@ -252,6 +252,9 @@
   <meta property="fb:pages" content="1105012356028968">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"CallMeIE Technologies","url":"https://callmeie.ie/","image":"https://callmeie.ie/og-image.png","telephone":"+353-61-788-120","priceRange":"€€","address":{"@type":"PostalAddress","addressLocality":"Limerick","addressRegion":"Limerick","addressCountry":"IE"},"geo":{"@type":"GeoCoordinates","latitude":52.668,"longitude":-8.6305},"areaServed":{"@type":"City","name":"Limerick"}}</script>
 <link rel="stylesheet" href="/brand.css?v=20261010-house-style">
+<link rel="stylesheet" href="/assets/css/audio-player.css" />
+<script defer src="/assets/js/audio-player.js"></script>
+<link rel="stylesheet" href="/assets/css/receptionist-editorial.css" />
 </head>
 
 <body data-callmeie-page="marketing">
@@ -276,7 +279,7 @@
 
 
 
-<main class="page" id="main"><section class="hero" id="top"><p>AI phone receptionist</p><h1 class="hero__headline">Answer calls when you cannot.</h1><p class="hero__sub">An Irish AI receptionist configured for your business. It answers approved questions and handles appointments during your agreed plan hours. SMS and call transfers depend on your plan and setup.</p><p style="display:flex;flex-wrap:wrap;align-items:center;gap:16px"><a class="tier__cta" href="tel:+35361788120">Hear the live demo: +353 61 788 120</a> <a href="onboard.html">Ask about your business</a></p><audio controls preload="metadata" src="assets/audio/claire-cafe-booking.mp3">Call the demo line to hear a sample.</audio></section>
+<main class="page" id="main"><section class="hero receptionist-hero" id="top"><div class="receptionist-hero__copy"><p class="receptionist-hero__eyebrow">AI phone receptionist</p><h1 class="hero__headline">Answer calls when you cannot</h1><p class="hero__sub">An Irish AI receptionist for your business. It answers approved questions during your agreed plan hours. Booking, SMS and transfers depend on your plan and setup.</p><p class="receptionist-hero__links"><a href="tel:+35361788120">Call the live demo: +353 61 788 120</a><a href="onboard.html">Ask about your business</a></p></div><figure class="receptionist-hero__media"><img src="/assets/brand/receiver-detail-v2.webp" srcset="/assets/brand/receiver-detail-v2-800.webp 800w, /assets/brand/receiver-detail-v2.webp 1536w" sizes="(max-width:640px) 100vw, 50vw" width="1536" height="1024" alt="Burgundy telephone receiver on a studio desk" fetchpriority="high"></figure><audio data-voice-player controls preload="metadata" src="assets/audio/claire-cafe-booking.mp3">Call the demo line to hear a sample.</audio></section>
 <section class="editorial" id="handles"><h2>Built around your business</h2><div class="capabilities"><article><h3>Answer questions</h3><p>Your services, opening hours and approved information.</p></article><article><h3>Handle appointments</h3><p>Calendar booking configured for your business and agreed workflow.</p></article><article><h3>Pass calls to you</h3><p>Agreed transfer and callback routes for requests that need a person.</p></article></div></section>
 <section class="editorial" id="how-demo-works"><h2>From demo to your own receptionist</h2><ol><li><strong>Try the demo.</strong> Ring and choose a sample business.</li><li><strong>Tell us what you need.</strong> We agree your information, plan, calendar and routing.</li><li><strong>Test before activation.</strong> Review the calls and fallback route with us.</li></ol><p>Explore examples: <a href="dental.html">Dental</a>, <a href="motor-factors.html">Motor factors</a>, <a href="salon.html">Salon</a>, <a href="solicitor.html">Solicitor</a>, <a href="accounting.html">Accountant</a>. Other businesses are welcome.</p></section><section class="editorial" id="pricing" aria-labelledby="pricing-title">
     <div class="section-head">
@@ -968,12 +971,12 @@
     var start = document.createElement('button');
     start.type = 'button';
     start.className = 'cmt-chat-btn cmt-chat-btn-primary';
-    start.textContent = 'Start →';
+    start.textContent = 'Start';
     start.addEventListener('click', function () { state.stepIndex = 0; renderStep(); });
     var direct = document.createElement('a');
     direct.href = 'mailto:hello@callmeie.ie?subject=Talk%20to%20CallMeIE';
     direct.className = 'cmt-chat-btn cmt-chat-btn-ghost';
-    direct.textContent = 'Email Adam directly →';
+    direct.textContent = 'Email Adam directly';
 
     actions.appendChild(start);
     actions.appendChild(direct);
@@ -1017,9 +1020,9 @@
     next.className = 'cmt-chat-btn cmt-chat-btn-primary';
     // After P2-7 the contact step (renderContactStep) sits between the
     // last chip step and submit, so even the final chip page is
-    // logically "Next →" — the "See my fit" button lives in the
+    // logically "Next" — the "See my fit" button lives in the
     // contact step.
-    next.textContent = 'Next →';
+    next.textContent = 'Next';
     next.addEventListener('click', advance);
 
     function syncNext() {
@@ -1061,7 +1064,7 @@
       var back = document.createElement('button');
       back.type = 'button';
       back.className = 'cmt-chat-btn cmt-chat-btn-ghost';
-      back.textContent = '← Back';
+      back.textContent = 'Back';
       back.addEventListener('click', function () { state.stepIndex -= 1; renderStep(); });
       nav.appendChild(back);
     }
@@ -1143,7 +1146,7 @@
     var back = document.createElement('button');
     back.type = 'button';
     back.className = 'cmt-chat-btn cmt-chat-btn-ghost';
-    back.textContent = '← Back';
+    back.textContent = 'Back';
     back.addEventListener('click', function () {
       state.askedContact = false;
       renderStep();
@@ -1168,7 +1171,7 @@
     var done = document.createElement('button');
     done.type = 'button';
     done.className = 'cmt-chat-btn cmt-chat-btn-primary';
-    done.textContent = 'See my fit →';
+    done.textContent = 'See my fit';
     done.addEventListener('click', submit);
     nav.appendChild(done);
 
@@ -1411,7 +1414,7 @@
       <span class="cmt-bottom-cta__quiz-full">Find your fit · 30s</span>
       <span class="cmt-bottom-cta__quiz-short">Find your fit</span>
     </span>
-    <span class="cmt-bottom-cta__quiz-arrow" aria-hidden="true">→</span>
+    <span class="cmt-bottom-cta__quiz-arrow" aria-hidden="true"></span>
   </button>
 
   <span class="cmt-bottom-cta__comms" role="group" aria-label="Talk to us directly">

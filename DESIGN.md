@@ -15,6 +15,12 @@ Keep the 7/8 October seller, privacy, coverage-hours and form corrections.
 Warm paper, deep ink, burgundy rules and strong sans-serif type. Use the actual
 CallMeIE icon and wordmark. Preserve confident hierarchy and generous space.
 
+The recovered brief requires composed imagery, not a palette refresh. Home places
+real website work and the telephone in one lit studio scene with separate layers.
+Websites and Lab use large uninterrupted previews and varied editorial scale.
+The Receptionist brings a custom sample player into its composed opening section.
+Short factual copy supports the work rather than narrating each section.
+
 Reference: GN output/proposal/build-proposal-pack.py and rendered v1 pages,
 existing receptionist/assets/callmeie-logo.png, and installed design-hub section
 templates for layout. Generic references must not override this selected identity.
@@ -26,7 +32,8 @@ templates for layout. Generic references must not override this selected identit
 - Archivo Black for display. IBM Plex Sans for body, navigation, prices and forms.
 - Self-host the existing proposal font files with their OFL licences. Two common
   font families; use Plex and tabular figures for labels/data.
-- No decorative emoji, forced heading line breaks or decorative final-word colour accents.
+- No decorative emoji or repeated arrow glyphs, forced heading line breaks,
+  staccato slogan pairs or decorative final-word colour accents.
 - No replacement text logo, generic serif theme or new palette.
 - Square minimal controls, 2px corners, hairlines and restrained inset depth.
   No glowing filled pills or capsule-shaped category/status controls.
@@ -58,14 +65,24 @@ Root owner adds `/brand.css` and canonical navigation/footer partial changes.
 Agents do not edit shared partials, shared CSS or the injector. Root reinjects once.
 Marketing pages use `body data-callmeie-page="marketing"`; legal/scope use
 `data-callmeie-page="document"`. Do not set these markers on distinct demo/sample pages.
-Link `/brand.css` last in head. Do not hide overflow to make a broken layout pass.
+Load `/brand.css` after legacy styles, then any deliberately scoped page stylesheet.
+Do not hide page overflow to make a broken layout pass.
 Existing form IDs, action routes, consent handling and billing URLs remain functional.
 
 ## Motion and 3D
 
-Use restrained button/gallery transitions and a short entrance that leaves content
-visible without JavaScript and with reduced motion. A 3D phone is optional only
-if it helps the receptionist demonstration. No mandatory WebGL or long scroll scene.
+Three interaction jobs: continuous scene depth tied to native forward/reverse
+scroll, clear gallery hover/focus feedback, and usable custom audio transport.
+Content remains visible without JavaScript and with reduced motion. Separate
+bitmap layers are compositing, not a claim of genuine interactive 3D. Use an
+actual 3D renderer only if it improves the service demonstration and passes the
+existing rig, performance, visual and fallback workflow. No scroll hijacking or
+unnecessary pinning. Review intermediate forward and reverse frames.
+
+Read reports/design-direction-history-20261010.md for direct user evidence and
+ask_system.py/Codex-store coverage. Independent old/new/reference comparison is
+reports/design-comparison-20261010.md. Preserve failed reviews as history; a
+technical pass must not erase a visual failure or imply Adam's acceptance.
 
 ## Verification
 

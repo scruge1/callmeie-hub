@@ -997,12 +997,12 @@
     var start = document.createElement('button');
     start.type = 'button';
     start.className = 'cmt-chat-btn cmt-chat-btn-primary';
-    start.textContent = 'Start →';
+    start.textContent = 'Start';
     start.addEventListener('click', function () { state.stepIndex = 0; renderStep(); });
     var direct = document.createElement('a');
     direct.href = 'mailto:hello@callmeie.ie?subject=Talk%20to%20CallMeIE';
     direct.className = 'cmt-chat-btn cmt-chat-btn-ghost';
-    direct.textContent = 'Email Adam directly →';
+    direct.textContent = 'Email Adam directly';
 
     actions.appendChild(start);
     actions.appendChild(direct);
@@ -1046,9 +1046,9 @@
     next.className = 'cmt-chat-btn cmt-chat-btn-primary';
     // After P2-7 the contact step (renderContactStep) sits between the
     // last chip step and submit, so even the final chip page is
-    // logically "Next →" — the "See my fit" button lives in the
+    // logically "Next" — the "See my fit" button lives in the
     // contact step.
-    next.textContent = 'Next →';
+    next.textContent = 'Next';
     next.addEventListener('click', advance);
 
     function syncNext() {
@@ -1090,7 +1090,7 @@
       var back = document.createElement('button');
       back.type = 'button';
       back.className = 'cmt-chat-btn cmt-chat-btn-ghost';
-      back.textContent = '← Back';
+      back.textContent = 'Back';
       back.addEventListener('click', function () { state.stepIndex -= 1; renderStep(); });
       nav.appendChild(back);
     }
@@ -1172,7 +1172,7 @@
     var back = document.createElement('button');
     back.type = 'button';
     back.className = 'cmt-chat-btn cmt-chat-btn-ghost';
-    back.textContent = '← Back';
+    back.textContent = 'Back';
     back.addEventListener('click', function () {
       state.askedContact = false;
       renderStep();
@@ -1197,7 +1197,7 @@
     var done = document.createElement('button');
     done.type = 'button';
     done.className = 'cmt-chat-btn cmt-chat-btn-primary';
-    done.textContent = 'See my fit →';
+    done.textContent = 'See my fit';
     done.addEventListener('click', submit);
     nav.appendChild(done);
 
@@ -1439,7 +1439,7 @@
       <span class="cmt-bottom-cta__quiz-full">Find your fit · 30s</span>
       <span class="cmt-bottom-cta__quiz-short">Find your fit</span>
     </span>
-    <span class="cmt-bottom-cta__quiz-arrow" aria-hidden="true">→</span>
+    <span class="cmt-bottom-cta__quiz-arrow" aria-hidden="true"></span>
   </button>
 
   <span class="cmt-bottom-cta__comms" role="group" aria-label="Talk to us directly">

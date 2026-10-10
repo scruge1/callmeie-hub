@@ -3,9 +3,38 @@
 Created with the built-in OpenAI image-generation tool in this authorised website correction. These are original raster artwork, not customer photographs or interactive 3D models. Originals remain outside the repository. Public exports are WebP, quality88, method6; no semantic edits were applied during export.
 
 - `paper-texture.webp`: faint warm-paper surface behind the established typography;1254×1254RGB,140136bytes.
-- `burgundy-phone.webp`: transparent handset and cord in the Home hero;1312×1199RGBA,105506bytes. Decorative empty alt text because the adjacent heading describes the service.
+- `burgundy-phone.webp`: earlier rejected isolated handset treatment;1312×1199RGBA,105506bytes. Retained as source history, no longer used by Home.
 
 The paper is softened by a cream overlay. The handset is a single still; no WebGL, animation loading or additional renderer is needed. Genuine 3D remains conditional on a useful service story, as requested.
+
+## Further composition pass
+
+The current hero uses a photographic environment with separate telephone and
+real website-preview layers. Phone and preview move independently with native
+scroll while remaining part of the same scene. These are authored raster layers,
+not a WebGL model. The generated masters are1536×1024; they are not described as4K.
+
+- `studio-background-v2.webp`: empty limestone desk environment,1536×1024RGB,
+  100452bytes. Original phone and cable removed by imagegen from the scene study.
+- `studio-phone-layer-v2.webp`: phone, cable and contact-shadow foreground,
+  1516×1024RGBA,152266bytes. Alpha bounds crop only during export.
+- `receiver-detail-v2.webp`: tactile receiver/paper/aluminium close-up,
+  1536×1024RGB,208312bytes;800px responsive export46762bytes.
+- `studio-desk-v2.webp`: original unified environment study,1536×1024RGB,
+  104314bytes; retained reference export, not the current layered hero background.
+
+The visible website image is an actual existing demo preview, not generated UI.
+All selected new artwork is in the repository; original PNG masters remain in
+the session's `.codex/generated_images` directory. WebP quality88/method6;
+responsive800px variant quality85. No customer photography or identities implied.
+
+Art brief: commission a quiet Irish design-studio scene, warm paper and limestone,
+oxblood telephone resting naturally at the right, afternoon directional light,
+precise believable materials and shadows, calm text space on the left. Avoid
+floating objects, collage, fake website UI, generated words/logos and neon.
+The second brief focuses on the tactile receiver detail. Layer-edit prompts
+extract the exact telephone/cable/shadow onto transparency and remove only that
+telephone/cable from the original background, preserving the other environment.
 
 ## Paper prompt
 
