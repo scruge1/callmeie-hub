@@ -2,10 +2,14 @@
 
 ## Current correction — 10 October 2026
 
-The corrected site is verified locally and ready for publication under Adam's
-existing explicit instruction. Publication proof will be recorded here after
-GitHub Pages and actual live browser verification. The earlier basic/off-brand
-publication remains historical evidence, not design acceptance.
+The corrected site is LIVE at https://callmeie.ie/. Source release:adc21bc5b8cb04b6ab4294b9362700d92c522a1c.
+GitHub Pages38085385084 and cohesion38085385236 succeeded. Actual live WebKit
+checks passed for Home, Websites, Lab, Receptionist and Privacy at390/1280:
+correct two fonts/wordmark, loaded handset and gallery images, no page overflow
+or browser errors. Ten served HTML/CSS/font/artwork/helper/favicon files match
+the exact Git release bytes. Publication follows Adam's existing instruction.
+The earlier basic/off-brand publication remains historical evidence, not design
+acceptance. This receipt commit changes documentation only.
 
 The correction restores the Great National v1 house reference: original logo,
 warm paper, ink/burgundy, Archivo Black and IBM Plex Sans, square controls and

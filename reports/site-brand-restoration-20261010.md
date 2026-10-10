@@ -70,3 +70,18 @@ the existing parent repository:low risk, zero affected processes, with an FTS
 extension warning. That index covers unrelated parent changes and is not a
 candidate-specific impact proof for this isolated worktree. The public-site
 runtime, source diff and shared-partial checks are the relevant verification.
+
+## Published verification
+
+Source release:adc21bc5b8cb04b6ab4294b9362700d92c522a1c. Pages run38085385084 and cohesion38085385236
+succeeded. Actual live WebKit390/1280 verification passed on Home, Websites,
+Lab, Receptionist and Privacy. Correct Archivo/Plex fonts and original wordmark
+are present; the handset and all gallery previews load; no page overflow or
+browser errors. Ten actual served files match Git release bytes exactly.
+Evidence:external output/live-restoration-verification.json,
+live-restoration-hashes.json and output/playwright/live-restoration-* captures.
+Main visually viewed the actual live Home/mobile and Lab/desktop captures.
+This final receipt changes documentation only; site source remains identical.
+GitNexus detect-changes was also attempted against the exact worktree before
+the receipt commit; it is not registered in that index. Manual Git diff confirms
+the receipt is limited to ACTIVE-CHECKPOINT.md, README.md and this report.

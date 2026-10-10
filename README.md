@@ -24,7 +24,16 @@ Shared styling is in `brand.css`; shared HTML is in `_partials/`.
 Run `py -3 scripts/inject-cohesion.py` after changing a partial, then its
 `--check` mode. Demo designs retain their distinct visual styles.
 
-## Published consolidation — 10 October 2026
+## Current published correction — 10 October 2026
+
+The GN house-style restoration is live at https://callmeie.ie/.
+Source release: `adc21bc5b8cb04b6ab4294b9362700d92c522a1c`. GitHub Pages and cohesion checks succeeded.
+All80 content pages have mobile/desktop visual coverage; the final runtime matrix
+and shared-header checks passed. Actual live checks confirm the fonts, artwork
+and working gallery previews. See ACTIVE-CHECKPOINT.md and
+reports/site-brand-restoration-20261010.md for evidence and limits.
+
+## First consolidation — historical publication
 
 Adam rejected the first published design as basic and off-brand. The current
 correction restores the GN proposal reference and original logo; see DESIGN.md.
