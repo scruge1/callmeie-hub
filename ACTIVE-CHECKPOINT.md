@@ -59,5 +59,19 @@ raw results/summary are adjacent. Section-specific Chrome mobile visual checks,
 open/closed menus, gallery decoding and mobile table scrolling supplement it.
 Shared-partial check, JavaScript syntax, push-on-hidden lint and Git whitespace
 checks pass. Static local-link check reports no missing destinations.
-Local review/build is complete. Publication is authorised and in progress.
-Record the deployed commit and live verification here after GitHub Pages accepts it.
+Published site release: faceddd2696f5af77cb029913d82a8229338528e.
+GitHub Pages deployment 38080785560 succeeded on 10 October 2026 at 19:41 UTC.
+Cohesion workflow 38080785856 passed. Live WebKit checks covered Home, Websites,
+Lab, Receptionist and Privacy at 390 and 1280 pixels: ten HTTP 200 responses,
+no page overflow or JavaScript errors, all gallery previews decoded.
+Visual inspection of live Websites mobile and Lab desktop confirmed the layouts.
+All 27 live preview files, brand.css and three GSAP assets match reviewed hashes.
+Private evidence: output/live-verification.json, output/live-assets.json and
+output/playwright/live-*.png under the external runtime folder above.
+GitNexus detect-changes ran against the inherited New repos index: low risk and
+zero affected processes. Its parent-wide results include unrelated work and are
+not candidate-specific proof. The staged release contained only reviewed files.
+Vendor whitespace is retained to preserve upstream asset hashes.
+Recovery reference: prior published commit 657861961e8297853a2c6e62c6c453c56488f159;
+use a normal reviewed revert if required. No rollback was performed or rehearsed.
+Publication is complete. Remaining owner follow-up: clarify care billing increments.

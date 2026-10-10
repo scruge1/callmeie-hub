@@ -24,10 +24,11 @@ Shared styling is in `brand.css`; shared HTML is in `_partials/`.
 Run `py -3 scripts/inject-cohesion.py` after changing a partial, then its
 `--check` mode. Demo designs retain their distinct visual styles.
 
-## Local review candidate — 10 October 2026
+## Published consolidation — 10 October 2026
 
 Branch `review/site-consolidation-20261010` starts from published commit
-`657861961e8297853a2c6e62c6c453c56488f159`. Adam authorised publication after review.
+`657861961e8297853a2c6e62c6c453c56488f159`. Published site release:
+`faceddd2696f5af77cb029913d82a8229338528e`. GitHub Pages deployment succeeded.
 See [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md) for verification and remaining
 publication status. Private browser captures stay outside Git.
 
