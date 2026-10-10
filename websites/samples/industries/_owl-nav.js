@@ -1,8 +1,8 @@
 /**
  * Callmeie Technologies sample-preview nav bar.
  * Loaded from every demo/sample page via:
- *   - demos/*/index.html  →  <script src="/websites/samples/industries/_owl-nav.js" defer></script>
- *   - samples/industries/*.html  →  <script src="_owl-nav.js" defer></script>
+ *   - demo index pages  →  <script src="/websites/samples/industries/_owl-nav.js" defer></script>
+ *   - industry sample pages  →  <script src="_owl-nav.js" defer></script>
  *
  * Fixed bottom-centre bar: back to gallery, ← Prev, 01/10, Next →, "Build this", ×
  */

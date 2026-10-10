@@ -12,16 +12,24 @@ This repo serves the apex domain `callmeie.ie` via GitHub Pages.
 
 ## Brand contract
 
-Same tokens as `portal.callmeie.ie` (Document Ops console) and
-`docs.callmeie.ie` (Document Ops sales site). Single product family =
-single brand language.
+The site design follows [DESIGN.md](DESIGN.md). It presents
+AI receptionists and websites as the two main services. Supporting services
+and legal scope stay available without crowding the main pages.
 
 - Paper `#f8f5f0` · Ink `#1c1f24` · Indigo `#1d3557` · Amber `#c08a3f`
-- Fraunces (display) + Inter (body) + JetBrains Mono (mono)
+- Fraunces (short display headings) + Inter (body, labels and prices)
 - No glassmorphism, no purple gradients, no emoji, no rounded floating cards
 
-Source of truth: `document-ops-portal/app/static/portal.css` lines 1–58.
-If brand tokens change, update there first then mirror here.
+Shared styling is in `brand.css`; shared HTML is in `_partials/`.
+Run `py -3 scripts/inject-cohesion.py` after changing a partial, then its
+`--check` mode. Demo designs retain their distinct visual styles.
+
+## Local review candidate — 10 October 2026
+
+Branch `review/site-consolidation-20261010` starts from published commit
+`657861961e8297853a2c6e62c6c453c56488f159`. Adam authorised publication after review.
+See [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md) for verification and remaining
+publication status. Private browser captures stay outside Git.
 
 ## Companion plans
 
@@ -32,7 +40,8 @@ This repo implements the plan locked in:
 - `document-ops-portal/CALLMEIE-PARENT-HUB-DESIGN-RECIPE.md`
 - `document-ops-portal/CALLMEIE-PARENT-HUB-CODEBASE-PLAN.md`
 
-If this repo and those plans diverge, the plans win until updated.
+These documents describe the earlier build. The authorised local review
+uses DESIGN.md and ACTIVE-CHECKPOINT.md for its current scope.
 
 ## Stack
 
