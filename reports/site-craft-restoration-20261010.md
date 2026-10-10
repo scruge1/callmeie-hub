@@ -11,7 +11,7 @@ Removed decorative arrows from parent controls, reduced repeated narration and r
 - 80 content pages plus 14 redirect stubs inventoried. All 80 content pages checked in Chrome at 768/1280 and WebKit at 375/390: 320 cases. Final repairs reran 96 cases within that matrix.
 - No page overflow, browser errors or failed resources. All 205 source manifest files match the reviewed candidate. Raw automated flags remain in private evidence; intentional artwork, labelled empty controls and the accessible privacy table were visually adjudicated rather than described as zero flags.
 - Agents actually viewed every content page at mobile and desktop sizes. The 36 main routes include the unauthenticated admin gate; 44 demo routes were reviewed separately. All 20 affected navigation footer crops and all 20 gallery thumbnail instances were checked. A real sample logo overlap was repaired and checked at 320/375/390.
-- Custom audio playback, pause, seek, keyboard interaction, media error and no-JavaScript fallback passed. Production MP3 byte ranges return 206; live custom controls require a post-publication check.
+- Custom audio playback, pause, seek, keyboard interaction, media error and no-JavaScript fallback passed. Production MP3 byte ranges return 206; live custom controls subsequently passed Chrome/WebKit390/1280 play, pause, 50% seek and keyboard checks.
 - Native Home scrolling and reverse scrolling were recorded and visually reviewed in Chrome and WebKit. Reduced motion dynamically removes transforms. No pinned scene or wheel interception.
 - Cohesion check: 91 pages, zero drift, two intentional skips. Local link targets: zero missing. Git whitespace check passed.
 
@@ -19,4 +19,4 @@ GitNexus exact-worktree lookup previously returned not found; the unrelated pare
 
 Private browser evidence is outside Git under AppData/Local/callmeie-site-review-20261010/output. No authenticated admin workflow, form submission, phone call or provider mutation was performed. Visual review is an engineering check, not a claim that Adam has accepted the design.
 
-Publication and live verification receipts are recorded in ACTIVE-CHECKPOINT.md.
+Published source06dcc58b2f7e30b040030cda2b03d2699682d3f8. Pages38090796457 and cohesion38090796633 succeeded. Live WebKit checks of five main routes at390/1280 passed. All19 sampled served files match the exact release. Publication and live verification receipts are recorded in ACTIVE-CHECKPOINT.md.

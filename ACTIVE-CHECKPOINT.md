@@ -1,14 +1,29 @@
 # CallMeIE whole-site review and local preview
 
-## Current work — 10 October 2026
+## Current published craft release — 10 October 2026
 
-Adam rejected the published visual treatment as too basic: repeated arrow
-glyphs, an isolated handset and native audio controls. A further local craft
-pass is active. Recover original design direction through ask_system.py stores,
-the Codex database and source messages. Rebuild image-led compositions and a
-custom accessible audio module; review actual browser visuals and motion before
-publication under the existing publish instruction. Prior runtime checks are
-historical evidence and do not certify this new candidate or visual acceptance.
+LIVE at https://callmeie.ie/. Source release:
+06dcc58b2f7e30b040030cda2b03d2699682d3f8.
+GitHub Pages38090796457 and cohesion38090796633 succeeded.
+The 320-case final matrix passed across80 content pages, with zero page overflow,
+browser errors or resource failures. Agents actually viewed all80 pages at
+mobile and desktop sizes. All205 reviewed source hashes match the candidate;
+19 actual served HTML/CSS/JS/font/artwork/metadata files match the release bytes.
+See reports/site-craft-restoration-20261010.md and the separate section reports.
+Live WebKit checks passed for Home, Websites, Lab, Receptionist and Privacy
+at390/1280: loaded previews/assets, correct fonts/wordmark, no overflow or
+browser errors. Live custom audio passed Chrome/WebKit390/1280: play, pause,
+50% seek and keyboard advancement; MP3 range requests return206.
+See reports/live-audio-verification-20261010.md. Live Home also passed12
+Chrome/WebKit390/1280 normal/reduced-motion/no-JavaScript contexts; all44
+state frames, open menus and four full pages were actually viewed. Main links
+fit and return200; no page errors, overflow or missing hero images.
+
+This release uses composed studio imagery, real gallery previews, an integrated
+receiver image and custom audio controls. It preserves GN colours, two fonts,
+prices, scope, consent and provider boundaries. Artwork is raster depth, not
+interactive3D or4K. User design acceptance remains Adam's decision. No provider
+writes, live submissions, authenticated admin checks or phone calls occurred.
 
 ## Previous published correction — 10 October 2026
 

@@ -119,3 +119,14 @@ Base: C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/output/playwrig
 - chromium-results.json preserves the fresh Chrome normal/reduced/noJS metadata. Source screenshots and independent wheel metadata establish the final WebKit review; the original12-case metadata remains in craft-review2/results.json.
 
 Reviewed source only: index.html, assets/css/home-editorial.css and assets/js/studio-scene.js. No source functions or site files edited by this agent. Root owns final full-site gates, current Websites/Lab changes and the custom receptionist player; those lanes are not silently passed by this Home review.
+## Published Home verification — source 06dcc58
+
+Read-only LIVE check of https://callmeie.ie/ after the successful Pages/cohesion publication. Chrome and WebKit each covered 390 px and 1280 px, with normal motion, reduced motion, and JavaScript disabled: 12 contexts. Local stylesheet readiness and hero image decoding preceded measurement. No forms, credentials, enquiries, or contact actions were submitted.
+
+Result: bounded visual and fallback PASS. All 12 contexts had zero page errors, zero document overflow, and no undecoded hero images. All measured main links fit the viewport. Both desktop browsers returned HTTP 200 for the four unique main internal links. The two mobile open-menu screenshots show every menu label inside the viewport.
+
+Actual visual coverage: four contact sheets containing all 44 normal/fallback frames, both mobile menu captures, and four full-page screenshots. The final Clancy website concept is visible in the composed scene and repeated service preview. Its caption stays above the foreground phone. Burgundy phone, paper studio, strong house headings, squared controls, and compact footer remain aligned in both browsers. The composition preserves room for legible actions on mobile. No new visual defect found in this scope.
+
+Normal motion was inspected at scroll positions 0, 200, 450, 650, 450, 200, and 0 with settled scroll positions. Scene depth returns to the same value in either direction. Reduced motion recorded depth 0 and phone transform none at both measured positions. JavaScript-disabled states preserve the static composition, copy, and links. This is layered raster depth, not genuine 3D geometry. This bounded publication check does not assert Adam's aesthetic approval or whole-site interaction coverage.
+
+External evidence directory: `C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/output/playwright/brand-live-final/`. Machine evidence: `results.json`. Viewed image groups: `chromium-390-sheet.jpg`, `chromium-1280-sheet.jpg`, `webkit-390-sheet.jpg`, `webkit-1280-sheet.jpg`, both `*-390-menu.png`, and all four `*-full.png`. Harness: `C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/brand-live-final.cjs`.
