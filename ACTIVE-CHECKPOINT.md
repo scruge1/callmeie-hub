@@ -1,5 +1,43 @@
 # CallMeIE whole-site review and local preview
 
+## Current correction — 10 October 2026
+
+The corrected site is verified locally and ready for publication under Adam's
+existing explicit instruction. Publication proof will be recorded here after
+GitHub Pages and actual live browser verification. The earlier basic/off-brand
+publication remains historical evidence, not design acceptance.
+
+The correction restores the Great National v1 house reference: original logo,
+warm paper, ink/burgundy, Archivo Black and IBM Plex Sans, square controls and
+strong hierarchy. Approved scope, pricing, privacy and form boundaries remain.
+Generated paper and handset WebP assets add material and service imagery; the
+handset is a still, not interactive 3D. Asset prompts/export details are in
+assets/brand/README.md. Prior design research and direct Claude/Codex transcript
+provenance are saved in reports/design-history-20261010.md.
+
+Three agents completed the correction and visual review. All80 content pages
+were viewed at375/1280. Settled viewport images resolve full-page animation
+capture artefacts; final10 demo enquiry forms and changed footers have normal
+viewport proof. Forms identify CallMeIE without24-hour promises/admin narration.
+No decorative emoji, forced heading breaks or coloured final-word accents.
+
+Final runtime acceptance:320 scenarios across Chromium768/1280 and WebKit375/390,
+plus105 shared-header checks across35 pages at320/375/390. Targeted follow-ups
+replace earlier results for final copy/asset/footer changes. No page overflow,
+browser errors or failed resources;179 source/asset hashes have zero drift.
+Intentional raw gate flags are retained and explicitly reviewed, not claimed
+as zero. Shared partials:91 pages, zero drift. Local links:zero missing targets.
+
+Evidence: AppData/Local/callmeie-site-review-20261010/output/playwright/
+style-restoration, final-header-check, final-settled, form-final and corresponding
+section reports. Local preview:http://127.0.0.1:8769/.
+Technical passes do not imply Adam's visual acceptance or physical-device
+performance. Authenticated admin and live form sends were not tested; no
+customer messages/provider changes occurred. Legacy hidden discovery-widget
+routing remains unchanged and is not part of the visible two-service offering.
+
+The sections below retain first-publication history and original authorisation.
+
 Owner: Codex main thread 01a126ed-cf0b-7120-a1a6-0a91633eb1eb.
 User approved parallel section review and local preview on 10 October 2026.
 Base: live GitHub main 657861961e8297853a2c6e62c6c453c56488f159.
@@ -7,7 +45,7 @@ Worktree: callmeie-hub-review-20261010; branch review/site-consolidation-2026101
 Adam explicitly authorised publication on 10 October 2026 after the local review.
 Outbound enquiries and customer contact remain outside this task.
 
-## Current work
+## First publication — historical checks
 
 - Three section agents completed reviews and bounded implementation. Each viewed
   desktop/mobile browser captures. Follow-up reviews cover nested demos, documents

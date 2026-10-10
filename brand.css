@@ -1,12 +1,15 @@
-/* Shared marketing styles; demo bodies retain their own design. */
-:root{--cmt-paper:#f8f5f0;--cmt-paper-alt:#efe9de;--cmt-ink:#1c1f24;--cmt-muted:#615d55;--cmt-brand:#1d3557;--cmt-accent:#1d3557;--cmt-font-display:'Fraunces',Georgia,serif;--cmt-font-body:'Inter',sans-serif;--cmt-font-mono:'Inter',sans-serif;--cmt-strip-h:76px}
-body[data-callmeie-page]{--paper:var(--cmt-paper);--paper-alt:var(--cmt-paper-alt);--bg:var(--cmt-paper);--ink:var(--cmt-ink);--muted:var(--cmt-muted);--accent:var(--cmt-brand);--accent-hover:#14253f;--brand:var(--cmt-brand);--brand-hover:#14253f;--burgundy:var(--cmt-brand);--display:var(--cmt-font-display);--body:var(--cmt-font-body);--mono:var(--cmt-font-body);--font-display:var(--cmt-font-display);--font-body:var(--cmt-font-body);background:var(--cmt-paper)!important;color:var(--cmt-ink);font-family:var(--cmt-font-body)!important;font-size:17px;line-height:1.6;margin:0;padding-bottom:0!important}
+/* CallMeIE house style: existing Great National proposal pack and original logo.
+   Two common-site fonts; individual demo bodies retain their own design. */
+@font-face{font-family:'Archivo Black';src:url('/assets/fonts/archivo-black-400.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url('/assets/fonts/ibm-plex-sans-400.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+:root{--cmt-paper:#f5f1e8;--cmt-paper-alt:#ece7d9;--cmt-ink:#0b0a08;--cmt-ink-soft:#292620;--cmt-muted:#545454;--cmt-line:#c8c1b3;--cmt-brand:#5a1420;--cmt-brand-hover:#40101a;--cmt-brand-soft:#ece7d9;--cmt-accent:#5a1420;--cmt-font-display:'Archivo Black',sans-serif;--cmt-font-body:'IBM Plex Sans',sans-serif;--cmt-font-mono:'IBM Plex Sans',sans-serif;--cmt-strip-h:76px}
+body[data-callmeie-page]{--paper:var(--cmt-paper);--paper-alt:var(--cmt-paper-alt);--bg:var(--cmt-paper);--ink:var(--cmt-ink);--muted:var(--cmt-muted);--accent:var(--cmt-brand);--accent-hover:var(--cmt-brand-hover);--brand:var(--cmt-brand);--brand-hover:var(--cmt-brand-hover);--burgundy:var(--cmt-brand);--display:var(--cmt-font-display);--body:var(--cmt-font-body);--mono:var(--cmt-font-body);--font-display:var(--cmt-font-display);--font-body:var(--cmt-font-body);background:var(--cmt-paper)!important;color:var(--cmt-ink);font-family:var(--cmt-font-body)!important;font-size:17px;line-height:1.6;margin:0;padding-bottom:0!important}
 body[data-callmeie-page] :is(p,li,a,button,input,textarea,select,label,summary,small,span,th,td,figcaption,dt,dd){font-family:var(--cmt-font-body)!important}
-body[data-callmeie-page] :is(h1,h2,h3,h4){font-family:var(--cmt-font-display)!important;font-style:normal!important;text-transform:none!important;letter-spacing:-.025em;overflow-wrap:break-word;text-wrap:balance}
+body[data-callmeie-page] :is(h1,h2,h3,h4){font-family:var(--cmt-font-display)!important;font-style:normal!important;font-weight:400!important;text-transform:none!important;letter-spacing:-.045em;overflow-wrap:break-word;text-wrap:balance;font-optical-sizing:auto}
 body[data-callmeie-page] :is(h1,h2,h3) em{font:inherit;color:inherit}
-body[data-callmeie-page] h1{font-size:clamp(2.25rem,5vw,3.8rem)!important;line-height:1.1!important;max-width:21ch}
-body[data-callmeie-page] h2{font-size:clamp(1.65rem,3vw,2.35rem)!important;line-height:1.2}
-body[data-callmeie-page] :is(.eyebrow,.section-kicker,.hero__eyebrow,.tier__kicker,.crumbs,.legal-eyebrow,.section-label){letter-spacing:.035em!important;text-transform:none!important;font-size:14px!important}
+body[data-callmeie-page] h1{font-size:clamp(2.35rem,6.8vw,5.4rem)!important;line-height:1.03!important;max-width:20ch;font-variation-settings:normal!important}
+body[data-callmeie-page] h2{font-size:clamp(1.65rem,3.5vw,2.8rem)!important;line-height:1.12}
+body[data-callmeie-page] :is(.eyebrow,.section-kicker,.hero__eyebrow,.tier__kicker,.crumbs,.legal-eyebrow,.section-label){letter-spacing:.13em!important;text-transform:uppercase!important;font-size:12px!important;font-weight:600;color:var(--cmt-brand)}
 body[data-callmeie-page] :is(.lede,.hero__sub,.section-dek,.legal-lede,.about-inner p){font-family:var(--cmt-font-body)!important;font-style:normal!important;font-size:clamp(1rem,1.2vw,1.15rem)!important;max-width:65ch;line-height:1.65}
 body[data-callmeie-page] :is(.page,.shell,.hero-inner,.section-inner,.about-inner,.demo-line-inner,.legal-inner,.cta-tail-inner){width:100%;max-width:1180px;margin-inline:auto;padding-inline:clamp(20px,4vw,48px)}
 body[data-callmeie-page="document"] :is(.legal-inner,.page-shell){max-width:920px}
@@ -15,11 +18,11 @@ body[data-callmeie-page] .hero.shell{padding-inline:clamp(20px,4vw,48px)}
 body[data-callmeie-page] :is(.section-head,.section-head__body){display:block}
 body[data-callmeie-page] .section-dek{margin-left:0}
 body[data-callmeie-page] .hero__headline{margin-left:0;transform:none}
-body[data-callmeie-page] :is(.btn,.tier__cta,.pricing-cta,.button,.callmeie-cta){border-radius:5px;transition:background-color .18s,color .18s,transform .18s;text-transform:none;letter-spacing:0}
+body[data-callmeie-page] :is(.btn,.tier__cta,.pricing-cta,.button,.callmeie-cta){border-radius:2px;transition:background-color .18s,color .18s,transform .18s;text-transform:none;letter-spacing:0}
 body[data-callmeie-page] :is(.btn-primary,.tier__cta,.pricing-cta,.button-primary){background:var(--cmt-brand)!important;color:var(--cmt-paper)!important}
 body[data-callmeie-page] :is(.btn,.tier__cta,.pricing-cta):hover{transform:translateY(-2px)}
 body[data-callmeie-page] :is(.tier__price,.price,.plan-price){font-family:var(--cmt-font-body)!important;font-style:normal}
-body[data-callmeie-page] :is(.tier,.plan,.pricing-card){min-width:0;border-color:var(--cmt-line);border-radius:6px}
+body[data-callmeie-page] :is(.tier,.plan,.pricing-card){min-width:0;border-color:var(--cmt-line);border-radius:2px}
 body[data-callmeie-page] :is(.tier--featured,.plan.featured,.pricing-card.featured){border-color:var(--cmt-brand)}
 body[data-callmeie-page] :is(.product-row-head,.cta-row,.hero__actions){display:flex;gap:16px;flex-wrap:wrap;align-items:center}
 body[data-callmeie-page] :is(.product-row-head,.product-row-body)>*{min-width:0}
@@ -73,6 +76,7 @@ body[data-callmeie-page] .tier .name{font-style:normal!important}
 #owl-sample-nav{background:var(--cmt-paper)!important;color:var(--cmt-ink)!important;font-family:var(--cmt-font-body)!important;letter-spacing:0!important;flex-wrap:wrap!important;justify-content:center;box-sizing:border-box}
 #owl-sample-nav :is(a,button){font-family:var(--cmt-font-body)!important;color:var(--cmt-ink)!important;flex:0 0 auto;white-space:nowrap}
 #owl-sample-nav :is(.owl-label,.owl-idx,.owl-div,.owl-build){display:none!important}
+#owl-sample-nav{position:relative!important;left:auto!important;bottom:auto!important;transform:none!important;width:max-content!important;max-width:calc(100% - 32px)!important;margin:24px auto!important}
 .cmt-consent{width:360px;max-width:calc(100vw - 32px);padding:14px!important;border:1px solid var(--cmt-line)!important;background:var(--cmt-paper)!important;color:var(--cmt-ink)!important}
 .cmt-consent :is(p,a,button){font-family:var(--cmt-font-body)!important;font-size:14px!important;line-height:1.45!important;font-style:normal!important;text-transform:none!important}
 .cmt-consent__hd,.cmt-consent__body{color:var(--cmt-ink)!important}
@@ -106,3 +110,79 @@ body:has(.cmt-consent[data-show="1"]) #owl-sample-nav{display:none!important}
   .cmt-consent{inset:auto 12px 12px!important;width:auto;max-width:none}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Restore the house-style hierarchy without restoring the old copy density. */
+body[data-callmeie-page]{--paper-alt:var(--cmt-paper-alt);--cream:var(--cmt-paper);--ink-soft:var(--cmt-ink-soft);--muted:var(--cmt-muted);--line:var(--cmt-line);--line-soft:#ded7cb;--rule:var(--cmt-line);--accent-hover:var(--cmt-brand-hover);--accent-dark:var(--cmt-brand-hover);--accent-light:var(--cmt-brand);--brand-hover:var(--cmt-brand-hover);--serif:var(--cmt-font-display);--display-style:normal;--display-weight:400;font-feature-settings:'calt' 1}
+body[data-callmeie-page] :is(h1,h2,h3,h4) :is(span,em,a){font-family:inherit!important;font-weight:inherit}
+body[data-callmeie-page] .house-accent{color:var(--cmt-brand)}
+body[data-callmeie-page] .hero::before{background:none}
+body[data-callmeie-page] .hero{padding-block:clamp(44px,7vw,96px);border-bottom:1px solid var(--cmt-line)}
+body[data-callmeie-page] .hero h1{margin-bottom:28px;max-width:19ch}
+body[data-callmeie-page] :is(.lede,.hero__sub){color:var(--cmt-ink-soft);font-size:clamp(18px,1.4vw,21px)!important}
+body[data-callmeie-page] :is(.hero .kicker,.hero .eyebrow){color:var(--cmt-brand);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+body[data-callmeie-page] .product-row-head{align-items:baseline}
+body[data-callmeie-page] .product-name{font-family:var(--cmt-font-display)!important;font-size:clamp(25px,3vw,36px)}
+body[data-callmeie-page] .product-outcome{color:var(--cmt-brand);font-variant-numeric:tabular-nums}
+body[data-callmeie-page] :is(.product-row,.card,.sample-card,.tier,.plan,.pricing-card,.cta-block){border-radius:2px!important}
+body[data-callmeie-page] :is(.tier-price,.tier__price,.plan-price){font-family:var(--cmt-font-display)!important;font-weight:400!important;color:var(--cmt-brand);font-variant-numeric:tabular-nums}
+body[data-callmeie-page] :is(.tier-name,.tier .name){font-family:var(--cmt-font-display)!important}
+body[data-callmeie-page] :is(.tier--featured,.tier.featured,.tier.highlight,.plan.featured,.pricing-card.featured){border-top:3px solid var(--cmt-brand);box-shadow:inset 0 1px 0 #ffffff80}
+body[data-callmeie-page] .demo-line{background:var(--cmt-brand);color:var(--cmt-paper);border-top:0;border-bottom:0}
+body[data-callmeie-page] .demo-line :is(h2,p,a,span){color:var(--cmt-paper)}
+body[data-callmeie-page] .demo-line-call{border-color:#f5f1e860;border-radius:2px;background:transparent}
+body[data-callmeie-page] .demo-line::before{display:none}
+body[data-callmeie-page] :is(.card-header h2,.sample-card h2,.sample-card h3){font-size:clamp(20px,2vw,25px)!important;letter-spacing:-.035em}
+body[data-callmeie-page] .card-title{font-family:var(--cmt-font-display)!important;font-size:21px;font-weight:400;letter-spacing:-.035em;line-height:1.25}
+body[data-callmeie-page] .legal-card__title{font-size:clamp(1.4rem,2vw,1.8rem)!important;line-height:1.15}
+body[data-callmeie-page] .website-sections a{color:var(--cmt-brand);border-bottom:1px solid var(--cmt-brand);padding-bottom:3px}
+body[data-callmeie-page] :is(.website-sections,.card-cta-row){gap:20px}
+body[data-callmeie-page] .card-cta{background:var(--cmt-brand);color:var(--cmt-paper);font-family:var(--cmt-font-body)!important;border-radius:2px}
+body[data-callmeie-page] .lab-grid .card-cta{background:none;color:var(--cmt-brand);border-bottom:1px solid var(--cmt-brand)}
+body[data-callmeie-page] :is(.card-preview,.thumb){border-radius:0}
+body[data-callmeie-page] :is(.section-h2,.final h2){max-width:24ch}
+body[data-callmeie-page] .simple-steps article{border-top:2px solid var(--cmt-brand);padding-top:18px}
+body[data-callmeie-page] .simple-steps h3{font-size:22px}
+body[data-callmeie-page] .lab-head{padding-block:56px 32px;border-bottom:2px solid var(--cmt-brand)}
+body[data-callmeie-page] .lab-head h1{margin-bottom:24px}
+body[data-callmeie-page] .cta-block{background:var(--cmt-brand)}
+body[data-callmeie-page] .footer-strip{background:var(--cmt-brand);border-radius:2px}
+body[data-callmeie-page] .footer-strip a{border-radius:2px}
+.callmeie-wordmark{display:block;width:186px;height:62px;object-fit:contain;max-width:100%;flex-shrink:0}
+.callmeie-footer-wordmark{display:block;width:240px;height:80px;object-fit:contain;max-width:100%;margin-left:-20px}
+.callmeie-mark{flex:0 0 auto}
+.callmeie-footer{background:var(--cmt-paper)}
+.callmeie-footer-wordmark{mix-blend-mode:normal}
+.callmeie-cta,.callmeie-mobile-links,.cmt-consent,.cmt-consent__btn,.callmeie-pill{border-radius:2px!important}
+.callmeie-cta{background:var(--cmt-brand);color:var(--cmt-paper)}
+.callmeie-mobile-menu summary{list-style:none}
+.callmeie-mobile-menu summary::-webkit-details-marker{display:none}
+.callmeie-mobile-menu summary::after{content:'+';display:inline-block;margin-left:7px;font-size:18px}
+.callmeie-mobile-menu[open] summary::after{content:'−'}
+/* Product-page safety rules must not add a second gutter to the shared header. */
+@media(max-width:640px){.callmeie-strip{padding-inline:0!important}.callmeie-strip .callmeie-cta{white-space:nowrap;flex-shrink:0;min-height:44px;display:inline-flex;align-items:center;justify-content:center}.callmeie-strip .callmeie-mobile-menu summary{white-space:nowrap}}
+@media(max-width:360px){.callmeie-strip .callmeie-wordmark{width:120px}.callmeie-strip-inner{gap:8px}.callmeie-strip .callmeie-mobile-menu summary{padding-left:0}}
+@media(max-width:760px){.callmeie-strip .callmeie-mobile-menu{position:static}.callmeie-strip .callmeie-mobile-links{right:20px;top:100%;max-width:calc(100vw - 40px)}}
+@media(max-width:760px){.callmeie-wordmark{width:144px;height:48px}.callmeie-footer-wordmark{width:210px;height:70px;margin-left:-16px}body[data-callmeie-page] .hero{padding-block:40px 48px}body[data-callmeie-page] h1{font-size:clamp(36px,9.4vw,54px)!important}body[data-callmeie-page] .hero h1{max-width:19ch}body[data-callmeie-page] .lab-head{padding-top:40px}}
+@media(max-width:760px){body[data-callmeie-page] .demo-number{font-size:clamp(25px,7.7vw,40px)!important;white-space:nowrap;line-height:1.2;letter-spacing:-.02em;max-width:100%}}
+
+/* Generated material is a quiet surface; the brand and content remain dominant. */
+body[data-callmeie-page],body[data-callmeie-page] .hero,.callmeie-strip,.callmeie-footer{background-image:linear-gradient(#f5f1e8db,#f5f1e8db),url('/assets/brand/paper-texture.webp')!important;background-size:auto,620px}
+body[data-callmeie-page] .house-hero .hero-inner{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;gap:32px}
+.house-hero-copy{min-width:0}
+.house-hero-asset{margin:0;max-width:420px;justify-self:end}
+.house-hero-asset img{display:block;width:100%;height:auto;object-fit:contain}
+body[data-callmeie-fixed-header="clancys"] nav.nav,body[data-callmeie-fixed-header="strand"] #site-header{top:54px!important}
+body[data-callmeie-fixed-header="vibrant"] nav.nav{top:78px!important}
+@media(max-width:900px){body[data-callmeie-page] .house-hero .hero-inner{grid-template-columns:minmax(0,1fr);gap:12px}.house-hero-asset{width:210px;justify-self:end}}
+/* CallMeIE enquiry forms follow the house style inside distinct industry demos. */
+body #owl-lead-form{background:var(--cmt-paper);color:var(--cmt-ink);border-top:2px solid var(--cmt-brand);font-family:var(--cmt-font-body);font-size:16px}
+body #owl-lead-form h3{font-family:var(--cmt-font-display);font-weight:400;font-size:clamp(24px,3vw,34px);color:var(--cmt-ink)}
+body #owl-lead-form :is(.olf-kicker,.olf-status,.olf-close){color:var(--cmt-brand)}
+body #owl-lead-form :is(p.olf-lede,.olf-note,label span){color:var(--cmt-muted);font-size:14px}
+body #owl-lead-form p.olf-lede{font-size:16px}
+body #owl-lead-form .olf-note{border-color:var(--cmt-line)}
+body #owl-lead-form .olf-note a{color:var(--cmt-brand)}
+body #owl-lead-form :is(input,textarea){font-size:16px;border-color:var(--cmt-line)}
+body #owl-lead-form :is(input,textarea):focus{border-color:var(--cmt-brand);box-shadow:0 0 0 3px #5a14201a}
+body #owl-lead-form button:not(.olf-close){background:var(--cmt-brand);color:var(--cmt-paper);min-height:44px}
+body #owl-lead-form button:not(.olf-close):hover{background:var(--cmt-brand-hover)}

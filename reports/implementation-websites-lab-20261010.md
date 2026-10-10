@@ -36,7 +36,7 @@ Pinned vendor provenance, SHA256:
 - GSAP3.13.0: https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js — 96C01B81F44A3290E2B4532F55E2C9534B2ADC43273A19F3756B2CB41F0FD0B6
 - ScrollTrigger3.13.0: https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js — 308219390E5E3B84CDA0C481E70CAA9820883AE10BDA44E6E9A149A81AAC4B3F
 - SplitText3.13.0: https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js — 5E519EA2470FAA15CA4D4F27E9263E5906C07C034A9B4771164DEE108136563A
-`nFinal flagged-route repair: 04-physio-neumorphism.html now gives .topbar__phone margin-left:auto inside the same max-width:720px breakpoint that hides .topbar__nav. Visually checked375/390/1280. Brand and phone share first mobile header row; booking action wraps below. Desktop navigation stays aligned. No document overflow at any checked width. Only this static sample CSS rule changed.
+Final flagged-route repair: 04-physio-neumorphism.html now gives .topbar__phone margin-left:auto inside the same max-width:720px breakpoint that hides .topbar__nav. Visually checked375/390/1280. Brand and phone share first mobile header row; booking action wraps below. Desktop navigation stays aligned. No document overflow at any checked width. Only this static sample CSS rule changed.
 
 
 ## Final strict-gate repairs and accepted decorations
@@ -54,3 +54,27 @@ Vetcare booking gate entries are its five empty input controls, visible labeled 
 Repaired13 nested Vetcare undefined privacy/accessibility URLs to existing demo pages. Missing Clancys/Slaney/Wildflour policies link to actual CallMeIE privacy with explicit label; accessibility links say Accessibility contact and mailto hello@callmeie.ie. Murphy missing services/about pages route to the actual design gallery. No extra pages created. Whole-site local target checker reports0 missing targets after root and other agents’ fixes.
 
 Bounded evidence: outside-repo output/playwright/lab/bounded-final-gate.json,24 checks across six routes (WebKit375/390, Chrome768/1280). Fresh visual crops and action screenshots viewed. Existing global inventory remains main-owned; this report does not claim all routes share these results.
+
+## Final sample05 mobile header repair
+
+Static style `nocturne-mobile-header` added to websites/samples/05-3d-hyperrealism.html. At640px and below, the primary body navigation wraps with16px gap, the brand takes a full row, and its gold CTA has max-width100%. This resolves the overlapping logo and Reserve label without changing JS, desktop typography or headphone artwork. Fresh CSS-loaded, font-ready, progressively scrolled and3200ms-settled viewport captures were visually viewed at375/390/768/1280. All four headers are readable and distinct; document widths match viewport widths. Evidence external output/playwright/final-settled/*05-3d-hyperrealism* and nocturne-results.json.
+
+## Final restored-brand visual verification
+
+All 44 demo, sample and nested content routes received fresh captures at 375 and 1280 pixels (88 cases). Each capture waited for local CSS, fonts and progressive scrolling, then settled for 3200 ms after returning to the top. Normal viewport screenshots were taken before full-page screenshots. Full-page expansion can disturb ScrollTrigger, so the normal viewport images are the authority for hero visibility. All 12 top contact sheets and all 12 footer contact sheets were visually reviewed. Fresh normal viewport captures also verify each changed footer and form. Earlier complete body reviews support unchanged content. The initial 132 captures with malformed stylesheet URLs are excluded from final CSS evidence.
+
+All 88 document widths fit their viewports. The CallMeIE return control preserves each concept's distinct typography and palette. Root fixed the Clancys, Strand Road and sample 06 header offsets, moved the gallery return dock into normal flow, and separated sample 06 mobile logo and navigation rows. Fresh Clancys views at 375 and 390 pixels show unobstructed hero actions.
+
+Confirmed static CSS repairs in this lane:
+
+- Sample 05: mobile navigation wraps, the Nocturne brand occupies its own row, and the Reserve button fits. Visually verified at 375, 390, 768 and 1280 pixels.
+- Sample 04: the mobile CONCRETE/SLAB footer logo now uses a scoped font clamp on `main > footer .brand`. Fresh normal viewport images at 375 and 390 pixels show the complete logo.
+- Sample 06: the mobile contact email button uses smaller text, padding and gaps with a fixed icon size. Fresh normal viewport images at 375 and 390 pixels show the complete address. Root owns its separate navigation grid repair.
+
+The shared industry enquiry form is an intentional section in normal document flow. All 10 industry HTML routes load `_owl-form.js`; all 10 slugs exist in its mapping. Static presentation strings now identify CallMeIE, label the page as an illustrative business website, ask about the visitor's business and preferred design, and link to the real privacy notice and website plans. Unsupported 24-hour reply and fictional administrator claims were removed. Form IDs, endpoint, site mapping, handlers and state logic are unchanged. No provider configuration changed. `node --check` passes.
+
+All 20 final normal viewport form images (10 routes at 375 and 1280 pixels) were visually reviewed across four contact sheets. They show the shared paper and burgundy CallMeIE treatment, readable labels, inputs and submit controls, plus visible privacy and plan links. Every case contains the expected illustrative-demo copy and has bounded document width. No forms were submitted.
+
+GitNexus impact was attempted with CLI 1.6.12 against the parent New repos index. The `_owl-form` target was not found, risk remained UNKNOWN, and the FTS extension was unavailable. The anonymous IIFE and isolated worktree lookup prevent a resolved graph result. This is a documented limitation, not evidence of no impact. Manual review of all 10 HTML call sites and the exact presentation-string diff establishes the bounded change scope.
+
+Evidence is outside Git at `C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/output/playwright/final-settled/` and `form-final/`. These contain the 88-route capture results, normal viewport top images, final footer proofs, sample 05 four-width proofs and 20 final form results/contact sheets. Root owns the complete browser gate and publication decision. No confirmed visual defects remain in this lane. Source is frozen.

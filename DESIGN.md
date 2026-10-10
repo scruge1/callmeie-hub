@@ -2,31 +2,44 @@
 
 ## Scope and source
 
-Local preview requested by Adam on 10 October 2026. Base is published commit
-657861961e8297853a2c6e62c6c453c56488f159. No publication is authorised in this task.
+Adam rejected the first 10 October consolidation as too basic and off-brand.
+The Great National pilot proposal v1 is the explicit reference for this correction.
+Its v09 editorial notes preserve logos, paper/burgundy colours and existing fonts
+while cutting repeated and internal narration. v1 keeps that visual system.
+The old dark/Geist ai-agency spec and May per-product themes are historical.
+Simplifying copy does not authorise changing CallMeIE's visual identity.
 Keep the 7/8 October seller, privacy, coverage-hours and form corrections.
 
 ## Visual thesis
 
-Warm paper, clear ink and quiet indigo. One coherent Irish business site with
-generous space, short headings and useful product examples.
+Warm paper, deep ink, burgundy rules and strong sans-serif type. Use the actual
+CallMeIE icon and wordmark. Preserve confident hierarchy and generous space.
 
-Reference: existing `_partials/cohesion.css` identity, installed Apple design
-reference for restraint, and design-hub section templates for layout and CTA.
-This task supersedes older per-product burgundy/orange themes and mono labels.
+Reference: GN output/proposal/build-proposal-pack.py and rendered v1 pages,
+existing receptionist/assets/callmeie-logo.png, and installed design-hub section
+templates for layout. Generic references must not override this selected identity.
 
 ## Shared system
 
-- Paper #f8f5f0, alternate #efe9de, ink #1c1f24, muted #615d55, line #d8cfc1.
-- One action accent: indigo #1d3557. Product photos and demo artwork can vary.
-- Fraunces for short headings. Inter for body, navigation, prices and forms.
-- No third marketing font, all-caps hero, long italic heading or numbered narration.
+- Paper #f5f1e8, alternate #ece7d9, ink #0b0a08, muted #545454, line #c8c1b3.
+- One action accent: burgundy #5a1420. Product photos and demo artwork can vary.
+- Archivo Black for display. IBM Plex Sans for body, navigation, prices and forms.
+- Self-host the existing proposal font files with their OFL licences. Two common
+  font families; use Plex and tabular figures for labels/data.
+- No decorative emoji, forced heading line breaks or decorative final-word colour accents.
+- No replacement text logo, generic serif theme or new palette.
+- Square minimal controls, 2px corners, hairlines and restrained inset depth.
+  No glowing filled pills or capsule-shaped category/status controls.
+- Large headings carry identity; card headings remain smaller and aligned.
+- Do not flatten headings, prices, labels and sections into one visual weight.
 - Body minimum 16px. Text width about 65 characters. Mobile gutters at least20px.
 - One global header. Local section links can remain as a compact in-flow row.
 - One shared footer. Remove repeated product identity/footer blocks.
 - Main navigation: AI Receptionist, Websites, About, Contact. Lab is under Websites.
 - Native details/summary for secondary offer and FAQ detail. Keep material terms visible.
 - Keep essential prices, minimum commitments and ownership clear. Do not invent approved promises.
+- Use direct natural language. Remove hype, internal process language, generic
+  sales narration and repeated explanations. Do not add statistics merely as proof.
 
 ## Page responsibilities
 
@@ -61,3 +74,5 @@ Inventory every tracked public HTML route. Check actual renders at375/390px mobi
 stuck-transform and layout-push checks; use WebKit as well as Chromium. Inspect
 screenshots for every route; distinguish redirect/system files from content pages.
 Check tables, headings, nav, modal and form alignment. Keep captures outside Git.
+ACTIVE-CHECKPOINT.md owns current local versus published status. A technical pass
+alone is not design acceptance.

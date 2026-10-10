@@ -16,8 +16,8 @@ The site design follows [DESIGN.md](DESIGN.md). It presents
 AI receptionists and websites as the two main services. Supporting services
 and legal scope stay available without crowding the main pages.
 
-- Paper `#f8f5f0` · Ink `#1c1f24` · Indigo `#1d3557` · Amber `#c08a3f`
-- Fraunces (short display headings) + Inter (body, labels and prices)
+- Paper `#f5f1e8` · Ink `#0b0a08` · Burgundy `#5a1420`
+- Archivo Black (display) + IBM Plex Sans (body, labels and data), self-hosted
 - No glassmorphism, no purple gradients, no emoji, no rounded floating cards
 
 Shared styling is in `brand.css`; shared HTML is in `_partials/`.
@@ -25,6 +25,10 @@ Run `py -3 scripts/inject-cohesion.py` after changing a partial, then its
 `--check` mode. Demo designs retain their distinct visual styles.
 
 ## Published consolidation — 10 October 2026
+
+Adam rejected the first published design as basic and off-brand. The current
+correction restores the GN proposal reference and original logo; see DESIGN.md.
+The original publication below remains historical evidence, not design acceptance.
 
 Branch `review/site-consolidation-20261010` starts from published commit
 `657861961e8297853a2c6e62c6c453c56488f159`. Published site release:
