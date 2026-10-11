@@ -12,25 +12,34 @@ This repo serves the apex domain `callmeie.ie` via GitHub Pages.
 
 ## Brand contract
 
-The site design follows [DESIGN.md](DESIGN.md). It presents
-AI receptionists and websites as the two main services. Supporting services
-and legal scope stay available without crowding the main pages.
+The site follows [DESIGN.md](DESIGN.md) and preserves the original `6578619`
+design. Irish AI phone reception is the main offer; websites are secondary.
+This cleanup shortens copy, standardises supporting typography, repairs actual
+demo thumbnails and corrects alignment while keeping the original layouts.
 
-- Paper `#f5f1e8` · Ink `#0b0a08` · Burgundy `#5a1420`
-- Archivo Black (display) + IBM Plex Sans (body, labels and data), self-hosted
-- No glassmorphism, no purple gradients, no emoji, no rounded floating cards
+- Original warm paper, ink/navy and Fraunces display headings
+- Inter for company supporting text; distinct demo art direction remains
+- Original Websites orange accent and Receptionist editorial treatment
+- No new generated imagery or 3D in this pass
 
-Shared styling is in `brand.css`; shared HTML is in `_partials/`.
-Run `py -3 scripts/inject-cohesion.py` after changing a partial, then its
-`--check` mode. Demo designs retain their distinct visual styles.
+Scoped cleanup styling is in `cleanup.css`; shared HTML is in `_partials/`.
+Run `python scripts/inject-cohesion.py` after changing a partial, then use its
+`--check` mode. Private browser captures stay outside Git.
 
-## Current craft pass — 10 October 2026
+## Original design cleanup — 11 October 2026
 
-The composed craft release is live at https://callmeie.ie/. Source: `06dcc58`.
-It adds integrated image layers, real-preview galleries and custom audio
-controls. [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md) owns verification and
-publication state. Recovered direct-user requirements and independent comparisons
-are in [the history report](reports/design-direction-history-20261010.md) and
+Adam authorised publication of the reviewed original-design cleanup.
+All 228 browser source and asset files are pinned to the candidate that passed
+320 browser cases across all80 content pages. [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md)
+owns current verification and publication state; see the
+[cleanup report](reports/original-cleanup-20261011.md) and
+[publication report](reports/original-cleanup-publication-20261011.md).
+
+## Previous craft pass — historical
+
+The `06dcc58` craft release was owner-rejected and is superseded by the original
+design cleanup. Recovered requirements and comparisons remain in
+[the history report](reports/design-direction-history-20261010.md) and
 [the design review](reports/design-comparison-20261010.md).
 
 ## Previous published correction — 10 October 2026
@@ -44,8 +53,8 @@ reports/site-brand-restoration-20261010.md for evidence and limits.
 
 ## First consolidation — historical publication
 
-Adam rejected the first published design as basic and off-brand. The current
-correction restores the GN proposal reference and original logo; see DESIGN.md.
+Adam rejected the first published design as basic and off-brand. The subsequent
+GN correction was also superseded by the original-design cleanup; see DESIGN.md.
 The original publication below remains historical evidence, not design acceptance.
 
 Branch `review/site-consolidation-20261010` starts from published commit

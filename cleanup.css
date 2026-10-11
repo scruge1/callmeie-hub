@@ -1,0 +1,62 @@
+/* Small typography and alignment corrections over the original design. */
+body.copy-cleanup {
+  --cleanup-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --cleanup-display: 'Fraunces', Georgia, serif;
+  --body: var(--cleanup-body);
+  --sans: var(--cleanup-body);
+  --mono: var(--cleanup-body);
+  --font-body: var(--cleanup-body);
+  --font-mono: var(--cleanup-body);
+  --cmt-font-body: var(--cleanup-body);
+  --cmt-font-mono: var(--cleanup-body);
+  font-family: var(--cleanup-body);
+}
+.copy-cleanup :where(p,a,span,button,input,select,textarea,summary,label,li,td,th,small,strong,em) {
+  font-family: var(--cleanup-body) !important;
+}
+.copy-cleanup :where(h1,h2,h3,h4),
+.copy-cleanup :where(h1,h2,h3,h4) *,
+.copy-cleanup .nav-brand,
+.copy-cleanup .callmeie-mark-name {
+  font-family: var(--cleanup-display) !important;
+}
+.copy-cleanup h1 { font-size:clamp(36px,5.6vw,72px) !important; line-height:1.08 !important; }
+.copy-cleanup .headline { font-variation-settings:normal !important; font-optical-sizing:none; transition:none; }
+.copy-cleanup h2 { line-height:1.15; }
+.copy-cleanup :where(h1,h2,h3,p) { overflow-wrap:break-word; }
+.copy-cleanup :where(button,input,select,textarea) { max-width:100%; }
+.copy-cleanup .callmeie-strip-inner { font-size:16px; }
+.copy-cleanup .callmeie-mark-name { font-size:21px; }
+.copy-cleanup .callmeie-mark-tag { font-size:10px; }
+.copy-cleanup :where(.callmeie-cta,.callmeie-products summary) { font-size:13px; }
+.copy-cleanup .callmeie-products summary { font-size:13px; }
+.copy-cleanup .submit-btn { white-space:normal !important; height:auto; overflow-wrap:break-word; }
+.copy-cleanup .callmeie-footer { font-size:14px; }
+.copy-cleanup .cmt-chat-fab,.copy-cleanup .cmt-chat-shell,.copy-cleanup .cmt-bottom-cta__quiz { display:none !important; }
+.copy-cleanup:has(.cmt-bottom-cta) .cmt-wa-fab { display:none !important; }
+.copy-cleanup .product-arrow { text-transform:none; letter-spacing:0; }
+.copy-cleanup .cta-tail .btn-primary { color:#fff; }
+.copy-cleanup .cta-tail .btn-primary { max-width:100%; overflow-wrap:anywhere; }
+.copy-cleanup .product-row-head { min-width:0; }
+.copy-cleanup .product-arrow { white-space:normal; }
+.copy-cleanup .demo-line-call { max-width:100%; white-space:normal; }
+.copy-cleanup .sig,.copy-cleanup .care-price { font-family:var(--cleanup-display) !important; }
+.copy-cleanup .sig { overflow-wrap:anywhere; }
+.copy-cleanup.cleanup-document h1 { font-size:clamp(34px,4vw,56px) !important; }
+.copy-cleanup.cleanup-document h2 { font-size:clamp(23px,2.4vw,30px); }
+.copy-cleanup.cleanup-document :where(.legal-inner,.prose,.document-content) { min-width:0; }
+.copy-cleanup.cleanup-document :where(code,td,th,a) { overflow-wrap:anywhere; }
+.copy-cleanup .nav { height:auto; }
+.copy-cleanup .nav-inner { flex-wrap:wrap; height:auto; min-height:82px; }
+.copy-cleanup .callmeie-strip { height:auto; min-height:48px; }
+.copy-cleanup .callmeie-strip-inner { flex-wrap:wrap; height:auto; min-height:48px; padding-block:8px; }
+@media(max-width:760px) {
+  .copy-cleanup h1 { font-size:clamp(34px,8.8vw,44px) !important; }
+  .copy-cleanup .headline { letter-spacing:0; }
+  .copy-cleanup .cta-row { display:flex; flex-wrap:wrap; gap:12px; }
+  .copy-cleanup .cta-row > * { min-width:0; max-width:100%; }
+  .copy-cleanup .demo-line-inner { gap:24px; }
+  .copy-cleanup .demo-line-call-number { font-size:clamp(22px,6.5vw,32px); max-width:100%; white-space:normal; }
+  .copy-cleanup .section-dek { margin-left:0; }
+  .copy-cleanup .section-head { grid-template-columns:32px minmax(0,1fr); gap:12px; }
+}

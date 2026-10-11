@@ -560,3 +560,14 @@ body.has-bottom-cta .cmt-chat-fab {
   }
 }
 
+
+/* Keep parent return controls out of the demo header and its content. */
+.callmeie-pill{position:relative!important;display:flex;width:fit-content;margin:12px 20px;top:auto!important;left:auto!important;transform:none!important;z-index:10}
+.callmeie-pill-tooltip{display:none}
+.callmeie-demo-footer-inner{flex-wrap:wrap;gap:12px}
+#owl-sample-nav{position:relative!important;left:auto!important;bottom:auto!important;transform:none!important;width:max-content!important;max-width:calc(100% - 32px)!important;margin:24px auto!important;flex-wrap:wrap!important;justify-content:center;box-sizing:border-box}
+#owl-sample-nav :is(a,button){font-family:Inter,system-ui,sans-serif!important;flex:0 0 auto;white-space:nowrap}
+
+.callmeie-strip-inner{position:relative}
+.callmeie-products{position:static}
+.callmeie-products-menu{left:auto;right:16px;width:280px;max-width:calc(100vw - 32px)}

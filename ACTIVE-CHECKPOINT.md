@@ -1,144 +1,87 @@
-# CallMeIE whole-site review and local preview
+# CallMeIE original design cleanup
 
-## Current published craft release — 10 October 2026
+## Current truth — 11 October 2026
 
-LIVE at https://callmeie.ie/. Source release:
-06dcc58b2f7e30b040030cda2b03d2699682d3f8.
-GitHub Pages38090796457 and cohesion38090796633 succeeded.
-The 320-case final matrix passed across80 content pages, with zero page overflow,
-browser errors or resource failures. Agents actually viewed all80 pages at
-mobile and desktop sizes. All205 reviewed source hashes match the candidate;
-19 actual served HTML/CSS/JS/font/artwork/metadata files match the release bytes.
-See reports/site-craft-restoration-20261010.md and the separate section reports.
-Live WebKit checks passed for Home, Websites, Lab, Receptionist and Privacy
-at390/1280: loaded previews/assets, correct fonts/wordmark, no overflow or
-browser errors. Live custom audio passed Chrome/WebKit390/1280: play, pause,
-50% seek and keyboard advancement; MP3 range requests return206.
-See reports/live-audio-verification-20261010.md. Live Home also passed12
-Chrome/WebKit390/1280 normal/reduced-motion/no-JavaScript contexts; all44
-state frames, open menus and four full pages were actually viewed. Main links
-fit and return200; no page errors, overflow or missing hero images.
+Adam asked to return carefully to the good original design and make gradual
+changes to typography, thumbnails, copy and alignment. This supersedes the
+replacement art direction. Irish AI phone reception is the main offer;
+websites are the secondary offer. New generated imagery, textures and assets
+come after review of this cleanup.
 
-This release uses composed studio imagery, real gallery previews, an integrated
-receiver image and custom audio controls. It preserves GN colours, two fonts,
-prices, scope, consent and provider boundaries. Artwork is raster depth, not
-interactive3D or4K. User design acceptance remains Adam's decision. No provider
-writes, live submissions, authenticated admin checks or phone calls occurred.
+Candidate: original `6578619` on branch `review/original-cleanup-20261010`.
+Local preview: http://127.0.0.1:8773/.
+Adam authorised publication on 11 October 2026. The reviewed browser files
+are integrated on top of current main `56fc4be` in the isolated publication
+worktree `callmeie-hub-publish-20261011`, branch
+`publish/original-cleanup-20261011`. All 228 pinned browser source and asset
+files match the reviewed candidate exactly. Preserve both histories.
+Publication is pending the commit check, push, deployment and live verification.
+The previous rejected visual release is `06dcc58`.
+See reports/original-cleanup-publication-20261011.md for release evidence.
 
-## Previous published correction — 10 October 2026
+The original paper colours, Fraunces headings, section structure and demo
+designs remain. Supporting text uses Inter consistently. Website and Lab
+previews use real existing thumbnail images. Home and selected service copy
+are shorter. Repeated footers and unsupported product claims are removed.
+Responsive corrections address menus, controls, headings and local table
+scrolling. The working custom audio player is retained with styling that fits
+the original design. The obsolete discovery quiz entry points are hidden;
+direct contact links remain.
 
-The corrected site is LIVE at https://callmeie.ie/. Source release:adc21bc5b8cb04b6ab4294b9362700d92c522a1c.
-GitHub Pages38085385084 and cohesion38085385236 succeeded. Actual live WebKit
-checks passed for Home, Websites, Lab, Receptionist and Privacy at390/1280:
-correct two fonts/wordmark, loaded handset and gallery images, no page overflow
-or browser errors. Ten served HTML/CSS/font/artwork/helper/favicon files match
-the exact Git release bytes. Publication follows Adam's existing instruction.
-The earlier basic/off-brand publication remains historical evidence, not design
-acceptance. This receipt commit changes documentation only.
+## Completed first-pass verification
 
-The correction restores the Great National v1 house reference: original logo,
-warm paper, ink/burgundy, Archivo Black and IBM Plex Sans, square controls and
-strong hierarchy. Approved scope, pricing, privacy and form boundaries remain.
-Generated paper and handset WebP assets add material and service imagery; the
-handset is a still, not interactive 3D. Asset prompts/export details are in
-assets/brand/README.md. Prior design research and direct Claude/Codex transcript
-provenance are saved in reports/design-history-20261010.md.
+The final browser matrix covers 80 content pages at four browser/width
+combinations: Chrome 768/1280 and WebKit 320/390. All 320 cases return HTTP 200,
+with no page-wide overflow or JavaScript errors. The 14 redirects are listed
+separately in the inventory. Agents actually reviewed all 80 content pages at
+320/1280, with bounded normal-viewport follow-ups for each confirmed defect.
+The admin review covers its unauthenticated gate only.
 
-Three agents completed the correction and visual review. All80 content pages
-were viewed at375/1280. Settled viewport images resolve full-page animation
-capture artefacts; final10 demo enquiry forms and changed footers have normal
-viewport proof. Forms identify CallMeIE without24-hour promises/admin narration.
-No decorative emoji, forced heading breaks or coloured final-word accents.
+Actual Website gallery views confirm all 11 previews render. Lab has 20 working
+preview references. Clancy's visible mobile and desktop scene images render;
+hidden desktop copies can remain lazy and unloaded. Raw detector flags remain
+for closed native menus, empty form fields, intentional decoration and a
+honeypot. These were inspected rather than treated as automatic failures.
+The Vet industry heading's four-pixel excess is underline decoration.
 
-Final runtime acceptance:320 scenarios across Chromium768/1280 and WebKit375/390,
-plus105 shared-header checks across35 pages at320/375/390. Targeted follow-ups
-replace earlier results for final copy/asset/footer changes. No page overflow,
-browser errors or failed resources;179 source/asset hashes have zero drift.
-Intentional raw gate flags are retained and explicitly reviewed, not claimed
-as zero. Shared partials:91 pages, zero drift. Local links:zero missing targets.
+Home/About normal and doubled-text checks pass. This is text enlargement,
+not native browser zoom. Open menus fit. The Privacy table and other corrected
+tables scroll locally with keyboard focus, with readable columns. Sample audio
+passes actual play, pause, seek and keyboard checks in Chrome/WebKit. Disabled
+JavaScript and unavailable-audio fallbacks pass. Chrome's metadata fetch can
+report ERR_ABORTED after a successful 206 response; direct checks confirm
+readyState 4, valid duration and no media error in both affected contexts.
 
-Evidence: AppData/Local/callmeie-site-review-20261010/output/playwright/
-style-restoration, final-header-check, final-settled, form-final and corresponding
-section reports. Local preview:http://127.0.0.1:8769/.
-Technical passes do not imply Adam's visual acceptance or physical-device
-performance. Authenticated admin and live form sends were not tested; no
-customer messages/provider changes occurred. Legacy hidden discovery-widget
-routing remains unchanged and is not part of the visible two-service offering.
+All 228 pinned browser source/asset files match the reviewed bytes. Shared
+injection has zero drift; local links have zero missing targets; whitespace
+checks pass. See reports/original-cleanup-20261011.md and section reports.
+Private screenshots and browser data stay outside Git under
+C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/output/.
 
-The sections below retain first-publication history and original authorisation.
+Original inline JavaScript blocks are preserved after line-ending normalization.
+Audio and sample enquiry helpers are exact copies of verified current versions.
+Operative Privacy, Terms and DPA text is unchanged, excluding only the added
+legacy DocOps notice and label suffixes. Introductions and metadata describe
+current products; the Legal index uses the verified Service provider identity.
+No provider writes, phone
+calls, real submissions or authenticated admin checks are included.
 
-Owner: Codex main thread 01a126ed-cf0b-7120-a1a6-0a91633eb1eb.
-User approved parallel section review and local preview on 10 October 2026.
-Base: live GitHub main 657861961e8297853a2c6e62c6c453c56488f159.
-Worktree: callmeie-hub-review-20261010; branch review/site-consolidation-20261010.
-Adam explicitly authorised publication on 10 October 2026 after the local review.
-Outbound enquiries and customer contact remain outside this task.
+## Next steps
 
-## First publication — historical checks
+Review this first cleanup against the original before adding any new assets.
+Use one identified need at a time for later imagery or textures. Preserve
+the receptionist-first positioning and the original character.
 
-- Three section agents completed reviews and bounded implementation. Each viewed
-  desktop/mobile browser captures. Follow-up reviews cover nested demos, documents
-  and the final shared footer. All 80 content pages have visual coverage.
-- Shared navigation, two-font marketing design, compact footer and consent layout
-  are applied. Websites/Lab use 27 working curated previews in the same brand.
-- Full-route runtime verification completed: 80 pages × 4 required scenarios,
-  Chromium 768/1280 and WebKit 375/390. No page overflow, page errors or failed
-  resources in the accepted results. Raw flags are retained with explicit visual
-  adjudication for intended artwork, scroll tables, honeypots and native controls.
-- Earlier parallel captures with unloaded CSS are rejected evidence. The quiet
-  preview server queue was increased from 5 to 128 after local connection refusals
-  under parallel browsers. The affected workload then completed without refusal.
-- Working local preview: http://127.0.0.1:8769/ (quiet static server).
-- Source/asset hashes: external output/source-manifest.json, 175 files, no drift.
-- Existing review reports are in sibling callmeie-hub/reports/site-review-*-2026-10-10.md.
-- Captures and QA runtime files: AppData/Local/callmeie-site-review-20261010.
+Adam proposed a custom push-to-talk button on11October. Record it as the next
+improvement for separate review: press and hold to speak, release to send,
+clear listening/reply states and text fallback. It needs a live voice connection
+and microphone consent. It is not included in this publication; no new live
+voice connection or provider configuration has been authorised by that question.
 
-## Required result
+Publish through a normal fast-forward commit on current main. Verify the
+served bytes, real gallery images and audio controls before claiming success.
+The reviewed candidate remains recoverable in its original worktree.
 
-Shorter consistent site, two marketing fonts, repaired demo previews, useful Lab,
-no clipped objects/tables/nav at tested widths, preserved legal/form corrections.
-Review conditional3D usefulness. Present working local preview and exact limits.
-
-## Decisions and limits
-
-- No added decorative 3D: the existing call demo and real website previews explain
-  the services better. Existing 3D gallery concepts remain available.
-- Material prices, minimum terms and supplier identity remain. Removed unsupported
-  proof and repetitive sales narration; document tables scroll locally on mobile.
-- Website care scope still says 15-minute increments rounded to nearest 5 minutes.
-  Existing wording is retained. Owner clarification remains a follow-up; no new
-  billing policy is inferred from the publication instruction.
-- Demo businesses contain fictional names/numbers and a portrait placeholder.
-  Shared return chrome explicitly labels them Demo concept.
-- Admin verification covers the sign-in gate only. No credentials or live enquiry
-  submissions. No authenticated workflows or third-party dashboards were tested.
-- Publication uses the existing GitHub Pages main-branch deployment.
-
-## Evidence and next action
-
-Implementation reports: reports/implementation-brand-20261010.md,
-reports/implementation-products-20261010.md,
-reports/implementation-websites-lab-20261010.md and
-reports/document-review-20261010.md.
-Browser artifacts: external output/playwright/ under the runtime folder above.
-Accepted runtime record: output/playwright/verified-routes/acceptance.json;
-raw results/summary are adjacent. Section-specific Chrome mobile visual checks,
-open/closed menus, gallery decoding and mobile table scrolling supplement it.
-Shared-partial check, JavaScript syntax, push-on-hidden lint and Git whitespace
-checks pass. Static local-link check reports no missing destinations.
-Published site release: faceddd2696f5af77cb029913d82a8229338528e.
-GitHub Pages deployment 38080785560 succeeded on 10 October 2026 at 19:41 UTC.
-Cohesion workflow 38080785856 passed. Live WebKit checks covered Home, Websites,
-Lab, Receptionist and Privacy at 390 and 1280 pixels: ten HTTP 200 responses,
-no page overflow or JavaScript errors, all gallery previews decoded.
-Visual inspection of live Websites mobile and Lab desktop confirmed the layouts.
-All 27 live preview files, brand.css and three GSAP assets match reviewed hashes.
-Private evidence: output/live-verification.json, output/live-assets.json and
-output/playwright/live-*.png under the external runtime folder above.
-GitNexus detect-changes ran against the inherited New repos index: low risk and
-zero affected processes. Its parent-wide results include unrelated work and are
-not candidate-specific proof. The staged release contained only reviewed files.
-Vendor whitespace is retained to preserve upstream asset hashes.
-Recovery reference: prior published commit 657861961e8297853a2c6e62c6c453c56488f159;
-use a normal reviewed revert if required. No rollback was performed or rehearsed.
-Publication is complete. Remaining owner follow-up: clarify care billing increments.
+The owner's red-marked screenshot remains unread: Swarm Gmail OAuth intake
+returned invalid_grant. Browser verification does not prove that specific
+owner-reported visual state or establish design acceptance.
