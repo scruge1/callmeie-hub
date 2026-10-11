@@ -11,6 +11,15 @@ navigation. Use the original logo image, paper#f5f1e8, and Fraunces for display
 with Inter for supporting text. Keep the Receptionist editorial treatment.
 Different heading sizes are valid hierarchy; do not flatten them into one size.
 
+The approved symbol is `/callmeie-icon.png`: the original handset inside the C
+with a separate dot above and to its right. The wide Receptionist logo contains
+a different symbol. Keep the approved icon uncropped with the CALLMEIE wordmark.
+Do not use blending effects that change the icon or its background colour.
+
+Home uses six text roles: label12px, small/control14px, body16px, component24px,
+section36px and hero64px. Mobile changes only section to32px and hero to40px.
+Preserve these roles instead of setting independent sizes per component.
+
 Lead with an Irish AI phone receptionist for Irish businesses. Websites are
 a secondary product. Explain the practical offer briefly. Remove repeated
 explanations, founder narration, obsolete DocOps offers and unsupported numbers.
@@ -20,6 +29,9 @@ Do not imply that bookings, transfers or integrations are included in every plan
 Use actual thumbnail captures for website concepts. Keep labels honest about
 illustrative demos. Preserve useful functional improvements from the later
 release, including the custom sample player, without importing the redesign.
+Check the compact working-concept grid and Lab teaser grid separately from
+the large gallery. Successful large image decoding does not cover CSS background
+thumbnails or prove that those tiles show the correct concept.
 
 Check every page visually at mobile and desktop widths. Check document
 overflow, local table scrolling, open menus, enlarged text and working controls.

@@ -1,0 +1,36 @@
+/* In-flow conversation control. Original CallMeIE paper, burgundy and type. */
+.website-voice[hidden], .website-voice [hidden] { display:none !important; }
+.website-voice { --voice-ink:#5a1420; color:#29231f; min-width:0; margin-block:28px; padding-block:24px; border-block:1px solid rgba(90,20,32,.2); }
+.demo-line .website-voice { margin:24px 0 0; padding:24px 0 0; border-bottom:0; }
+.website-voice__row { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:24px; }
+.website-voice__intro { min-width:0; }
+.website-voice__label { margin:0 0 6px !important; color:var(--voice-ink); font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.website-voice__title { margin:0 0 8px !important; font-family:'Fraunces',Georgia,serif; font-size:clamp(24px,3vw,32px); font-weight:500; line-height:1.15; }
+.website-voice__description { margin:0 !important; max-width:46ch; font-size:14px; line-height:1.55; }
+.website-voice__actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+.website-voice__talk { display:inline-flex; justify-content:center; align-items:center; gap:12px; min-height:56px; padding:14px 24px; border:1px solid var(--voice-ink); border-radius:999px; color:#fff; background:var(--voice-ink); font-size:14px; font-weight:600; cursor:pointer; touch-action:none; user-select:none; -webkit-user-select:none; transition:background .16s ease,box-shadow .16s ease; }
+.website-voice__talk:hover { background:#40101a; }
+.website-voice__talk:disabled { opacity:.65; cursor:wait; }
+.website-voice[data-state="listening"] .website-voice__talk { background:#40101a; box-shadow:0 0 0 5px rgba(90,20,32,.12); }
+.website-voice button:focus-visible,.website-voice summary:focus-visible,.website-voice a:focus-visible { outline:2px solid var(--voice-ink); outline-offset:5px; }
+.website-voice__talk svg { width:20px; height:20px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.website-voice__end,.website-voice__mode { min-height:44px; padding:8px 6px; border:0; color:var(--voice-ink); background:transparent; font-size:13px; cursor:pointer; text-decoration:underline; text-underline-offset:4px; }
+.website-voice__meta { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 16px; margin-top:16px; }
+.website-voice__status { display:flex; align-items:center; gap:8px; margin:0 !important; max-width:100%; min-width:0; font-size:13px; line-height:1.5; overflow-wrap:anywhere; }
+.website-voice__indicator { width:6px; height:6px; flex-shrink:0; border-radius:50%; background:#786e66; }
+.website-voice[data-state="ready"] .website-voice__indicator,.website-voice[data-state="listening"] .website-voice__indicator,.website-voice[data-state="speaking"] .website-voice__indicator { background:var(--voice-ink); }
+.website-voice__notice { margin:8px 0 0 !important; font-size:11px; line-height:1.6; color:#6c6057; }
+.website-voice__notice a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
+.website-voice__captions { margin-top:12px; font-size:13px; }
+.website-voice__captions summary { display:inline-flex; align-items:center; min-height:44px; cursor:pointer; color:var(--voice-ink); text-decoration:underline; text-underline-offset:4px; }
+.website-voice__captions ol { max-height:240px; overflow:auto; list-style:none; margin:0; padding:0; border-top:1px solid rgba(90,20,32,.15); }
+.website-voice__captions li { padding-block:10px; line-height:1.55; overflow-wrap:anywhere; }
+.website-voice__captions strong { display:block; margin-bottom:3px; font-size:11px; font-weight:600; color:var(--voice-ink); }
+.home-cleanup:has(.website-voice:not([hidden])) .cmt-wa-fab { display:none !important; }
+@media(max-width:760px) {
+  .website-voice__row { grid-template-columns:minmax(0,1fr); gap:20px; }
+  .website-voice__actions { width:100%; }
+  .website-voice__talk { flex:1; max-width:360px; padding-inline:18px; }
+  .website-voice__meta { align-items:flex-start; }
+}
+@media(prefers-reduced-motion:reduce) { .website-voice__talk { transition:none; } }

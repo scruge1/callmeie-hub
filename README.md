@@ -26,12 +26,21 @@ Scoped cleanup styling is in `cleanup.css`; shared HTML is in `_partials/`.
 Run `python scripts/inject-cohesion.py` after changing a partial, then use its
 `--check` mode. Private browser captures stay outside Git.
 
+Push-to-talk is specified in
+[the integration plan](reports/push-to-talk-integration-plan-20261011.md).
+Its local browser control and backend bridge are now built and tested against
+an isolated HTTP fixture. Public configuration remains disabled. The existing
+voice/tracking owners are reused; real provider/media acceptance remains open.
+See [the build receipt](reports/push-to-talk-build-20261011.md) and
+ACTIVE-CHECKPOINT.md for scope, source and acceptance boundaries.
+
 ## Original design cleanup — 11 October 2026
 
 The original cleanup is published as `5f42901`. Adam's new screenshots require
 label, phone, footer, logo and colour corrections. This branch also refreshes
 the player with three fictional call types using current V4 Turbo voices.
-Publication is authorised and pending final checks in ACTIVE-CHECKPOINT.md.
+Release `d63bf9e` is live. Pages, cohesion and235 exact served-file checks pass;
+bounded live visual/audio checks pass. ACTIVE-CHECKPOINT.md owns the evidence.
 All 228 browser source and asset files are pinned to the candidate that passed
 320 browser cases across all80 content pages. [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md)
 owns current verification and publication state; see the
@@ -80,8 +89,9 @@ uses DESIGN.md and ACTIVE-CHECKPOINT.md for its current scope.
 
 ## Stack
 
-Static HTML + CSS + one tiny JS file. No framework. No build step. Push
-to `main`, GitHub Pages rebuilds in ~30s.
+Static HTML, CSS and local JavaScript. No framework or site build step. The
+optional voice vendor bundle has a pinned, separate build; it is disabled
+publicly. Push to `main` to trigger GitHub Pages publication.
 
 ```
 callmeie-hub/

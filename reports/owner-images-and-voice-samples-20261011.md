@@ -3,7 +3,7 @@
 ## Scope and status
 
 Local candidate on top of published original cleanup5f42901.
-Publication remains pending verification, commit, deployment and live checks.
+Published and verified as `d63bf9e`; see the live evidence below.
 The owner's screenshot batch was retrieved from Swarm intake and all eight
 images were actually viewed. Independent normal WebKit393 views reproduced
 the label collisions, split phone number, covered footer and missing logo.
@@ -76,3 +76,28 @@ main text. Whitespace and injection checks pass. Graph coverage is not claimed.
 
 Push-to-talk remains a proposal. No new live microphone/voice backend or
 rig/home/Hetzner service was activated by this media and layout work.
+
+## Verified live release
+
+Published source: `d63bf9e5d66822ddb37d670eb59a7f2fc424a9d3`.
+Normal fast-forward publication preserved the original cleanup and later histories.
+Cohesion run38101839954 and Pages run38101839806 succeeded. All235 live browser
+files match committed Git blob bytes. Independent live checks passed the owner
+image states, Home/About/Websites/Lab and three-voice playback. These are bounded
+browser checks, not physical iPhone testing or owner design acceptance.
+
+GitHub evidence:
+- https://github.com/scruge1/callmeie-hub/actions/runs/38101839954
+- https://github.com/scruge1/callmeie-hub/actions/runs/38101839806
+
+Private receipts remain outside Git:
+- owner-release-live-bytes.json:235 exact live Git-blob matches.
+- owner-release-live/verification.md:11 normal owner-state captures inspected.
+- playwright/live-brand-d63bf9e/results.json:8 normal parent cases,4 gallery
+  views inspected;11 Website/20 Lab preview nodes decoded at390/1280.
+- playwright/three-voice-live-d63bf9e/verification.md:6 actual voice playback
+  cases and2 native fallback cases;6 normal selected-player views inspected.
+
+Live controls, waveforms, labels, phone groups, logo and footer clearance pass.
+No physical iPhone or owner design acceptance is claimed. No phone calls,
+submissions or provider configuration writes. Push-to-talk remains a proposal.

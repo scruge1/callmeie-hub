@@ -122,6 +122,9 @@
 <link rel="stylesheet" href="/assets/css/audio-player.css?v=20261011-v4">
 <link rel="stylesheet" href="/assets/css/receptionist-cleanup.css?v=owner-fixes-20261011">
 <script src="/assets/js/audio-player.js?v=20261011-v4" defer></script>
+<link rel="stylesheet" href="/assets/css/website-voice.css?v=20261011">
+<script src="/assets/js/website-voice-transport.js?v=20261011" defer></script>
+<script src="/assets/js/website-voice.js?v=20261011" defer></script>
 <style>
   /* Hero icon ring-pulse — transform only (compositor thread), prefers-reduced-motion guarded */
   @keyframes ring-pulse {
@@ -251,10 +254,10 @@
     text-align: center;
   }
 </style>
-  <link rel="stylesheet" href="/_partials/cohesion.css?v=owner-fixes-20261011">
+  <link rel="stylesheet" href="/_partials/cohesion.css?v=layout-20261011">
   <meta property="fb:pages" content="1105012356028968">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"CallMeIE Technologies","url":"https://callmeie.ie/","image":"https://callmeie.ie/og-image.png","telephone":"+353-61-788-120","priceRange":"€€","address":{"@type":"PostalAddress","addressLocality":"Limerick","addressRegion":"Limerick","addressCountry":"IE"},"geo":{"@type":"GeoCoordinates","latitude":52.668,"longitude":-8.6305},"areaServed":{"@type":"City","name":"Limerick"}}</script>
-  <link rel="stylesheet" href="/cleanup.css?v=owner-fixes-20261011">
+  <link rel="stylesheet" href="/cleanup.css?v=layout-20261011">
 </head>
 
 <body class="copy-cleanup">
@@ -266,7 +269,7 @@
 <aside class="callmeie-strip" role="navigation" aria-label="CallMeIE Technologies parent">
   <div class="callmeie-strip-inner">
     <a class="callmeie-mark" href="/" aria-label="CallMeIE home">
-      <span class="brand-logo"><img src="/receptionist/assets/callmeie-logo.png" width="1200" height="400" alt="CallMeIE"></span>
+      <span class="brand-logo"><span class="brand-logo-icon"><img src="/callmeie-icon.png" width="1254" height="1254" alt=""></span><span class="brand-logo-wordmark">CALLMEIE</span></span>
     </a>
     <details class="callmeie-products">
       <summary>Products</summary>
@@ -429,6 +432,7 @@
       <h2 id="how-demo-title" class="section-title">Try it before you buy it</h2>
     </div>
     <p class="section-dek">Call the demo line and choose dental, motor factors, salon or solicitor. These are sample businesses; your receptionist is configured separately.</p>
+    <section class="website-voice" data-website-voice data-page="receptionist" aria-label="Talk to Claire" hidden></section>
 
     <div class="demo-strip">
       <div class="demo-strip__prose"><ol class="demo-steps"><li><b>Choose a demo</b>Say which business you want to hear.</li><li><b>Try a request</b>Ask a question or try a sample booking.</li><li><b>Discuss your setup</b>Agree information, actions and hours before activation.</li></ol></div>

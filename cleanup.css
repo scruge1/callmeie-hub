@@ -85,9 +85,39 @@ body.copy-cleanup {
 @media(max-width:480px) {
   .copy-cleanup .nav-inner { gap:12px; }
   .copy-cleanup .nav-cta .btn { padding:12px 16px; }
-  .copy-cleanup .nav-brand .brand-logo { width:140px; height:30px; }
-  .copy-cleanup .nav-brand .brand-logo img { width:180px; height:60px; left:-15px; top:-12px; }
+  .copy-cleanup .nav-brand .brand-logo { height:32px; gap:4px; }
+  .copy-cleanup .nav-brand .brand-logo-icon { width:32px; height:32px; }
+  .copy-cleanup .nav-brand .brand-logo-wordmark { font-size:16px; }
   .copy-cleanup .callmeie-strip-inner { gap:8px; padding-inline:16px; }
   .copy-cleanup .callmeie-products summary { padding-inline:6px; font-size:12px; }
   .copy-cleanup .callmeie-cta { padding-inline:10px; font-size:12px; }
+}
+
+/* Home uses six text levels instead of independent sizes for each component. */
+.copy-cleanup.home-cleanup h1 { font-size:64px !important; }
+.copy-cleanup.home-cleanup h2 { font-size:36px; }
+.copy-cleanup.home-cleanup :where(.product-name,.website-voice__title,.demo-line-call-number) { font-size:24px; }
+.copy-cleanup.home-cleanup :where(main p,.section-intro,.product-blurb,.cta-sub) { font-size:16px; line-height:1.6; }
+.copy-cleanup.home-cleanup :where(.btn,.product-arrow,.demo-line-disclosure,.footer-legal,.website-voice__description,.website-voice__status,.website-voice__end,.website-voice__mode,.website-voice__captions) { font-size:14px; }
+.copy-cleanup.home-cleanup :where(.eyebrow,.section-eyebrow,.product-outcome,.demo-line-eyebrow,.demo-line-call-prefix,.footer-col-title,.website-voice__label,.website-voice__notice) { font-size:12px; }
+.home-cleanup .hero { padding:56px 24px 24px; }
+.home-cleanup .hero .lede { margin-bottom:16px; }
+.home-cleanup .hero .cta-row { margin-bottom:0; }
+.home-cleanup .hero + .rule-dots { margin:0; font-size:12px; line-height:12px; }
+/* Home supporting text shares the same three sizes across site chrome. */
+.copy-cleanup.home-cleanup :where(.nav-brand,.brand-logo,.demo-line-call,.product-row) { font-size:16px; }
+.copy-cleanup.home-cleanup .sig { font-size:14px; }
+.copy-cleanup.home-cleanup .callmeie-footer :where(a,span,p,li) { font-size:14px; }
+.copy-cleanup.home-cleanup .callmeie-footer :where(h4,.callmeie-footer-band,.callmeie-footer-band *) { font-size:12px; }
+.copy-cleanup.home-cleanup .cmt-consent :where(p,a,button) { font-size:14px; }
+.copy-cleanup.home-cleanup .cmt-consent .cmt-consent__hd { font-size:12px; }
+.copy-cleanup.home-cleanup .nav-link { font-size:14px; }
+.copy-cleanup.home-cleanup .callmeie-footer-brand > strong { font-size:16px; }
+.copy-cleanup.home-cleanup :where(.cmt-wa-fab,.cmt-wa-label) { font-size:14px; }
+body.copy-cleanup.home-cleanup { padding-bottom:calc(80px + env(safe-area-inset-bottom,0px)); }
+.home-cleanup .demo-line { margin-top:20px; }
+@media(max-width:760px) {
+  .copy-cleanup.home-cleanup h1 { font-size:40px !important; }
+  .copy-cleanup.home-cleanup h2 { font-size:32px; }
+  .home-cleanup .hero { padding-top:36px; }
 }

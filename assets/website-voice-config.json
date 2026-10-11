@@ -1,0 +1,5 @@
+{
+  "enabled": false,
+  "api_base": "https://api.callmeie.ie/api/website-voice",
+  "notice_revision": "website-voice-v1"
+}
