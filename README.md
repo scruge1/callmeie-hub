@@ -17,9 +17,9 @@ design. Irish AI phone reception is the main offer; websites are secondary.
 This cleanup shortens copy, standardises supporting typography, repairs actual
 demo thumbnails and corrects alignment while keeping the original layouts.
 
-- Original warm paper, ink/navy and Fraunces display headings
+- Original warm paper, ink and Fraunces display headings
 - Inter for company supporting text; distinct demo art direction remains
-- Original Websites orange accent and Receptionist editorial treatment
+- Existing graphic logo and burgundy accents across parent pages
 - No new generated imagery or 3D in this pass
 
 Scoped cleanup styling is in `cleanup.css`; shared HTML is in `_partials/`.
@@ -28,7 +28,10 @@ Run `python scripts/inject-cohesion.py` after changing a partial, then use its
 
 ## Original design cleanup — 11 October 2026
 
-Adam authorised publication of the reviewed original-design cleanup.
+The original cleanup is published as `5f42901`. Adam's new screenshots require
+label, phone, footer, logo and colour corrections. This branch also refreshes
+the player with three fictional call types using current V4 Turbo voices.
+Publication is authorised and pending final checks in ACTIVE-CHECKPOINT.md.
 All 228 browser source and asset files are pinned to the candidate that passed
 320 browser cases across all80 content pages. [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md)
 owns current verification and publication state; see the

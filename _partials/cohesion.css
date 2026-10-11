@@ -4,24 +4,24 @@
 
 :root {
   /* Color */
-  --cmt-paper:        #f8f5f0;
+  --cmt-paper:        #f5f1e8;
   --cmt-paper-alt:    #efe9de;
   --cmt-ink:          #1c1f24;
   --cmt-ink-soft:     #2d3239;
   --cmt-muted:        #6b665d;
   --cmt-line:         #d8cfc1;
   --cmt-line-soft:    rgba(216, 207, 193, 0.4);
-  --cmt-brand:        #1d3557;
-  --cmt-brand-hover:  #14253f;
-  --cmt-brand-soft:   rgba(29, 53, 87, 0.08);
+  --cmt-brand:        #5a1420;
+  --cmt-brand-hover:  #40101a;
+  --cmt-brand-soft:   rgba(90, 20, 32, 0.08);
   /* D7 lock 2026-05-04: amber dropped from master.
      --cmt-accent defaults to indigo (matches --cmt-brand) so cohesion chrome
      on /receptionist/ + /websites/ doesn't pollute their burgundy/orange
      accents with master amber. /docs/ still has its own amber + ok/warn
      defined locally in docs/site.css. */
-  --cmt-accent:       #1d3557;
-  --cmt-accent-hover: #14253f;
-  --cmt-accent-soft:  rgba(29, 53, 87, 0.08);
+  --cmt-accent:       #5a1420;
+  --cmt-accent-hover: #40101a;
+  --cmt-accent-soft:  rgba(90, 20, 32, 0.08);
 
   /* Typography */
   --cmt-font-display: 'Fraunces', 'Bodoni Moda', Georgia, serif;
@@ -114,6 +114,12 @@
   color: var(--cmt-ink);
   line-height: 1;
   margin-right: auto;
+}
+.brand-logo { display:block; position:relative; width:188px; height:40px; overflow:hidden; flex-shrink:0; }
+.brand-logo img { position:absolute; width:240px; height:80px; max-width:none; left:-20px; top:-16px; }
+@media(max-width:480px) {
+  .callmeie-strip .brand-logo { width:120px; height:26px; }
+  .callmeie-strip .brand-logo img { width:154px; height:51.33px; left:-12.83px; top:-10.27px; }
 }
 .callmeie-mark-name {
   font-family: var(--cmt-font-display);

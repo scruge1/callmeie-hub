@@ -1,5 +1,14 @@
 /* Small typography and alignment corrections over the original design. */
 body.copy-cleanup {
+  --paper: #f5f1e8;
+  --bg: #f5f1e8;
+  --brand: #5a1420;
+  --brand-hover: #40101a;
+  --brand-soft: #eee1e2;
+  --accent: #5a1420;
+  --accent-hover: #40101a;
+  --accent-dark: #40101a;
+  --accent-light: #d6a9af;
   --cleanup-body: 'Inter', system-ui, -apple-system, sans-serif;
   --cleanup-display: 'Fraunces', Georgia, serif;
   --body: var(--cleanup-body);
@@ -11,7 +20,7 @@ body.copy-cleanup {
   --cmt-font-mono: var(--cleanup-body);
   font-family: var(--cleanup-body);
 }
-.copy-cleanup :where(p,a,span,button,input,select,textarea,summary,label,li,td,th,small,strong,em) {
+.copy-cleanup :where(p,a,span,div,figcaption,dt,dd,button,input,select,textarea,summary,label,li,td,th,small,strong,em) {
   font-family: var(--cleanup-body) !important;
 }
 .copy-cleanup :where(h1,h2,h3,h4),
@@ -46,10 +55,20 @@ body.copy-cleanup {
 .copy-cleanup.cleanup-document h2 { font-size:clamp(23px,2.4vw,30px); }
 .copy-cleanup.cleanup-document :where(.legal-inner,.prose,.document-content) { min-width:0; }
 .copy-cleanup.cleanup-document :where(code,td,th,a) { overflow-wrap:anywhere; }
-.copy-cleanup .nav { height:auto; }
-.copy-cleanup .nav-inner { flex-wrap:wrap; height:auto; min-height:82px; }
+.copy-cleanup .nav { height:auto; background:var(--paper); }
+.copy-cleanup .nav-inner { width:calc(100% - 48px); padding-inline:0; flex-wrap:wrap; height:auto; min-height:82px; }
 .copy-cleanup .callmeie-strip { height:auto; min-height:48px; }
 .copy-cleanup .callmeie-strip-inner { flex-wrap:wrap; height:auto; min-height:48px; padding-block:8px; }
+.copy-cleanup:has(.cmt-bottom-cta) { padding-bottom:calc(64px + env(safe-area-inset-bottom,0px)); }
+.copy-cleanup .cmt-bottom-cta { background:rgba(28,31,36,.97); }
+.copy-cleanup .section-num { font-family:var(--cleanup-body); font-size:12px; letter-spacing:.06em; overflow-wrap:break-word; }
+.copy-cleanup .section-head { grid-template-columns:minmax(112px,160px) minmax(0,1fr); }
+.copy-cleanup .final-cta__number { font-size:clamp(26px,5vw,64px); line-height:1.2; word-break:normal; overflow-wrap:normal; letter-spacing:-.02em; }
+.copy-cleanup .final-cta__number .phone-location { display:block; font-size:14px; font-weight:500; letter-spacing:0; margin-bottom:10px; }
+.copy-cleanup .final-cta__number .phone-digits { white-space:nowrap; }
+.copy-cleanup .nav-brand:has(.brand-logo),.copy-cleanup .callmeie-mark:has(.brand-logo) { padding:0; }
+.copy-cleanup .eyebrow { display:flex; align-items:baseline; gap:12px; }
+.copy-cleanup .eyebrow .dot { flex-shrink:0; align-self:center; margin-right:0; }
 @media(max-width:760px) {
   .copy-cleanup h1 { font-size:clamp(34px,8.8vw,44px) !important; }
   .copy-cleanup .headline { letter-spacing:0; }
@@ -58,5 +77,17 @@ body.copy-cleanup {
   .copy-cleanup .demo-line-inner { gap:24px; }
   .copy-cleanup .demo-line-call-number { font-size:clamp(22px,6.5vw,32px); max-width:100%; white-space:normal; }
   .copy-cleanup .section-dek { margin-left:0; }
-  .copy-cleanup .section-head { grid-template-columns:32px minmax(0,1fr); gap:12px; }
+  .copy-cleanup .section-head { grid-template-columns:minmax(0,1fr); gap:16px; margin-bottom:28px; }
+  .copy-cleanup .section-num { width:100%; padding-top:10px; }
+  .copy-cleanup .section-title { font-size:clamp(27px,7.5vw,38px); }
+  .copy-cleanup .final-cta__number { font-size:clamp(25px,7.4vw,42px); }
+}
+@media(max-width:480px) {
+  .copy-cleanup .nav-inner { gap:12px; }
+  .copy-cleanup .nav-cta .btn { padding:12px 16px; }
+  .copy-cleanup .nav-brand .brand-logo { width:140px; height:30px; }
+  .copy-cleanup .nav-brand .brand-logo img { width:180px; height:60px; left:-15px; top:-12px; }
+  .copy-cleanup .callmeie-strip-inner { gap:8px; padding-inline:16px; }
+  .copy-cleanup .callmeie-products summary { padding-inline:6px; font-size:12px; }
+  .copy-cleanup .callmeie-cta { padding-inline:10px; font-size:12px; }
 }

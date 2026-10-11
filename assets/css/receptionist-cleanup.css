@@ -6,3 +6,5 @@
 
 .hero .demo-number{font-size:clamp(24px,4.8vw,72px);max-width:100%;white-space:nowrap}
 @media(max-width:350px){.hero .hero__headline{font-size:33px!important;overflow-wrap:normal}}
+.hero__audio figcaption[hidden] { display:none; }
+.copy-cleanup .hero__audio { padding:0; border:0; background:transparent; max-width:540px; }

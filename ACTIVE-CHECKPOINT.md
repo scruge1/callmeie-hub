@@ -1,87 +1,77 @@
-# CallMeIE original design cleanup
+# CallMeIE screenshot corrections and voice samples
 
 ## Current truth — 11 October 2026
 
-Adam asked to return carefully to the good original design and make gradual
-changes to typography, thumbnails, copy and alignment. This supersedes the
-replacement art direction. Irish AI phone reception is the main offer;
-websites are the secondary offer. New generated imagery, textures and assets
-come after review of this cleanup.
+Original cleanup `5f4290125099ea7735d2b4fb43990e3827871849` is published.
+Pages and cohesion checks succeeded; all 228 served files matched committed
+bytes. This branch holds the next local corrections. Phone reception remains
+primary; websites are secondary. Original layouts and Fraunces/Inter remain.
+The owner explicitly requires the existing graphic logo and burgundy across
+parent pages. The former Home navy/Website orange split is superseded there.
+Distinct demo bodies retain their own designs. No new generated imagery or 3D.
 
-Candidate: original `6578619` on branch `review/original-cleanup-20261010`.
-Local preview: http://127.0.0.1:8773/.
-Adam authorised publication on 11 October 2026. The reviewed browser files
-are integrated on top of current main `56fc4be` in the isolated publication
-worktree `callmeie-hub-publish-20261011`, branch
-`publish/original-cleanup-20261011`. All 228 pinned browser source and asset
-files match the reviewed candidate exactly. Preserve both histories.
-Publication is pending the commit check, push, deployment and live verification.
-The previous rejected visual release is `06dcc58`.
-See reports/original-cleanup-publication-20261011.md for release evidence.
+Worktree: `callmeie-hub-voice-samples-20261011`.
+Branch: `review/voice-samples-20261011`. Preview: http://127.0.0.1:8780/.
+Publication is authorised. Final verification, commit and live checks are pending.
+Preserve original `6578619` and the rejected later histories without reset.
 
-The original paper colours, Fraunces headings, section structure and demo
-designs remain. Supporting text uses Inter consistently. Website and Lab
-previews use real existing thumbnail images. Home and selected service copy
-are shorter. Repeated footers and unsupported product claims are removed.
-Responsive corrections address menus, controls, headings and local table
-scrolling. The working custom audio player is retained with styling that fits
-the original design. The obsolete discovery quiz entry points are hidden;
-direct contact links remain.
+## Owner image evidence and fixes
 
-## Completed first-pass verification
+Swarm Gmail intake now works. An agent viewed all eight new matching images
+and reproduced the faults in normal live WebKit 393 views. Horizontal overflow
+checks and small contact sheets had missed label collisions, phone digit breaks
+and covered footer content. Previous PASS does not establish design acceptance.
 
-The final browser matrix covers 80 content pages at four browser/width
-combinations: Chrome 768/1280 and WebKit 320/390. All 320 cases return HTTP 200,
-with no page-wide overflow or JavaScript errors. The 14 redirects are listed
-separately in the inventory. Agents actually reviewed all 80 content pages at
-320/1280, with bounded normal-viewport follow-ups for each confirmed defect.
-The admin review covers its unauthenticated gate only.
+Corrections restore the exact existing graphic logo, burgundy `#5a1420` and
+paper `#f5f1e8`. Mobile section labels use Inter and a full row above headings.
+Phone locations are separate from unbroken numbers. Dock pages reserve 64px
+plus safe-area bottom space. The Websites secondary header identifies the page
+instead of showing another conflicting faux logo. Home header and hero share
+the same visible left edge.
 
-Actual Website gallery views confirm all 11 previews render. Lab has 20 working
-preview references. Clancy's visible mobile and desktop scene images render;
-hidden desktop copies can remain lazy and unloaded. Raw detector flags remain
-for closed native menus, empty form fields, intentional decoration and a
-honeypot. These were inspected rather than treated as automatic failures.
-The Vet industry heading's four-pixel excess is underline decoration.
+Independent local review covers the owner-image states at 320/393/768/1280
+across Home and four Receptionist routes. Labels and headings are disjoint;
+phone groups remain intact; footer links clear the dock by at least 27px.
+Home/About/Websites/Lab headers fit one row at 320 with readable logos.
+Final normal captures pass. The full80-page matrix has320 successful contexts;
+the35 parent pages were repeated against the final styles in140 contexts.
+No page-wide overflow, page errors, label collisions or covered footer bands.
+Measured parent fonts are Fraunces and Inter. Raw closed-menu/decorative flags
+were compared with the original matrix and independently inspected. A narrow
+Financial demo heading/signature received a separate bounded correction.
 
-Home/About normal and doubled-text checks pass. This is text enlargement,
-not native browser zoom. Open menus fit. The Privacy table and other corrected
-tables scroll locally with keyboard focus, with readable columns. Sample audio
-passes actual play, pause, seek and keyboard checks in Chrome/WebKit. Disabled
-JavaScript and unavailable-audio fallbacks pass. Chrome's metadata fetch can
-report ERR_ABORTED after a successful 206 response; direct checks confirm
-readyState 4, valid duration and no media error in both affected contexts.
+## Refreshed sample audio
 
-All 228 pinned browser source/asset files match the reviewed bytes. Shared
-injection has zero drift; local links have zero missing targets; whitespace
-checks pass. See reports/original-cleanup-20261011.md and section reports.
-Private screenshots and browser data stay outside Git under
-C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/output/.
+Three fictional excerpts use current approved `eleven_v4_turbo` voices: Claire
+for a cafe booking, Conor for a trade callback and Cillian for a professional
+enquiry. No customer data, real call, provider configuration or phone route is
+changed. Fifteen synthesized segments total 965 characters. PCM assembly,
+normalization and decoded-sample checks pass. Scribe_v2 transcripts match the
+scripts; these checks do not claim human listening approval.
 
-Original inline JavaScript blocks are preserved after line-ending normalization.
-Audio and sample enquiry helpers are exact copies of verified current versions.
-Operative Privacy, Terms and DPA text is unchanged, excluding only the added
-legacy DocOps notice and label suffixes. Introductions and metadata describe
-current products; the Legal index uses the verified Service provider identity.
-No provider writes, phone
-calls, real submissions or authenticated admin checks are included.
+The custom player switches title, context and measured waveform, pauses the
+old source, resets time and does not autoplay. All 15 Chrome/WebKit actual
+playback, seek, keyboard, 206 and source-switch cases pass. Native no-JS controls
+and two alternatives pass in both engines. Final styling fixes the hidden
+caption, uses burgundy controls and removes an unintended outer frame.
 
-## Next steps
+See `reports/owner-images-and-voice-samples-20261011.md` for provenance and limits.
+Private captures, email images and media receipts stay outside Git under
+`C:/Users/a33_s/AppData/Local/callmeie-site-review-20261010/output/`.
 
-Review this first cleanup against the original before adding any new assets.
-Use one identified need at a time for later imagery or textures. Preserve
-the receptionist-first positioning and the original character.
+## Verification boundary and remaining work
 
-Adam proposed a custom push-to-talk button on11October. Record it as the next
-improvement for separate review: press and hold to speak, release to send,
-clear listening/reply states and text fallback. It needs a live voice connection
-and microphone consent. It is not included in this publication; no new live
-voice connection or provider configuration has been authorised by that question.
+Injection, direct staged scope and whitespace checks pass. Inline scripts and
+legal main text are unchanged. GitNexus staged detection was attempted and
+failed because the worktree is unregistered. Player impact returned target-not-found: graph
+coverage is unavailable, not a verified low risk. The parent index and attempted
+isolated analysis did not provide coverage. Do not claim graph verification.
 
-Publish through a normal fast-forward commit on current main. Verify the
-served bytes, real gallery images and audio controls before claiming success.
-The reviewed candidate remains recoverable in its original worktree.
+Commit normally on current main, preserve concurrent changes, verify Pages/CI,
+served bytes and bounded live owner-image/audio states. Update this checkpoint
+and memory when live. Older receipts remain historical in
+`reports/original-cleanup-publication-20261011.md`.
 
-The owner's red-marked screenshot remains unread: Swarm Gmail OAuth intake
-returned invalid_grant. Browser verification does not prove that specific
-owner-reported visual state or establish design acceptance.
+Push-to-talk remains a proposed next integration with microphone consent and
+text fallback. Rig/home and a Hetzner gateway need qualified end-to-end behavior
+before fallback claims. No new public voice backend is active from this work.

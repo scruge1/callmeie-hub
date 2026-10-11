@@ -1,0 +1,28 @@
+{
+  "samples": [
+    {
+      "id": "claire-cafe-booking-v4",
+      "label": "Claire",
+      "title": "Claire takes a café booking.",
+      "context": "A table booking for a fictional café.",
+      "src": "/receptionist/assets/audio/claire-cafe-booking-v4.mp3",
+      "waveform": "/assets/audio/claire-cafe-booking-v4-waveform.json"
+    },
+    {
+      "id": "conor-trade-callback-v4",
+      "label": "Conor",
+      "title": "Conor takes a callback request.",
+      "context": "A repair enquiry for a fictional plumbing business.",
+      "src": "/receptionist/assets/audio/conor-trade-callback-v4.mp3",
+      "waveform": "/assets/audio/conor-trade-callback-v4-waveform.json"
+    },
+    {
+      "id": "cillian-professional-enquiry-v4",
+      "label": "Cillian",
+      "title": "Cillian handles a new enquiry.",
+      "context": "An initial enquiry for a fictional legal practice.",
+      "src": "/receptionist/assets/audio/cillian-professional-enquiry-v4.mp3",
+      "waveform": "/assets/audio/cillian-professional-enquiry-v4-waveform.json"
+    }
+  ]
+}
