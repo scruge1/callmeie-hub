@@ -37,9 +37,33 @@ change. No tool installation or runtime configuration change was required.
 
 ## Deployment
 
-Prepared for publication. Actual commit, GitHub checks and live verification
-will be recorded here after rollout. The final unsigned insurance package and
-delivery receipts remain outside Git under
+Published source release: `1e20ed6c0515c677e345ef313a3803d7791f474f`.
+The normal fast-forward push preserved all previous main history. GitHub Pages
+run [38609229267](https://github.com/scruge1/callmeie-hub/actions/runs/38609229267)
+and cohesion run [38609232728](https://github.com/scruge1/callmeie-hub/actions/runs/38609232728)
+both succeeded. Pages reports this source built at 17:45:41 UTC.
+
+Live verification at 17:49 UTC confirms HTTP 200 and exact reviewed hashes for
+all four legal HTML files and the current Order Markdown. All eight live
+desktop/mobile cases pass scope, identity, version, viewport and internal-anchor
+checks. Schedule D navigation passes at both sizes. There are no page errors.
+The desktop/mobile screenshots were inspected. The unchanged homepage exactly
+matches its Git blob; a raw worktree comparison differed only in CRLF endings.
+The local superseded-archive URL returns 404. The initial probe during the Pages
+build saw old files; it is retained separately and was not counted as acceptance.
+
+These source files match the reviewed v02 bytes:
+
+| Path | SHA256 |
+| --- | --- |
+| `legal/terms.html` | `4c4ad78e110299dc2bb1740a71d6971c002e8e30a300844b75fd5e82738c184f` |
+| `legal/privacy.html` | `6e5634f6482a06b001ba752c61a12a6b370b355a068ffa58ebeed3bb402257e9` |
+| `legal/dpa.html` | `8b144709f7bd9701fb2aac8af1c6dc27b3c74f1339ebcc9ebd31e145848794f6` |
+| `legal/index.html` | `d7303ac6c5161e418bb02b31223f30f3c9b5c82f8b25c7fa2b17f5d038eddc1b` |
+| `_internal/order-forms/order-form-template.md` | `c94dc2fce04642fd04aa166b7027f3347560321ce5b6fcf1612afcf6fb8060f7` |
+
+Raw live receipts, final unsigned insurance package and delivery receipts remain
+outside Git under
 `C:/Users/a33_s/Downloads/CallMeIE-PI-draft-20261014/`.
 
 Recovery preserves the base commit and reviewed branch. A recovery, if needed,

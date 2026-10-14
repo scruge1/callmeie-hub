@@ -15,9 +15,14 @@ GitNexus detection was invoked but cannot resolve this unregistered worktree;
 graph coverage is unavailable. Direct file, script and hash checks provide the
 scoped evidence. No code functions/classes are edited.
 
-Publication and live verification are pending in this prepared commit. The
-existing task checkpoint and `reports/legal-publication-20261014.md` hold the
-rollout evidence. The earlier site checkpoint below is retained as history.
+Source release `1e20ed6c0515c677e345ef313a3803d7791f474f` is published and verified.
+Pages run `38609229267` and cohesion run `38609232728` succeeded. At 17:49 UTC,
+all five live legal source files matched the reviewed SHA256 hashes. Eight live
+desktop/mobile legal-page cases passed content, layout, anchors and Schedule D
+navigation checks. The screenshots were inspected. The homepage matches its
+unchanged Git source; the unpublished local archive URL returns 404.
+The existing task checkpoint and `reports/legal-publication-20261014.md` hold
+the rollout evidence. The earlier site checkpoint below is retained as history.
 The public voice widget remains disabled. No provider or existing client setting
 is changed by this legal publication.
 
