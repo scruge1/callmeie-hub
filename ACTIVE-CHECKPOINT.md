@@ -1,5 +1,26 @@
 # CallMeIE screenshot corrections and voice samples
 
+## Legal publication - 14 October 2026
+
+Adam authorised deployment of the reviewed v02 legal pack. The publication starts
+from current main `948fc2e33d8938a0be56bb96b9278d24bb252997`; the remote has no newer
+changes at intake. The four legal pages and current sole-trader Order retain the
+reviewed source bytes. The superseded Order remains in Git history and a local
+archive. No archive file is added to this publication.
+
+Cohesion checks pass: 88 pages with sentinels, zero drift and zero errors.
+The cookie audit passes across 93 pages. Previous v02 checks cover all four legal
+pages at desktop and mobile sizes. Styles and executable scripts are unchanged.
+GitNexus detection was invoked but cannot resolve this unregistered worktree;
+graph coverage is unavailable. Direct file, script and hash checks provide the
+scoped evidence. No code functions/classes are edited.
+
+Publication and live verification are pending in this prepared commit. The
+existing task checkpoint and `reports/legal-publication-20261014.md` hold the
+rollout evidence. The earlier site checkpoint below is retained as history.
+The public voice widget remains disabled. No provider or existing client setting
+is changed by this legal publication.
+
 ## Current truth — layout and website voice follow-up
 
 Live source remains `d63bf9e` pending publication of this verified candidate.

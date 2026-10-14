@@ -130,4 +130,8 @@ See `CALLMEIE-PARENT-HUB-BUILD-SPEC.md` §6 for the 7-phase runbook.
 
 ## License
 
-Proprietary. CallMeIE Technologies Ltd.
+Proprietary materials and third-party components retain their applicable ownership and licences. The trading name does not establish ownership of every asset.
+
+## Legal alignment publication - 14 October 2026
+
+Adam authorised publication of the reviewed `review/pi-legal-20261014` candidate. Terms, Privacy and DPA v1.3 and the modular Order v2.0 identify the sole-trader supplier and scope future services by agreement. The old Order is retained in Git history and a clearly superseded local archive; it is excluded from the current reference and this publication's added files. [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md) and [the publication report](reports/legal-publication-20261014.md) record deployment and verification. The final unsigned insurance package and broker-only questions are owned by `C:/Users/a33_s/Downloads/CallMeIE-PI-draft-20261014/CHECKPOINT.txt`. No existing client contract, billing configuration or provider setting is amended.
