@@ -28,7 +28,9 @@ Run `python scripts/inject-cohesion.py` after changing a partial, then use its
 
 ## Original design cleanup — 11 October 2026
 
-Adam authorised publication of the reviewed original-design cleanup.
+The reviewed original-design cleanup is live at https://callmeie.ie/ from
+`5f42901`. GitHub Pages and cohesion checks passed; all228 served files match
+the committed release and bounded live visual/audio checks passed.
 All 228 browser source and asset files are pinned to the candidate that passed
 320 browser cases across all80 content pages. [ACTIVE-CHECKPOINT.md](ACTIVE-CHECKPOINT.md)
 owns current verification and publication state; see the

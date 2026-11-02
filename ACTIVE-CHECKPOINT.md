@@ -1,6 +1,15 @@
 # CallMeIE original design cleanup
 
-## Current truth — 11 October 2026
+## Current release route — owner corrections
+
+This worktree preserves an earlier stage. Current public source is `d63bf9e`,
+including screenshot corrections, original graphic logo/burgundy accents and
+three refreshed V4 Turbo samples. Current authority:
+../callmeie-hub-voice-samples-20261011/ACTIVE-CHECKPOINT.md and DESIGN.md.
+Earlier release checks below are historical; they do not override the new
+owner screenshots or establish owner design acceptance.
+
+## Historical stage truth — 11 October 2026
 
 Adam asked to return carefully to the good original design and make gradual
 changes to typography, thumbnails, copy and alignment. This supersedes the
@@ -15,7 +24,18 @@ are integrated on top of current main `56fc4be` in the isolated publication
 worktree `callmeie-hub-publish-20261011`, branch
 `publish/original-cleanup-20261011`. All 228 pinned browser source and asset
 files match the reviewed candidate exactly. Preserve both histories.
-Publication is pending the commit check, push, deployment and live verification.
+Published source: `5f4290125099ea7735d2b4fb43990e3827871849`.
+Normal fast-forward push preserved both earlier histories. GitHub cohesion
+run38099269190 and Pages run38099268945 succeeded. All228 pinned browser files
+downloaded from callmeie.ie match exact committed Git blob bytes, including the
+normalised Git line endings. Independent live review passed Home/About/Websites/
+Lab at390/1280, all11 Website and20 Lab previews at both widths, Chrome/WebKit
+audio play/pause/seek/keyboard/206 at390/1280 and native no-JS fallback. Twenty
+bounded live demo/legal cases pass, including keyboard table scrolling.
+No new live defects were found. Full320 matrix is local candidate evidence,
+not a repeated full live audit. GitNexus parser/index coverage remained unavailable
+as documented; direct staged scope and runtime checks are retained.
+The original cleanup is published; new voice samples are a separate active task.
 The previous rejected visual release is `06dcc58`.
 See reports/original-cleanup-publication-20261011.md for release evidence.
 
@@ -78,9 +98,13 @@ clear listening/reply states and text fallback. It needs a live voice connection
 and microphone consent. It is not included in this publication; no new live
 voice connection or provider configuration has been authorised by that question.
 
-Publish through a normal fast-forward commit on current main. Verify the
-served bytes, real gallery images and audio controls before claiming success.
-The reviewed candidate remains recoverable in its original worktree.
+The publication is complete and verified. Keep the original candidate and
+rejected releases recoverable. Adam now asks to replace the old May voice sample
+and show several voices across call types. This is being prepared separately in
+`callmeie-hub-voice-samples-20261011`, branch `review/voice-samples-20261011`.
+The push-to-talk question remains a proposed later integration: Hetzner public
+gateway, qualified rig/home processing and existing Vapi/ElevenLabs backup.
+No new voice service, failover route or phone binding is active.
 
 The owner's red-marked screenshot remains unread: Swarm Gmail OAuth intake
 returned invalid_grant. Browser verification does not prove that specific

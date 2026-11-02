@@ -52,3 +52,35 @@ Private screenshots and runtime receipts remain outside Git under
 AppData/Local/callmeie-site-review-20261010/output.
 No real form submissions, provider writes, phone calls or authenticated admin
 checks are part of this release verification.
+
+## Verified live release
+
+Published source: `5f4290125099ea7735d2b4fb43990e3827871849`.
+Normal fast-forward push preserved both earlier histories. GitHub cohesion
+run38099269190 and Pages run38099268945 succeeded. All228 pinned browser files
+downloaded from callmeie.ie match exact committed Git blob bytes, including the
+normalised Git line endings. Independent live review passed Home/About/Websites/
+Lab at390/1280, all11 Website and20 Lab previews at both widths, Chrome/WebKit
+audio play/pause/seek/keyboard/206 at390/1280 and native no-JS fallback. Twenty
+bounded live demo/legal cases pass, including keyboard table scrolling.
+No new live defects were found. Full320 matrix is local candidate evidence,
+not a repeated full live audit. GitNexus parser/index coverage remained unavailable
+as documented; direct staged scope and runtime checks are retained.
+The original cleanup is published; new voice samples are a separate active task.
+
+GitHub evidence:
+- https://github.com/scruge1/callmeie-hub/actions/runs/38099269190
+- https://github.com/scruge1/callmeie-hub/actions/runs/38099268945
+
+Private live receipts under AppData/Local/callmeie-site-review-20261010/output:
+- original-release-live-bytes.json:228 exact source/asset matches
+- playwright/original-release-parent-live/verification.md:8 page cases,62 real
+  gallery observations,24 normal page frames and62 preview captures inspected
+- playwright/original-release-live-audio/verification.md:4 interaction cases,
+  8 actual player/top frames viewed and native fallback in both browsers
+- playwright/live-original-release/verification.md:20 normal visual cases,
+  all viewed, Privacy keyboard scrolling at320/390 and corrected demo geometry
+
+These are release checks, not owner design acceptance. The inaccessible historical
+red-marked screenshot remains unread. New push-to-talk and refreshed samples are
+not included in this source release. No calls, forms or provider writes were made.
