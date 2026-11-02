@@ -117,8 +117,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,800;1,9..144,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/receptionist/styles.css">
+<link rel="stylesheet" href="/assets/css/audio-player.css">
+<link rel="stylesheet" href="/assets/css/receptionist-cleanup.css">
+<script src="/assets/js/audio-player.js" defer></script>
 <style>
   /* Hero icon ring-pulse — transform only (compositor thread), prefers-reduced-motion guarded */
   @keyframes ring-pulse {
@@ -251,9 +254,10 @@
   <link rel="stylesheet" href="/_partials/cohesion.css">
   <meta property="fb:pages" content="1105012356028968">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"CallMeIE Technologies","url":"https://callmeie.ie/","image":"https://callmeie.ie/og-image.png","telephone":"+353-61-788-120","priceRange":"€€","address":{"@type":"PostalAddress","addressLocality":"Limerick","addressRegion":"Limerick","addressCountry":"IE"},"geo":{"@type":"GeoCoordinates","latitude":52.668,"longitude":-8.6305},"areaServed":{"@type":"City","name":"Limerick"}}</script>
+  <link rel="stylesheet" href="/cleanup.css?v=original-cleanup-1">
 </head>
 
-<body>
+<body class="copy-cleanup">
 
 <a class="cmt-skip-link" href="#main">Skip to main content</a>
 
@@ -273,8 +277,8 @@
           <em>AI answering during agreed plan hours</em>
         </a>
         <a role="menuitem" href="/websites/">
-          <strong>AI-First Websites</strong>
-          <em>Sites with AI baked in</em>
+          <strong>Websites</strong>
+          <em>Design, build and maintenance</em>
         </a>
       </div>
     </details>
@@ -360,14 +364,9 @@
 
   <!-- HERO -->
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <div class="hero__kicker">See it work. Sign up today.</div>
-    <h1 id="hero-title" class="hero__headline">Your business gets its own receptionist.</h1>
-    <p class="hero__sub">
-      Ring <strong>+353 61 788 120</strong> to hear an AI receptionist live, then sign up over the
-      same call — Adam can join the line and lock in your setup before you hang up.
-      <em>It answers calls, books appointments, texts back missed callers, and escalates the
-      ones that need a human.</em> Built in Limerick. Live on a real line.
-    </p>
+    <div class="hero__kicker">AI phone receptionist</div>
+    <h1 id="hero-title" class="hero__headline">Your business gets its own receptionist</h1>
+    <p class="hero__sub">Answer calls using your approved business information. Booking, SMS and transfers depend on your plan and setup. Built and operated in Limerick.</p>
 
     <!-- P3-3 — ~33-second two-voice cafe-booking demo. Niamh's #1 fear
          is "will it sound robotic / will my regulars hate it" — this lets
@@ -395,20 +394,20 @@
              the ElevenLabs TTS em-dash-vocalisation bug.
          Render script: ~/AppData/Local/Temp/render-dialog.py
     -->
-    <figure class="hero__audio" aria-label="Sample call: Claire taking a cafe booking">
-      <figcaption class="hero__audio-label">Hear Claire · ~35-sec sample · cafe booking</figcaption>
-      <audio controls preload="metadata" src="assets/audio/claire-cafe-booking.mp3">
+    <figure id="demo" class="hero__audio" aria-label="Sample call: Claire taking a cafe booking">
+
+      <audio data-voice-player controls preload="metadata" src="assets/audio/claire-cafe-booking.mp3">
         Your browser does not support audio playback. Ring the live line below to hear Claire instead.
       </audio>
-      <span class="hero__audio-caption">Real synthesis. Real call flow. Customer rings, Claire books the table, texts the owner, sends a reminder.</span>
+
     </figure>
 
-    <span class="demo-number__label">Ring to see it work — and sign up today over the phone</span>
+    <span class="demo-number__label">Try the live demo</span>
     <a class="demo-number" href="tel:+35361788120" aria-label="Ring plus three five three, six one, seven eight eight, one two zero">+353 61 788 120</a>
 
     <div class="hero__actions">
-      <a class="btn-primary" href="tel:+35361788120">See it work · sign up</a>
-      <a class="btn-secondary" href="onboard.html">Or fill the form instead →</a>
+      <a class="btn-primary" href="tel:+35361788120">Call the demo</a>
+      <a class="btn-secondary" href="onboard.html">Enquire online</a>
     </div>
   </section>
 
@@ -447,41 +446,7 @@
   </style>
 
   <!-- ANCHOR-COST: above-fold price contrast -->
-  <section class="anchor-cost" aria-labelledby="anchor-cost-title">
-    <p class="anchor-cost__lead">The maths · Ireland 2026</p>
-    <h2 id="anchor-cost-title" class="anchor-cost__title">€1,840 to hire one. €149 to ship one.</h2>
-    <div class="anchor-cost__grid">
-      <div class="anchor-cost__col anchor-cost__col--human">
-        <div>
-          <p class="anchor-cost__tag">Part-time human · 25h/wk</p>
-          <p class="anchor-cost__price">€1,840 <em>– €2,366/mo</em></p>
-        </div>
-        <p class="anchor-cost__detail">
-          <strong>€14–€18/hr</strong> + employer PRSI 11.15% + auto-enrolment + holiday accrual.
-          Business hours only. No nights, weekends, lunch, sick days.
-        </p>
-      </div>
-      <div class="anchor-cost__delta" aria-hidden="true">vs</div>
-      <div class="anchor-cost__col anchor-cost__col--ai">
-        <div>
-          <p class="anchor-cost__tag">CallMeIE Starter · from €149/mo</p>
-          <p class="anchor-cost__price">€149 <em>/mo</em></p>
-        </div>
-        <p class="anchor-cost__detail">
-          300 minutes included, same business hours as the human — no lunch breaks, no sick
-          days, no missed calls. €297 setup once. Escalates to your mobile when judgement is
-          needed. Want nights, weekends and Christmas covered too? Upgrade to 24/7 cover.
-        </p>
-      </div>
-    </div>
-    <div class="anchor-cost__cta-row">
-      <a class="btn-primary" href="tel:+35361788120">Ring to see it work · sign up</a>
-      <a class="anchor-cost__more" href="#cost">See full breakdown ↓</a>
-    </div>
-    <p class="anchor-cost__source">
-      Figures: published Irish part-time front-desk payroll ranges 2026 · Employer PRSI 11.15% · auto-enrolment My Future Fund · holiday accrual 8.7%
-    </p>
-  </section>
+
 
   <!-- HOW THE DEMO WORKS + sample call excerpt (dental) -->
   <section class="editorial" id="how-demo-works" aria-labelledby="how-demo-title">
@@ -489,36 +454,10 @@
       <div class="section-num">§ 01 — Demo</div>
       <h2 id="how-demo-title" class="section-title">Try it before you buy it</h2>
     </div>
-    <p class="section-dek">
-      The demo line runs four live examples — dental, motor factors, salon, solicitor. Ring the
-      number, say which type of business you want to hear, and you'll be put through to that
-      demo receptionist. What you experience is exactly what your customers would hear — except
-      configured for your business, your name, your calendar. The live line is +353 61 788 120 — answered 24/7.
-    </p>
+    <p class="section-dek">Call the demo line and choose dental, motor factors, salon or solicitor. These are sample businesses; your receptionist is configured separately.</p>
 
     <div class="demo-strip">
-      <div class="demo-strip__prose">
-        <p>
-          <strong>The demo shows four example businesses.</strong> Each has its own AI receptionist
-          configured for that vertical — its own name, its own knowledge base, its own booking
-          rules. When you ring, a brief qualifier routes you to whichever demo you want to hear.
-        </p>
-        <p>
-          <strong>What you actually buy is one of these, built for you.</strong> Your receptionist
-          answers with your business name, knows your calendar, quotes your prices, and handles
-          your most common questions. The four demo verticals are samples, not the product list.
-        </p>
-        <p>
-          After each demo call: a wrap-up text lands on the caller's phone. That's part of the
-          product — every real call gets a confirmation or a callback prompt within sixty seconds.
-        </p>
-        <ol class="demo-steps">
-          <li><b>Ring the line</b>Say what type of business you want to hear. Routed to that demo.</li>
-          <li><b>Experience the demo</b>The demo AI answers as if it's that business's receptionist.</li>
-          <li><b>Booking or triage</b>Slot confirmed, price quoted, or escalated if it needs a human.</li>
-          <li><b>Wrap-up SMS</b>Confirmation text on your phone within sixty seconds.</li>
-        </ol>
-      </div>
+      <div class="demo-strip__prose"><ol class="demo-steps"><li><b>Choose a demo</b>Say which business you want to hear.</li><li><b>Try a request</b>Ask a question or try a sample booking.</li><li><b>Discuss your setup</b>Agree information, actions and hours before activation.</li></ol></div>
 
       <figure class="call-log">
         <figcaption class="call-log__kicker">What your customer hears · Dental practice · caller rings the practice number direct</figcaption>
@@ -541,8 +480,7 @@
       <h2 id="handles-title" class="section-title">What it handles</h2>
     </div>
     <p class="section-dek">
-      Six disciplines done by one system, tuned per-vertical. Not a chatbot dressed up
-      as a phone — a receptionist that happens to be software.
+      Configured around your approved information and the actions included in your plan.
     </p>
 
     <div class="handles-grid">
@@ -559,51 +497,31 @@
       <article class="handles-item">
         <div class="handles-item__num">II — Missed calls</div>
         <h3 class="handles-item__title">Missed-call text-back</h3>
-        <p>
-          Every missed call triggers an SMS within sixty seconds — offering to book,
-          answer a question, or send the caller back to voicemail if that is what
-          they want. No lead goes cold.
-        </p>
+        <p>SMS follow-up is available where included in your plan and configured during setup.</p>
       </article>
 
       <article class="handles-item">
         <div class="handles-item__num">III — Emergency</div>
         <h3 class="handles-item__title">Emergency transfer</h3>
-        <p>
-          Dental pain, motor breakdown, legal urgency — the AI recognises the tone and
-          either triages for severity or forwards straight to the owner's mobile. No
-          "press 9 for reception" voicemail tree.
-        </p>
+        <p>Calls that need a person follow the agreed transfer or callback route. The receptionist does not provide clinical or legal advice.</p>
       </article>
 
       <article class="handles-item">
         <div class="handles-item__num">IV — Products</div>
         <h3 class="handles-item__title">Stock &amp; product queries</h3>
-        <p>
-          For motor factors and retail: live inventory lookups answered on the call.
-          Part number, fit, price, availability, delivery window. No "I'll get someone
-          to ring you back."
-        </p>
+        <p>Stock, price and availability answers depend on your approved information and inventory integration.</p>
       </article>
 
       <article class="handles-item">
         <div class="handles-item__num">V — Hours</div>
         <h3 class="handles-item__title">Opening-hours queries</h3>
-        <p>
-          Honest answers to "are you open tomorrow?" including Irish bank holidays,
-          half-days, seasonal hours, and the annual Christmas shutdown the old
-          voicemail never remembered to update.
-        </p>
+        <p>Answers use your approved opening hours, holiday closures and seasonal changes.</p>
       </article>
 
       <article class="handles-item">
         <div class="handles-item__num">VI — Report</div>
         <h3 class="handles-item__title">Weekly report</h3>
-        <p>
-          Every Monday: a plain email — calls handled, bookings made, calls escalated,
-          common questions asked. Enough signal to see whether this is earning its
-          keep — no need to log in to know. (There's a dashboard too, if you want the detail.)
-        </p>
+        <p>Call and booking reporting depends on the agreed plan and setup.</p>
       </article>
     </div>
   </section>
@@ -639,18 +557,9 @@
           or insurance eligibility, assess symptoms or recommend treatment.
         </p>
 
-        <div class="qa">
-          <div class="qa__row"><div class="qa__tag">Caller</div><div class="qa__text">"Do ye take Laya? And how much is a filling?"</div></div>
-          <div class="qa__row"><div class="qa__tag">Dental AI</div><div class="qa__text qa__text--a">Yes, Bright Smile is a Laya-registered practice. A white composite filling is €110 to €160 depending on size — the dentist will quote exactly on the day. Would you like me to book you in?</div></div>
-        </div>
 
-        <figure class="call-log">
-          <figcaption class="call-log__kicker">What your caller hears · dental practice · rings practice number direct</figcaption>
-          <span class="call-log__line"><span class="call-log__time">[09:48:03]</span><span class="call-log__who">Caller</span><span class="call-log__text">"I've a medical card — is the exam still free?"</span></span>
-          <span class="call-log__line"><span class="call-log__time">[09:48:07]</span><span class="call-log__who call-log__who--ai">Receptionist</span><span class="call-log__text">"Yes — HSE Dental Treatment Services covers the exam and basic treatment. I'll need your card number when you come in."</span></span>
-          <span class="call-log__line"><span class="call-log__time">[09:48:19]</span><span class="call-log__who">Caller</span><span class="call-log__text">"Great. Anything next Tuesday morning?"</span></span>
-          <span class="call-log__line"><span class="call-log__time">[09:48:24]</span><span class="call-log__who call-log__who--ai">Receptionist</span><span class="call-log__text">"Tuesday 10:15 AM with Dr. Niamh. Booked — text confirmation sent."</span></span>
-        </figure>
+
+
       </div>
     </article>
 
@@ -671,18 +580,9 @@
           the reg, the customer's number, and queues an owner callback by SMS.
         </p>
 
-        <div class="qa">
-          <div class="qa__row"><div class="qa__tag">Caller</div><div class="qa__text">"Have ye a front pad set for an '18 Octavia?"</div></div>
-          <div class="qa__row"><div class="qa__tag">Motor AI</div><div class="qa__text qa__text--a">Two options — OEM-equivalent Brembo at €68.40, or Comline at €42.80. Both in stock. Account price? You'd be Kelly's Motors in Castletroy — €54.70 trade on the Brembo. On the 2pm run today if you confirm now.</div></div>
-        </div>
 
-        <figure class="call-log">
-          <figcaption class="call-log__kicker">What your caller hears · motor factors · rings counter number direct</figcaption>
-          <span class="call-log__line"><span class="call-log__time">[11:17:48]</span><span class="call-log__who">Caller</span><span class="call-log__text">"Window regulator for a 2009 Saab 9-3. Long shot."</span></span>
-          <span class="call-log__line"><span class="call-log__time">[11:17:55]</span><span class="call-log__who call-log__who--ai">Receptionist</span><span class="call-log__text">"Not in local stock. FB Euro lists it — €184 inc VAT, Thursday AM delivery to us. Want me to source it?"</span></span>
-          <span class="call-log__line"><span class="call-log__time">[11:18:09]</span><span class="call-log__who">Caller</span><span class="call-log__text">"Go on then, yeah."</span></span>
-          <span class="call-log__line"><span class="call-log__time">[11:18:14]</span><span class="call-log__who call-log__who--ai">Receptionist</span><span class="call-log__text">"Logged against your account. I'll SMS when it arrives Thursday."</span></span>
-        </figure>
+
+
       </div>
     </article>
 
@@ -705,10 +605,7 @@
           anyone chasing by hand.
         </p>
 
-        <div class="qa">
-          <div class="qa__row"><div class="qa__tag">Caller</div><div class="qa__text">"Can I get Aoife for balayage on a Saturday?"</div></div>
-          <div class="qa__row"><div class="qa__tag">Salon AI</div><div class="qa__text qa__text--a">Aoife has Saturday the 9th at 10:30 AM — she'll need the full three hours for balayage. €40 deposit to secure, refundable up to 24 hours. Card now or pay-link by text?</div></div>
-        </div>
+
       </div>
     </article>
 
@@ -731,17 +628,9 @@
           transmits case detail over SMS, only meeting-logistics messages.
         </p>
 
-        <div class="qa">
-          <div class="qa__row"><div class="qa__tag">Caller</div><div class="qa__text">"I'm thinking of separation. Does the firm do that?"</div></div>
-          <div class="qa__row"><div class="qa__tag">Legal AI</div><div class="qa__text qa__text--a">Yes, family law including judicial separation and divorce. I'll take your name and a contact number now for the conflict check, then book a first consultation — typically €180 for the first hour, which covers general advice and whether we can act for you.</div></div>
-        </div>
 
-        <figure class="call-log">
-          <figcaption class="call-log__kicker">What your caller hears · solicitor · rings firm number direct</figcaption>
-          <span class="call-log__line"><span class="call-log__time">[15:04:22]</span><span class="call-log__who">Caller</span><span class="call-log__text">"My father passed. I need to sort probate."</span></span>
-          <span class="call-log__line"><span class="call-log__time">[15:04:30]</span><span class="call-log__who call-log__who--ai">Receptionist</span><span class="call-log__text">"I'm sorry to hear that. I'll take a few details for the conflict check, then we'll book a first appointment — no charge for the initial thirty-minute probate call."</span></span>
-          <span class="call-log__line"><span class="call-log__time">[15:05:11]</span><span class="call-log__who call-log__who--ai">Receptionist</span><span class="call-log__text">"No conflict found. Tuesday 11:00 AM with Ms. Fitzgerald. Confirmation and intake form by email now."</span></span>
-        </figure>
+
+
       </div>
     </article>
   </section>
@@ -904,59 +793,7 @@
   </section>
 
   <!-- COST COMPARISON -->
-  <section class="editorial" id="cost" aria-labelledby="cost-title">
-    <div class="section-head">
-      <div class="section-num">§ 05 — Arithmetic</div>
-      <h2 id="cost-title" class="section-title">Versus a part-time receptionist</h2>
-    </div>
-    <p class="section-dek">
-      Not hype. Just the maths for an Irish SME weighing a part-time human receptionist
-      against CallMeIE. Figures reflect published Irish payroll ranges for a part-time
-      front-desk hire in 2026.
-    </p>
 
-    <div class="cost-compare">
-      <div class="cost-col">
-        <div class="cost-col__kicker">Option A</div>
-        <h3 class="cost-col__head">Part-time receptionist</h3>
-        <p>
-          25 hours a week at typical Irish front-desk rates, plus Employer PRSI and
-          pension auto-enrolment — the real cost is higher than the hourly rate on
-          the offer letter.
-        </p>
-        <div class="cost-row"><span class="cost-row__label">Hourly rate (€14–€18/hr)</span><span class="cost-row__value">€14.00 – €18.00</span></div>
-        <div class="cost-row"><span class="cost-row__label">25 hrs × 4.33 wks</span><span class="cost-row__value">€1,516 – €1,950</span></div>
-        <div class="cost-row"><span class="cost-row__label">+ Employer PRSI (11.15%)</span><span class="cost-row__value">€169 – €217</span></div>
-        <div class="cost-row"><span class="cost-row__label">+ Auto-enrolment (My Future Fund)</span><span class="cost-row__value">€23 – €29</span></div>
-        <div class="cost-row"><span class="cost-row__label">+ Holiday accrual (8.7%)</span><span class="cost-row__value">€132 – €170</span></div>
-        <div class="cost-row"><span class="cost-row__label"><strong>Total monthly</strong></span><span class="cost-row__value">€1,840 – €2,366</span></div>
-        <p class="cost-note">
-          Covers 25 hours a week. Nights, weekends, lunch breaks, sick days — not
-          covered. Public holidays at double-time.
-        </p>
-      </div>
-
-      <div class="cost-col">
-        <div class="cost-col__kicker">Option B</div>
-        <h3 class="cost-col__head">CallMeIE</h3>
-        <p>
-          AI answering operates during the configured plan hours and capacity.
-          Eligible plans include after-hours cover. Human technical support is separate.
-        </p>
-        <div class="cost-row"><span class="cost-row__label">Starter</span><span class="cost-row__value">€149 / month</span></div>
-        <div class="cost-row"><span class="cost-row__label">Professional</span><span class="cost-row__value">€249 / month</span></div>
-        <div class="cost-row"><span class="cost-row__label">Growth</span><span class="cost-row__value">€397 / month</span></div>
-        <div class="cost-row"><span class="cost-row__label">Setup (one-time)</span><span class="cost-row__value">€297 – €497</span></div>
-        <div class="cost-row"><span class="cost-row__label">Coverage</span><span class="cost-row__value">By plan and configuration</span></div>
-        <div class="cost-row"><span class="cost-row__label"><strong>Total monthly</strong></span><span class="cost-row__value">€149 – €397</span></div>
-        <p class="cost-note">
-          Compare the plan's price, configured hours and capacity with your needs. Not a
-          replacement for judgement — a complement that escalates to a human when
-          judgement is actually needed.
-        </p>
-      </div>
-    </div>
-  </section>
 
   <!-- IRISH SPECIFICS -->
   <section class="editorial" id="irish" aria-labelledby="irish-title">
@@ -982,33 +819,7 @@
   </section>
 
   <!-- FOUNDER STATEMENT -->
-  <section class="editorial" id="founder" aria-labelledby="founder-title">
-    <div class="section-head">
-      <div class="section-num">§ 07 — Founder</div>
-      <h2 id="founder-title" class="section-title">Why this exists</h2>
-    </div>
 
-    <div class="founder">
-      <p class="founder__body">
-        I built CallMeIE because Irish small businesses deserve better than voicemail.
-        A dental practice losing a new patient because the line rang out at lunchtime
-        is not a fluke — it is the quiet, daily arithmetic of a receptionist-less
-        front desk. <em>This is the honest alternative: a system that answers in
-        an Irish accent, knows the local specifics, and hands off to a human the
-        moment the call actually needs one.</em> Operated from Limerick. Priced so a
-        single-chair practice can justify it without a spreadsheet. Plan terms are
-        stated above, with no minimum seat counts and no selling of caller data.
-      </p>
-      <div class="founder__sign">
-        <div class="founder__signature">CallMeIE</div>
-        <div class="founder__caption">
-          <strong>Owner · CallMeIE</strong>
-          Limerick, Ireland · Operated in-house<br>
-          Built on Vapi, Twilio, and a Hetzner-hosted backend
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ -->
   <section class="editorial" id="faq" aria-labelledby="faq-title">
@@ -1017,8 +828,7 @@
       <h2 id="faq-title" class="section-title">Questions we actually get</h2>
     </div>
     <p class="section-dek">
-      Written as they are asked. Answered honestly — including where the system is
-      not the right fit.
+      Setup, privacy and plan terms.
     </p>
 
     <div class="faq-list">
@@ -1028,19 +838,7 @@
           <span>What happens if the AI can't handle a call?</span>
           <span class="faq-toggle"></span>
         </summary>
-        <div class="faq-body">
-          <p>
-            It escalates. The moment the AI detects uncertainty — an unusual request, a
-            confused caller, an angry tone, a missing fact — it transfers the call straight
-            to you: the owner's mobile rings directly with the caller still on the line, and
-            an SMS summary of the call lands on that mobile at the same time.
-          </p>
-          <p>
-            If the owner doesn't pick up, the AI apologises politely and takes a callback
-            number, not a voicemail. The owner then has everything needed to return the
-            call in context.
-          </p>
-        </div>
+        <div class="faq-body"><p>It follows the human transfer or callback route agreed during setup. Transfer and SMS availability depend on the plan and phone configuration.</p></div>
       </details>
 
       <details>
@@ -1183,63 +981,13 @@
     <div class="final-cta__kicker">The demo is live right now</div>
     <h2 id="final-cta-title" class="final-cta__headline">Hear it before you hire it</h2>
     <a class="final-cta__number" href="tel:+35361788120">Limerick: +353 61 788 120</a>
-    <p class="final-cta__sub">
-      Takes about ninety seconds. You'll get a real call from a real CallMeIE instance in
-      receptionist mode. Try to confuse it.
-    </p>
-    <a class="final-cta__secondary" href="onboard.html">Or submit the onboarding form →</a>
+    <p class="final-cta__sub">Try a sample enquiry, then discuss the information and actions your business needs.</p>
+    <a class="final-cta__secondary" href="onboard.html">Enquire online</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="page">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>CallMeIE</h4>
-        <p>AI phone receptionist for Irish SMEs. Built &amp; operated from Limerick, Ireland.</p>
-        <p>Stack: Vapi · Twilio · Google Calendar where enabled · Hetzner-hosted backend.</p>
-        <p>Email: <a href="mailto:hello@callmeie.ie" class="mono-val">hello@callmeie.ie</a></p>
-        <p>Demo line: <span class="mono-val">+353 61 788 120</span></p>
-      </div>
-      <div class="footer-col">
-        <h4>Product</h4>
-        <ul>
-          <li><a href="#how-demo-works">How the demo works</a></li>
-          <li><a href="#handles">What it handles</a></li>
-          <li><a href="#verticals">Verticals</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="onboard.html">Onboarding form</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#cost">Cost comparison</a></li>
-          <li><a href="#irish">Irish-specifics</a></li>
-          <li>Owner SMS: <span class="mono-val">+353 85 786 3564</span></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy notice</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
-          <li><a href="about.html">About CallMeIE</a></li>
-          <li><a href="/receptionist/blog/">Blog</a></li>
-          <li><a href="mailto:hello@callmeie.ie?subject=GDPR%20data%20request">GDPR request</a></li>
-          <li><a href="mailto:hello@callmeie.ie?subject=DPA%20request">DPA on request</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-legal">
-      <span class="footer-legal__wordmark">CALLMEIE &mdash; LIMERICK</span>
-      <span>© 2026 CallMeIE. All rights reserved.</span>
-      <span>Built in Limerick &nbsp;·&nbsp; Limerick: +353 61 788 120</span>
-    </div>
-  </div>
-</footer>
+
 
 <!-- COHESION:FOOTER-START -->
 <!-- (auto-generated by scripts/inject-cohesion.py — DO NOT EDIT) -->
@@ -1247,7 +995,7 @@
   <div class="callmeie-footer-inner">
     <div class="callmeie-footer-brand">
       <strong>CallMeIE Technologies</strong>
-      <span>AI staff for Irish small businesses · By appointment · Serving Limerick &amp; Munster · Ireland</span>
+      <span>AI receptionists for Irish businesses · Limerick, Ireland</span>
       <a href="mailto:hello@callmeie.ie">hello@callmeie.ie</a>
       <a href="https://wa.me/353857863564" target="_blank" rel="noopener">WhatsApp +353 85 786 3564</a>
       <div class="callmeie-footer-social" aria-label="Follow us">
@@ -1267,7 +1015,7 @@
         <h4>Products</h4>
         <ul>
           <li><a href="/receptionist/">AI Receptionist</a></li>
-          <li><a href="/websites/">AI-First Websites</a></li>
+          <li><a href="/websites/">Websites</a></li>
         </ul>
       </div>
       <div class="callmeie-footer-col">

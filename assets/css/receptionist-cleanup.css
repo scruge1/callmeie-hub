@@ -1,0 +1,8 @@
+/* Bounded original-page alignment; no new scene or layout system. */
+.hero__audio{padding:0;border:0;background:transparent;max-width:540px}.hero__audio .voice-player{margin:0}.voice-player__title{font-style:italic}.masthead-right{min-width:0;max-width:100%;overflow-wrap:anywhere}.page{min-width:0}
+@media(max-width:600px){.masthead{flex-wrap:wrap;gap:12px}.masthead-right{width:100%;box-sizing:border-box}.hero__audio{width:100%}.demo-number{font-size:clamp(24px,7vw,40px)}}
+
+@media(max-width:600px){.topbar{flex-wrap:wrap}.topbar__right{min-width:0;max-width:100%;justify-content:flex-start}.topbar__cta{white-space:normal;overflow-wrap:anywhere}.hero__actions{flex-wrap:wrap}}
+
+.hero .demo-number{font-size:clamp(24px,4.8vw,72px);max-width:100%;white-space:nowrap}
+@media(max-width:350px){.hero .hero__headline{font-size:33px!important;overflow-wrap:normal}}

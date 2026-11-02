@@ -107,13 +107,13 @@
 
   var section = document.createElement("section");
   section.id = "owl-lead-form";
-  section.setAttribute("aria-label", "Contact " + meta.business);
+  section.setAttribute("aria-label", "CallMeIE website enquiry");
   section.innerHTML =
     '<button type="button" class="olf-close" aria-label="Hide this form">\u00d7</button>' +
     '<div class="olf-inner">' +
-      '<div class="olf-kicker">' + meta.business + '  Get in touch</div>' +
-      '<h3>Send an enquiry  a reply lands within 24 hours.</h3>' +
-      '<p class="olf-lede">This is a sample site built by Callmeie Technologies. The form below is real  submissions land in the admin dashboard for ' + meta.business + '. Try it.</p>' +
+      '<div class="olf-kicker">CallMeIE</div>' +
+      '<h3>Enquire about a website</h3>' +
+      '<p class="olf-lede">This is an illustrative business website. Use the form to enquire about a CallMeIE website.</p>' +
       '<form class="olf-form">' +
         '<div class="olf-row">' +
           '<label><span>Your name</span><input type="text" name="name" required autocomplete="name"></label>' +
@@ -121,7 +121,7 @@
         '</div>' +
         '<div class="olf-row">' +
           '<label><span>Phone <em style="font-style:italic;font-weight:400;text-transform:none;letter-spacing:0.04em;opacity:0.7;">(optional)</em></span><input type="tel" name="phone" autocomplete="tel"></label>' +
-          '<label><span>What you\u2019re after</span><input type="text" name="topic" placeholder="e.g. first appointment, a quote, opening hours..."></label>' +
+          '<label><span>What you\u2019re after</span><input type="text" name="topic" placeholder="Your business and preferred design"></label>' +
         '</div>' +
         '<label><span>Message</span><textarea name="message" rows="3" placeholder="A couple of lines is fine."></textarea></label>' +
         '<input type="text" name="nickname" class="olf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
@@ -130,7 +130,7 @@
           '<span class="olf-status" role="status" aria-live="polite"></span>' +
         '</div>' +
       '</form>' +
-      '<p class="olf-note">This is an Callmeie Technologies industry sample. Submissions go to our demo admin dashboard, <strong>not</strong> to the actual business. Want a site like this for your own practice?  <a href="https://callmeie.ie/websites/#pricing">Pick a tier</a>.</p>' +
+      '<p class="olf-note">CallMeIE website enquiries. <a href="https://callmeie.ie/legal/privacy.html">Privacy notice</a> · <a href="https://callmeie.ie/websites/#pricing">Website plans</a>.</p>' +
     '</div>';
 
   // Insert right before the floating sample-nav bar's script tag / before </body>

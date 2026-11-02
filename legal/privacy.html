@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Privacy Policy — CallMeIE Technologies · Limerick, Ireland</title>
-    <meta name="description" content="CallMeIE privacy policy covering AI Receptionist, Document Ops, and AI-First Websites. GDPR Article 13/14 disclosure, sub-processor list, retention windows, your rights.">
+    <meta name="description" content="CallMeIE privacy policy for AI Receptionist and Websites, including providers, retention and your rights.">
     <link rel="canonical" href="https://callmeie.ie/legal/privacy.html">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Privacy Policy — CallMeIE Technologies">
-    <meta property="og:description" content="GDPR Article 13/14 privacy disclosure for AI Receptionist, Document Ops, and AI-First Websites.">
+    <meta property="og:description" content="Privacy information for AI Receptionist and Websites.">
     <meta property="og:url" content="https://callmeie.ie/legal/privacy.html">
     <meta property="og:site_name" content="CallMeIE Technologies">
 
@@ -21,13 +21,19 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,500..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/_partials/cohesion.css">
     <link rel="stylesheet" href="legal.css">
+    <style>
+      .provider-table-scroll { max-width:100%; overflow-x:auto; }
+      .provider-table-scroll .legal-table { min-width:480px; table-layout:fixed; }
+      .provider-table-scroll :is(th,td):first-child { width:32%; }
+    </style>
   <meta property="fb:pages" content="1105012356028968">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"CallMeIE Technologies","url":"https://callmeie.ie/","image":"https://callmeie.ie/og-image.png","telephone":"+353-61-788-120","priceRange":"€€","address":{"@type":"PostalAddress","addressLocality":"Limerick","addressRegion":"Limerick","addressCountry":"IE"},"geo":{"@type":"GeoCoordinates","latitude":52.668,"longitude":-8.6305},"areaServed":{"@type":"City","name":"Limerick"}}</script>
+  <link rel="stylesheet" href="/cleanup.css?v=original-cleanup-1">
 </head>
-<body>
+<body class="copy-cleanup cleanup-document">
 
 <a class="cmt-skip-link" href="#main">Skip to main content</a>
 
@@ -49,7 +55,7 @@
         <h1 class="legal-headline">Privacy Policy.</h1>
         <p class="legal-stamp"><strong>Version:</strong> 1.2 · <strong>Last updated:</strong> 2026-10-07</p>
         <p class="legal-lede">
-            This policy covers all three CallMeIE Technologies products: <strong>AI Receptionist</strong>, <strong>Document Ops</strong>, and <strong>AI-First Websites</strong>. Per-product data flows, sub-processors, and retention windows are itemised below per GDPR Article 13/14. The Data Processing Agreement (Article 28 contract) lives at <a href="/legal/dpa.html">/legal/dpa.html</a>.
+            This policy covers <strong>AI Receptionist</strong> and <strong>Websites</strong>. Data flows, providers and retention are described below. The Data Processing Agreement is available at <a href="/legal/dpa.html">/legal/dpa.html</a>.
         </p>
     </div>
 </header>
@@ -58,6 +64,8 @@
 
 <main id="main" class="legal-inner legal-prose">
 
+<p class="legal-legacy-note">Document Ops was withdrawn from new sales on 7 June 2026. References to Document Ops apply only where an existing agreement names that service.</p>
+
 <nav class="legal-toc" aria-label="Sections">
     <h2>Contents</h2>
     <ol>
@@ -65,7 +73,7 @@
         <li><a href="#sec-2">Data we process — per product</a>
             <ol>
                 <li><a href="#sec-2a">AI Receptionist</a></li>
-                <li><a href="#sec-2b">Document Ops</a></li>
+                <li><a href="#sec-2b">Document Ops (legacy)</a></li>
                 <li><a href="#sec-2c">AI-First Websites</a></li>
             </ol>
         </li>
@@ -124,6 +132,7 @@
 <section id="sec-5">
 <h2>5 · Providers and recipients</h2>
 <p>Providers depend on the service and enabled features. The customer-specific DPA Schedule identifies the actual sub-processors before processing. A payment provider or a provider acting for its own legal obligations is not automatically a sub-processor for every activity.</p>
+<div class="provider-table-scroll" role="region" aria-label="Providers and service roles; scroll horizontally to read all columns" tabindex="0">
 <table class="legal-table">
 <thead><tr><th>Provider</th><th>Service role</th></tr></thead>
 <tbody>
@@ -137,6 +146,7 @@
 <tr><td>Configured AI providers</td><td>Answering, classification or service diagnostics where enabled. The actual provider and data sent must be identified for the service; previous configurations have included Anthropic and xAI.</td></tr>
 <tr><td>Telegram</td><td>Owner alerts where enabled; submitted business/contact details can be included. An owner-only chat is still a disclosure to the messaging provider.</td></tr>
 </tbody></table>
+</div>
 <p>Providers may process information outside the EEA; see §8. For customer processing, sub-processor authorisation, equivalent contractual duties and objection rights follow the DPA. No fixed thirty-day notice or provider certification is implied unless agreed and supported.</p>
 </section>
 

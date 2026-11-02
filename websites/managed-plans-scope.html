@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600..800;1,9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/_partials/cohesion.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
@@ -128,8 +128,10 @@
     background: rgba(255, 255, 255, 0.5);
   }
 </style>
+  <link rel="stylesheet" href="/cleanup.css?v=original-cleanup-1">
+<style>.plans-table-scroll{max-width:100%;overflow-x:auto}.plans-table-scroll:focus-visible{outline:2px solid var(--cmt-brand);outline-offset:3px}.plans-table-scroll table{min-width:440px}</style>
 </head>
-<body>
+<body class="copy-cleanup cleanup-document">
 
 <nav class="page-shell" aria-label="Page location" style="padding-bottom: 0;">
   <p class="crumbs"><a href="/">CallMeIE</a> · <a href="/websites/">AI-First Websites</a> · Managed Plans — Scope</p>
@@ -168,7 +170,7 @@
 
   <h2>Tiers</h2>
 
-  <table>
+  <div class="plans-table-scroll" role="region" aria-label="Website plan comparison; scroll to see all columns" tabindex="0"><table>
     <thead>
       <tr>
         <th>&nbsp;</th>
@@ -215,7 +217,7 @@
         <td>✓ + monitoring</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <p>The per-tier inclusions, out-of-scope lists, worked examples and change-request rules are the <strong>same as the matching Care tier</strong> (Launch≈Essential, Business≈Growth, Premium≈Concierge) — see <a href="/websites/care-plans-scope.html">Care Plans</a>. One scope definition, not two.</p>
 
