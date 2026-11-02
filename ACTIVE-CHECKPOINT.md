@@ -1,5 +1,65 @@
 # CallMeIE whole-site review and local preview
 
+## Current release route — owner corrections
+
+This worktree preserves an earlier stage. Current public source is `d63bf9e`,
+including screenshot corrections, original graphic logo/burgundy accents and
+three refreshed V4 Turbo samples. Current authority:
+../callmeie-hub-voice-samples-20261011/ACTIVE-CHECKPOINT.md and DESIGN.md.
+Earlier release checks below are historical; they do not override the new
+owner screenshots or establish owner design acceptance.
+
+## Active published cleanup — 11 October 2026
+
+Adam authorised publication of the original-design cleanup. Live source is
+`5f4290125099ea7735d2b4fb43990e3827871849`; exact-byte and bounded live checks pass.
+Current evidence: ../callmeie-hub-publish-20261011/ACTIVE-CHECKPOINT.md.
+Original candidate/preview8773 remains recoverable in callmeie-hub-original-6578619.
+This worktree preserves the rejected release and its historical receipts.
+Refreshed voice samples are a separate active change; new image/3D direction is
+deferred to an identified need after review of the restored layout.
+
+## Latest owner review — 10 October 2026
+
+Adam rejects the composed craft direction: floating telephone/table geometry,
+weak isolated receiver image, poor whole-page coherence and generic typography.
+Reports a red-marked hero CTA/preview overlap. Primary positioning is an Irish
+AI phone receptionist for Irish businesses; websites are a secondary product.
+Earlier browser passes did not establish design acceptance or rule out this
+reported overlap. Do not repeat the rejected scene or equate QA with acceptance.
+
+Original pre-redesign source6578619 is preserved in Git and recovered separately
+at ../callmeie-hub-original-6578619, preferred preview http://127.0.0.1:8773/.
+That recovery now holds the gradual cleanup candidate, not a deployed rollback.
+Live source remains06dcc58.
+Swarm Gmail attachment intake failed with expired/revoked OAuth invalid_grant;
+red-marked owner screenshot has not been read. No credential or provider changes.
+The candidate checkpoint owns targeted cleanup and verification. Inspect the
+owner screenshot when available. Preserve legal/pricing/provider repairs.
+
+## Corrected scope — preserve the original website
+
+Adam clarified that the original website was good. His initial request was
+less copy, consistent typography/formatting, working previews and alignment
+across pages. Codex expanded this into an unwanted redesign. The two-direction
+comparison plan is superseded. Do not generate a replacement identity or scene.
+
+Use original6578619 as the visual baseline. First measure its actual font
+families, sizes, weights, line heights and heading usage; different sizes do not
+mean different families. Keep the original character, palette, hierarchy and
+useful page structure. Reduce repetition and internal narration. Repair previews
+and inconsistent page treatments, including Lab. Position the Irish AI phone
+receptionist first and Websites second. New assets or3D are optional only when
+necessary to resolve a specific identified problem, not an upgrade requirement.
+
+Restore selectively in an isolated local candidate, retaining current legal,
+seller, consent, coverage-hours, pricing and functional corrections. Do not
+blindly roll back the whole repository. Produce a before/after comparison of the
+same original layout with copy and typography cleanup. Review actual mobile and
+desktop pages and the marked overlap when available. Apply only the selected
+cleanup across routes, then verify all layouts and working controls. Planning
+continues; no new publication yet. Preserve original and current source history.
+
 ## Current published craft release — 10 October 2026
 
 LIVE at https://callmeie.ie/. Source release:

@@ -1,5 +1,18 @@
 # CallMeIE website consolidation
 
+## Latest owner direction — preserve the original
+
+Adam clarified that the original website was good; the desired change was copy,
+typography/format consistency, previews and page alignment. Codex expanded the
+scope into an unwanted redesign. The two-concept comparison is superseded.
+Original6578619 is the visual baseline. Keep its character and useful structure;
+measure actual families/sizes before simplifying type. The Irish AI receptionist
+is primary; Websites is secondary. Do targeted cleanup and before/after review.
+Keep current commercial, legal, consent and functional repairs. New generated
+assets and3D are optional only for a specific justified improvement.
+ACTIVE-CHECKPOINT.md owns the current plan. Details below describe the rejected
+published treatment, not instructions for the next implementation.
+
 ## Scope and source
 
 Adam rejected the first 10 October consolidation as too basic and off-brand.
