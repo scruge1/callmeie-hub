@@ -1,0 +1,240 @@
+# Superseded Order Form - history only
+
+Superseded 14 October 2026. Do not use for customers, insurance reference or live supplier terms. Original wording below contains outdated company/VAT/insurance/support/data-return statements. Active replacement: ../order-form-template.md.
+
+--- BEGIN ORIGINAL TEMPLATE ---
+
+# Order Form — CallMeIE Technologies (TEMPLATE v1.0 DRAFT)
+
+**Status:** DRAFT — solicitor review required before first paying customer signs.
+**Date drafted:** 2026-05-07.
+**Pairs with:** `legal/terms.html` (Master Service Agreement), `legal/dpa.html` (Article 28 DPA), `_internal/ropa-2026.md` (Article 30 ROPA), `websites/care-plans-scope.md` (Care plan inclusions).
+**Single source of truth:** ONE template covers all 3 build tiers + all 3 Care tiers + Doc Ops + AI Receptionist via the per-section checkboxes. Reduces drift across templates (round 3 PDR D-LIFE-17).
+
+---
+
+## Section A — Parties
+
+**Service Provider:**
+CallMeIE Technologies Limited — a private company limited by shares,
+registered in Ireland, CRO no. 816273 (incorporated 21 May 2026).
+Registered office: 40 Gouldavoher Estate, Limerick, V94 HWH7, Ireland
+IE VAT-registered (VAT no. IE8490023T)
+Primary contact: hello@callmeie.ie · +353 85 786 3564
+
+**Customer:**
+Business name: _____________________________
+Trading-as / brand: __________________________
+Registered address: _________________________________________
+Primary contact name: _________________ Role: ______________
+Primary contact email: ____________________ Phone: ____________
+VAT number (if EU B2B reverse-charge applies): ________________
+
+---
+
+## Section B — Engagement type
+
+Tick exactly one bundle (combinations OK across products if Customer signs once
+for both):
+
+### B1. AI-First Websites — Build (one-off)
+
+  [ ] **Quick Page** — €395 + VAT · 3 working days · 1 section, 1 round of revisions, no copy/logo/photography included
+  [ ] **Starter** — €695 + VAT · 7 working days · 1 page, 1 round of revisions
+  [ ] **Pro** — €1,595 + VAT · 14 working days · 5 pages, 2 rounds of revisions, Decap CMS
+  [ ] **Custom** — from €2,950 + VAT · scoped on call · negotiated rounds + tools (Payload CMS / e-commerce / multilingual)
+
+**Payment milestones (Build):**
+  - Quick Page / Starter: **100% on signature** (low admin overhead at this band)
+  - Pro: **50% on signature, 50% on launch**
+  - Custom: **40% on signature, 30% on design-approval milestone, 30% on launch**
+
+**Revision cap:** as stated above. Beyond cap → €60/hour (€55/hour if Customer
+also has a Care plan).
+
+**Acceptance:** site is accepted upon either (a) the Customer's written
+"approved" reply to the launch-handoff email, OR (b) the lapse of 14 calendar
+days following the launch-handoff email without written objection.
+
+### B1b. AI-First Websites — Managed (recurring build + maintain, €0 upfront)
+
+  [ ] **Launch** — €69/mo · **12-month minimum** · 1-page build included + 30 min/mo edits · 2 biz-day SLA · €60/hr overage
+  [ ] **Business** — €100/mo · **12-month minimum** · up-to-5-page build included + 2 hr/mo edits + 1 new page/quarter · 1 biz-day SLA · €60/hr overage
+  [ ] **Premium** — €149/mo · **18-month minimum** · bespoke build included + unlimited fair-use (6hr/mo rolling 90-day avg, 8hr single-month ceiling) + quarterly refresh · same-day SLA · €55/hr overage
+
+Detailed inclusions + scope at: https://callmeie.ie/websites/managed-plans-scope
+
+**Payment (Managed):** **€0 on signature.** First month billed on go-live; monthly
+via Stripe thereafter on the same day each month. **No setup fee.** Cancel after the
+minimum term with 30 days' written notice (per §H1).
+
+**Minimum term & early termination (Managed-specific — OVERRIDES §H1/§H2 for this
+engagement type):** the site is built and delivered at €0 upfront; the minimum term
+is solely how the build cost is recovered — it is deferred payment for that build,
+not a penalty. If the Customer cancels before the end of the minimum term, the
+Customer may either (a) continue paying the remaining minimum-term monthly fees on
+the normal monthly schedule, or (b) settle the remaining balance in one final
+invoice. There is no separate kill fee or deposit (none was taken). After the
+minimum term, the engagement is month-to-month per §H1. **This minimum-term
+commitment is an important term and the Customer confirms it has been specifically
+drawn to their attention.**
+
+**IP (Managed-specific — OVERRIDES §C2 and §F2 for this engagement type):** Managed
+is a managed service. CallMeIE Technologies retains the source code and hosting for
+the duration of the engagement; the §C2 / §F2 source-code-transfer-on-payment terms
+**do not apply** to a Managed engagement. The Customer purchases a built, hosted and
+maintained website — not the code. A Customer who wants to own the source code
+outright takes the one-off Build offer (§B1) instead; there is no separate buy-out.
+Customer-supplied content remains the Customer's property (§F1 unchanged). On valid
+end of engagement, hosting transfer-of-control and data export proceed per §G, except
+that the deliverable is a static export of the live site content — **no source-code
+repository handover** for Managed.
+
+### B2. AI-First Websites — Care plan (monthly subscription)
+
+  [ ] **Essential** — €45/mo or €450/yr — 30 min/mo edits · 2 biz-day SLA · €60/hr overage
+  [ ] **Growth** — €95/mo or €950/yr — 2 hr/mo edits + 1 new page/quarter · 1 biz-day SLA · €60/hr overage
+  [ ] **Concierge** — €195/mo or €1,950/yr — unlimited fair-use (6hr/mo rolling 90-day avg, 8hr/mo single-month ceiling) · same-day SLA · €55/hr overage
+
+Detailed inclusions + scope at: https://callmeie.ie/websites/care-plans-scope
+
+**Billing:** monthly via Stripe on the same day each month, OR annual prepay
+(2 months free) on signature day. Cancel any time with 30 days' written notice
+to support@callmeie.ie. No auto-renew traps.
+
+### B3. Document Ops — Pilot (one-off)
+
+  [ ] **Entry Pilot** — €500 + VAT · 25 documents · 14 working days
+  [ ] **Standard Pilot** — €1,500 + VAT · 100 documents · schema mapping to your accounting tool
+
+### B4. Document Ops — Subscription (monthly)
+
+  [ ] **Auto** — €99/mo · 200 docs/mo cap · self-serve queue · spot-check before paste
+  [ ] **Auto Plus** — €249/mo · 600 docs/mo cap · 2 tenant seats included · €40/mo per extra seat
+  [ ] **Rescue + Export** — €499/mo · 250 docs/mo · 10 human rescues with 3-biz-day SLA · overflow bounces normally
+  [ ] **Bespoke** — from €1,500/mo · scoped on call · custom CSV schema, multi-leg consignment linking, monthly reviewer summary
+
+### B5. AI Receptionist — Subscription (monthly)
+
+  [ ] **Starter** — €149/mo + €297 setup · 300 min/mo · business-hours cover · 1 calendar
+  [ ] **Professional** — €249/mo + €297 setup · 600 min/mo · 24/7 + missed-call text-back · 1 calendar
+  [ ] **Growth** — €397/mo + €497 setup · 1,200 min/mo · multi-calendar · monthly optimisation call · 3-month minimum
+
+---
+
+## Section C — Deliverables
+
+**For Build engagements**, the Customer will receive on completion:
+1. The live site at the agreed URL (Customer's domain or `{slug}.callmeie.ie`)
+2. Full source code in a GitHub repository, ownership transferred to Customer (collaborator + can be promoted to repo owner) — except for Managed engagements, where CallMeIE Technologies retains the source code (see §B1b)
+3. CMS admin credentials (Decap GitHub OAuth for Pro; Payload account for Custom; n/a for Quick Page / Starter)
+4. The "Stack Sheet" — single-page PDF listing every service, account holder, registered email, renewal date, monthly cost
+5. One Loom training video (5–8 minutes) covering Customer-self-edit workflows
+6. Day-of-launch welcome email per `OPERATOR-RUNBOOK.md` handoff package
+7. 30-day post-launch check-in (calendar invite already sent)
+
+**For Document Ops engagements**, the Customer will receive:
+1. A magic-link to the tenant portal at `https://portal.callmeie.ie/{slug}/`
+2. A dedicated email-in inbox: `inbox-{slug}@callmeie.ie`
+3. CSV exports formatted for Xero supplier-bill import (auto-paste); Sage IE Quick-Entry purchases (auto-paste, with companion crib for RCT manual posting); BrightBooks via Surf Accounts engine (auto-paste); QuickBooks UK/IE via SaasAnt bridge (Customer's SaasAnt account required)
+4. Bounce-back queue with one-line reason per uncertain document
+5. Stripe customer portal access for self-serve cancel / upgrade / billing
+
+**For AI Receptionist engagements**, the Customer will receive:
+1. A dedicated Twilio phone number (we never own the Customer's existing line; Customer keeps it)
+2. Vapi assistant configured to Customer's voice/persona/hours/services from the Day-1 welcome call
+3. Google Calendar write access via service-account share (Customer keeps OAuth control)
+4. Weekly Monday email report: calls handled, bookings made, escalations
+5. Stripe customer portal access for self-serve cancel / upgrade / billing
+
+---
+
+## Section D — Customer responsibilities
+
+The Customer agrees to:
+
+1. Provide brand assets (logo in vector form, brand colours, fonts owned/licensed, photography rights) within 3 business days of signature.
+2. Warrant that all content supplied to CallMeIE Technologies (text, images, logos, customer-data extracts) is owned by the Customer or licensed to the Customer for the purpose. Customer indemnifies CallMeIE Technologies against third-party copyright claims arising from supplied content.
+3. Maintain the accuracy of their own knowledge base (services, prices, hours, FAQs) for AI Receptionist engagements. Customer is the data controller; the AI is decision-support to the Customer's instruction.
+4. Pay invoices within 14 days of issue. For business customers, late payment is governed by the European Communities (Late Payment in Commercial Transactions) Regulations 2012 (S.I. No. 580 of 2012, as amended): statutory interest accrues automatically at 8 percentage points above the European Central Bank main refinancing reference rate, together with fixed recovery-cost compensation of €40, €70 or €100 according to the size of the overdue amount, plus reasonable further recovery costs. (Those Regulations do not apply to a consumer customer.)
+5. Respond to revision requests within 5 business days. After 14 days of unresponsiveness ("ghosting"): project is paused; deposit retained; work-to-date delivered as-is; restart billed at €60/hr from the pause point.
+6. Warrant that the Customer is entering this Agreement wholly for purposes relating to its trade, business, craft or profession and not as a consumer, and acknowledge that consumer-protection law, including the Consumer Rights Act 2022, does not apply to this Agreement.
+
+---
+
+## Section E — Service Provider responsibilities
+
+CallMeIE Technologies agrees to:
+
+1. Deliver each engagement to the timeline + scope above. Acceptance criteria per Section B.
+2. Maintain professional indemnity + cyber liability insurance (carrier + cover details published at `legal/terms.html` §8).
+3. Monitor uptime via Uptime Kuma. For Care customers: any unplanned outage >30 minutes triggers proactive incident email and a 1-day Care credit.
+4. Process Customer personal data per the DPA (`legal/dpa.html`) and the ROPA (`_internal/ropa-2026.md`).
+5. Deliver complete data export within 7 calendar days of any Customer cancellation, then permanently delete from our systems within 30 calendar days (per DPA Article 17 commitment + `scripts/permanent_delete.py` execution path).
+6. Respond to support emails within the SLA tier above. Silence beyond SLA on a confirmed-received email entitles the Customer to a refund of one tier-month at no questions asked.
+
+---
+
+## Section F — IP ownership
+
+1. **Customer-supplied content** (text, images, logos, brand) remains the Customer's property.
+2. **CallMeIE-developed deliverables.** With effect from CallMeIE Technologies' receipt of payment in full of all milestone invoices for an engagement, CallMeIE Technologies assigns to the Customer — by way of present assignment of future copyright under section 121 of the Copyright and Related Rights Act 2000 — all copyright and other intellectual property rights in the CallMeIE-developed deliverables for that engagement (code, design, configuration, AI prompts), such rights to vest in the Customer automatically on their coming into existence and on payment, with no further document required. This does not apply to Managed engagements, where CallMeIE Technologies retains the source code (see §B1b), or to pre-existing CallMeIE IP (§F4).
+3. **Portfolio licence (carve-out):** CallMeIE Technologies retains a non-exclusive, royalty-free licence to display the work in our portfolio (including case studies, before/after screenshots, traffic + uptime metrics in aggregate) UNLESS the Customer opts out in writing within 14 days of the launch-handoff email.
+4. **Pre-existing CallMeIE IP** (templates, internal tooling, the Doc Ops extraction pipeline itself, the AI Receptionist Vapi configuration system, scripts under `scripts/`, the Decap CMS / Payload CMS configurations as a reusable system) is licensed to the Customer for the duration of their engagement. On engagement termination, the Customer keeps the configured instance (their site, their tenant, their Vapi assistant) but does not retain a licence to redistribute the underlying tooling.
+
+5. **Moral rights.** To the fullest extent permitted by sections 116 and 118 of the Copyright and Related Rights Act 2000, CallMeIE Technologies unconditionally and irrevocably waives all moral rights in the CallMeIE-developed deliverables — including the paternity right and the integrity right — in favour of the Customer and its successors and licensees.
+
+---
+
+## Section G — Hosting transfer-of-control
+
+1. **Day 1 through engagement:** site / tenant / assistant runs on CallMeIE Technologies infrastructure (Cloudflare Pages, Hetzner Coolify, Render, Vapi). CallMeIE-controlled accounts, Customer never sees credentials.
+2. **Cancellation, week 1 (Days 1–7):** CallMeIE Technologies delivers complete export — for Websites: GitHub repo + content backup + Stack Sheet; for Doc Ops: zip of every original document + master CSV; for AI Receptionist: PDF export of last 6 months of summaries + booking history + recordings download link.
+3. **Cancellation, weeks 1–4 (Days 1–30):** Customer may request migration to their own infrastructure at no fee. CallMeIE Technologies provides DB dumps, hosting-config docs, DNS-transfer instructions within 14 working days of the request.
+4. **Day 30 onward:** all Customer data permanently deleted from CallMeIE Technologies systems per `scripts/permanent_delete.py`. Customer relationship terminated.
+5. **Re-activation within 3 months:** CallMeIE Technologies retains the Customer's Vapi assistant in `archived` state for 90 days. Customer can re-activate within 3 months via reply to final invoice; configuration restored within 24 hours, no re-build fee.
+
+---
+
+## Section H — Cancellation + kill fee
+
+1. **Subscription engagements (Care, Doc Ops sub, AI Receptionist):** cancel any time with 30 days' written notice to `support@callmeie.ie` OR via Stripe Customer Portal one-click. Final pro-rated invoice for the 30-day notice period.
+2. **Build engagements, mid-build:** if the Customer cancels a Build engagement before launch, CallMeIE Technologies will invoice for (i) all work actually completed to the cancellation date, charged at the rates in this Order Form or, where none is stated, at €60/hour; plus (ii) a cancellation charge — CallMeIE Technologies' genuine pre-estimate of the loss caused by the cancelled booking, being a reserved development slot that cannot be re-filled at short notice — set at the lesser of 30% of the remaining contracted balance or €350. The deposit is credited against these amounts. Work-to-date is delivered as-is and the GitHub repository transferred on payment of the above.
+3. **Service Provider termination (rare):** if CallMeIE Technologies must terminate (Customer breach of acceptable use, non-payment, or fraud), 30 days' notice + complete data export per Section G applies.
+
+---
+
+## Section I — Liability cap (refer to MSA)
+
+Liability terms per `legal/terms.html` §8. CallMeIE Technologies' total aggregate liability is capped at: (a) for subscription Services — the greater of the fees paid under this Order Form in the 12 months before the event giving rise to the claim, or €1,000; (b) for one-off Build engagements — 100% of the total fees paid for that Build, for claims made within 24 months of launch-handoff; (c) for Bespoke engagements (Custom build, Doc Ops Bespoke) — the amount stated below.
+
+**Bespoke liability cap (if applicable):** € __________ aggregate.
+
+Nothing limits liability for: death or personal injury caused by negligence; fraud or fraudulent misrepresentation; breach of the terms implied by section 39 of the Sale of Goods and Supply of Services Act 1980; where the Customer is a consumer, any liability under Part 4 of the Consumer Rights Act 2022; a controller's or processor's liability to a data subject under Article 82 GDPR; or any other liability that cannot lawfully be limited under Irish law.
+
+---
+
+## Section J — Governing law + signatures
+
+This Order Form, the MSA (`legal/terms.html`), and the DPA (`legal/dpa.html`) together form the binding agreement. Governed by the laws of Ireland; jurisdiction of the Irish courts.
+
+**Customer signature:**
+
+  Name (print): _______________________
+  Title: _____________________________
+  Signature: _________________________ Date: __________
+
+**CallMeIE Technologies signature:**
+
+  Name (print): Adam Vaughan
+  Title: Director, CallMeIE Technologies Limited
+  Signature: _________________________ Date: __________
+
+---
+
+## Internal notes (NOT customer-facing)
+
+- This template lives at `_internal/order-forms/order-form-template.md`. Customer-facing PDF is generated from this on demand (export to PDF or use Documenso when D-LIFE-16 lifts and Documenso lands at customer #5).
+- Solicitor review still pending as of v1.0 draft. The 10 clauses called out in `_research/2026-05-06-websites-lifecycle.md` Part 3 are all addressed in this template (see deliverable enumeration / milestone schedule / revision cap / scope-creep boundary / IP+portfolio carve-out / hosting transfer schedule / acceptance criteria / kill fee / late-payment per Irish law / customer-content warranty).
+- For first paying customer (rounds 1–4): Adam fills in Section A + B as a print-PDF, **signs the §J CallMeIE Technologies signature block himself first**, then emails it to the customer, who replies "I agree" with the counter-signed PDF attached. Both signatures are required: a customer-only signature does NOT satisfy section 120(3) of the Copyright and Related Rights Act 2000 for the IP assignment in §F (the assignor — CallMeIE — must sign). A contract executed this way is binding under the Electronic Commerce Act 2000 (ss. 9, 13, 19) and the eIDAS Regulation (EU) 910/2014, and avoids the Documenso install at this scale.
+- When Documenso lands (customer #5+): import this template as a Documenso template; the per-tier checkboxes become Documenso form fields; signature + 50% deposit collected in one click.
