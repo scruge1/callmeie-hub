@@ -1723,7 +1723,7 @@
     <section class="shell hero">
       <div class="eyebrow">CallMeIE Technologies · Websites · Limerick</div>
       <h1>Websites that <em>work for your business.</em></h1>
-      <p class="lede">Choose a direction below. We adapt the design, write the copy, build your website and keep it working. Managed plans start at €69/month with €0 upfront, or choose a one-off build to own the source code.</p>
+      <p class="lede">We design and maintain websites for businesses in Limerick and across Ireland. Pick a direction below. We adapt the design, write the copy, build your website and keep it working. Managed plans start at €69/month with €0 upfront, or choose a one-off build to own the source code.</p>
       <div class="hero-cta-row">
         <a class="btn accent" href="#pricing">See the three tiers </a>
         <a data-quote-open data-first-step="call" class="btn secondary" href="mailto:hello@callmeie.ie?subject=Free%2020-min%20style-match%20call">Book a free 20-min call</a>
@@ -2438,6 +2438,17 @@
 
   <!-- Owl Studio backend wiring — POSTs any <form data-owl> to /owl/submit -->
   <script>
+  // Record only accepted leads. Existing analytics consent is mandatory;
+  // the event payload contains no visitor identity or form contents.
+  function trackWebsiteConversion(eventName, channel) {
+    try {
+      if (localStorage.getItem('cmt-consent') !== 'accepted') return;
+      if (window.umami && typeof window.umami.track === 'function') {
+        window.umami.track(eventName, { page: location.pathname, channel: channel });
+      }
+    } catch (_) { /* Analytics must never block the enquiry. */ }
+  }
+
   document.querySelectorAll('form[data-owl]').forEach(f => {
     const status = f.querySelector('.cf-status');
     const btn = f.querySelector('button[type=submit]');
@@ -2455,6 +2466,7 @@
         if (!r.ok) throw new Error('HTTP ' + r.status);
         const j = await r.json();
         if (j.ok) {
+          trackWebsiteConversion('website-contact-success', 'contact-form');
           f.reset();
           if (status) { status.className = 'cf-status ok'; status.textContent = 'Request received. I will review it and follow up.'; }
           if (btn) { btn.textContent = 'Sent ✓'; setTimeout(() => { btn.disabled = false; btn.textContent = btn.dataset.oldText || 'Send the brief'; }, 4000); }
@@ -2826,6 +2838,7 @@
         if (!r.ok) throw new Error('HTTP ' + r.status);
         const j = await r.json();
         if (j.ok) {
+          trackWebsiteConversion('website-quote-success', 'quote-modal');
           status.className = 'qm-status ok';
           status.textContent = 'Brief received. I will review it and follow up.';
           submitBtn.textContent = 'Sent ✓';
