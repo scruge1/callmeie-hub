@@ -1558,6 +1558,16 @@
     }
     .contact-form .cf-status.ok { color: var(--accent-light); }
     .contact-form .cf-status.err { color: #ff9d7e; }
+    .contact-form .cf-email-alt {
+      font: 600 12px var(--mono);
+      color: var(--accent-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .contact-form .cf-email-alt:focus-visible {
+      outline: 2px solid var(--accent-light);
+      outline-offset: 4px;
+    }
 
     /* ── Demo Preview Overlay (#dpo) ───────────────────── */
     #dpo {
@@ -2374,6 +2384,7 @@
         <input type="text" name="nickname" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="cf-foot">
           <button type="submit" class="btn primary cf-submit">Send the brief</button>
+          <a class="cf-email-alt" data-contact-email-alt href="mailto:hello@callmeie.ie?subject=Website%20brief">Or send by email</a>
           <span class="cf-status" role="status" aria-live="polite"></span>
         </div>
       </form>
@@ -2452,6 +2463,30 @@
   document.querySelectorAll('form[data-owl]').forEach(f => {
     const status = f.querySelector('.cf-status');
     const btn = f.querySelector('button[type=submit]');
+    const emailAlt = f.querySelector('[data-contact-email-alt]');
+    // An email draft is an alternative, not an accepted backend submission.
+    // Never claim delivery or emit a success analytics event for a mailto click.
+    if (emailAlt) emailAlt.addEventListener('click', e => {
+      const fields = Object.fromEntries(new FormData(f));
+      if (fields.nickname) { e.preventDefault(); return; } // Bot honeypot.
+      const q = new URLSearchParams(location.search);
+      const body = [
+        'Hello CallMeIE,',
+        '',
+        'I would like to discuss a website project.',
+        '',
+        'Name: ' + String(fields.name || '').slice(0, 150),
+        'Email: ' + String(fields.email || '').slice(0, 180),
+        'Business and requirements:',
+        String(fields.message || '').slice(0, 1600),
+        '',
+        'Campaign source: ' + String(q.get('utm_source') || 'website').slice(0, 120),
+        'Creative: ' + String(q.get('utm_content') || '').slice(0, 120),
+        'Source page: ' + location.href.slice(0, 420)
+      ].join('\n');
+      emailAlt.href = 'mailto:hello@callmeie.ie?subject=' +
+        encodeURIComponent('CallMeIE website brief') + '&body=' + encodeURIComponent(body);
+    });
     f.addEventListener('submit', async e => {
       e.preventDefault();
       if (btn) { btn.disabled = true; btn.dataset.oldText = btn.textContent; btn.textContent = 'Sending…'; }
@@ -2474,7 +2509,7 @@
           throw new Error(j.detail || 'submit failed');
         }
       } catch (err) {
-        if (status) { status.className = 'cf-status err'; status.textContent = 'Something went wrong — please email hello@callmeie.ie directly.'; }
+        if (status) { status.className = 'cf-status err'; status.textContent = 'This form was not sent. Use “Or send by email” above to open a pre-filled draft and send it from your email app.'; }
         if (btn) { btn.disabled = false; btn.textContent = btn.dataset.oldText || 'Send the brief'; }
       }
     });
