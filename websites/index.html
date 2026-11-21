@@ -2460,6 +2460,24 @@
     } catch (_) { /* Analytics must never block the enquiry. */ }
   }
 
+  // A real 404 for this site's registration means the API cannot accept leads.
+  // Switch to an honest email draft, then automatically resume API on recovery.
+  let owlSalesSiteMissing = false;
+  fetch('https://api.callmeie.ie/owl/health/owl-studio-sales', {
+    method: 'GET', cache: 'no-store'
+  }).then(r => {
+    if (r.status !== 404) return;
+    owlSalesSiteMissing = true;
+    document.querySelectorAll('form[data-owl] button[type=submit]').forEach(btn => {
+      btn.textContent = 'Open email draft';
+    });
+    const invitation = document.querySelector('.contact-or');
+    if (invitation) invitation.textContent =
+      'Our web form is temporarily unavailable. Please use your email app to send the brief; nothing is sent until you press Send there.';
+    const quoteSubmit = document.querySelector('#quote-form .qm-submit');
+    if (quoteSubmit) quoteSubmit.textContent = 'Open email draft';
+  }).catch(() => { /* A network error alone does not prove a missing site. */ });
+
   document.querySelectorAll('form[data-owl]').forEach(f => {
     const status = f.querySelector('.cf-status');
     const btn = f.querySelector('button[type=submit]');
@@ -2489,6 +2507,14 @@
     });
     f.addEventListener('submit', async e => {
       e.preventDefault();
+      if (owlSalesSiteMissing) {
+        if (status) {
+          status.className = 'cf-status';
+          status.textContent = 'Email draft only — review and press Send in your email app. No enquiry has been submitted yet.';
+        }
+        if (emailAlt) emailAlt.click(); // Synchronous user-initiated email draft.
+        return;
+      }
       if (btn) { btn.disabled = true; btn.dataset.oldText = btn.textContent; btn.textContent = 'Sending…'; }
       if (status) { status.className = 'cf-status'; status.textContent = ''; }
       const fd = Object.fromEntries(new FormData(f));
@@ -2741,7 +2767,7 @@
       status.className = 'qm-status';
       status.textContent = '';
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send the brief';
+      submitBtn.textContent = owlSalesSiteMissing ? 'Open email draft' : 'Send the brief';
       // Pre-fill from data-* attrs
       if (preset) {
         if (preset.first_step) {
@@ -2822,6 +2848,7 @@
       if (b.phone) lines.push(`Phone: ${b.phone}`);
       if (b.deadline) lines.push(`Deadline: ${b.deadline}`);
       if (b.notes) { lines.push(''); lines.push(`Notes:`); lines.push(b.notes); }
+      lines.push('Source page: ' + location.href.slice(0, 420));
       return lines.join('\n');
     }
 
@@ -2842,14 +2869,21 @@
     // Primary submit — POST /owl/submit with the basket
     form.addEventListener('submit', async e => {
       e.preventDefault();
+      const basket = readBasket();
+      if (basket.nickname) { closeModal(); return; } // Bot honeypot.
+      if (owlSalesSiteMissing) {
+        status.className = 'qm-status';
+        status.textContent = 'An email draft will open. Please press Send in your email app; nothing was submitted yet.';
+        emailAltBtn.click(); // Reuse original validated email fallback.
+        return;
+      }
       submitBtn.disabled = true;
       submitBtn.dataset.oldText = submitBtn.textContent;
       submitBtn.textContent = 'Sending…';
       status.className = 'qm-status';
       status.textContent = '';
 
-      const b = readBasket();
-      if (b.nickname) { closeModal(); return; }   // bot honeypot — silently drop
+      const b = basket;
 
       try {
         const r = await fetch('https://api.callmeie.ie/owl/submit', {
