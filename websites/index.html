@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet">
   <style>
     /* ------------------------------------------------------------------
-       Owl Studio sales page.
+       CallMeIE AI-first website services.
        Sections (in order):
          1. topbar
          2. hero + pricing-anchor line
@@ -2374,8 +2374,8 @@
         <a data-quote-open data-first-step="project" class="btn secondary" href="mailto:hello@callmeie.ie?subject=Website%20project%20%E2%80%94%20ready%20to%20book">Email the studio</a>
       </div>
 
-      <p class="contact-or">or, if you&apos;d rather not open an email client —</p>
-      <form class="contact-form" data-owl aria-label="Quick contact form">
+      <p class="contact-or">Fill in your brief and open a pre-filled email draft. Review it and press Send in your email app to contact CallMeIE.</p>
+      <form class="contact-form" data-enquiry aria-label="Quick contact form">
         <div class="cf-row">
           <label><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
           <label><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
@@ -2383,7 +2383,7 @@
         <label><span>Business + what you&apos;re after</span><textarea name="message" rows="4" required placeholder="Your business, preferred concept and what the website needs to do."></textarea></label>
         <input type="text" name="nickname" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="cf-foot">
-          <button type="submit" class="btn primary cf-submit">Send the brief</button>
+          <button type="submit" class="btn primary cf-submit">Open email draft</button>
           <a class="cf-email-alt" data-contact-email-alt href="mailto:hello@callmeie.ie?subject=Website%20brief">Or send by email</a>
           <span class="cf-status" role="status" aria-live="polite"></span>
         </div>
@@ -2447,46 +2447,28 @@
 </footer>
 <!-- COHESION:FOOTER-END -->
 
-  <!-- Owl Studio backend wiring — POSTs any <form data-owl> to /owl/submit -->
+  <!-- CallMeIE website enquiry email drafts: client CRM remains separate. -->
   <script>
-  // Record only accepted leads. Existing analytics consent is mandatory;
-  // the event payload contains no visitor identity or form contents.
-  function trackWebsiteConversion(eventName, channel) {
+  // A clicked email draft is intent, not proof of sending or an accepted lead.
+  // No visitor identity or form content is sent to analytics.
+  function trackWebsiteEmailIntent(channel) {
     try {
       if (localStorage.getItem('cmt-consent') !== 'accepted') return;
       if (window.umami && typeof window.umami.track === 'function') {
-        window.umami.track(eventName, { page: location.pathname, channel: channel });
+        window.umami.track('website-enquiry-email-intent', { page: location.pathname, channel });
       }
-    } catch (_) { /* Analytics must never block the enquiry. */ }
+    } catch (_) { /* Analytics must never block an enquiry. */ }
   }
 
-  // A real 404 for this site's registration means the API cannot accept leads.
-  // Switch to an honest email draft, then automatically resume API on recovery.
-  let owlSalesSiteMissing = false;
-  fetch('https://api.callmeie.ie/owl/health/owl-studio-sales', {
-    method: 'GET', cache: 'no-store'
-  }).then(r => {
-    if (r.status !== 404) return;
-    owlSalesSiteMissing = true;
-    document.querySelectorAll('form[data-owl] button[type=submit]').forEach(btn => {
-      btn.textContent = 'Open email draft';
-    });
-    const invitation = document.querySelector('.contact-or');
-    if (invitation) invitation.textContent =
-      'Our web form is temporarily unavailable. Please use your email app to send the brief; nothing is sent until you press Send there.';
-    const quoteSubmit = document.querySelector('#quote-form .qm-submit');
-    if (quoteSubmit) quoteSubmit.textContent = 'Open email draft';
-  }).catch(() => { /* A network error alone does not prove a missing site. */ });
-
-  document.querySelectorAll('form[data-owl]').forEach(f => {
+  document.querySelectorAll('form[data-enquiry]').forEach(f => {
     const status = f.querySelector('.cf-status');
-    const btn = f.querySelector('button[type=submit]');
     const emailAlt = f.querySelector('[data-contact-email-alt]');
     // An email draft is an alternative, not an accepted backend submission.
     // Never claim delivery or emit a success analytics event for a mailto click.
     if (emailAlt) emailAlt.addEventListener('click', e => {
       const fields = Object.fromEntries(new FormData(f));
       if (fields.nickname) { e.preventDefault(); return; } // Bot honeypot.
+      trackWebsiteEmailIntent('contact-form');
       const q = new URLSearchParams(location.search);
       const body = [
         'Hello CallMeIE,',
@@ -2505,39 +2487,16 @@
       emailAlt.href = 'mailto:hello@callmeie.ie?subject=' +
         encodeURIComponent('CallMeIE website brief') + '&body=' + encodeURIComponent(body);
     });
-    f.addEventListener('submit', async e => {
+    f.addEventListener('submit', e => {
       e.preventDefault();
-      if (owlSalesSiteMissing) {
-        if (status) {
-          status.className = 'cf-status';
-          status.textContent = 'Email draft only — review and press Send in your email app. No enquiry has been submitted yet.';
-        }
-        if (emailAlt) emailAlt.click(); // Synchronous user-initiated email draft.
-        return;
+      if (!f.reportValidity()) return;
+      const fields = Object.fromEntries(new FormData(f));
+      if (fields.nickname) return;
+      if (status) {
+        status.className = 'cf-status';
+        status.textContent = 'An email draft is opening. Review and press Send in your email app; no enquiry has been sent yet.';
       }
-      if (btn) { btn.disabled = true; btn.dataset.oldText = btn.textContent; btn.textContent = 'Sending…'; }
-      if (status) { status.className = 'cf-status'; status.textContent = ''; }
-      const fd = Object.fromEntries(new FormData(f));
-      try {
-        const r = await fetch('https://api.callmeie.ie/owl/submit', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({site_id: 'owl-studio-sales', form_data: fd, submitted_from: location.href})
-        });
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        const j = await r.json();
-        if (j.ok) {
-          trackWebsiteConversion('website-contact-success', 'contact-form');
-          f.reset();
-          if (status) { status.className = 'cf-status ok'; status.textContent = 'Request received. I will review it and follow up.'; }
-          if (btn) { btn.textContent = 'Sent ✓'; setTimeout(() => { btn.disabled = false; btn.textContent = btn.dataset.oldText || 'Send the brief'; }, 4000); }
-        } else {
-          throw new Error(j.detail || 'submit failed');
-        }
-      } catch (err) {
-        if (status) { status.className = 'cf-status err'; status.textContent = 'This form was not sent. Use “Or send by email” above to open a pre-filled draft and send it from your email app.'; }
-        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.oldText || 'Send the brief'; }
-      }
+      if (emailAlt) emailAlt.click();
     });
   });
   </script>
@@ -2546,7 +2505,7 @@
        QUOTE MODAL — replaces mailto: on every "select this / build this / add care" CTA.
        Progressive enhancement: every trigger has a mailto: href as fallback.
        JS hijacks click, opens <dialog>, pre-fills from data-* attrs.
-       Submit posts to /owl/submit with form_type=quote; basket is logged in admin.
+       The brief opens a pre-filled email draft; no CRM lead is implied.
        ======================================================== -->
   <dialog id="quote-modal" class="qm-dialog" aria-labelledby="qm-title">
     <form id="quote-form" class="qm-form" autocomplete="on" novalidate>
@@ -2625,7 +2584,7 @@
       </fieldset>
 
       <div class="qm-foot">
-        <button type="submit" class="btn primary qm-submit">Send the brief</button>
+        <button type="submit" class="btn primary qm-submit">Open email draft</button>
         <button type="button" class="qm-email-alt">Or send as email </button>
         <span class="qm-status" role="status" aria-live="polite"></span>
       </div>
@@ -2767,7 +2726,7 @@
       status.className = 'qm-status';
       status.textContent = '';
       submitBtn.disabled = false;
-      submitBtn.textContent = owlSalesSiteMissing ? 'Open email draft' : 'Send the brief';
+      submitBtn.textContent = 'Open email draft';
       // Pre-fill from data-* attrs
       if (preset) {
         if (preset.first_step) {
@@ -2863,68 +2822,27 @@
       }
       const subject = `AI-First Websites brief · ${b.business}`;
       const body = basketSummary(b);
+      trackWebsiteEmailIntent('quote-modal');
       location.href = `mailto:hello@callmeie.ie?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
 
-    // Primary submit — POST /owl/submit with the basket
-    form.addEventListener('submit', async e => {
+    // A draft is not an accepted enquiry; the visitor must send it.
+    form.addEventListener('submit', e => {
       e.preventDefault();
       const basket = readBasket();
-      if (basket.nickname) { closeModal(); return; } // Bot honeypot.
-      if (owlSalesSiteMissing) {
-        status.className = 'qm-status';
-        status.textContent = 'An email draft will open. Please press Send in your email app; nothing was submitted yet.';
-        emailAltBtn.click(); // Reuse original validated email fallback.
+      if (basket.nickname) { closeModal(); return; }
+      if (!basket.name || !basket.business || !basket.email) {
+        status.className = 'qm-status err';
+        status.textContent = 'Please fill name, business, and email first.';
         return;
       }
-      submitBtn.disabled = true;
-      submitBtn.dataset.oldText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending…';
       status.className = 'qm-status';
-      status.textContent = '';
-
-      const b = basket;
-
-      try {
-        const r = await fetch('https://api.callmeie.ie/owl/submit', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({
-            site_id: 'owl-studio-sales',
-            form_type: 'quote',
-            form_data: {
-              name: b.name, business: b.business, email: b.email,
-              phone: b.phone || '', deadline: b.deadline || '',
-              first_step: b.first_step, tier: b.tier || '',
-              style: b.style || '', care: b.care || '',
-              care_period: b.care_period || '',
-              notes: b.notes || '',
-              summary: basketSummary(b),
-            },
-            submitted_from: location.href,
-          })
-        });
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        const j = await r.json();
-        if (j.ok) {
-          trackWebsiteConversion('website-quote-success', 'quote-modal');
-          status.className = 'qm-status ok';
-          status.textContent = 'Brief received. I will review it and follow up.';
-          submitBtn.textContent = 'Sent ✓';
-          setTimeout(closeModal, 2400);
-        } else {
-          throw new Error(j.detail || 'submit failed');
-        }
-      } catch (err) {
-        status.className = 'qm-status err';
-        status.textContent = 'Submit failed — try the "send as email" fallback below.';
-        submitBtn.disabled = false;
-        submitBtn.textContent = submitBtn.dataset.oldText;
-      }
+      status.textContent = 'An email draft is opening. Review and press Send in your email app; nothing was submitted yet.';
+      emailAltBtn.click();
     });
 
     // Export so the demo preview overlay can open the modal pre-filled
-    window._owlOpenModal = openModal;
+    window._callmeieOpenModal = openModal;
   })();
   </script>
 
@@ -3020,8 +2938,8 @@
       closePreview();
       // Slight delay so overlay animates out before modal opens
       setTimeout(function () {
-        if (typeof window._owlOpenModal === "function") {
-          window._owlOpenModal({ style: slug, first_step: "project" });
+        if (typeof window._callmeieOpenModal === "function") {
+          window._callmeieOpenModal({ style: slug, first_step: "project" });
         }
       }, 80);
     });
